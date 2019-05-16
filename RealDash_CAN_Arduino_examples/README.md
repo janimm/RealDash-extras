@@ -27,15 +27,15 @@ However, this protocol can be used with custom and DIY devices.
 
 RealDash reads a stream of data in following structures:
 
-CAN DATA FRAME:
-4 bytes - 0x11223344
-4 bytes - CAN frame id number
-8 bytes - CAN frame payload
+CAN DATA FRAME:</br>
+4 bytes - 0x11223344</br>
+4 bytes - CAN frame id number</br>
+8 bytes - CAN frame payload</br>
 
-TEXT EXTENSION FRAME:
-4 bytes - 0x11223355
-4 bytes - CAN frame id number
-N bytes - text in UTF8 format, including null-terminator
+TEXT EXTENSION FRAME:</br>
+4 bytes - 0x11223355</br>
+4 bytes - CAN frame id number</br>
+N bytes - text in UTF8 format, including null-terminator</br>
 
 First 4 bytes are an identifier at the beginning of each CAN frame. This is
 required for RealDash to 'catch-up' on ongoing stream of CAN frames.
@@ -57,19 +57,15 @@ RealDash actions, like buttons or data triggers.
 
 SET_VALUE frame is always 17 bytes with following layout:
 
-4 bytes - always 0x11223344
-4 bytes - CAN frame id number
-8 bytes - CAN frame payload
-1 byte - checksum byte
+4 bytes - always 0x11223344</br>
+4 bytes - CAN frame id number</br>
+8 bytes - CAN frame payload</br>
+1 byte - checksum byte</br>
 
-First 4 bytes are RealDash CAN protocol identification tag.
-
-Next 4 bytes are CAN frame id number to set value into.
-
-Next 8 bytes are the can frame payload containing all frame values.
-
-Last byte is a simple checksum of preceeding 13 bytes. Value overflow is
-ignored.
+First 4 bytes are RealDash CAN protocol identification tag.</br>
+Next 4 bytes are CAN frame id number to set value into.</br>
+Next 8 bytes are the can frame payload containing all frame values.</br>
+Last byte is a simple checksum of preceeding 13 bytes. Value overflow is ignored.</br>
 
 Note that CAN frame id number and index value must match the xml file imported into RealDash connection settings.
 
