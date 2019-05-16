@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+DashBox CAN description file for Megasquirt CAN broadcast (Dash broadcasting).
+Only valid when default settings are used in TunerStudio CAN Dash broadcasting settings:
+Dash Broadcasting
+Configuration: Automatic
+Base CAN identifier: 1512
+Output transmit rate: 10Hz
+
+Requires RealDash version 1.2.0 or newer
+-->
+<DashBox>
+  <!-- baseId [optional] is added to each channel canId.-->
+	<CAN baseId="1512">
+    <channels>
+      <!-- 'targetId' links value to RealDash input, see 'realdash_target_identifiers.txt for a complete list -->
+      <!-- OR -->
+      <!-- 'name' links value to RealDash input, these are hardcoded into RealDash and must match for proper linking -->
+      <!-- 'units' is for information only, except for "F", "mph", and "psi" which need to be specified for dashboard conversions to work properly
+                   (for example Megaquirt, which broadcasts all temperatures in fahrenheit regardless of the settings
+      -->
+      <!-- 'canId' can identifier (baseId + canId) -->
+      <!-- 'offset' byte offset in data section of the frame -->
+      <!-- 'length' value length in bytes -->
+      <!-- 'conversion' if omitted, value is read 'as-is'. Otherwise variables 'B0', 'B1', 'B2', 'B3', 'V' and 'ID#' can be used within conversion formula, where:
+                      B0 is first byte in value, B1 second byte, and so on
+                      V is the actual incoming value (composed of frame bytes, based on offset, length, startbit and bitcount)
+                      examples;
+                      conversion="V/10" - result is incoming value / 10
+                      conversion="B0+15*(B1-43)" - result is 'first byte + 15 * (second byte - 43)
+                      conversion="V+ID200-74.3" - result is incoming value + 'Body Electronics->Gear' - 74.3 -->
+
+      <channel targetId="31" units="kPA" canId="0" offset="0" length="2" conversion="V/10"></channel>
+      <channel targetId="37" units="RPM" canId="0" offset="2" length="2"></channel>
+      <channel targetId="14" units="F" canId="0" offset="4" length="2" conversion="V/10"></channel>
+      <channel targetId="42" units="%" canId="0" offset="6" length="2" conversion="V/10"></channel>
+
+      <channel targetId="35" units="ms" canId="1" offset="0" length="2" conversion="V/1000"></channel>
+      <channel targetId="36" units="ms" canId="1" offset="2" length="2" conversion="V/1000"></channel>
+      <channel targetId="27" units="F" canId="1" offset="4" length="2" conversion="V/10"></channel>
+      <channel targetId="38" units="deg" canId="1" offset="6" length="2" conversion="V/10"></channel>
+
+      <channel targetId="2" units="AFR" canId="2" offset="0" length="1" conversion="V/10"></channel>
+      <channel targetId="0" units="AFR" canId="2" offset="1" length="1" conversion="V/10"></channel>
+      <channel name="101" units="%" canId="2" offset="2" length="2" conversion="V/10"></channel>
+      <channel targetId="106" units="F" canId="2" offset="4" length="2" conversion="V/10"></channel>
+      <channel name="SeqPW1" units="ms" canId="2" offset="6" length="2" conversion="V/1000"></channel>
+
+      <channel targetId="12" units="V" canId="3" offset="0" length="2" conversion="V/10"></channel>
+      <channel name="Sensor1" canId="3" offset="2" length="2" conversion="V/10"></channel>
+      <channel name="Sensor2" canId="3" offset="4" length="4" conversion="V/10"></channel>
+      <channel targetId="28" units="deg" canId="3" offset="6" length="2" conversion="V/10"></channel>
+
+      <channel targetId="81" units="ms" canId="4" offset="0" length="2" conversion="V/10"></channel>
+      <channel name="TractionRetard" units="deg" canId="4" offset="2" length="2" conversion="V/10"></channel>
+      <channel name="LaunchTiming" units="deg" canId="4" offset="4" length="2" conversion="V/10"></channel>
+
+    </channels>
+	</CAN>
+</DashBox>
+
