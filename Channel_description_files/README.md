@@ -15,7 +15,7 @@ RealDash OBD2 description files.
 
 | file | description |
 |:--------|:----------:|
-| realdash_obd2.xml | RealDash default OBD2 description file.</br>This file is bundled with RealDash app and used aas a default. |
+| realdash_obd2.xml | RealDash default OBD2 description file.</br>This file is bundled with RealDash app and used as a default. |
 | realdash_obd2_january_5_1.xml | Description file for 'January 5.1' ECU |
 
 ### RealDash CAN
