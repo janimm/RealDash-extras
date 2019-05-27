@@ -21,7 +21,7 @@ int analogPins[7] = {0};
 unsigned int rpm = 0;
 unsigned int kpa = 992; // 99.2
 unsigned int tps = 965; // 96.5
-unsigned int clt = 80;  // 80 - 10
+unsigned int clt = 80;  // 80 - 100
 unsigned int textCounter = 0;
 
 // if READWRITE_PINS is defined, the values are read from and written to Arduino
@@ -56,7 +56,7 @@ void loop()
   {
     tps = 0;
   }
-  if (clt++ > 130)
+  if (clt++ > 230)
   {
     // all values in frame are handled as unsigned values. To have negative values,
     // offset actual value and write corresponding conversion to xml file imported to RealDash
