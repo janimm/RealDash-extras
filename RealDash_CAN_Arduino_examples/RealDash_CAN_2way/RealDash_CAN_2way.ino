@@ -24,6 +24,10 @@ unsigned int tps = 965; // 96.5
 unsigned int clt = 80;  // 80 - 100
 unsigned int textCounter = 0;
 
+// incoming data
+byte incomingFrame[17] = { 0 };
+unsigned int incomingFramePos = 0;
+
 // if READWRITE_PINS is defined, the values are read from and written to Arduino
 // digital and analog pins.
 //#define READWRITE_PINS
@@ -192,45 +196,71 @@ void SendTextExtensionFrameToSerial(unsigned long canFrameId, const char* text)
 
 void ReadIncomingSerialData()
 {
-  while (Serial.available() > 16)
+  while (Serial.available() > 0)
   {
-    // we have at least 17 bytes available (one RealDash 'SET VALUE' frame)
+    // little bit of extra effort here, since especially Bluetooth connections
+    // may leave unsent/received data in internal buffer for a long time
+    // therefore, we cannot be sure that incoming byte stream really starts at
+    // where we expect it to start.
 
-    // read entire set value frame to byte buffer
-    byte frame[17] = { 0 };
-    Serial.readBytes(frame, 17);
+    // read one byte from serial stream
+    incomingFrame[incomingFramePos++] = Serial.read();
 
-    // first four bytes contain set value frame separator bytes
-    unsigned long blockTag = 0;
-    memcpy(&blockTag, frame, 4);
-
-    // next four bytes contain set value CAN frame id
-    unsigned long canFrameId = 0;
-    memcpy(&canFrameId, frame + 4, 4);
-
-    // next 8 bytes are the frame data
-    byte data[8] = { 0 };
-    memcpy(data, frame + 8, 8);
-
-    // last byte is check byte calculated as sum of previous 13 bytes (ignore overflow)
-    byte checkByte = 0;
-    for (int i=0; i<16; i++)
+    // check the first 4 bytes tag (0x11223344, little endian)
+    if ( (incomingFramePos == 1 && incomingFrame[0] != 0x44) ||
+         (incomingFramePos == 2 && incomingFrame[1] != 0x33) ||
+         (incomingFramePos == 3 && incomingFrame[2] != 0x22) ||
+         (incomingFramePos == 4 && incomingFrame[3] != 0x11))
     {
-      checkByte += frame[i];
+      // the tag at the beginning of the frame does not match, this is an invalid frame
+      // just zero the incomingFrame buffer and start expecting first byte again
+      memset(incomingFrame, 0, 17);
+      incomingFramePos = 0;
     }
     
-    const unsigned long serialBlockTag = 0x11223344;
-    if (blockTag == serialBlockTag && frame[16] == checkByte)
+    if (incomingFramePos >= 17)
     {
-      // this is a valid set value-frame:
-      // it begins with RealDash CAN frame separator and last check byte calculation match
-      HandleIncomingSetValueFrame(canFrameId, data);
+      // frame complete, process it
+      ProcessIncomingFrame();
+      
+      // zero the incomingFrame buffer and start expecting first byte again
+      memset(incomingFrame, 0, 17);
+      incomingFramePos = 0;
     }
   }
 }
 
 
-void HandleIncomingSetValueFrame(unsigned long canFrameId, byte data[8])
+void ProcessIncomingFrame()
+{
+  // first four bytes contain set value frame separator bytes, always 0x11223344
+  unsigned long blockTag = 0;
+  memcpy(&blockTag, incomingFrame, 4);
+
+  // next four bytes contain set value CAN frame id
+  unsigned long canFrameId = 0;
+  memcpy(&canFrameId, incomingFrame + 4, 4);
+
+  // next 8 bytes are the frame data
+  // ...
+  
+  // last byte is check byte calculated as sum of previous 13 bytes (ignore overflow)
+  byte checkByte = 0;
+  for (int i=0; i<16; i++)
+  {
+    checkByte += incomingFrame[i];
+  }
+
+  if (incomingFrame[16] == checkByte)
+  {
+    // checksum match, this is a valid set value-frame:
+    // the frame payload data is in incomingFrame + 8 bytes
+    HandleIncomingSetValueFrame(canFrameId, incomingFrame + 8);
+  }
+}
+
+
+void HandleIncomingSetValueFrame(unsigned long canFrameId, const byte* data)
 {
   if (canFrameId == 3201)
   {
