@@ -30,7 +30,7 @@
                       conversion="B0+15*(B1-43)" - result is 'first byte + 15 * (second byte - 43)
                       conversion="V+ID200-74.3" - result is incoming value + 'Body Electronics->Gear' - 74.3 -->
 
-      <value targetId="37" units="RPM" offset="0" length="2"></value>
+      <value targetId="37" offset="0" length="2"></value>
       <value targetId="31" units="kPA" offset="2" length="2" conversion="V*0.1"></value>
       <value targetId="42" units="%" offset="4" length="2" conversion="V*0.1"></value>
       <value name="Haltech: Coolant pressure" units="kPA" offset="6" length="2" conversion="V*0.1"></value>
