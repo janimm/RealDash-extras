@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RealDash>
+
+	<groups>
+
+		<!-- You can include gauges into groups which can be animated. You can include same gauge to many different groups at the same time. -->
+
+		<group name="Speed group">
+			<gauge name="Speed needle gauge"></gauge>
+			<gauge name="Speed text gauge"></gauge>
+		</group>
+
+		<group name="Gauge group">
+			<gauge name="Gauge 1"></gauge>
+			<gauge name="Gauge 2"></gauge>
+			<gauge name="Gauge 3"></gauge>
+		</group>
+
+	</groups>
+
+	<animations>
+
+		<!-- S I N G L E  G A U G E  A N I M A T I O N S -->
+
+		<!-- Animations for hiding the RPM needle gauge. "end" is gauge opacity (scale 0-1). -->
+
+		<animation name="fade-in-rpm" type="fade" target="RPM needle gauge" end="1.0" duration="0.3"></animation>
+		<animation name="fade-out-rpm" type="fade" target="RPM needle gauge" end="0.0" duration="0.3"></animation>
+
+		<!-- Animations for moving the RPM needle gauge. "end" is gauge area, you can copy gauge area from RealDash with CTRL+Q. -->
+
+		<animation name="move-rpm-top" type="morph" target="RPM needle gauge" end="0.066666662693024,0.118518471717834,0.285416662693024,0.507007718086243" duration="0.3" easing="QuadOut"></animation>
+		<animation name="move-rpm-center" type="morph" target="RPM needle gauge" end="0.066666662693024,0.305755376815796,0.285416662693024,0.694244623184204" duration="0.3" easing="QuadOut"></animation>
+		<animation name="move-rpm-bottom" type="morph" target="RPM needle gauge" end="0.066666662693024,0.492592573165894,0.285416662693024,0.881081819534302" duration="0.3" easing="QuadOut"></animation>
+
+		<!-- G R O U P  A N I M A T I O N S -->
+
+		<!-- Animations for hiding the Speed group. "end" is gauge opacity (scale 0-1). -->
+
+		<animation name="fade-in-speed-group" type="fade" group="Speed group" end="1.0" duration="0.3"></animation>
+		<animation name="fade-out-speed-group" type="fade" group="Speed group" end="0.0" duration="0.3"></animation>
+
+		<!-- Animations for moving the Speed group. "end" is gauge area, you can copy gauge area from RealDash with CTRL+Q. -->
+
+		<animation name="move-speed-group-top" type="morph" group="Speed group" end="0.066666662693024,0.118518471717834,0.285937488079071,0.592592597007751" duration="0.3" easing="QuadOut"></animation>
+		<animation name="move-speed-group-center" type="morph" group="Speed group" end="0.066666662693024,0.250000298023224,0.285937488079071,0.724070191383362" duration="0.3" easing="QuadOut"></animation>
+		<animation name="move-speed-group-bottom" type="morph" group="Speed group" end="0.066666662693024,0.409259974956512,0.285937488079071,0.883324742317200" duration="0.3" easing="QuadOut"></animation>
+
+		<!-- O T H E R  E X A M P L E S  A N I M A T I O N S -->
+
+		<animation name="fade-out-gauge-2" type="fade" target="Gauge 2" end="0.0" duration="0.3"></animation>
+		<animation name="fade-in-gauge-2" type="fade" target="Gauge 2" end="1.0" duration="0.3"></animation>
+
+		<animation name="move-gauge-group-top" type="morph" group="Gauge group" end="0.133333325386047,0.118518471717834,0.866666615009308,0.507407486438751" duration="0.3" easing="QuadOut"></animation>
+		<animation name="move-gauge-group-center" type="morph" group="Gauge group" end="0.133333325386047,0.237037003040314,0.866666615009308,0.625926017761230" duration="0.3" easing="QuadOut"></animation>
+		<animation name="move-gauge-1-bottom" type="morph" target="Gauge 1" end="0.133333325386047,0.355555534362793,0.352083384990692,0.744444489479065" duration="0.3" easing="QuadOut"></animation>
+		<animation name="move-gauge-2-bottom" type="morph" target="Gauge 2" end="0.390625000000000,0.355555534362793,0.609375000000000,0.744444489479065" duration="0.3" delay="0.15" easing="QuadOut"></animation>
+		<animation name="move-gauge-3-bottom" type="morph" target="Gauge 3" end="0.647916674613953,0.355555534362793,0.866666615009308,0.744444370269775" duration="0.3" delay="0.3" easing="QuadOut"></animation>
+
+	</animations>
+
+	<triggers>
+
+		<!-- S I N G L E  G A U G E  T R I G G E R S -->
+
+		<!-- Triggers for hiding and showing the RPM needle gauge. This is for action type "Rotate value up". -->
+
+		<trigger name="Show RPM" condition="smaller" variable="Dummy 01" tolerance="1.00" reset="1.00" cooldown="0.00">
+			<actions>
+
+				<action name="fade-in-rpm"></action>
+
+			</actions>
+		</trigger>
+
+		<trigger name="Hide RPM" condition="larger" variable="Dummy 01" tolerance="0.00" reset="0.00" cooldown="0.00">
+			<actions>
+
+				<action name="fade-out-rpm"></action>
+
+			</actions>
+		</trigger>
+
+		<!-- Triggers for moving the RPM needle gauge. This is for action type "Set value". -->
+
+		<trigger name="Move RPM to top" condition="equal" variable="Dummy 02" tolerance="0.00" reset="0.00" cooldown="0.00">
+			<actions>
+
+				<action name="move-rpm-top"></action>
+
+			</actions>
+		</trigger>
+
+		<trigger name="Move RPM to center" condition="equal" variable="Dummy 02" tolerance="1.00" reset="1.00" cooldown="0.00">
+			<actions>
+
+				<action name="move-rpm-center"></action>
+
+			</actions>
+		</trigger>
+
+		<trigger name="Move RPM to bottom" condition="equal" variable="Dummy 02" tolerance="2.00" reset="2.00" cooldown="0.00">
+			<actions>
+
+				<action name="move-rpm-bottom"></action>
+
+			</actions>
+		</trigger>
+
+		<!-- G R O U P  T R I G G E R S -->
+
+		<!-- Triggers for hiding and showing the Speed group. This is for action type "Rotate value up". -->
+
+		<trigger name="Show Speed group" condition="smaller" variable="Dummy 03" tolerance="1.00" reset="1.00" cooldown="0.00">
+			<actions>
+
+				<action name="fade-in-speed-group"></action>
+
+			</actions>
+		</trigger>
+
+		<trigger name="Hide Speed group" condition="larger" variable="Dummy 03" tolerance="0.00" reset="0.00" cooldown="0.00">
+			<actions>
+
+				<action name="fade-out-speed-group"></action>
+
+			</actions>
+		</trigger>
+
+		<!-- Triggers for moving the Speed group. This is for action type "Set value". -->
+
+		<trigger name="Move Speed group to top" condition="equal" variable="Dummy 04" tolerance="0.00" reset="0.00" cooldown="0.00">
+			<actions>
+
+				<action name="move-speed-group-top"></action>
+
+			</actions>
+		</trigger>
+
+		<trigger name="Move Speed group to center" condition="equal" variable="Dummy 04" tolerance="1.00" reset="1.00" cooldown="0.00">
+			<actions>
+
+				<action name="move-speed-group-center"></action>
+
+			</actions>
+		</trigger>
+
+		<trigger name="Move Speed group to bottom" condition="equal" variable="Dummy 04" tolerance="2.00" reset="2.00" cooldown="0.00">
+			<actions>
+
+				<action name="move-speed-group-bottom"></action>
+
+			</actions>
+		</trigger>
+
+		<!-- O T H E R  E X A M P L E S  T R I G G E R S -->
+
+		<trigger name="Move Gauges to top" condition="equal" variable="Dummy 05" tolerance="0.00" reset="0.00" cooldown="0.00">
+			<actions>
+
+				<action name="fade-in-gauge-2"></action> <!-- For setting Gauge 2 back to visible. -->
+				<action name="move-gauge-group-top"></action>
+
+			</actions>
+		</trigger>
+
+		<trigger name="Move Gauges to center and fade out Gauge 2" condition="equal" variable="Dummy 05" tolerance="1.00" reset="1.00" cooldown="0.00">
+			<actions>
+
+				<action name="fade-out-gauge-2"></action>
+				<action name="move-gauge-group-center"></action>
+
+			</actions>
+		</trigger>
+
+		<trigger name="Move Gauges to bottom with delay" condition="equal" variable="Dummy 05" tolerance="2.00" reset="2.00" cooldown="0.00">
+			<actions>
+
+				<action name="fade-in-gauge-2"></action> <!-- For setting Gauge 2 back to visible. -->
+				<action name="move-gauge-1-bottom"></action>
+				<action name="move-gauge-2-bottom"></action>
+				<action name="move-gauge-3-bottom"></action>
+
+			</actions>
+		</trigger>
+
+
+	</triggers>
+</RealDash>

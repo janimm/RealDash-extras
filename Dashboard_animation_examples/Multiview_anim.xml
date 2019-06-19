@@ -1,0 +1,776 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RealDash>
+
+    <boot>
+
+        <gauge name="Center toggle" fade="0.0"></gauge>
+
+        <gauge name="Boost 1" visible="true" fade="1.0"></gauge>
+
+        <gauge name="MAP text" area="0.320625007152557,-0.555792987346649,0.377916991710663,-0.541077971458435"></gauge>
+
+    </boot>
+
+    <groups>
+
+        <group name="Drive mode values">
+    		<gauge name="Speed value"></gauge>
+	    	<gauge name="RPM value"></gauge>
+	    	<gauge name="Boost value"></gauge>
+	    	<gauge name="Odo value"></gauge>
+	    	<gauge name="Trip value"></gauge>
+        </group>
+
+		<group name="Drive mode units">
+    		<gauge name="Speed unit"></gauge>
+	    	<gauge name="RPM text"></gauge>
+	    	<gauge name="Boost unit"></gauge>
+	    	<gauge name="Odo unit"></gauge>
+	    	<gauge name="Trip unit"></gauge>
+        </group>
+
+		<group name="RPM arc gauge">
+    		<gauge name="RPM arc gauge"></gauge>
+	    	<gauge name="RPM arc gauge background"></gauge>
+        </group>
+
+		<group name="Boost arc gauge">
+    		<gauge name="Boost + arc gauge"></gauge>
+	    	<gauge name="Boost - arc gauge"></gauge>
+	    	<gauge name="Boost arc gauge background"></gauge>
+        </group>
+
+		<group name="Gear">
+    		<gauge name="Gear value"></gauge>
+	    	<gauge name="Gear value N"></gauge>
+	    	<gauge name="Gear value R"></gauge>
+        </group>
+
+		<group name="Warning lights">
+    		<gauge name="Oil indicator"></gauge>
+	    	<gauge name="Check engine indicator"></gauge>
+		    <gauge name="Door indicator"></gauge>
+			<gauge name="Battery indicator"></gauge>
+			<gauge name="Brake indicator"></gauge>
+			<gauge name="High beam indicator"></gauge>
+			<gauge name="Turn signal left"></gauge>
+			<gauge name="Turn signal right"></gauge>
+        </group>
+
+		<group name="Coolant gauge">
+    		<gauge name="Coolant gauge"></gauge>
+	    	<gauge name="Coolant background"></gauge>
+        </group>
+
+		<group name="Fuel level gauge">
+    		<gauge name="Fuel level gauge"></gauge>
+	    	<gauge name="Fuel level background"></gauge>
+        </group>
+
+		<group name="Car info backgrounds">
+	    	<gauge name="CLT graph background"></gauge>
+	    	<gauge name="IAT graph background"></gauge>
+	    	<gauge name="AFR graph background"></gauge>
+	    	<gauge name="ADV graph background"></gauge>
+	    	<gauge name="RPM graph background"></gauge>
+	    	<gauge name="MAP graph background"></gauge>
+        </group>
+
+		<group name="Info panel speed">
+	    	<gauge name="Speed value info panel"></gauge>
+	    	<gauge name="Speed unit info panel"></gauge>
+        </group>
+
+		<group name="Info">
+	    	<gauge name="Avg speed text"></gauge>
+	    	<gauge name="Avg speed unit"></gauge>
+	    	<gauge name="Avg speed value"></gauge>
+	    	<gauge name="Fuel consumption text"></gauge>
+	    	<gauge name="Fuel consumption unit"></gauge>
+	    	<gauge name="Fuel consumption value"></gauge>
+	    	<gauge name="Avg fuel consumption text"></gauge>
+	    	<gauge name="Avg fuel consumption unit"></gauge>
+	    	<gauge name="Avg fuel consumption value"></gauge>
+		</group>
+
+		<group name="Graphs">
+	    	<gauge name="CLT graph"></gauge>
+	    	<gauge name="IAT graph"></gauge>
+	    	<gauge name="AFR graph"></gauge>
+	    	<gauge name="ADV graph"></gauge>
+	    	<gauge name="RPM graph"></gauge>
+	    	<gauge name="MAP graph"></gauge>
+        </group>
+
+		<group name="Graph texts">
+	    	<gauge name="CLT text graph"></gauge>
+		    <gauge name="CLT value graph"></gauge>
+	    	<gauge name="IAT text graph"></gauge>
+	    	<gauge name="IAT value graph"></gauge>
+	    	<gauge name="AFR text graph"></gauge>
+	    	<gauge name="AFR value graph"></gauge>
+	    	<gauge name="ADV text graph"></gauge>
+	    	<gauge name="ADV value graph"></gauge>
+	    	<gauge name="RPM text graph"></gauge>
+	    	<gauge name="RPM value graph"></gauge>
+	    	<gauge name="MAP text graph"></gauge>
+	    	<gauge name="MAP value graph"></gauge>
+        </group>
+
+		<group name="Speedlimit">
+	    	<gauge name="Speedlimit value"></gauge>
+		    <gauge name="Speedlimit background"></gauge>
+        </group>
+
+		<group name="Music info">
+	    	<gauge name="Song title small"></gauge>
+		    <gauge name="Artist name small"></gauge>
+		    <gauge name="Break line"></gauge>
+        </group>
+
+		<group name="Now playing">
+	    	<gauge name="Now playing line"></gauge>
+		    <gauge name="Now playing text"></gauge>
+        </group>
+
+		<group name="Song info">
+	    	<gauge name="Artist name music player"></gauge>
+		    <gauge name="Album name music player"></gauge>
+        </group>
+
+		<group name="Playback controls">
+	    	<gauge name="Previous track"></gauge>
+		    <gauge name="Play/Pause"></gauge>
+		    <gauge name="Next track"></gauge>
+        </group>
+
+    </groups>
+
+    <animations>
+
+		<!-- Active mode indicator -->
+
+		<animation name="drive-mode" type="morph" target="Active page" end="0.000000000000000,0.212130069732666,0.057812452316284,0.314907848834991" duration="0.3" easing="QuadInOut"></animation>
+		<animation name="car-info-mode" type="morph" target="Active page" end="0.000000000000000,0.396018981933594,0.057812452316284,0.498796999454498" duration="0.3" easing="QuadInOut"></animation>
+		<animation name="map-mode" type="morph" target="Active page" end="0.000000000000000,0.582685172557831,0.057812452316284,0.685463190078735" duration="0.3" easing="QuadInOut"></animation>
+		<animation name="music-player-mode" type="morph" target="Active page" end="0.000000000000000,0.767499804496765,0.057812452316284,0.870277822017670" duration="0.3" easing="QuadInOut"></animation>
+
+		<!-- Active mode name -->
+
+		<animation name="drive-mode-text-move-in" type="morph" target="Drive mode text" start="0.117083251476288,0.185007512569427,0.256667554378510,0.208156585693359" end="0.117083251476288,0.167414903640747,0.256667554378510,0.190563917160034" duration="0.3" delay="0.2" easing="QuadOut"></animation>
+		<animation name="drive-mode-text-fade-in" type="fade" target="Drive mode text" end="1.0" duration="0.3" delay="0.2" easing="QuadOut"></animation>
+
+		<animation name="drive-mode-text-move-out" type="morph" target="Drive mode text" end="0.117083251476288,0.149822235107422,0.256667554378510,0.172971308231354" duration="0.3" easing="QuadIn"></animation>
+		<animation name="drive-mode-text-fade-out" type="fade" target="Drive mode text" end="0.0" duration="0.3" easing="QuadIn"></animation>
+
+		<animation name="car-info-mode-text-move-in" type="morph" target="Car info mode text" start="0.117083251476288,0.185007512569427,0.256667554378510,0.208156585693359" end="0.117083251476288,0.167414903640747,0.256667554378510,0.190563917160034" duration="0.3" delay="0.2" easing="QuadOut"></animation>
+		<animation name="car-info-mode-text-fade-in" type="fade" target="Car info mode text" end="1.0" duration="0.3" delay="0.2" easing="QuadOut"></animation>
+
+		<animation name="car-info-mode-text-move-out" type="morph" target="Car info mode text" end="0.117083251476288,0.149822235107422,0.256667554378510,0.172971308231354" duration="0.3" easing="QuadIn"></animation>
+		<animation name="car-info-mode-text-fade-out" type="fade" target="Car info mode text" end="0.0" duration="0.3" easing="QuadIn"></animation>
+
+		<animation name="map-mode-text-move-in" type="morph" target="Map mode text" start="0.117083251476288,0.185007512569427,0.256667554378510,0.208156585693359" end="0.117083251476288,0.167414903640747,0.256667554378510,0.190563917160034" duration="0.3" delay="0.2" easing="QuadOut"></animation>
+		<animation name="map-mode-text-fade-in" type="fade" target="Map mode text" end="1.0" duration="0.3" delay="0.2" easing="QuadOut"></animation>
+
+		<animation name="map-mode-text-move-out" type="morph" target="Map mode text" end="0.117083251476288,0.149822235107422,0.256667554378510,0.172971308231354" duration="0.3" easing="QuadIn"></animation>
+		<animation name="map-mode-text-fade-out" type="fade" target="Map mode text" end="0.0" duration="0.3" easing="QuadIn"></animation>
+
+		<animation name="music-player-mode-text-move-in" type="morph" target="Music player mode text" start="0.117083251476288,0.185007512569427,0.256667554378510,0.208156585693359" end="0.117083251476288,0.167414903640747,0.256667554378510,0.190563917160034" duration="0.3" delay="0.2" easing="QuadOut"></animation>
+		<animation name="music-player-mode-text-fade-in" type="fade" target="Music player mode text" end="1.0" duration="0.3" delay="0.2" easing="QuadOut"></animation>
+
+		<animation name="music-player-mode-text-move-out" type="morph" target="Music player mode text" end="0.117083251476288,0.149822235107422,0.256667554378510,0.172971308231354" duration="0.3" easing="QuadIn"></animation>
+		<animation name="music-player-mode-text-fade-out" type="fade" target="Music player mode text" end="0.0" duration="0.3" easing="QuadIn"></animation>
+
+		<!-- Drive mode values -->
+
+		<animation name="drive-mode-values-move-in" type="morph" group="Drive mode values" start="0.220104217529297,0.505925893783569,0.837604939937592,0.965551137924194" end="0.220104217529297,0.425370275974274,0.837604939937592,0.884997963905334" duration="0.3" delay="0.2" easing="QuadOut"></animation>
+		<animation name="drive-mode-values-fade-in" type="fade" group="Drive mode values" end="1.0" duration="0.3" delay="0.2" easing="QuadOut"></animation>
+
+		<animation name="drive-mode-values-move-out" type="morph" group="Drive mode values" end="0.220104217529297,0.385555386543274,0.837604939937592,0.845184326171875" duration="0.3" easing="QuadIn"></animation>
+		<animation name="drive-mode-values-fade-out" type="fade" group="Drive mode values" end="0.0" duration="0.3" easing="QuadIn"></animation>
+
+		<!-- Drive mode units -->
+
+		<animation name="drive-mode-units-move-in" type="morph" group="Drive mode units" start="0.220104217529297,0.581108927726746,0.837604939937592,0.943701326847076" end="0.220104217529297,0.559813261032104,0.837604939937592,0.922405660152435" duration="0.3" delay="0.5" easing="QuadOut"></animation>
+		<animation name="drive-mode-units-fade-in" type="fade" group="Drive mode units" end="1.0" duration="0.3" delay="0.5" easing="QuadOut"></animation>
+
+		<animation name="drive-mode-units-move-out" type="morph" group="Drive mode units" end="0.220104217529297,0.522777318954468,0.837604939937592,0.885369718074799" duration="0.3" easing="QuadIn"></animation>
+		<animation name="drive-mode-units-fade-out" type="fade" group="Drive mode units" end="0.0" duration="0.3" easing="QuadIn"></animation>
+
+		<!-- Speed arc gauge -->
+
+		<animation name="speed-arc-gauge-move-in" type="morph" target="Speed arc gauge" start="0.376042068004608,0.289351642131805,0.681771159172058,0.832870006561279" end="0.376042068004608,0.266203463077545,0.681771159172058,0.809721767902374" duration="0.3" delay="0.2" easing="QuadOut"></animation>
+		<animation name="speed-arc-gauge-fade-in" type="fade" target="Speed arc gauge" end="1.0" duration="0.3" delay="0.2" easing="QuadOut"></animation>
+
+		<animation name="speed-arc-gauge-move-out" type="morph" target="Speed arc gauge" end="0.376042068004608,0.238425612449646,0.681771159172058,0.781943917274475" duration="0.3" easing="QuadIn"></animation>
+		<animation name="speed-arc-gauge-fade-out" type="fade" target="Speed arc gauge" end="0.0" duration="0.3" easing="QuadIn"></animation>
+
+		<!-- RPM arc gauge -->
+
+		<animation name="rpm-arc-gauge-move-in" type="morph" group="RPM arc gauge" end="0.357552468776703,0.236018478870392,0.699739456176758,0.844350874423981" duration="0.3" delay="0.5" easing="QuadOut"></animation>
+		<animation name="rpm-arc-gauge-fade-in" type="fade" group="RPM arc gauge" end="1.0" duration="0.3" delay="0.5" easing="QuadOut"></animation>
+
+		<animation name="rpm-arc-gauge-move-out" type="morph" group="RPM arc gauge" end="0.347135961055756,0.236018478870392,0.689322948455811,0.844350874423981" duration="0.3" easing="QuadIn"></animation>
+		<animation name="rpm-arc-gauge-fade-out" type="fade" group="RPM arc gauge" end="0.0" duration="0.3" easing="QuadIn"></animation>
+
+		<!-- Boost arc gauge -->
+
+		<animation name="boost-arc-gauge-move-in" type="morph" group="Boost arc gauge" end="0.357552468776703,0.236018478870392,0.699739456176758,0.844350874423981" duration="0.3" delay="0.5" easing="QuadOut"></animation>
+		<animation name="boost-arc-gauge-fade-in" type="fade" group="Boost arc gauge" end="1.0" duration="0.3" delay="0.5" easing="QuadOut"></animation>
+
+		<animation name="boost-arc-gauge-move-out" type="morph" group="Boost arc gauge" end="0.367968976497650,0.236018478870392,0.710155963897705,0.844350874423981" duration="0.3" easing="QuadIn"></animation>
+		<animation name="boost-arc-gauge-fade-out" type="fade" group="Boost arc gauge" end="0.0" duration="0.3" easing="QuadIn"></animation>
+
+		<!-- Gear break line -->
+
+		<animation name="gear-break-line-move-in" type="morph" target="Gear break line" end="0.194271504878998,0.378724455833435,0.210938632488251,0.703734040260315" duration="0.3" delay="0.2" easing="QuadOut"></animation>
+		<animation name="gear-break-line-fade-in" type="fade" target="Gear break line" end="1.0" duration="0.3" delay="0.2" easing="QuadOut"></animation>
+
+		<animation name="gear-break-line-move-out" type="morph" target="Gear break line" end="0.194271504878998,0.477798759937286,0.210938632488251,0.599107503890991" duration="0.3" easing="QuadIn"></animation>
+		<animation name="gear-break-line-fade-out" type="fade" target="Gear break line" end="0.0" duration="0.3" easing="QuadIn"></animation>
+
+		<!-- Gear -->
+
+		<animation name="gear-move-in" type="morph" group="Gear" end="0.152187883853912,0.409814953804016,0.200104117393494,0.657222568988800" duration="0.3" delay="0.5" easing="QuadOut"></animation>
+		<animation name="gear-fade-in" type="fade" group="Gear" end="1.0" duration="0.3" delay="0.5" easing="QuadOut"></animation>
+
+		<animation name="gear-move-out" type="morph" group="Gear" end="0.128229260444641,0.409814953804016,0.176145434379578,0.657222568988800" duration="0.3" easing="QuadIn"></animation>
+		<animation name="gear-fade-out" type="fade" group="Gear" end="0.0" duration="0.3" easing="QuadIn"></animation>
+
+		<!-- Warning lights -->
+
+		<animation name="warning-lights-move-in" type="morph" group="Warning lights" start="0.321093678474426,0.188148319721222,0.727342426776886,0.388518750667572" end="0.321093678474426,0.158518612384796,0.727342426776886,0.358889043331146" duration="0.3" delay="0.5" easing="QuadOut"></animation>
+		<animation name="warning-lights-fade-in" type="fade" group="Warning lights" end="1.0" duration="0.3" delay="0.5" easing="QuadOut"></animation>
+
+		<animation name="warning-lights-move-out" type="morph" group="Warning lights" end="0.321093678474426,0.114074051380157,0.727342426776886,0.314444482326508" duration="0.3" easing="QuadIn"></animation>
+		<animation name="warning-lights-fade-out" type="fade" group="Warning lights" end="0.0" duration="0.3" easing="QuadIn"></animation>
+
+		<!-- Coolant gauge -->
+
+		<animation name="coolant-gauge-move-in" type="morph" group="Coolant gauge" end="0.719791710376740,0.849907159805298,0.954687416553497,0.930462658405304" duration="0.3" delay="0.5" easing="QuadOut"></animation>
+		<animation name="coolant-gauge-fade-in" type="fade" group="Coolant gauge" end="1.0" duration="0.3" delay="0.5" easing="QuadOut"></animation>
+
+		<animation name="coolant-gauge-move-out" type="morph" group="Coolant gauge" end="0.719791710376740,0.979861140251160,0.954687416553497,1.060416698455811" duration="0.3" easing="QuadIn"></animation>
+		<animation name="coolant-gauge-fade-out" type="fade" group="Coolant gauge" end="0.0" duration="0.3" easing="QuadIn"></animation>
+
+		<!-- Fuel level gauge -->
+
+		<animation name="fuel-level-gauge-move-in" type="morph" group="Fuel level gauge" end="0.098958313465118,0.849907100200653,0.333854317665100,0.930462718009949" duration="0.3" delay="0.5" easing="QuadOut"></animation>
+		<animation name="fuel-level-gauge-fade-in" type="fade" group="Fuel level gauge" end="1.0" duration="0.3" delay="0.5" easing="QuadOut"></animation>
+
+		<animation name="fuel-level-gauge-move-out" type="morph" group="Fuel level gauge" end="0.098958313465118,0.979861080646515,0.333854317665100,1.060416698455811" duration="0.3" easing="QuadIn"></animation>
+		<animation name="fuel-level-gauge-fade-out" type="fade" group="Fuel level gauge" end="0.0" duration="0.3" easing="QuadIn"></animation>
+
+		<!-- Car info backgrounds -->
+
+		<animation name="car-info-backgrounds-move-in" type="morph" group="Car info backgrounds" end="0.343750000000000,0.143518984317780,0.954476058483124,0.931020081043243" duration="0.3" delay="0.2" easing="QuadOut"></animation>
+		<animation name="car-info-backgrounds-fade-in" type="fade" group="Car info backgrounds" end="1.0" duration="0.3" delay="0.2" easing="QuadOut"></animation>
+
+		<animation name="car-info-backgrounds-move-out" type="morph" group="Car info backgrounds" end="0.343750000000000,0.212963581085205,0.954476058483124,1.000462174415588" duration="0.3" easing="QuadIn"></animation>
+		<animation name="car-info-backgrounds-fade-out" type="fade" group="Car info backgrounds" end="0.0" duration="0.3" easing="QuadIn"></animation>
+
+		<!-- Info panel -->
+
+		<animation name="info-panel-move-in" type="morph" target="Info panel" end="0.098958313465118,0.143425703048706,0.333854198455811,0.930462718009949" duration="0.3" delay="0.2" easing="QuadOut"></animation>
+		<animation name="info-panel-fade-in" type="fade" target="Info panel" end="1.0" duration="0.3" delay="0.2" easing="QuadOut"></animation>
+
+		<animation name="info-panel-move-out" type="morph" target="Info panel" end="0.098958313465118,0.212870299816132,0.333854198455811,0.999907612800598" duration="0.3" easing="QuadIn"></animation>
+		<animation name="info-panel-fade-out" type="fade" target="Info panel" end="0.0" duration="0.3" easing="QuadIn"></animation>
+
+		<!-- Info panel speed -->
+
+		<animation name="info-panel-speed-move-in" type="morph" group="Info panel speed" end="0.128125369548798,0.319814741611481,0.305729627609253,0.501849770545959" duration="0.3" delay="0.5" easing="QuadOut"></animation>
+		<animation name="info-panel-speed-fade-in" type="fade" group="Info panel speed" end="1.0" duration="0.3" delay="0.5" easing="QuadOut"></animation>
+
+		<animation name="info-panel-speed-move-out" type="morph" group="Info panel speed" end="0.128125369548798,0.357777774333954,0.305729627609253,0.539811611175537" duration="0.3" easing="QuadIn"></animation>
+		<animation name="info-panel-speed-fade-out" type="fade" group="Info panel speed" end="0.0" duration="0.3" easing="QuadIn"></animation>
+
+		<!-- Info -->
+
+		<animation name="info-move-in" type="morph" group="Info" end="0.117083251476288,0.596674323081970,0.316666841506958,0.797417163848877" duration="0.3" delay="0.8" easing="QuadOut"></animation>
+		<animation name="info-fade-in" type="fade" group="Info" end="1.0" duration="0.3" delay="0.8" easing="QuadOut"></animation>
+
+		<animation name="info-move-out" type="morph" group="Info" end="0.117083251476288,0.636487960815430,0.316666841506958,0.837230801582336" duration="0.3" easing="QuadIn"></animation>
+		<animation name="info-fade-out" type="fade" group="Info" end="0.0" duration="0.3" easing="QuadIn"></animation>
+
+		<!-- Graphs -->
+
+		<animation name="graphs-move-in" type="morph" group="Graphs" end="0.359374821186066,0.249535560607910,0.939369916915894,0.903704702854156" duration="0.3" delay="0.5" easing="QuadOut"></animation>
+		<animation name="graphs-fade-in" type="fade" group="Graphs" end="1.0" duration="0.3" delay="0.5" easing="QuadOut"></animation>
+
+		<animation name="graphs-move-out" type="morph" group="Graphs" end="0.359374821186066,0.274535596370697,0.939369916915894,0.928703963756561" duration="0.3" easing="QuadIn"></animation>
+		<animation name="graphs-fade-out" type="fade" group="Graphs" end="0.0" duration="0.3" easing="QuadIn"></animation>
+
+		<!-- Graph texts -->
+
+		<animation name="graph-texts-move-in" type="morph" group="Graph texts" end="0.362292170524597,0.162129878997803,0.936039447784424,0.734815835952759" duration="0.3" delay="0.8" easing="QuadOut"></animation>
+		<animation name="graph-texts-fade-in" type="fade" group="Graph texts" end="1.0" duration="0.3" delay="0.8" easing="QuadOut"></animation>
+
+		<animation name="graph-texts-move-out" type="morph" group="Graph texts" end="0.362292170524597,0.186204016208649,0.936039447784424,0.758889198303223" duration="0.3" easing="QuadIn"></animation>
+		<animation name="graph-texts-fade-out" type="fade" group="Graph texts" end="0.0" duration="0.3" easing="QuadIn"></animation>
+
+		<!-- Map -->
+
+		<animation name="map-move-in" type="morph" target="Map" end="0.000000000000000,0.000000000000000,1.370827674865723,1.000000000000000" duration="0.3" delay="0.2" easing="QuadOut"></animation>
+		<animation name="map-fade-in" type="fade" target="Map" end="1.0" duration="0.3" delay="0.2" easing="QuadOut"></animation>
+
+		<animation name="map-move-out" type="morph" target="Map" end="0.000000000000000,0.200000000000000,1.370827674865723,1.200000000000000" duration="0.3" easing="QuadIn"></animation>
+		<animation name="map-fade-out" type="fade" target="Map" end="0.0" duration="0.3" easing="QuadIn"></animation>
+
+		<!-- Speedlimit -->
+
+		<animation name="speedlimit-move-in" type="morph" group="Speedlimit" end="0.268022060394287,0.243796348571777,0.327395975589752,0.324351787567139" duration="0.3" delay="0.5" easing="QuadOut"></animation>
+		<animation name="speedlimit-fade-in" type="fade" group="Speedlimit" end="1.0" duration="0.3" delay="0.5" easing="QuadOut"></animation>
+
+		<animation name="speedlimit-move-out" type="morph" group="Speedlimit" end="0.268022060394287,0.282685339450836,0.327395975589752,0.363240778446198" duration="0.3" easing="QuadIn"></animation>
+		<animation name="speedlimit-fade-out" type="fade" group="Speedlimit" end="0.0" duration="0.3" easing="QuadIn"></animation>
+
+		<!-- Music player background -->
+
+		<animation name="music-player-background-fade-in" type="fade" target="Music player background" end="1.0" duration="0.3" delay="0.2" easing="QuadOut"></animation>
+
+		<animation name="music-player-background-fade-out" type="fade" target="Music player background" end="0.0" duration="0.3" easing="QuadIn"></animation>
+
+		<!-- Music info -->
+
+		<animation name="music-info-move-in" type="morph" group="Music info" end="0.185312807559967,0.013209462165833,0.813746929168701,0.088209271430969" duration="0.3" delay="0.2" easing="QuadOut"></animation>
+		<animation name="music-info-fade-in" type="fade" group="Music info" end="1.0" duration="0.3" delay="0.2" easing="QuadOut"></animation>
+
+		<animation name="music-info-move-out" type="morph" group="Music info" end="0.185312807559967,-0.056249856948853,0.813746929168701,0.018749952316284" duration="0.3" easing="QuadIn"></animation>
+		<animation name="music-info-fade-out" type="fade" group="Music info" end="0.0" duration="0.3" easing="QuadIn"></animation>
+
+		<!-- Now playing -->
+
+		<animation name="now-playing-move-in" type="morph" group="Now playing" start="0.117083251476288,0.307542383670807,0.294687509536743,0.369442045688629" end="0.117083251476288,0.278838574886322,0.294687509536743,0.340738236904144" duration="0.3" delay="0.2" easing="QuadOut"></animation>
+		<animation name="now-playing-fade-in" type="fade" group="Now playing" end="1.0" duration="0.3" delay="0.2" easing="QuadOut"></animation>
+
+		<animation name="now-playing-move-out" type="morph" group="Now playing" end="0.117083251476288,0.243653297424316,0.294687509536743,0.305552959442139" duration="0.3" easing="QuadIn"></animation>
+		<animation name="now-playing-fade-out" type="fade" group="Now playing" end="0.0" duration="0.3" easing="QuadIn"></animation>
+
+		<!-- Song title -->
+
+		<animation name="song-title-move-in" type="morph" target="Song title music player" start="0.113749921321869,0.510737538337708,0.605932652950287,0.594994783401489" end="0.113749921321869,0.435737669467926,0.605932652950287,0.519997000694275" duration="0.3" delay="0.5" easing="QuadOut"></animation>
+		<animation name="song-title-fade-in" type="fade" target="Song title music player" end="1.0" duration="0.3" delay="0.5" easing="QuadOut"></animation>
+
+		<animation name="song-title-move-out" type="morph" target="Song title music player" end="0.113749921321869,0.381107866764069,0.605932652950287,0.465367853641510" duration="0.3" easing="QuadIn"></animation>
+		<animation name="song-title-fade-out" type="fade" target="Song title music player" end="0.0" duration="0.3" easing="QuadIn"></animation>
+
+		<!-- Playback controls -->
+
+		<animation name="playback-controls-move-in" type="morph" group="Playback controls" start="0.639062583446503,0.531573235988617,0.904374897480011,0.625090718269348" end="0.639062583446503,0.460277795791626,0.904374897480011,0.553796529769897" duration="0.3" delay="0.5" easing="QuadOut"></animation>
+		<animation name="playback-controls-fade-in" type="fade" group="Playback controls" end="1.0" duration="0.3" delay="0.5" easing="QuadOut"></animation>
+
+		<animation name="playback-controls-move-out" type="morph" group="Playback controls" end="0.639062583446503,0.401944279670715,0.904374897480011,0.495464742183685" duration="0.3" easing="QuadIn"></animation>
+		<animation name="playback-controls-fade-out" type="fade" group="Playback controls" end="0.0" duration="0.3" easing="QuadIn"></animation>
+
+		<!-- Song info -->
+
+		<animation name="song-info-move-in" type="morph" group="Song info" start="0.113749921321869,0.632033169269562,0.605932712554932,0.720552206039429" end="0.113749921321869,0.587590038776398,0.605932712554932,0.676109075546265" duration="0.3" delay="0.8" easing="QuadOut"></animation>
+		<animation name="song-info-fade-in" type="fade" group="Song info" end="1.0" duration="0.3" delay="0.8" easing="QuadOut"></animation>
+
+		<animation name="song-info-move-out" type="morph" group="Song info" end="0.113749921321869,0.550554096698761,0.605932712554932,0.639073133468628" duration="0.3" easing="QuadIn"></animation>
+		<animation name="song-info-fade-out" type="fade" group="Song info" end="0.0" duration="0.3" easing="QuadIn"></animation>
+
+    </animations>
+
+    <triggers>
+
+        <trigger name="Drive mode" condition="equal" variable="Dummy variable 1" tolerance="0.00" reset="0.00" cooldown="0.00">
+            <actions>
+
+				<!-- Drive mode -->
+
+                <action name="drive-mode"></action>
+
+				<action name="drive-mode-text-move-in"></action>
+				<action name="drive-mode-text-fade-in"></action>
+
+				<action name="drive-mode-values-move-in"></action>
+				<action name="drive-mode-values-fade-in"></action>
+
+				<action name="drive-mode-units-move-in"></action>
+				<action name="drive-mode-units-fade-in"></action>
+
+				<action name="speed-arc-gauge-move-in"></action>
+				<action name="speed-arc-gauge-fade-in"></action>
+
+				<action name="rpm-arc-gauge-move-in"></action>
+				<action name="rpm-arc-gauge-fade-in"></action>
+
+				<action name="boost-arc-gauge-move-in"></action>
+				<action name="boost-arc-gauge-fade-in"></action>
+
+				<action name="gear-break-line-move-in"></action>
+				<action name="gear-break-line-fade-in"></action>
+
+				<action name="gear-move-in"></action>
+				<action name="gear-fade-in"></action>
+
+				<action name="warning-lights-move-in"></action>
+				<action name="warning-lights-fade-in"></action>
+
+				<action name="coolant-gauge-move-in"></action>
+				<action name="coolant-gauge-fade-in"></action>
+
+				<action name="fuel-level-gauge-move-in"></action>
+				<action name="fuel-level-gauge-fade-in"></action>
+
+				<action name="music-info-move-in"></action>
+				<action name="music-info-fade-in"></action>
+
+				<!-- Car info mode -->
+
+				<action name="car-info-mode-text-move-out"></action>
+				<action name="car-info-mode-text-fade-out"></action>
+
+				<action name="car-info-backgrounds-move-out"></action>
+				<action name="car-info-backgrounds-fade-out"></action>
+
+				<action name="info-panel-move-out"></action>
+				<action name="info-panel-fade-out"></action>
+
+				<action name="info-panel-speed-move-out"></action>
+				<action name="info-panel-speed-fade-out"></action>
+
+				<action name="info-move-out"></action>
+				<action name="info-fade-out"></action>
+
+				<action name="graphs-move-out"></action>
+				<action name="graphs-fade-out"></action>
+
+				<action name="graph-texts-move-out"></action>
+				<action name="graph-texts-fade-out"></action>
+
+				<!-- Map mode -->
+
+				<action name="map-mode-text-move-out"></action>
+				<action name="map-mode-text-fade-out"></action>
+
+				<action name="map-move-out"></action>
+				<action name="map-fade-out"></action>
+
+				<action name="speedlimit-move-out"></action>
+				<action name="speedlimit-fade-out"></action>
+
+				<!-- Music player mode -->
+
+				<action name="music-player-mode-text-move-out"></action>
+				<action name="music-player-mode-text-fade-out"></action>
+
+				<action name="music-player-background-fade-out"></action>
+
+				<action name="now-playing-move-out"></action>
+				<action name="now-playing-fade-out"></action>
+
+				<action name="song-title-move-out"></action>
+				<action name="song-title-fade-out"></action>
+
+				<action name="playback-controls-move-out"></action>
+				<action name="playback-controls-fade-out"></action>
+
+				<action name="song-info-move-out"></action>
+				<action name="song-info-fade-out"></action>
+
+            </actions>
+        </trigger>
+
+        <trigger name="Car info mode" condition="equal" variable="Dummy variable 1" tolerance="1.00" reset="0.00" cooldown="0.00">
+            <actions>
+
+				<!-- Car info mode -->
+
+                <action name="car-info-mode"></action>
+
+				<action name="car-info-mode-text-move-in"></action>
+				<action name="car-info-mode-text-fade-in"></action>
+
+				<action name="car-info-backgrounds-move-in"></action>
+				<action name="car-info-backgrounds-fade-in"></action>
+
+				<action name="info-panel-move-in"></action>
+				<action name="info-panel-fade-in"></action>
+
+				<action name="info-panel-speed-move-in"></action>
+				<action name="info-panel-speed-fade-in"></action>
+
+				<action name="info-move-in"></action>
+				<action name="info-fade-in"></action>
+
+				<action name="graphs-move-in"></action>
+				<action name="graphs-fade-in"></action>
+
+				<action name="graph-texts-move-in"></action>
+				<action name="graph-texts-fade-in"></action>
+
+				<action name="fuel-level-gauge-move-in"></action>
+				<action name="fuel-level-gauge-fade-in"></action>
+
+				<action name="music-info-move-in"></action>
+				<action name="music-info-fade-in"></action>
+
+				<!-- Drive mode -->
+
+				<action name="drive-mode-text-move-out"></action>
+				<action name="drive-mode-text-fade-out"></action>
+
+				<action name="drive-mode-values-move-out"></action>
+				<action name="drive-mode-values-fade-out"></action>
+
+				<action name="drive-mode-units-move-out"></action>
+				<action name="drive-mode-units-fade-out"></action>
+
+				<action name="speed-arc-gauge-move-out"></action>
+				<action name="speed-arc-gauge-fade-out"></action>
+
+				<action name="rpm-arc-gauge-move-out"></action>
+				<action name="rpm-arc-gauge-fade-out"></action>
+
+				<action name="boost-arc-gauge-move-out"></action>
+				<action name="boost-arc-gauge-fade-out"></action>
+
+				<action name="gear-break-line-move-out"></action>
+				<action name="gear-break-line-fade-out"></action>
+
+				<action name="gear-move-out"></action>
+				<action name="gear-fade-out"></action>
+
+				<action name="warning-lights-move-out"></action>
+				<action name="warning-lights-fade-out"></action>
+
+				<action name="coolant-gauge-move-out"></action>
+				<action name="coolant-gauge-fade-out"></action>
+
+				<!-- Map mode -->
+
+				<action name="map-mode-text-move-out"></action>
+				<action name="map-mode-text-fade-out"></action>
+
+				<action name="map-move-out"></action>
+				<action name="map-fade-out"></action>
+
+				<action name="speedlimit-move-out"></action>
+				<action name="speedlimit-fade-out"></action>
+
+				<!-- Music player mode -->
+
+				<action name="music-player-mode-text-move-out"></action>
+				<action name="music-player-mode-text-fade-out"></action>
+
+				<action name="music-player-background-fade-out"></action>
+
+				<action name="now-playing-move-out"></action>
+				<action name="now-playing-fade-out"></action>
+
+				<action name="song-title-move-out"></action>
+				<action name="song-title-fade-out"></action>
+
+				<action name="playback-controls-move-out"></action>
+				<action name="playback-controls-fade-out"></action>
+
+				<action name="song-info-move-out"></action>
+				<action name="song-info-fade-out"></action>
+
+            </actions>
+        </trigger>
+
+		<trigger name="Map mode" condition="equal" variable="Dummy variable 1" tolerance="2.00" reset="0.00" cooldown="0.00">
+            <actions>
+
+				<!-- Map mode -->
+
+                <action name="map-mode"></action>
+
+				<action name="map-move-in"></action>
+				<action name="map-fade-in"></action>
+
+				<action name="map-mode-text-move-in"></action>
+				<action name="map-mode-text-fade-in"></action>
+
+				<action name="info-panel-move-in"></action>
+				<action name="info-panel-fade-in"></action>
+
+				<action name="info-panel-speed-move-in"></action>
+				<action name="info-panel-speed-fade-in"></action>
+
+				<action name="info-move-in"></action>
+				<action name="info-fade-in"></action>
+
+				<action name="speedlimit-move-in"></action>
+				<action name="speedlimit-fade-in"></action>
+
+				<action name="fuel-level-gauge-move-in"></action>
+				<action name="fuel-level-gauge-fade-in"></action>
+
+				<action name="music-info-move-in"></action>
+				<action name="music-info-fade-in"></action>
+
+				<!-- Car info mode -->
+
+				<action name="car-info-mode-text-move-out"></action>
+				<action name="car-info-mode-text-fade-out"></action>
+
+				<action name="car-info-backgrounds-move-out"></action>
+				<action name="car-info-backgrounds-fade-out"></action>
+
+				<action name="graphs-move-out"></action>
+				<action name="graphs-fade-out"></action>
+
+				<action name="graph-texts-move-out"></action>
+				<action name="graph-texts-fade-out"></action>
+
+				<!-- Drive mode -->
+
+				<action name="drive-mode-text-move-out"></action>
+				<action name="drive-mode-text-fade-out"></action>
+
+				<action name="drive-mode-values-move-out"></action>
+				<action name="drive-mode-values-fade-out"></action>
+
+				<action name="drive-mode-units-move-out"></action>
+				<action name="drive-mode-units-fade-out"></action>
+
+				<action name="speed-arc-gauge-move-out"></action>
+				<action name="speed-arc-gauge-fade-out"></action>
+
+				<action name="rpm-arc-gauge-move-out"></action>
+				<action name="rpm-arc-gauge-fade-out"></action>
+
+				<action name="boost-arc-gauge-move-out"></action>
+				<action name="boost-arc-gauge-fade-out"></action>
+
+				<action name="gear-break-line-move-out"></action>
+				<action name="gear-break-line-fade-out"></action>
+
+				<action name="gear-move-out"></action>
+				<action name="gear-fade-out"></action>
+
+				<action name="warning-lights-move-out"></action>
+				<action name="warning-lights-fade-out"></action>
+
+				<action name="coolant-gauge-move-out"></action>
+				<action name="coolant-gauge-fade-out"></action>
+
+				<!-- Music player mode -->
+
+				<action name="music-player-mode-text-move-out"></action>
+				<action name="music-player-mode-text-fade-out"></action>
+
+				<action name="music-player-background-fade-out"></action>
+
+				<action name="now-playing-move-out"></action>
+				<action name="now-playing-fade-out"></action>
+
+				<action name="song-title-move-out"></action>
+				<action name="song-title-fade-out"></action>
+
+				<action name="playback-controls-move-out"></action>
+				<action name="playback-controls-fade-out"></action>
+
+				<action name="song-info-move-out"></action>
+				<action name="song-info-fade-out"></action>
+
+            </actions>
+        </trigger>
+
+		<trigger name="Music player mode" condition="equal" variable="Dummy variable 1" tolerance="3.00" reset="0.00" cooldown="0.00">
+            <actions>
+
+				<!-- Music player mode -->
+
+                <action name="music-player-mode"></action>
+
+				<action name="music-player-mode-text-move-in"></action>
+				<action name="music-player-mode-text-fade-in"></action>
+
+				<action name="music-player-background-fade-in"></action>
+
+				<action name="now-playing-move-in"></action>
+				<action name="now-playing-fade-in"></action>
+
+				<action name="song-title-move-in"></action>
+				<action name="song-title-fade-in"></action>
+
+				<action name="playback-controls-move-in"></action>
+				<action name="playback-controls-fade-in"></action>
+
+				<action name="song-info-move-in"></action>
+				<action name="song-info-fade-in"></action>
+
+				<!-- Map mode -->
+
+				<action name="map-mode-text-move-out"></action>
+				<action name="map-mode-text-fade-out"></action>
+
+				<action name="map-move-out"></action>
+				<action name="map-fade-out"></action>
+
+				<action name="speedlimit-move-out"></action>
+				<action name="speedlimit-fade-out"></action>
+
+				<action name="fuel-level-gauge-move-out"></action>
+				<action name="fuel-level-gauge-fade-out"></action>
+
+				<action name="music-info-move-out"></action>
+				<action name="music-info-fade-out"></action>
+
+				<!-- Car info -->
+
+				<action name="car-info-mode-text-move-out"></action>
+				<action name="car-info-mode-text-fade-out"></action>
+
+				<action name="car-info-backgrounds-move-out"></action>
+				<action name="car-info-backgrounds-fade-out"></action>
+
+				<action name="info-panel-move-out"></action>
+				<action name="info-panel-fade-out"></action>
+
+				<action name="info-panel-speed-move-out"></action>
+				<action name="info-panel-speed-fade-out"></action>
+
+				<action name="info-move-out"></action>
+				<action name="info-fade-out"></action>
+
+				<action name="graphs-move-out"></action>
+				<action name="graphs-fade-out"></action>
+
+				<action name="graph-texts-move-out"></action>
+				<action name="graph-texts-fade-out"></action>
+
+				<!-- Drive mode -->
+
+				<action name="drive-mode-text-move-out"></action>
+				<action name="drive-mode-text-fade-out"></action>
+
+				<action name="drive-mode-values-move-out"></action>
+				<action name="drive-mode-values-fade-out"></action>
+
+				<action name="drive-mode-units-move-out"></action>
+				<action name="drive-mode-units-fade-out"></action>
+
+				<action name="speed-arc-gauge-move-out"></action>
+				<action name="speed-arc-gauge-fade-out"></action>
+
+				<action name="rpm-arc-gauge-move-out"></action>
+				<action name="rpm-arc-gauge-fade-out"></action>
+
+				<action name="boost-arc-gauge-move-out"></action>
+				<action name="boost-arc-gauge-fade-out"></action>
+
+				<action name="gear-break-line-move-out"></action>
+				<action name="gear-break-line-fade-out"></action>
+
+				<action name="gear-move-out"></action>
+				<action name="gear-fade-out"></action>
+
+				<action name="warning-lights-move-out"></action>
+				<action name="warning-lights-fade-out"></action>
+
+				<action name="coolant-gauge-move-out"></action>
+				<action name="coolant-gauge-fade-out"></action>
+
+            </actions>
+        </trigger>
+
+    </triggers>
+
+</RealDash>
