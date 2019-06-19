@@ -10,7 +10,9 @@ How to create animated dashboards with RealDash.
 | Multiview.rd</br>Multiview_anim.xml | Multiview dashboard and associated animation XML file. Multiview is available for free in RealDash gallery. |
 
 
-## Animation types
+## Animations
+
+### Animation types
 
 | type | description |
 |:--------|:----------:|
@@ -18,13 +20,15 @@ How to create animated dashboards with RealDash.
 | fade | fade gauge or group |
 
 
-## Animation easing types
+### Animation easing types
 
 Animations use easing. Multiple easing types are available for animations.
 
 Each easing type may have postfix In, Out, or InOut. Default for all is InOut.
 
 Default easing for all animations is SineInOut.
+
+(Examples of easing in action)[https://matthewlein.com/tools/ceaser]
 
 | type | description |
 |:--------|:----------:|
