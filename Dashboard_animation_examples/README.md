@@ -28,7 +28,7 @@ Each easing type may have postfix In, Out, or InOut. Default for all is InOut.
 
 Default easing for all animations is SineInOut.
 
-(Examples of easing in action)[https://matthewlein.com/tools/ceaser]
+Examples of easing in action: [https://matthewlein.com/tools/ceaser]
 
 | type | description |
 |:--------|:----------:|
