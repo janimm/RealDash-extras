@@ -4,9 +4,11 @@ How to create animated dashboards with RealDash.
 
 - Name the animation XML file as 'dashboardname_anim.xml'
 - Place the animation XML file into same folder with .rd file
-- On Windows version of RealDash, use File menu 'Import' option to import the XML file.
+- On Windows version of RealDash, use File menu 'Import' option to import the XML file (in edit mode).
 	* This is required since Windows 10 does not allow accessing files without user interaction.
-- 
+- When XML has changed, reload the .rd file, or press F2 on Windows to reload the dash and apply changes.
+- Every time .rd file is saved it also contains all animations, there is no need to distribute the XML with .rd file.
+
 
 ## Files
 
