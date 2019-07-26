@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- RealDash CAN XML description file, version 2 Requires RealDash version 1.5.8 or newer -->
 <RealDashCAN version="2">
-  <!-- baseId [optional] is added to each frame canId. -->
-  <!-- frames baseId="3200" -->
-  <frames>
+  <!-- NOTE: For Holley EFI, the CAN frame baseId must be set as per Holley manual to: -->
+  <!-- The CAN ID in the following table has already been masked with 0xfffff800 to remove the EFI
+  serial number from the CAN ID. The actual CAN ID that is sent on the CAN bus is the id from the table
+  below + ((EFI ID#) & 0x7ff). The EFI ID# is printed on the back of the unit in decimal. -->
+  
+  <frames baseId="0"> <!-- CHANGE THIS -->
+    
     <!-- PARAMETERS FOR 'frame' -->
     <!-- 'id' can identifier (= baseId + id). Use 0x prefix to enter id as hexadesimal value. For example <frame id="3200"> is equal to <frame id="0x0c80"> -->
     <!-- 'writeInterval' if present, this CAN frame is written to CAN bus in this interval (milliseconds) -->
