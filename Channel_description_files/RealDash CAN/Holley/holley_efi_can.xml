@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- RealDash CAN XML description file, version 2 Requires RealDash version 1.5.8 or newer -->
+<RealDashCAN version="2">
+  <!-- baseId [optional] is added to each frame canId. -->
+  <!-- frames baseId="3200" -->
+  <frames>
+    <!-- PARAMETERS FOR 'frame' -->
+    <!-- 'id' can identifier (= baseId + id). Use 0x prefix to enter id as hexadesimal value. For example <frame id="3200"> is equal to <frame id="0x0c80"> -->
+    <!-- 'writeInterval' if present, this CAN frame is written to CAN bus in this interval (milliseconds) -->
+    <!-- 'endianess' the endianess of all frame values (big | little [default]). This is only valid if value 'length' parameter is set to at least 2 bytes.  -->
+    <frame id="0x1E001000" endianess="big">
+      <!-- PARAMETERS FOR 'value' -->
+      <!-- 'targetId' links value to RealDash input, see RealDash manuals www for a complete list -->
+      <!-- OR -->
+      <!-- 'name' links value to RealDash input, input appears in 'ECU Specific' input category -->
+
+      <!-- 'units' is used for post calculations, "F", "mph", "psi", "bit" which need to be specified for dashboard conversions to work properly -->
+      <!-- 'offset' byte offset of the value in frame -->
+      <!-- 'length' value length in bytes -->
+      <!-- 'startbit' the index of the first bit of the value -->
+      <!-- 'bitcount' number of bits used by the value -->
+      <!-- 'endianess' the endianess of value (big | little [default]). This is only valid if 'length' parameter is set to at least 2 bytes.  -->
+      <!-- 'rangeMin' and 'rangeMax' if 'name' is used instead of 'targetId', this is the recommended value range in RealDash editor -->
+      <!-- 'initialValue' if this parameter is present, its value is written to CAN after connection has been made to the CAN bus -->
+      <!-- 'conversion' if omitted, value is read 'as-is'. Otherwise variables 'B0', 'B1', 'B2', 'B3', 'V' and 'ID#' can be used within conversion formula, where:
+                      B0 is first byte in value, B1 second byte, and so on
+                      V is the actual incoming value (composed of frame bytes, based on offset, length, startbit and bitcount)
+                      examples;
+                      conversion="V/10" - result is incoming value / 10
+                      conversion="B0+15*(B1-43)" - result is 'first byte + 15 * (second byte - 43)
+                      conversion="V+ID200-74.3" - result is incoming value + 'Body Electronics->Gear' - 74.3 -->
+
+      <value targetId="33" offset="0" length="4" conversion="V*0.001"></value>
+      <value targetId="37" offset="4" length="4" conversion="V*0.00390625"></value>
+    </frame>
+
+    <frame id="0x1E005000" endianess="big">
+      <value targetId="35" offset="0" length="4" conversion="V*0.00390625"></value>
+      <value targetId="Holley: Fuel Flow (pounds per hour)" offset="4" length="4" conversion="V*0.00390625"></value>
+    </frame>
+
+    <frame id="0x1E009000" endianess="big">
+      <value name="Holley: Closed Loop Status (on/off)" offset="0" length="4" conversion="V*0.00390625"></value>
+      <value name="Holley: Injector Duty Cycle" units="%" offset="4" length="4" conversion="V*0.00390625"></value>
+    </frame>
+
+    <frame id="0x1E00D000" endianess="big">
+      <value targetId="0" offset="0" length="4" conversion="V*0.00390625"></value>
+      <value targetId="17" units="%" offset="4" length="4" conversion="V*0.00390625"></value>
+    </frame>
+
+    <frame id="0x1E011000" endianess="big">
+      <value targetId="2" offset="0" length="4" conversion="V*0.00390625"></value>
+      <value targetId="1" offset="4" length="4" conversion="V*0.00390625"></value>
+    </frame>
+
+    <frame id="0x1E015000" endianess="big">
+      <value targetId="38" units="deg" offset="0" length="4" conversion="V*0.00390625"></value>
+      <value name="Holley: AFR Average" offset="4" length="4" conversion="V*0.00390625"></value>
+    </frame>
+
+    <frame id="0x1E019000" endianess="big">
+      <value targetId="31" units="kPA" offset="0" length="4" conversion="V*0.00390625"></value>
+      <value targetId="28" units="deg" offset="4" length="4" conversion="V*0.00390625"></value>
+    </frame>
+
+    <frame id="0x1E01D000" endianess="big">
+      <value targetId="27" units="F" offset="0" length="4" conversion="V*0.00390625"></value>
+      <value targetId="42" units="%" offset="4" length="4" conversion="V*0.00390625"></value>
+    </frame>
+
+    <frame id="0x1E021000" endianess="big">
+      <value targetId="11" units="kPA" offset="0" length="4" conversion="V*0.00390625"></value>
+      <value targetId="14" units="F" offset="4" length="4" conversion="V*0.00390625"></value>
+    </frame>
+
+    <frame id="0x1E025000" endianess="big">
+      <value targetId="151" units="bar" offset="0" length="4" conversion="V*0.00390625*0.06894757"></value>
+      <value targetId="12" units="V" offset="4" length="4" conversion="V*0.00390625"></value>
+    </frame>
+
+    <frame id="0x1E029000" endianess="big">
+      <value name="Holley: Pedal Position" units="%" offset="0" length="4" conversion="V*0.00390625"></value>
+      <value targetId="202" units="bar" offset="4" length="4" conversion="V*0.00390625*0.06894757"></value>
+    </frame>
+
+    <frame id="0x1E02D000" endianess="big">
+      <value name="Holley: Boost Gear" offset="0" length="4" conversion="V*0.00390625"></value>
+      <value name="Holley: Main Rev Limit (on/off)" offset="4" length="4" conversion="V*0.00390625"></value>
+    </frame>
+
+    <frame id="0x1E031000" endianess="big">
+      <value name="Holley: Boost Speed (mph)" units="mph" offset="0" length="4" conversion="V*0.00390625"></value>
+      <value name="Holley: Boost Stage" offset="4" length="4" conversion="V*0.00390625"></value>
+    </frame>
+
+    <frame id="0x1E035000" endianess="big">
+      <value targetId="270" units="bar" offset="0" length="4" conversion="V*0.00390625*0.06894757"></value>
+      <value name="Holley: Boost Time (sec)" offset="4" length="4" conversion="V*0.00390625"></value>
+    </frame>
+
+    <frame id="0x1E039000" endianess="big">
+      <value name="Holley: Boost Solenoid Duty Cycle" units="%" offset="0" length="4" conversion="V*0.00390625"></value>
+      <value name="Holley: Boost (psi)" units="psi" offset="4" length="4" conversion="V*0.00390625"></value>
+    </frame>
+
+    <frame id="0x1E03D000" endianess="big">
+      <value name="Holley: N20 Stage 1 (%)" units="%" offset="0" length="4" conversion="V*0.00390625"></value>
+      <value name="Holley: Water Meth Injection (%)" units="%" offset="4" length="4" conversion="V*0.00390625"></value>
+    </frame>
+
+    <frame id="0x1E041000" endianess="big">
+      <value name="Holley: N20 Stage 3 (%)" units="%" offset="0" length="4" conversion="V*0.00390625"></value>
+      <value name="Holley: N20 Stage 2 (%)" units="%" offset="4" length="4" conversion="V*0.00390625"></value>
+    </frame>
+
+    <frame id="0x1E045000" endianess="big">
+      <value targetId="200" offset="0" length="4" conversion="V*0.00390625"></value>
+      <value name="Holley: N20 Stage 4 (%)" units="%" offset="4" length="4" conversion="V*0.00390625"></value>
+    </frame>
+
+    <frame id="0x1E049000" endianess="big">
+      <value name="Holley: Line Pressure (%)" units="%" offset="0" length="4" conversion="V*0.00390625"></value>
+      <value targetId="81" units="kph" offset="4" length="4" conversion="V*0.00390625*1.609344"></value>
+    </frame>
+
+    <frame id="0x1E04D000" endianess="big">
+      <value name="Holley: Input Shaft Speed" offset="0" length="4" conversion="V*0.00390625"></value>
+      <value name="Holley: Line Temp" units="F" offset="4" length="4" conversion="V*0.00390625"></value>
+    </frame>
+
+    <frame id="0x1E051000" endianess="big">
+      <value name="Holley: Input #2" offset="0" length="4" conversion="V*0.00390625"></value>
+      <value name="Holley: Input #1" offset="4" length="4" conversion="V*0.00390625"></value>
+    </frame>
+
+    <frame id="0x1E055000" endianess="big">
+      <value name="Holley: Input #4" offset="0" length="4" conversion="V*0.00390625"></value>
+      <value name="Holley: Input #3" offset="4" length="4" conversion="V*0.00390625"></value>
+    </frame>
+
+    <frame id="0x1E059000" endianess="big">
+      <value name="Holley: Output #1" offset="0" length="4" conversion="V*0.00390625"></value>
+      <value name="Holley: Input #5" offset="4" length="4" conversion="V*0.00390625"></value>
+    </frame>
+
+    <frame id="0x1E05D000" endianess="big">
+      <value name="Holley: Output #3" offset="0" length="4" conversion="V*0.00390625"></value>
+      <value name="Holley: Output #2" offset="4" length="4" conversion="V*0.00390625"></value>
+    </frame>
+
+    <frame id="0x1E061000" endianess="big">
+      <value name="Holley: Output #5" offset="0" length="4" conversion="V*0.00390625"></value>
+      <value name="Holley: Output #4" offset="4" length="4" conversion="V*0.00390625"></value>
+    </frame>
+
+  </frames>
+</RealDashCAN>
+
