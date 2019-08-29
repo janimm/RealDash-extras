@@ -15,7 +15,7 @@ Requires RealDash version 1.5.8 or newer
     <command send="ate0"></command>
     <command send="atl0"></command>
     <command send="ats0"></command>
-    <command send="ath0"></command>
+    <command send="ath1"></command>
     <command send="atdpn"></command>
     <command send="0100"></command>
     <command send="0120"></command>
