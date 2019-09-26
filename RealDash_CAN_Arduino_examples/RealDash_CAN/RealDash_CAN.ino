@@ -153,10 +153,10 @@ void SendCANFrameToSerial(unsigned long canFrameId, const byte* frameData)
 {
   // the 4 byte identifier at the beginning of each CAN frame
   // this is required for RealDash to 'catch-up' on ongoing stream of CAN frames
-  const unsigned long serialBlockTag = 0x11223344;
-  Serial.write((const byte*)&serialBlockTag, 4);
+  const byte serialBlockTag[4] = { 0x44, 0x33, 0x22, 0x11 };
+  Serial.write(serialBlockTag, 4);
 
-  // the CAN frame id number
+  // the CAN frame id number (as 32bit little endian value)
   Serial.write((const byte*)&canFrameId, 4);
 
   // CAN frame payload
@@ -170,13 +170,15 @@ void SendTextExtensionFrameToSerial(unsigned long canFrameId, const char* text)
   {
     // the 4 byte identifier at the beginning of each CAN frame
     // this is required for RealDash to 'catch-up' on ongoing stream of CAN frames
-    const unsigned long textExtensionBlockTag = 0x11223355;
-    Serial.write((const byte*)&textExtensionBlockTag, 4);
+    const byte textExtensionBlockTag[4] = { 0x55, 0x33, 0x22, 0x11 };
+    Serial.write(textExtensionBlockTag, 4);
 
-    // the CAN frame id number
+    // the CAN frame id number (as 32bit little endian value)
     Serial.write((const byte*)&canFrameId, 4);
 
     // text payload
     Serial.write(text, strlen(text) + 1);
   }
 }
+
+
