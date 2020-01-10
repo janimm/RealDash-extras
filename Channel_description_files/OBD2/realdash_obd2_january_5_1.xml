@@ -37,14 +37,14 @@ A special channel descriptions for "Russian Special - January 5.1"
   <rotation>
     <command send="2101" skipCount="0">
       <values>
-        <value targetId="37" conversion="B11*40"></value>
-        <value targetId="81" units="km/h" conversion="B17"></value>
-        <value targetId="12" conversion="(B18*12.8/255)+5.2"></value>
-        <value targetId="14" units="C" conversion="B8-40"></value>
-        <value targetId="42" conversion="B10"></value>
-        <value targetId="35" conversion="B22*2.04/255+B23*522.24/255"></value>
-        <value targetId="0" conversion="14.7*(B9+128)/256"></value>
-        <value targetId="30" conversion="B26*42.5/255+B27*10880/255"></value>
+        <value targetId="37" conversion="B11*40"></value><!--RPM-->
+        <value targetId="81" units="km/h" conversion="B17"></value><!--Speed-->
+        <value targetId="12" conversion="(B18*12.8/255)+5.2"></value><!--Batt voltage-->
+        <value targetId="14" units="C" conversion="B8-40"></value><!--CLT-->
+        <value targetId="42" conversion="B10"></value><!--TPS-->
+        <value targetId="35" conversion="B22*2.04/255+B23*522.24/255"></value><!--PW1-->
+        <value targetId="0" conversion="14.7*(B9+128)/256"></value><!--AFR1-->
+        <value targetId="30" conversion="B26*42.5/255+B27*10880/255"></value><!--MAF-->
         <value name="Yanvar 51 target pos. idle" conversion="B13"></value>
         <value name="Yanvar 51 target idle rpm" conversion="B19*10"></value>
         <value name="Yanvar 51 inj.correction" conversion="(B15*/255)+0.5"></value>

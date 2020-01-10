@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+RealDash OBD2 communication description file.
+Required RealDash version: 1.1.8 or newer
+
+A special channel descriptions for "Russian Special - Bosch mp7.0"
+-->
+<OBD2>
+  <init>
+    <!-- after first init command is sent, RealDash reads whatever data comes from serial during next 3500ms. This is done to purge the serial buffers. -->
+    <!-- do not remove 'atl0', 'ate0', or 'ats0' commands. Those settings are assumed when parsing the reply from adapter. -->
+    <command send="atd"></command>
+    <command send="atz"></command>
+    <command send="atl0"></command>
+    <command send="ate0"></command>
+    <command send="ats0"></command>
+    <command send="atsp5"></command>
+    <command send="atal"></command>
+    <command send="atib10"></command>
+    <command send="atsh8211f1"></command>
+    <command send="atst32"></command>
+    <command send="atsw00"></command>
+    <command send="atfi"></command>
+  </init>
+
+  <!-- 'send' command to send to ELM327 adapter -->
+  <!-- 'skipCount' number of skips in rotation for that value. Higher the value less frequently its read -->
+  <!-- 'targetId' links value to RealDash input, see 'realdash_target_identifiers.txt for a complete list -->
+  <!-- OR -->
+  <!-- 'name' links value to RealDash input, if name is unknown to RealDash, input appears in 'ECU Specific' input category -->
+  <!-- 'units' optional info only for automatic unit conversion system. "C","F","km/h","mph","bar","psi","bit" -->
+  <!-- 'conversion' if omitted, value is read 'as-is'. Otherwise variables 'B0', 'B1', 'B2', 'B3', 'V' and 'ID#' can be used within conversion formula, for example;
+       conversion="V/10" - result is incoming value / 10
+       conversion="B0+15*(B1-43)" - result is 'first byte + 15 * (second byte - 43)
+       conversion="V+ID200-74.3" - result is incoming value + 'Body Electronics->Gear' - 74.3 -->
+  <!-- if units="bit", RealDash always checks the lowest bit as of value on or off. Therefore the bitshift to the right on conversion, for example conversion="(V>>1)"
+       will read second bit on incoming value -->
+  <!-- conversion from ABC to RealDash B#
+    B00,B01,B02,B03,B04,B05,B06,B07,B08,B09,B10,B11,B12,B13,B14,B15,B16,B17,B18,B19,B20,B21,B22,B23,B24,B25
+    A   B   C   D   E   F   G   H   I   J   K   L   M   N   O   P   Q   R   S   T   U   V   W   X   Y   Z
+  -->
+
+  <rotation>
+    <command send="2101" skipCount="0">
+      <values>
+        <value targetId="37" conversion="B15*40"></value><!--RPM-->
+        <value targetId="81" units="km/h" conversion="B14"></value><!--Speed-->
+        <value targetId="12" conversion="B9*0.0942"></value><!--Batt voltage-->
+        <value targetId="14" units="C" conversion="B10*0.75-48"></value><!--CLT-->
+        <value targetId="42" conversion="B13*0.390625"></value><!--TPS-->
+        <value targetId="35" conversion="(B16*256+B17)*0.024"></value><!--PW1-->
+        <value targetId="30" conversion="B24*0.1"></value><!--MAF-->
+        <value targetId="100" conversion="B7*0.05"></value><!--Engine Load-->
+        <value targetId="254" conversion="B25*0.0044"></value><!--Lambda1-->
+
+        <value name="Bosch mp7: Number of errors" conversion="B0"></value>
+        <value name="Bosch mp7: Error code" conversion="B1*256"></value>
+        <value name="Bosch mp7: MAF voltage" conversion="B7*0.019535"></value>
+        <value name="Bosch mp7: UOZ" conversion="B11*(-0.75)-108"></value>
+        <value name="Bosch mp7: Value UOZ of detonation" conversion="B12*0.75"></value>
+        <value name="Bosch mp7: FSM XX" conversion="B18"></value>
+        <value name="Bosch mp7: JRPMS XX" conversion="B22*10"></value>
+        <value name="Bosch mp7: MAF_XX" conversion="B23*0.25"></value>
+        <value name="Bosch mp7: O2 voltage 1" conversion="B25*0.0044"></value>
+        <value name="Bosch mp7: Lambda correction" conversion="B27*1"></value><!-- The conversion must be wrong here -->
+        <value name="Bosch mp7: Injection puls correction (MC)" conversion="B28*1"></value><!-- The conversion must be wrong here -->
+        <value name="Bosch mp7: Multi puls correction" conversion="B29*1"></value><!-- The conversion must be wrong here -->
+        <value name="Bosch mp7: Adsorber flow" conversion="B30*0.390625"></value>
+        <value name="Bosch mp7: O2 voltage 2" conversion="B33*0.0044"></value>
+      </values>
+    </command>
+  </rotation>
+</OBD2>
+
