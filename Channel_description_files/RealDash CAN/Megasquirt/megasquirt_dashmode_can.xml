@@ -22,13 +22,13 @@
       <!-- 'endianess' the endianess of value (big | little [default]). This is only valid if 'length' parameter is set to at least 2 bytes.  -->
       <!-- 'rangeMin' and 'rangeMax' if 'name' is used instead of 'targetId', this is the recommended value range in RealDash editor -->
       <!-- 'initialValue' if this parameter is present, its value is written to CAN after connection has been made to the CAN bus -->
-      <!-- 'conversion' if omitted, value is read 'as-is'. Otherwise variables 'B0', 'B1', 'B2', 'B3', 'V' and 'ID#' can be used within conversion formula, where:
-                      B0 is first byte in value, B1 second byte, and so on
-                      V is the actual incoming value (composed of frame bytes, based on offset, length, startbit and bitcount)
-                      examples;
-                      conversion="V/10" - result is incoming value / 10
-                      conversion="B0+15*(B1-43)" - result is 'first byte + 15 * (second byte - 43)
-                      conversion="V+ID200-74.3" - result is incoming value + 'Body Electronics->Gear' - 74.3 -->
+      <!-- 'conversion' if omitted, value is read 'as-is'. Otherwise variables 'B0', 'B1', 'B2', 'B3', 'V' and 'ID#' can be used within conversion formula, for example;
+           conversion="V/10" - result is incoming value / 10
+           conversion="B0+15*(B1-43)" - result is 'first byte + 15 * (second byte - 43)
+           conversion="V+ID200-74.3" - result is incoming value + 'Body Electronics->Gear' - 74.3 -->
+      <!-- From RealDash version 1.6.6, 'conversionABC' is an option to 'conversion' and uses A,B,C,...AA,AB,AC,...,etc format to distinquish the veriables on the reply.
+           This makes it easier to convert the Equation from other apps.
+           Example: conversion="B0+15*(B1-43)" and conversionABC="A+15*(B-43)" are the same -->
 
       <value targetId="31" units="kPA" offset="0" length="2" conversion="V/10"></value>
       <value targetId="37" units="RPM" offset="2" length="2"></value>

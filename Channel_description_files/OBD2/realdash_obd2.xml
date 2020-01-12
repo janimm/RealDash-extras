@@ -31,6 +31,9 @@ Requires RealDash version 1.5.8 or newer
        conversion="V/10" - result is incoming value / 10
        conversion="B0+15*(B1-43)" - result is 'first byte + 15 * (second byte - 43)
        conversion="V+ID200-74.3" - result is incoming value + 'Body Electronics->Gear' - 74.3 -->
+  <!-- From RealDash version 1.6.6, 'conversionABC' is an option to 'conversion' and uses A,B,C,...AA,AB,AC,...,etc format to distinquish the veriables on the reply.
+       This makes it easier to convert the Equation from other apps.
+       Example: conversion="B0+15*(B1-43)" and conversionABC="A+15*(B-43)" are the same -->
   <!-- if units="bit", RealDash always checks the lowest bit as of value on or off. Therefore the bitshift to the right on conversion, for example conversion="(V>>1)"
        will read second bit on incoming value -->
 
