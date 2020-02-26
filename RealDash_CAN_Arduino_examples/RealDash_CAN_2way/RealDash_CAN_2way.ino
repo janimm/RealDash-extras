@@ -278,7 +278,7 @@ void HandleIncomingSetValueFrame(unsigned long canFrameId, const byte* frameData
     // write digital pins
     for (int i=0; i<13; i++)
     {
-      digitalWrite(i + 1, (digitalPins | (1 << i)) ? HIGH : LOW);
+      digitalWrite(i + 1, (digitalPins & (1 << i)) ? HIGH : LOW);
     }
     
     analogWrite(0, analogPins[0]);
