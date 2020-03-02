@@ -1,0 +1,1291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- RealDash CAN XML description file, version 2 Requires RealDash version 1.5.8 or newer -->
+<RealDashCAN version="2">
+  <frames>
+    <frame id="0x300" endianess="big">
+      <value name="Adaptronic: Voltage_IMAP_int" offset="0" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Voltage_EMAP_int" offset="2" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Voltage_IMAP_ext" offset="4" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Voltage_EMAP_ext" offset="6" length="2" conversion="V/1000"></value>
+    </frame>
+
+    <frame id="0x301" endianess="big">
+      <value name="Adaptronic: Voltage_TPS1" offset="0" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Voltage_TPS2" offset="2" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Voltage_O2_1" offset="4" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Voltage_O2_2" offset="6" length="2" conversion="V/1000"></value>
+    </frame>
+
+    <frame id="0x302" endianess="big">
+      <value name="Adaptronic: Voltage_ECT" offset="0" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Voltage_MAT" offset="2" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Voltage_OilT" offset="4" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Voltage_FuelT" offset="6" length="2" conversion="V/1000"></value>
+    </frame>
+
+    <frame id="0x303" endianess="big">
+      <value name="Adaptronic: Voltage_OilP" offset="0" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Voltage_FuelP" offset="2" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Voltage_Servo" offset="4" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Voltage_Ext1" offset="6" length="2" conversion="V/1000"></value>
+    </frame>
+    
+    <frame id="0x304" endianess="big">
+      <value name="Adaptronic: Voltage_Ext2" offset="0" length="2" conversion="V/1000"></value>
+      <value targetId="12" offset="2" length="2" conversion="V/1000"></value> <!-- battery voltage -->
+      <value name="Adaptronic: Voltage_5V" offset="4" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Voltage_SGND current" offset="6" length="2" conversion="V/1000"></value>
+    </frame>
+
+    <frame id="0x305" endianess="big">
+      <value name="Adaptronic: Mini Ana In #1 V1" offset="0" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Mini Ana In #1 V2" offset="2" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Mini Ana In #1 V3" offset="4" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Mini Ana In #1 V4" offset="6" length="2" conversion="V/1000"></value>
+    </frame>
+
+    <frame id="0x306" endianess="big">
+      <value name="Adaptronic: Mini Ana In #1 5V out" offset="0" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Mini Ana In #2 V1" offset="2" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Mini Ana In #2 V2" offset="4" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Mini Ana In #2 V3" offset="6" length="2" conversion="V/1000"></value>
+    </frame>
+
+    <frame id="0x307" endianess="big">
+      <value name="Adaptronic: Mini Ana In #2 V4" offset="0" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Mini Ana In #2 5V out" offset="2" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Mini Ana In #3 V1" offset="4" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Mini Ana In #3 V2" offset="6" length="2" conversion="V/1000"></value>
+    </frame>
+
+    <frame id="0x308" endianess="big">
+      <value name="Adaptronic: Mini Ana In #3 V3" offset="0" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Mini Ana In #3 V4" offset="2" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Mini Ana In #3 5V out" offset="4" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Mini Ana In #4 V1" offset="6" length="2" conversion="V/1000"></value>
+    </frame>
+
+    <frame id="0x309" endianess="big">
+      <value name="Adaptronic: Mini Ana In #4 V2" offset="0" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Mini Ana In #4 V3" offset="2" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Mini Ana In #4 V4" offset="4" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Mini Ana In #4 5V out" offset="6" length="2" conversion="V/1000"></value>
+    </frame>
+
+    <frame id="0x310" endianess="big">
+      <value targetId="37" offset="0" length="2"></value> <!-- RPM -->
+    </frame>
+
+    <frame id="0x314" endianess="big">
+      <value name="Adaptronic: CAS3 period" offset="2" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: CAS3 low time" offset="4" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: CAS3 frequency" offset="6" length="2" conversion="V/10"></value>
+    </frame>
+    
+    <frame id="0x315" endianess="big">
+      <value name="Adaptronic: VSS1 period" offset="0" length="2" conversion="V*10"></value>
+      <value name="Adaptronic: VSS1 frequency" offset="2" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: VSS2 period" offset="4" length="2" conversion="V*10"></value>
+      <value name="Adaptronic: VSS2 frequency" offset="6" length="2" conversion="V/10"></value>
+    </frame>
+
+    <frame id="0x316" endianess="big">
+      <value name="Adaptronic: VSS3 period" offset="0" length="2" conversion="V*10"></value>
+      <value name="Adaptronic: VSS3 frequency" offset="2" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: VSS4 period" offset="4" length="2" conversion="V*10"></value>
+      <value name="Adaptronic: VSS4 frequency" offset="6" length="2" conversion="V/10"></value>
+    </frame>
+    
+    <frame id="0x317" endianess="big">
+      <value name="Adaptronic: VVT1 raw angle" offset="0" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: VVT2 raw angle" offset="2" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: VVT3 raw angle" offset="4" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: VVT4 raw angle" offset="6" length="2" conversion="V/10"></value>
+    </frame>
+    
+    <frame id="0x318" endianess="big">
+      <value name="Adaptronic: Accel Lat" offset="0" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Accel Long" offset="2" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Accel Vert" offset="4" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Rate Yaw" offset="6" length="2" conversion="V/10"></value>
+    </frame>
+    
+    <frame id="0x319" endianess="big">
+      <value name="Adaptronic: Rate Pitch" offset="0" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Rate Roll" offset="2" length="2" conversion="V/10"></value>
+    </frame>
+    
+    <frame id="0x31b" endianess="big">
+      <value name="Adaptronic: Digital Input 1" units="bit" offset="6" length="2" conversion="V"></value>
+      <value name="Adaptronic: Digital Input 2" units="bit" offset="6" length="2" conversion="V>>1"></value>
+      <value name="Adaptronic: Digital Input 3" units="bit" offset="6" length="2" conversion="V>>2"></value>
+      <value name="Adaptronic: Digital Input 4" units="bit" offset="6" length="2" conversion="V>>3"></value>
+      <value name="Adaptronic: Digital Input 5" units="bit" offset="6" length="2" conversion="V>>4"></value>
+      <value name="Adaptronic: Digital Input 6" units="bit" offset="6" length="2" conversion="V>>5"></value>
+      <value name="Adaptronic: Digital Input 7" units="bit" offset="6" length="2" conversion="V>>6"></value>
+      <value name="Adaptronic: Digital Input 8" units="bit" offset="6" length="2" conversion="V>>7"></value>
+      <value name="Adaptronic: Digital Input 9" units="bit" offset="6" length="2" conversion="V>>8"></value>
+      <value name="Adaptronic: Digital Input 10" units="bit" offset="6" length="2" conversion="V>>9"></value>
+      <value name="Adaptronic: Digital Input 11" units="bit" offset="6" length="2" conversion="V>>10"></value>
+      <value name="Adaptronic: Digital Input 12" units="bit" offset="6" length="2" conversion="V>>11"></value>
+      <value name="Adaptronic: Digital Input 13" units="bit" offset="6" length="2" conversion="V>>12"></value>
+      <value name="Adaptronic: Digital Input 14" units="bit" offset="6" length="2" conversion="V>>13"></value>
+      <value name="Adaptronic: Digital Input 15" units="bit" offset="6" length="2" conversion="V>>14"></value>
+      <value name="Adaptronic: Digital Input 16" units="bit" offset="6" length="2" conversion="V>>15"></value>
+    </frame>
+    
+    <frame id="0x321" endianess="big">
+      <value name="Adaptronic: Knock cyl 1" offset="0" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Knock cyl 2" offset="2" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Knock cyl 3" offset="4" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Knock cyl 4" offset="6" length="2" conversion="V/1000"></value>
+    </frame>
+    
+    <frame id="0x322" endianess="big">
+      <value name="Adaptronic: Knock cyl 5" offset="0" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Knock cyl 6" offset="2" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Knock cyl 7" offset="4" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Knock cyl 8" offset="6" length="2" conversion="V/1000"></value>
+    </frame>
+    
+    <frame id="0x323" endianess="big">
+      <value name="Adaptronic: Knock cyl 9" offset="0" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Knock cyl 10" offset="2" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Knock cyl 11" offset="4" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Knock cyl 12" offset="6" length="2" conversion="V/1000"></value>
+    </frame>
+    
+    <frame id="0x324" endianess="big">
+      <value name="Adaptronic: Knock cyl 13" offset="0" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Knock cyl 14" offset="2" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Knock cyl 15" offset="4" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Knock cyl 16" offset="6" length="2" conversion="V/1000"></value>
+    </frame>
+
+    <frame id="0x325" endianess="big">
+      <value name="Adaptronic: RPM rate" offset="0" length="2"></value>
+      <value name="Adaptronic: DBW1 TPS 1" offset="2" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: DBW1 TPS 2" offset="4" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: DBW2 TPS 1" offset="6" length="2" conversion="V/1000"></value>
+    </frame>
+    
+    <frame id="0x326" endianess="big">
+      <value name="Adaptronic: DBW2 TPS 2" offset="0" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: DBW3 TPS 1" offset="2" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: DBW3 TPS 2" offset="4" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: DBW4 TPS 1" offset="6" length="2" conversion="V/1000"></value>
+    </frame>
+    
+    <frame id="0x327" endianess="big">
+      <value name="Adaptronic: DBW4 TPS 2" offset="0" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: CAS1 Voltage" offset="2" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: CAS2 Voltage" offset="4" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: CAS3 Voltage" offset="6" length="2" conversion="V/1000"></value>
+    </frame>
+    
+    <frame id="0x328" endianess="big">
+      <value name="Adaptronic: CAS4 Voltage" offset="0" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: CAS5 Voltage" offset="2" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: CAS1 peak V" offset="4" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: CAS2 peak V" offset="6" length="2" conversion="V/1000"></value>
+    </frame>
+    
+    <frame id="0x329" endianess="big">
+      <value name="Adaptronic: CAS3 peak V" offset="0" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: CAS4 peak V" offset="2" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: CAS5 peak V" offset="4" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Current engine angle" offset="6" length="2" conversion="V/10"></value>
+    </frame>
+    
+    <frame id="0x32a" endianess="big">
+      <value name="Adaptronic: Flags3" units="bit" offset="0" length="2"></value>
+      <value name="Adaptronic: Knock pos index" offset="2" length="2"></value>
+      <value name="Adaptronic: Knock V (raw)" offset="4" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Knock V (filt)" offset="6" length="2" conversion="V/1000"></value>
+    </frame>
+    
+    <frame id="0x32b" endianess="big">
+      <value name="Adaptronic: Mic V" offset="0" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Int IMAP V (inst)" offset="2" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Int EMAPV (inst)" offset="4" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Ext IMAP V (inst)" offset="6" length="2" conversion="V/1000"></value>
+    </frame>
+    
+    <frame id="0x32c" endianess="big">
+      <value name="Adaptronic: Ext EMAP V (inst)" offset="0" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: CPU temp" offset="2" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Int 1.24V ref V" offset="4" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: # samples (int IMAP)" offset="6" length="2"></value>
+    </frame>
+    
+    <frame id="0x32d" endianess="big">
+      <value name="Adaptronic: # samples (int EMAP)" offset="0" length="2"></value>
+      <value name="Adaptronic: # samples (ext IMAP)" offset="2" length="2"></value>
+      <value name="Adaptronic: # samples (ext EMAP)" offset="4" length="2"></value>
+      <value name="Adaptronic: Resistance (ECT)" offset="6" length="2" conversion="V/1000"></value>
+    </frame>
+    
+    <frame id="0x32e" endianess="big">
+      <value name="Adaptronic: Resistance (MAT)" offset="0" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Resistance (OilT)" offset="2" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Resistance (FuelT)" offset="4" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Init status, Power" units="bit" offset="6" length="2"></value>
+      <value name="Adaptronic: Init status, IOInit" units="bit" offset="6" length="2" conversion="V>>1"></value>
+      <value name="Adaptronic: Init status, USBCONF" units="bit" offset="6" length="2" conversion="V>>2"></value>
+      <value name="Adaptronic: Init status, SETTING" units="bit" offset="6" length="2" conversion="V>>3"></value>
+      <value name="Adaptronic: Init status, ACCEL" units="bit" offset="6" length="2" conversion="V>>4"></value>
+      <value name="Adaptronic: Init status, TRIGGER" units="bit" offset="6" length="2" conversion="V>>5"></value>
+      <value name="Adaptronic: Init status, TEMPBIAS" units="bit" offset="6" length="2" conversion="V>>6"></value>
+      <value name="Adaptronic: Init status, WIFI" units="bit" offset="6" length="2" conversion="V>>7"></value>
+      <value name="Adaptronic: Init status, TRIGGERI2C" units="bit" offset="6" length="2" conversion="V>>9"></value>
+      <value name="Adaptronic: Init status, ECCSATTEMPT" units="bit" offset="6" length="2" conversion="V>>10"></value>
+      <value name="Adaptronic: Init status, ECCSOC" units="bit" offset="6" length="2" conversion="V>>11"></value>
+      <value name="Adaptronic: Init status, HCPWROC" units="bit" offset="6" length="2" conversion="V>>12"></value>
+      <value name="Adaptronic: Init status, MRAMINIT" units="bit" offset="6" length="2" conversion="V>>13"></value>
+    </frame>
+
+    <frame id="0x32f" endianess="big">
+      <value name="Adaptronic: Low level inps, SER1IN_RX" units="bit" offset="0" length="2"></value>
+      <value name="Adaptronic: Low level inps, SER2IN_RX" units="bit" offset="0" length="2" conversion="V>>1"></value>
+      <value name="Adaptronic: Low level inps, SEROUT_RX" units="bit" offset="0" length="2" conversion="V>>2"></value>
+      <value name="Adaptronic: Low level inps, HC_RX" units="bit" offset="0" length="2" conversion="V>>3"></value>
+      <value name="Adaptronic: Low level inps, WIFI_RX" units="bit" offset="0" length="2" conversion="V>>4"></value>
+      <value name="Adaptronic: Low level inps, CAN1_IN" units="bit" offset="0" length="2" conversion="V>>5"></value>
+      <value name="Adaptronic: Low level inps, CAN2_IN" units="bit" offset="0" length="2" conversion="V>>6"></value>
+      <value name="Adaptronic: Low level inps, VSS" units="bit" offset="0" length="2" conversion="V>>7"></value>
+      <value name="Adaptronic: Low level inps, ARM1" units="bit" offset="0" length="2" conversion="V>>8"></value>
+      <value name="Adaptronic: Low level inps, ZERO1" units="bit" offset="0" length="2" conversion="V>>9"></value>
+      <value name="Adaptronic: Low level inps, ARM2" units="bit" offset="0" length="2" conversion="V>>10"></value>
+      <value name="Adaptronic: Low level inps, ZERO2" units="bit" offset="0" length="2" conversion="V>>11"></value>
+      <value name="Adaptronic: Low level inps, ARM3" units="bit" offset="0" length="2" conversion="V>>12"></value>
+      <value name="Adaptronic: Low level inps, ZERO3" units="bit" offset="0" length="2" conversion="V>>13"></value>
+      <value name="Adaptronic: Low level inps, USBID" units="bit" offset="0" length="2" conversion="V>>14"></value>
+      <value name="Adaptronic: Low level inps, IGNSW" units="bit" offset="0" length="2" conversion="V>>15"></value>
+
+      <value name="Adaptronic: Knock ampl (raw)" offset="2" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Knock ampl (filt)" offset="4" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Interpol engine angle" offset="6" length="2" conversion="V/10"></value>
+    </frame>
+    
+    <frame id="0x330" endianess="big">
+      <value name="Adaptronic: Comms FB Mod 0" offset="0" length="2"></value>
+      <value name="Adaptronic: CAS4 period" offset="2" length="2" conversion="V*10"></value>
+      <value name="Adaptronic: CAS4 frequency" offset="4" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: CAS5 period" offset="6" length="2" conversion="V*10"></value>
+    </frame>
+    
+    <frame id="0x331" endianess="big">
+      <value name="Adaptronic: CAS5 frequency" offset="0" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Low lev RT Mini inps, ARM4" units="bit" offset="2" length="2"></value>
+      <value name="Adaptronic: Low lev RT Mini inps, ZERO4" units="bit" offset="2" length="2" conversion="V>>1"></value>
+      <value name="Adaptronic: Low lev RT Mini inps, ARM5" units="bit" offset="2" length="2" conversion="V>>2"></value>
+      <value name="Adaptronic: Low lev RT Mini inps, ZERO5" units="bit" offset="2" length="2" conversion="V>>3"></value>
+      <value name="Adaptronic: Low lev RT Mini inps, FREQ" units="bit" offset="2" length="2" conversion="V>>4"></value>
+      <value name="Adaptronic: Low lev RT Mini inps, MVSS2" units="bit" offset="2" length="2" conversion="V>>5"></value>
+      <value name="Adaptronic: Low lev RT Mini inps, SVSS1" units="bit" offset="2" length="2" conversion="V>>6"></value>
+      <value name="Adaptronic: Low lev RT Mini inps, SVSS2" units="bit" offset="2" length="2" conversion="V>>7"></value>
+      <value name="Adaptronic: RT Flex input period" offset="4" length="2" conversion="V*10"></value>
+      <value name="Adaptronic: RT Flex low time" offset="6" length="2" conversion="V*10"></value>
+    </frame>
+    
+    <frame id="0x332" endianess="big">
+      <value name="Adaptronic: RT Flex frequency" offset="0" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: DBW current (A) 1" offset="2" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: DBW current (A) 2" offset="4" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: DBW current (A) 3" offset="6" length="2" conversion="V/1000"></value>
+    </frame>
+    
+    <frame id="0x333" endianess="big">
+      <value name="Adaptronic: DBW current (A) 4" offset="0" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Comms FB Mini ana 1 and 2" offset="2" length="2"></value>
+      <value name="Adaptronic: Comms FB Mini ana 3 and 4" offset="4" length="2"></value>
+      <value name="Adaptronic: Crank period (low)" offset="6" length="2"></value>
+    </frame>
+    
+    <frame id="0x334" endianess="big">
+      <value name="Adaptronic: Crank period (high)" offset="0" length="2"></value>
+      <value name="Adaptronic: Trigger error angle" offset="2" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Trigger error count" offset="4" length="2"></value>
+      <value name="Adaptronic: CAS2 period" offset="6" length="2" conversion="V*10"></value>
+    </frame>
+    
+    <frame id="0x335" endianess="big">
+      <value name="Adaptronic: CAS2 frequency" offset="0" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Low level out (M1200)" offset="2" length="2"></value>
+      <value name="Adaptronic: Async vol calc (µL)" offset="4" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Async dur calc (ms)" offset="6" length="2" conversion="V/1000"></value>
+    </frame>
+    
+    <frame id="0x340" endianess="big">
+      <value name="Adaptronic: Serial Lambda 1" offset="0" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Serial Lambda 2" offset="2" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Serial Lambda 3" offset="4" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Serial Lambda 4" offset="6" length="2" conversion="V/1000"></value>
+    </frame>
+    
+    <frame id="0x341" endianess="big">
+      <value name="Adaptronic: Serial Lambda 5" offset="0" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Serial Lambda 6" offset="2" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Serial Lambda 7" offset="4" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Serial Lambda 8" offset="6" length="2" conversion="V/1000"></value>
+    </frame>
+    
+    <frame id="0x342" endianess="big">
+      <value name="Adaptronic: Serial Lambda 9" offset="0" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Serial Lambda 10" offset="2" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Serial Lambda 11" offset="4" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Serial Lambda 12" offset="6" length="2" conversion="V/1000"></value>
+    </frame>
+    
+    <frame id="0x343" endianess="big">
+      <value name="Adaptronic: Serial Lambda 13" offset="0" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Serial Lambda 14" offset="2" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Serial Lambda 15" offset="4" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Serial Lambda 16" offset="6" length="2" conversion="V/1000"></value>
+    </frame>
+    
+    <frame id="0x344" endianess="big">
+      <value targetId="106" offset="0" length="2"></value> <!-- EGT1 -->
+      <value targetId="107" offset="2" length="2"></value> <!-- EGT2 -->
+      <value targetId="108" offset="4" length="2"></value> <!-- EGT3 -->
+      <value targetId="109" offset="6" length="2"></value> <!-- EGT4 -->
+    </frame>
+    
+    <frame id="0x345" endianess="big">
+      <value targetId="110" offset="0" length="2"></value> <!-- EGT5 -->
+      <value targetId="111" offset="2" length="2"></value> <!-- EGT6 -->
+      <value targetId="112" offset="4" length="2"></value> <!-- EGT7 -->
+      <value targetId="113" offset="6" length="2"></value> <!-- EGT8 -->
+    </frame>
+    
+    <frame id="0x346" endianess="big">
+      <value targetId="114" offset="0" length="2"></value> <!-- EGT9 -->
+      <value targetId="115" offset="2" length="2"></value> <!-- EGT10 -->
+      <value targetId="116" offset="4" length="2"></value> <!-- EGT11 -->
+      <value targetId="117" offset="6" length="2"></value> <!-- EGT12 -->
+    </frame>
+    
+    <frame id="0x347" endianess="big">
+      <value name="Adaptronic: Serial EGT 13" offset="0" length="2"></value>
+      <value name="Adaptronic: Serial EGT 14" offset="2" length="2"></value>
+      <value name="Adaptronic: Serial EGT 15" offset="4" length="2"></value>
+      <value name="Adaptronic: Serial EGT 16" offset="6" length="2"></value>
+    </frame>
+    
+    <frame id="0x34c" endianess="big">
+      <value name="Adaptronic: Module 0 ID" offset="0" length="2"></value>
+      <value name="Adaptronic: Module 1 ID" offset="2" length="2"></value>
+      <value name="Adaptronic: Module 2 ID" offset="4" length="2"></value>
+      <value name="Adaptronic: Module 3 ID" offset="6" length="2"></value>
+    </frame>
+    
+    <frame id="0x34d" endianess="big">
+      <value name="Adaptronic: Module 4 ID" offset="0" length="2"></value>
+      <value name="Adaptronic: Module 5 ID" offset="2" length="2"></value>
+      <value name="Adaptronic: Module 6 ID" offset="4" length="2"></value>
+      <value name="Adaptronic: Module 7 ID" offset="6" length="2"></value>
+    </frame>
+    
+    <frame id="0x34e" endianess="big">
+      <value name="Adaptronic: Vehicle board ID" offset="0" length="2"></value>
+      <value name="Adaptronic: Ethanol % (ECF gauge)" offset="2" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Fuel temp (ECF gauge)" offset="4" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Fuel press(ECF gauge)" offset="6" length="2" conversion="V/10"></value>
+    </frame>
+    
+    <frame id="0x34f" endianess="big">
+      <value name="Adaptronic: Analogue lambda O2 1" offset="0" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Analogue lambda O2 2" offset="2" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Turbine speed 1 kRPM" offset="4" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: Turbine speed 2 kRPM" offset="6" length="2" conversion="V/100"></value>
+    </frame>
+    
+    <frame id="0x360" endianess="big">
+      <value name="Adaptronic: IMAP int" offset="0" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: EMAP int" offset="2" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: IMAP ext" offset="4" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: EMAP ext" offset="6" length="2" conversion="V/10"></value>
+    </frame>
+    
+    <frame id="0x361" endianess="big">
+      <value targetId="31" offset="0" length="2" conversion="V/10"></value> <!-- MAP -->
+      <value name="Adaptronic: IMAP 2" offset="2" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: EMAP" offset="4" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: EMAP 2" offset="6" length="2" conversion="V/10"></value>
+    </frame>
+    
+    <frame id="0x362" endianess="big">
+      <value name="Adaptronic: Pressure ratio" offset="0" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Pressure ratio 2" offset="2" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Pedal 1 / TPS1" offset="4" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: Pedal 2 / TPS2" offset="6" length="2" conversion="V/100"></value>
+    </frame>
+    
+    <frame id="0x363" endianess="big">
+      <value targetId="42" offset="0" length="2" conversion="V/100"></value> <!-- TPS -->
+      <value name="Adaptronic: TPS 1 (DBW)" offset="2" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: TPS 2 (DBW)" offset="4" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: TPS 3 (DBW)" offset="6" length="2" conversion="V/100"></value>
+    </frame>
+    
+    <frame id="0x364" endianess="big">
+      <value name="Adaptronic: TPS 4 (DBW)" offset="0" length="2" conversion="V/100"></value>
+      <value targetId="254" offset="2" length="2" conversion="V/1000"></value> <!-- Lambda 1 -->
+      <value targetId="255" offset="4" length="2" conversion="V/1000"></value> <!-- Lambda 2 -->
+      <value targetId="14" offset="6" length="2" conversion="V/10"></value> <!-- CLT -->
+    </frame>
+    
+    <frame id="0x365" endianess="big">
+      <value targetId="27" offset="0" length="2" conversion="V/10"></value> <!-- IAT -->
+      <value targetId="152" offset="2" length="2" conversion="V/10"></value> <!-- Oil temp -->
+      <value name="Adaptronic: Fuel T" offset="4" length="2" conversion="V/10"></value>
+      <value targetId="151" offset="6" length="2" conversion="V/1000"></value> <!-- Oil pressure (converted to bar) -->
+    </frame>
+    
+    <frame id="0x366" endianess="big">
+      <value targetId="202" offset="0" length="2" conversion="V/1000"></value> <!-- Fuel pressure (converted to bar) -->
+      <value name="Adaptronic: Diff Fuel P" offset="2" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Servo pos" offset="4" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: 0-5V Ext 1" offset="6" length="2" conversion="V/10"></value>
+    </frame>
+    
+    <frame id="0x367" endianess="big">
+      <value name="Adaptronic: 0-5V Ext 2" offset="0" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Sens GND V (GND off)" offset="2" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Ethanol Content" offset="4" length="2" conversion="V/10"></value>
+      <value targetId="81" offset="6" length="2" conversion="V/10"></value> <!-- VSS -->
+    </frame>
+    
+    <frame id="0x368" endianess="big">
+      <value targetId="200" offset="0" length="2"></value> <!-- Gear -->
+      <value name="Adaptronic: Driven speed" offset="2" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Ground speed" offset="4" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Spd diff (drive-gnd)" offset="6" length="2" conversion="V/10"></value>
+    </frame>
+    
+    <frame id="0x369" endianess="big">
+      <value name="Adaptronic: Spd diff drive (L-R)" offset="0" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Spd diff gnd L-R)" offset="2" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Inlet VVT1 pos" offset="4" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Inlet VVT2 pos" offset="6" length="2" conversion="V/10"></value>
+    </frame>
+    
+    <frame id="0x36a" endianess="big">
+      <value name="Adaptronic: Exhaust VVT1 pos" offset="0" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Exhaust VVT2 pos" offset="2" length="2" conversion="V/10"></value>
+    </frame>
+    
+    <frame id="0x36c" endianess="big">
+      <value name="Adaptronic: Dig inp processed low, CLUTCH" units="bit" offset="0" length="2"></value>
+      <value name="Adaptronic: Dig inp processed low, ELEC LOAD" units="bit" offset="0" length="2" conversion="V>>1"></value>
+      <value name="Adaptronic: Dig inp processed low, AIRCONSW" units="bit" offset="0" length="2" conversion="V>>2"></value>
+      <value name="Adaptronic: Dig inp processed low, WOT" units="bit" offset="0" length="2" conversion="V>>3"></value>
+      <value name="Adaptronic: Dig inp processed low, CLOSEDTHROTTLE" units="bit" offset="0" length="2" conversion="V>>4"></value>
+      <value name="Adaptronic: Dig inp processed low, NOS" units="bit" offset="0" length="2" conversion="V>>5"></value>
+      <value name="Adaptronic: Dig inp processed low, STRAIN" units="bit" offset="0" length="2" conversion="V>>6"></value>
+      <value name="Adaptronic: Dig inp processed low, TURBOCANCEL" units="bit" offset="0" length="2" conversion="V>>7"></value>
+      <value name="Adaptronic: Dig inp processed low, ALTMAP" units="bit" offset="0" length="2" conversion="V>>8"></value>
+      <value name="Adaptronic: Dig inp processed low, TC SW" units="bit" offset="0" length="2" conversion="V>>9"></value>
+      <value name="Adaptronic: Dig inp processed low, LC SW" units="bit" offset="0" length="2" conversion="V>>10"></value>
+      <value name="Adaptronic: Dig inp processed low, ELECLOAD2" units="bit" offset="0" length="2" conversion="V>>11"></value>
+      <value name="Adaptronic: Dig inp processed low, PSTEER" units="bit" offset="0" length="2" conversion="V>>12"></value>
+      <value name="Adaptronic: Dig inp processed low, PUSHTOPASS" units="bit" offset="0" length="2" conversion="V>>13"></value>
+      <value name="Adaptronic: Dig inp processed low, PITLANESPEED" units="bit" offset="0" length="2" conversion="V>>14"></value>
+      <value name="Adaptronic: Dig inp processed low, BOOST1" units="bit" offset="0" length="2" conversion="V>>15"></value>
+      
+      <value name="Adaptronic: Dig inp processed hi, BOOST2" units="bit" offset="2" length="2"></value>
+
+      <value name="Adaptronic: Flags low, CLOSEDTHROTTLE" units="bit" offset="4" length="2"></value>
+      <value name="Adaptronic: Flags low, WOT" units="bit" offset="4" length="2" conversion="V>>1"></value>
+      <value name="Adaptronic: Flags low, POWERON" units="bit" offset="4" length="2" conversion="V>>2"></value>
+      <value name="Adaptronic: Flags low, CRANKING" units="bit" offset="4" length="2" conversion="V>>3"></value>
+      <value name="Adaptronic: Flags low, HAVEPERIOD" units="bit" offset="4" length="2" conversion="V>>4"></value>
+      <value name="Adaptronic: Flags low, HAVE360" units="bit" offset="4" length="2" conversion="V>>5"></value>
+      <value name="Adaptronic: Flags low, HAVE720" units="bit" offset="4" length="2" conversion="V>>6"></value>
+      <value name="Adaptronic: Flags low, MAP2" units="bit" offset="4" length="2" conversion="V>>7"></value>
+      <value name="Adaptronic: Flags low, ACON" units="bit" offset="4" length="2" conversion="V>>8"></value>
+      <value name="Adaptronic: Flags low, ACCOMPON" units="bit" offset="4" length="2" conversion="V>>9"></value>
+      <value name="Adaptronic: Flags low, THERMO1" units="bit" offset="4" length="2" conversion="V>>10"></value>
+      <value name="Adaptronic: Flags low, THERMO2" units="bit" offset="4" length="2" conversion="V>>11"></value>
+      <value name="Adaptronic: Flags low, THERMO3" units="bit" offset="4" length="2" conversion="V>>12"></value>
+      <value name="Adaptronic: Flags low, CLUTCH" units="bit" offset="4" length="2" conversion="V>>13"></value>
+      <value name="Adaptronic: Flags low, HAVE3602" units="bit" offset="4" length="2" conversion="V>>14"></value>
+      <value name="Adaptronic: Flags low, HAVE3603" units="bit" offset="4" length="2" conversion="V>>15"></value>
+
+      <value name="Adaptronic: Flags high, CLOSEDFUEL" units="bit" offset="6" length="2"></value>
+      <value name="Adaptronic: Flags high, CLOSEDIDLE" units="bit" offset="6" length="2" conversion="V>>1"></value>
+      <value name="Adaptronic: Flags high, IDLEDERIV" units="bit" offset="6" length="2" conversion="V>>2"></value>
+      <value name="Adaptronic: Flags high, IDLEHOMED" units="bit" offset="6" length="2" conversion="V>>3"></value>
+      <value name="Adaptronic: Flags high, LAUNCHENA" units="bit" offset="6" length="2" conversion="V>>4"></value>
+      <value name="Adaptronic: Flags high, INLAUNCH" units="bit" offset="6" length="2" conversion="V>>5"></value>
+      <value name="Adaptronic: Flags high, TCENA" units="bit" offset="6" length="2" conversion="V>>6"></value>
+      <value name="Adaptronic: Flags high, INTC" units="bit" offset="6" length="2" conversion="V>>7"></value>
+      <value name="Adaptronic: Flags high, INANTILAG" units="bit" offset="6" length="2" conversion="V>>8"></value>
+      <value name="Adaptronic: Flags high, FUELPUMPON" units="bit" offset="6" length="2" conversion="V>>9"></value>
+      <value name="Adaptronic: Flags high, INTWINTURBO" units="bit" offset="6" length="2" conversion="V>>10"></value>
+      <value name="Adaptronic: Flags high, CLOSEDBOOST" units="bit" offset="6" length="2" conversion="V>>11"></value>
+      <value name="Adaptronic: Flags high, LOCKED" units="bit" offset="6" length="2" conversion="V>>12"></value>
+      <value name="Adaptronic: Flags high, NEEDREAD" units="bit" offset="6" length="2" conversion="V>>13"></value>
+      <value name="Adaptronic: Flags high, ABOVEOVERRUN" units="bit" offset="6" length="2" conversion="V>>14"></value>
+      <value name="Adaptronic: Flags high, MIN PW CLIP" units="bit" offset="6" length="2" conversion="V>>15"></value>
+    </frame>
+    
+    <frame id="0x36d" endianess="big">
+      <value name="Adaptronic: Knock bkg level" offset="0" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: KnockMax (bkg removed)" offset="2" length="2" conversion="V/1000"></value>
+      <value targetId="11" offset="4" length="2" conversion="V/10"></value> <!-- Baro -->
+      <value name="Adaptronic: Temperature bias" offset="6" length="2"></value>
+    </frame>
+    
+    <frame id="0x36e" endianess="big">
+      <value name="Adaptronic: TPS target (DBW)" offset="0" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: Throttle duty 1 (DBW)" offset="2" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: Throttle duty 2 (DBW)" offset="4" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: Throttle duty 3 (DBW)" offset="6" length="2" conversion="V/100"></value>
+    </frame>
+    
+    <frame id="0x36f" endianess="big">
+      <value name="Adaptronic: Throttle duty 4 (DBW)" offset="0" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: CAS 1 V threshold" offset="2" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: CAS 2 V threshold" offset="4" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: CAS 3 V threshold" offset="6" length="2" conversion="V/1000"></value>
+    </frame>
+    
+    <frame id="0x370" endianess="big">
+      <value name="Adaptronic: CAS 4 V threshold" offset="0" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: CAS 5 V threshold" offset="2" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: VSS V threshold" offset="4" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: CAS 1 filter (ms)" offset="6" length="2" conversion="V/1000"></value>
+    </frame>
+    
+    <frame id="0x371" endianess="big">
+      <value name="Adaptronic: CAS 2 filter (ms)" offset="0" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: CAS 3 filter (ms)" offset="2" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: CAS 4 filter (ms)" offset="4" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: CAS 5 filter (ms)" offset="6" length="2" conversion="V/1000"></value>
+    </frame>
+    
+    <frame id="0x372" endianess="big">
+      <value name="Adaptronic: VSS filter (ms)" offset="0" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Digital In (filt)" offset="2" length="2"></value>
+      <value name="Adaptronic: Ethanol % (for calc)" offset="4" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Lambda Error 1" offset="6" length="2" conversion="V/1000"></value>
+    </frame>
+    
+    <frame id="0x373" endianess="big">
+      <value name="Adaptronic: Lambda Error 2" offset="0" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Lambda 1 min" offset="2" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Lambda 1 max" offset="4" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Lambda 2 min" offset="6" length="2" conversion="V/1000"></value>
+    </frame>
+    
+    <frame id="0x374" endianess="big">
+      <value name="Adaptronic: Lambda 2 max" offset="0" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: TPS effort due to TC" offset="2" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: Slip" offset="4" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: Slip LR Driven" offset="6" length="2" conversion="V/100"></value>
+    </frame>
+    
+    <frame id="0x375" endianess="big">
+      <value name="Adaptronic: Slip LR Ground" offset="0" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: MGP1" offset="2" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: MGP2" offset="4" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Knock max (inc bkg)" offset="6" length="2" conversion="V/1000"></value>
+    </frame>
+    
+    <frame id="0x376" endianess="big">
+      <value name="Adaptronic: Peak knock retard" offset="0" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Pedal pos (DBW)" offset="2" length="2" conversion="V/100"></value>
+    </frame>
+    
+    <frame id="0x378" endianess="big">
+      <value name="Adaptronic: Injector 1 duty" offset="0" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: Injector 2 duty" offset="2" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: Injector 3 duty" offset="4" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: Injector 4 duty" offset="6" length="2" conversion="V/100"></value>
+    </frame>
+    
+    <frame id="0x379" endianess="big">
+      <value name="Adaptronic: Injector 5 duty" offset="0" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: Injector 6 duty" offset="2" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: Injector 7 duty" offset="4" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: Injector 8 duty" offset="6" length="2" conversion="V/100"></value>
+    </frame>
+    
+    <frame id="0x37a" endianess="big">
+      <value name="Adaptronic: Injector 9 duty" offset="0" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: Injector 10 duty" offset="2" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: Injector 11 duty" offset="4" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: Injector 12 duty" offset="6" length="2" conversion="V/100"></value>
+    </frame>
+    
+    <frame id="0x37b" endianess="big">
+      <value name="Adaptronic: Injector 13 duty" offset="0" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: Injector 14 duty" offset="2" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: Injector 15 duty" offset="4" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: Injector 16 duty" offset="6" length="2" conversion="V/100"></value>
+    </frame>
+    
+    <frame id="0x37c" endianess="big">
+      <value name="Adaptronic: Injector 17 duty" offset="0" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: Injector 18 duty" offset="2" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: Injector 19 duty" offset="4" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: Injector 20 duty" offset="6" length="2" conversion="V/100"></value>
+    </frame>
+    
+    <frame id="0x37d" endianess="big">
+      <value name="Adaptronic: Injector 21 duty" offset="0" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: Injector 22 duty" offset="2" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: Injector 23 duty" offset="4" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: Injector 24 duty" offset="6" length="2" conversion="V/100"></value>
+    </frame>
+    
+    <frame id="0x37e" endianess="big">
+      <value name="Adaptronic: Injector 25 duty" offset="0" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: Injector 26 duty" offset="2" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: Injector 27 duty" offset="4" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: Injector 28 duty" offset="6" length="2" conversion="V/100"></value>
+    </frame>
+    
+    <frame id="0x37f" endianess="big">
+      <value name="Adaptronic: Injector 29 duty" offset="0" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: Injector 30 duty" offset="2" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: Injector 31 duty" offset="4" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: Injector 32 duty" offset="6" length="2" conversion="V/100"></value>
+    </frame>
+    
+    <frame id="0x380" endianess="big">
+      <value name="Adaptronic: Load Value 1" offset="0" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Load Value 2" offset="2" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Calculated VE 1" offset="4" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: Calculated VE 2" offset="6" length="2" conversion="V/100"></value>
+    </frame>
+    
+    <frame id="0x381" endianess="big">
+      <value name="Adaptronic: Calc Charge temp 1" offset="0" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Calc Charge temp 2" offset="2" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Stoichiometric ratio" offset="4" length="2" conversion="V/1000"></value>
+      <value targetId="256" offset="6" length="2" conversion="V/10000"></value> <!-- Lambda target 1 -->
+    </frame>
+    
+    <frame id="0x382" endianess="big">
+      <value name="Adaptronic: Calc fuel mass/cyl 1" offset="0" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Calc fuel mass/cyl 2" offset="2" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Est fuel film mass 1" offset="4" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Est fuel film mass 2" offset="6" length="2" conversion="V/10"></value>
+    </frame>
+    
+    <frame id="0x383" endianess="big">
+      <value name="Adaptronic: Req fuel film mass 1" offset="0" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Req fuel film mass 2" offset="2" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Fuel to deliver 1" offset="4" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Fuel to deliver 2" offset="6" length="2" conversion="V/10"></value>
+    </frame>
+    
+    <frame id="0x384" endianess="big">
+      <value name="Adaptronic: Fuel P used (calc)" offset="0" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Fuel Dens used (calc)" offset="2" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Inj flow rate stage 1" offset="4" length="2"></value>
+      <value name="Adaptronic: Inj flow rate stage 2" offset="6" length="2"></value>
+    </frame>
+    
+    <frame id="0x385" endianess="big">
+      <value name="Adaptronic: Inj flow rate stage 3" offset="0" length="2"></value>
+      <value name="Adaptronic: Inj flow rate stage 4" offset="2" length="2"></value>
+      <value name="Adaptronic: Inj offset stage 1" offset="4" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Inj offset stage 2" offset="6" length="2" conversion="V/1000"></value>
+    </frame>
+    
+    <frame id="0x386" endianess="big">
+      <value name="Adaptronic: Inj offset stage 3" offset="0" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Inj offset stage 4" offset="2" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Fuel mass cyl 1" offset="4" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Fuel mass cyl 2" offset="6" length="2" conversion="V/10"></value>
+    </frame>
+    
+    <frame id="0x387" endianess="big">
+      <value name="Adaptronic: Fuel mass cyl 3" offset="0" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Fuel mass cyl 4" offset="2" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Fuel mass cyl 5" offset="4" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Fuel mass cyl 6" offset="6" length="2" conversion="V/10"></value>
+    </frame>
+    
+    <frame id="0x388" endianess="big">
+      <value name="Adaptronic: Fuel mass cyl 7" offset="0" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Fuel mass cyl 8" offset="2" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Fuel mass cyl 9" offset="4" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Fuel mass cyl 10" offset="6" length="2" conversion="V/10"></value>
+    </frame>
+    
+    <frame id="0x389" endianess="big">
+      <value name="Adaptronic: Fuel mass cyl 11" offset="0" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Fuel mass cyl 12" offset="2" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Fuel mass cyl 13" offset="4" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Fuel mass cyl 14" offset="6" length="2" conversion="V/10"></value>
+    </frame>
+    
+    <frame id="0x38a" endianess="big">
+      <value name="Adaptronic: Fuel mass cyl 15" offset="0" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Fuel mass cyl 16" offset="2" length="2" conversion="V/10"></value>
+      <value targetId="35" offset="4" length="2" conversion="V/1000"></value>  <!-- PW 1 -->
+      <value targetId="36" offset="6" length="2" conversion="V/1000"></value>  <!-- PW 2 -->
+    </frame>
+    
+    <frame id="0x38b" endianess="big">
+      <value name="Adaptronic: Fuel inj dur out 3" offset="0" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Fuel inj dur out 4" offset="2" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Fuel inj dur out 5" offset="4" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Fuel inj dur out 6" offset="6" length="2" conversion="V/1000"></value>
+    </frame>
+    
+    <frame id="0x38c" endianess="big">
+      <value name="Adaptronic: Fuel inj dur out 7" offset="0" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Fuel inj dur out 8" offset="2" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Fuel inj dur out 9" offset="4" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Fuel inj dur out 10" offset="6" length="2" conversion="V/1000"></value>
+    </frame>
+    
+    <frame id="0x38d" endianess="big">
+      <value name="Adaptronic: Fuel inj dur out 11" offset="0" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Fuel inj dur out 12" offset="2" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Fuel inj dur out 13" offset="4" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Fuel inj dur out 14" offset="6" length="2" conversion="V/1000"></value>
+    </frame>
+    
+    <frame id="0x38e" endianess="big">
+      <value name="Adaptronic: Fuel inj dur out 15" offset="0" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Fuel inj dur out 16" offset="2" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Fuel inj dur out 17" offset="4" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Fuel inj dur out 18" offset="6" length="2" conversion="V/1000"></value>
+    </frame>
+    
+    <frame id="0x38f" endianess="big">
+      <value name="Adaptronic: Fuel inj dur out 19" offset="0" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Fuel inj dur out 20" offset="2" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Fuel inj dur out 21" offset="4" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Fuel inj dur out 22" offset="6" length="2" conversion="V/1000"></value>
+    </frame>
+    
+    <frame id="0x390" endianess="big">
+      <value name="Adaptronic: Fuel inj dur out 23" offset="0" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Fuel inj dur out 24" offset="2" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Fuel inj dur out 25" offset="4" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Fuel inj dur out 26" offset="6" length="2" conversion="V/1000"></value>
+    </frame>
+    
+    <frame id="0x391" endianess="big">
+      <value name="Adaptronic: Fuel inj dur out 27" offset="0" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Fuel inj dur out 28" offset="2" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Fuel inj dur out 29" offset="4" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Fuel inj dur out 30" offset="6" length="2" conversion="V/1000"></value>
+    </frame>
+    
+    <frame id="0x392" endianess="big">
+      <value name="Adaptronic: Fuel inj dur out 31" offset="0" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Fuel inj dur out 32" offset="2" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: FuelTrim air/chg temp" offset="4" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: FuelTrim ECT" offset="6" length="2" conversion="V/100"></value>
+    </frame>
+    
+    <frame id="0x393" endianess="big">
+      <value name="Adaptronic: FuelTrim post crank" offset="0" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: FuelTrim closed lp 1" offset="2" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: FuelTrim closed lp 2" offset="4" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: FuelTrim master" offset="6" length="2" conversion="V/100"></value>
+    </frame>
+    
+    <frame id="0x394" endianess="big">
+      <value name="Adaptronic: FuelTrim user enrich" offset="0" length="2" conversion="V/100"></value>
+      <value targetId="20" offset="2" length="2" conversion="V/100"></value> <!-- Flex fuel corr -->
+      <value name="Adaptronic: TPS rate for bank 1" offset="4" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: TPS rate for bank 2" offset="6" length="2" conversion="V/10"></value>
+    </frame>
+    
+    <frame id="0x395" endianess="big">
+      <value name="Adaptronic: Predicted MAP (TPS1)" offset="0" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Predicted MAP (TPS2)" offset="2" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Predicted MAP active" offset="4" length="2"></value>
+      <value name="Adaptronic: Calc fuel film %" offset="6" length="2" conversion="V/10"></value>
+    </frame>
+    
+    <frame id="0x396" endianess="big">
+      <value name="Adaptronic: Calc evap time" offset="0" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Calc enric fuel film" offset="2" length="2" conversion="V/10"></value>
+      <value targetId="2" offset="4" length="2" conversion="V/1000"></value> <!-- AFR Target 1 -->
+      <value name="Adaptronic: Calc air mass bank 1" offset="6" length="2"></value>
+    </frame>
+    
+    <frame id="0x397" endianess="big">
+      <value name="Adaptronic: Calc air mass bank 2" offset="0" length="2"></value>
+      <value name="Adaptronic: Total fuel trim 1" offset="2" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: Total fuel trim 2" offset="4" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: Heat soak percentage" offset="6" length="2" conversion="V/100"></value>
+    </frame>
+    
+    <frame id="0x398" endianess="big">
+      <value name="Adaptronic: Fuel inj angle 1" offset="0" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Fuel inj angle 2" offset="2" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Fuel inj angle 3" offset="4" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Fuel inj angle 4" offset="6" length="2" conversion="V/10"></value>
+    </frame>
+    
+    <frame id="0x399" endianess="big">
+      <value name="Adaptronic: Fuel inj angle 5" offset="0" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Fuel inj angle 6" offset="2" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Fuel inj angle 7" offset="4" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Fuel inj angle 8" offset="6" length="2" conversion="V/10"></value>
+    </frame>
+    
+    <frame id="0x39a" endianess="big">
+      <value name="Adaptronic: Fuel inj angle 9" offset="0" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Fuel inj angle 10" offset="2" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Fuel inj angle 11" offset="4" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Fuel inj angle 12" offset="6" length="2" conversion="V/10"></value>
+    </frame>
+    
+    <frame id="0x39b" endianess="big">
+      <value name="Adaptronic: Fuel inj angle 13" offset="0" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Fuel inj angle 14" offset="2" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Fuel inj angle 15" offset="4" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Fuel inj angle 16" offset="6" length="2" conversion="V/10"></value>
+    </frame>
+    
+    <frame id="0x39c" endianess="big">
+      <value name="Adaptronic: Fuel inj angle 17" offset="0" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Fuel inj angle 18" offset="2" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Fuel inj angle 19" offset="4" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Fuel inj angle 20" offset="6" length="2" conversion="V/10"></value>
+    </frame>
+    
+    <frame id="0x39d" endianess="big">
+      <value name="Adaptronic: Fuel inj angle 21" offset="0" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Fuel inj angle 22" offset="2" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Fuel inj angle 23" offset="4" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Fuel inj angle 24" offset="6" length="2" conversion="V/10"></value>
+    </frame>
+    
+    <frame id="0x39e" endianess="big">
+      <value name="Adaptronic: Fuel inj angle 25" offset="0" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Fuel inj angle 26" offset="2" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Fuel inj angle 27" offset="4" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Fuel inj angle 28" offset="6" length="2" conversion="V/10"></value>
+    </frame>
+    
+    <frame id="0x39f" endianess="big">
+      <value name="Adaptronic: Fuel inj angle 29" offset="0" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Fuel inj angle 30" offset="2" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Fuel inj angle 31" offset="4" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Fuel inj angle 32" offset="6" length="2" conversion="V/10"></value>
+    </frame>
+    
+    <frame id="0x3a0" endianess="big">
+      <value name="Adaptronic: Ign map raw value" offset="0" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Ign map ethanol trim" offset="2" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: FuelTrim antilag" offset="4" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: IgnTrim ECT" offset="6" length="2" conversion="V/10"></value>
+    </frame>
+    
+    <frame id="0x3a1" endianess="big">
+      <value name="Adaptronic: IgnTrim MAT" offset="0" length="2" conversion="V/10"></value>
+      <value targetId="28" offset="2" length="2" conversion="V/10"></value> <!-- Knock retard -->
+      <value name="Adaptronic: IgnTrim Idle" offset="4" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: IgnTrim Traction" offset="6" length="2" conversion="V/10"></value>
+    </frame>
+    
+    <frame id="0x3a2" endianess="big">
+      <value name="Adaptronic: IgnTrim Antilag" offset="0" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: IgnTrim Master" offset="2" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: IgnTrim User" offset="4" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Spark split" offset="6" length="2" conversion="V/10"></value>
+    </frame>
+    
+    <frame id="0x3a3" endianess="big">
+      <value targetId="38" offset="0" length="2" conversion="V/10"></value> <!-- Spark adv -->
+      <value name="Adaptronic: Ignition timing (trail)" offset="2" length="2" conversion="V/10"></value>
+    </frame>
+    
+    <frame id="0x3a4" endianess="big">
+      <value name="Adaptronic: Nominal dwell time" offset="0" length="2" conversion="V/1000"></value>
+      <value targetId="26" offset="2" length="2" conversion="V/1000"></value> <!-- Dwell -->
+      <value targetId="33" offset="4" length="2" conversion="V/100"></value> <!-- Engine runtime -->
+      <value name="Adaptronic: Time in enrichment" offset="6" length="2"></value>
+    </frame>
+    
+    <frame id="0x3a5" endianess="big">
+      <value name="Adaptronic: Async inj duration" offset="0" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Async inj strobe 1-16" offset="2" length="2"></value>
+      <value name="Adaptronic: Async inj duration 2" offset="4" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Async inj str 1-16 2" offset="6" length="2"></value>
+    </frame>
+    
+    <frame id="0x3a6" endianess="big">
+      <value name="Adaptronic: Async inj dur 17-32" offset="0" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Async inj str 17-32" offset="2" length="2"></value>
+      <value name="Adaptronic: Async inj dur 17-32 2" offset="4" length="2" conversion="V/1000"></value>
+      <value name="Adaptronic: Async inj str 17-32 2" offset="6" length="2"></value>
+    </frame>
+    
+    <frame id="0x3a7" endianess="big">
+      <value name="Adaptronic: Fuel temp (for calc)" offset="0" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: # injector outs used" offset="2" length="2"></value>
+      <value name="Adaptronic: # ignition outs used" offset="4" length="2"></value>
+      <value name="Adaptronic: Main loop speed" offset="6" length="2"></value>
+    </frame>
+    
+    <frame id="0x3a8" endianess="big">
+      <value name="Adaptronic: Raw target idle value" offset="0" length="2"></value>
+      <value name="Adaptronic: Target idle (elec)" offset="2" length="2"></value>
+      <value name="Adaptronic: Raw base duty cycle" offset="4" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: Idle effort (elec)" offset="6" length="2" conversion="V/100"></value>
+    </frame>
+    
+    <frame id="0x3a9" endianess="big">
+      <value name="Adaptronic: Idle effort (altern)" offset="0" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: Idle effort (psteer)" offset="2" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: Idle effort (antilag)" offset="4" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: Idle effort postcrank" offset="6" length="2" conversion="V/100"></value>
+    </frame>
+    
+    <frame id="0x3aa" endianess="big">
+      <value name="Adaptronic: Idle effort closed lp" offset="0" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: Idle closed lp status" offset="2" length="2"></value>
+      <value name="Adaptronic: Unclipped idle effort" offset="4" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: Idle effort / duty" offset="6" length="2" conversion="V/100"></value>
+    </frame>
+    
+    <frame id="0x3ab" endianess="big">
+      <value name="Adaptronic: Idle stepper position" offset="0" length="2"></value>
+      <value name="Adaptronic: Target idle RPM" offset="2" length="2"></value>
+      <value name="Adaptronic: Idle effort (open lp)" offset="4" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: Idle effort (thermo)" offset="6" length="2" conversion="V/100"></value>
+    </frame>
+    
+    <frame id="0x3ac" endianess="big">
+      <value name="Adaptronic: Idle effort (aircon)" offset="0" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: Target idle (aircon)" offset="2" length="2"></value>
+      <value name="Adaptronic: Idle stepper target" offset="4" length="2"></value>
+      <value name="Adaptronic: Idle Stepper A duty" offset="6" length="2" conversion="V/100"></value>
+    </frame>
+    
+    <frame id="0x3ad" endianess="big">
+      <value name="Adaptronic: Idle Stepper B duty" offset="0" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: Current gear bit 0" offset="2" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: Current gear bit 1" offset="4" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: Current gear bit 2" offset="6" length="2" conversion="V/100"></value>
+    </frame>
+    
+    <frame id="0x3ae" endianess="big">
+      <value name="Adaptronic: Idle effort (cracker)" offset="0" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: Current N2O Stage" offset="2" length="2"></value>
+      <value name="Adaptronic: Fuel trim for nitrous" offset="4" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: IgnTrim (nitrous)" offset="6" length="2" conversion="V/10"></value>
+    </frame>
+    
+    <frame id="0x3af" endianess="big">
+      <value name="Adaptronic: Fuel usage rate" offset="0" length="2"></value>
+      <value name="Adaptronic: Prev gear before shift" offset="2" length="2"></value>
+      <value name="Adaptronic: Measured ign cut dur" offset="4" length="2"></value>
+      <value name="Adaptronic: Idle RPM error" offset="6" length="2"></value>
+    </frame>
+    
+    <frame id="0x3b0" endianess="big">
+      <value name="Adaptronic: Cutting conditions, FUELPT" units="bit" offset="0" length="2"></value>
+      <value name="Adaptronic: Cutting conditions, OILT" units="bit" offset="0" length="2" conversion="V>>1"></value>
+      <value name="Adaptronic: Cutting conditions, OILP" units="bit" offset="0" length="2" conversion="V>>2"></value>
+      <value name="Adaptronic: Cutting conditions, AFR" units="bit" offset="0" length="2" conversion="V>>3"></value>
+      <value name="Adaptronic: Cutting conditions, OCINJ" units="bit" offset="0" length="2" conversion="V>>4"></value>
+      <value name="Adaptronic: Cutting conditions, OVRBOOST" units="bit" offset="0" length="2" conversion="V>>5"></value>
+      <value name="Adaptronic: Cutting conditions, REVL" units="bit" offset="0" length="2" conversion="V>>6"></value>
+      <value name="Adaptronic: Cutting conditions, OVERRUN" units="bit" offset="0" length="2" conversion="V>>7"></value>
+      <value name="Adaptronic: Cutting conditions, FCLEAR" units="bit" offset="0" length="2" conversion="V>>8"></value>
+      <value name="Adaptronic: Cutting conditions, PITLANE" units="bit" offset="0" length="2" conversion="V>>9"></value>
+      <value name="Adaptronic: Cutting conditions, LAUNCH" units="bit" offset="0" length="2" conversion="V>>10"></value>
+      <value name="Adaptronic: Cutting conditions, ANTILAG" units="bit" offset="0" length="2" conversion="V>>11"></value>
+      <value name="Adaptronic: Cutting conditions, FLATSHIFT" units="bit" offset="0" length="2" conversion="V>>12"></value>
+      <value name="Adaptronic: Cutting conditions, ETHROTTLE" units="bit" offset="0" length="2" conversion="V>>13"></value>
+      <value name="Adaptronic: Cutting conditions, FUEL" units="bit" offset="0" length="2" conversion="V>>14"></value>
+      <value name="Adaptronic: Cutting conditions, IGN" units="bit" offset="0" length="2" conversion="V>>15"></value>
+
+      <value name="Adaptronic: Current RPM limit" offset="2" length="2"></value>
+      <value name="Adaptronic: Pitlane RPM limit" offset="4" length="2"></value>
+    </frame>
+    
+    <frame id="0x3b1" endianess="big">
+      <value name="Adaptronic: Fuel cut" offset="4" length="2"></value>
+      <value name="Adaptronic: Ignition cut" offset="6" length="2"></value>
+    </frame>
+    
+    <frame id="0x3b8" endianess="big">
+      <value name="Adaptronic: Target MAP (from map)" offset="0" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Boost limit (ethanol)" offset="2" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Boost limit (traction)" offset="4" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Boost limit (input)" offset="6" length="2" conversion="V/10"></value>
+    </frame>
+    
+    <frame id="0x3b9" endianess="big">
+      <value name="Adaptronic: Boost limit (gear)" offset="0" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Target MAP (final)" offset="2" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Open lp WG (limited)" offset="4" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: Closed lp WG 1 corr" offset="6" length="2" conversion="V/100"></value>
+    </frame>
+    
+    <frame id="0x3ba" endianess="big">
+      <value name="Adaptronic: Unclipped WG value1" offset="0" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: Wastegate 1 duty" offset="2" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: Boost ctrl status" units="bit" offset="4" length="2"></value>
+      <value name="Adaptronic: Closed lp WG 2 corr" offset="6" length="2" conversion="V/100"></value>
+    </frame>
+    
+    <frame id="0x3bb" endianess="big">
+      <value name="Adaptronic: Unclipped WG value2" offset="0" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: Wastegate 2 duty" offset="2" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: Twin Turbo Pre duty" offset="4" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: Twin Turbo Ctrl duty" offset="6" length="2" conversion="V/100"></value>
+    </frame>
+    
+    <frame id="0x3bf" endianess="big">
+      <value name="Adaptronic: MOP target step (OL)" offset="4" length="2"></value>
+      <value name="Adaptronic: MOP Step number (OL)" offset="6" length="2"></value>
+    </frame>
+    
+    <frame id="0x3c0" endianess="big">
+      <value name="Adaptronic: Target intake VVT" offset="0" length="2" conversion="V/10"></value>
+      <value name="Adaptronic: Target exhaust VVT" offset="2" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: Intake VVT P gain" offset="4" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: Intake VVT I gain" offset="6" length="2" conversion="V/100"></value>
+    </frame>
+    
+    <frame id="0x3c1" endianess="big">
+      <value name="Adaptronic: Intake VVT D gain" offset="0" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: Exhaust VVT P gain" offset="2" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: Exhaust VVT I gain" offset="4" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: Exhaust VVT D gain" offset="6" length="2" conversion="V/100"></value>
+    </frame>
+    
+    <frame id="0x3c2" endianess="big">
+      <value name="Adaptronic: Unclipped VVTint1duty" offset="0" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: Unclipped VVTint2duty" offset="2" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: Unclipped VVTexh1duty" offset="4" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: Unclipped VVTexh2duty" offset="6" length="2" conversion="V/100"></value>
+    </frame>
+    
+    <frame id="0x3c3" endianess="big">
+      <value name="Adaptronic: VVT int 1 duty" offset="0" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: VVT int 2 duty" offset="2" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: VVT exh 1 duty" offset="4" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: VVT exh 2 duty" offset="6" length="2" conversion="V/100"></value>
+    </frame>
+    
+    <frame id="0x3c4" endianess="big">
+      <value name="Adaptronic: Status Intake 1, NOSIG" units="bit" offset="0" length="2"></value>
+      <value name="Adaptronic: Status Intake 1, DIGIN" units="bit" offset="0" length="2" conversion="V>>1"></value>
+      <value name="Adaptronic: Status Intake 1, BELOWROADSPEED" units="bit" offset="0" length="2" conversion="V>>2"></value>
+      <value name="Adaptronic: Status Intake 1, BELOWCOOLANT" units="bit" offset="0" length="2" conversion="V>>3"></value>
+      <value name="Adaptronic: Status Intake 1, OTHERMIN" units="bit" offset="0" length="2" conversion="V>>4"></value>
+      <value name="Adaptronic: Status Intake 1, OTHERMAX" units="bit" offset="0" length="2" conversion="V>>5"></value>
+      <value name="Adaptronic: Status Intake 1, LIMITED" units="bit" offset="0" length="2" conversion="V>>8"></value>
+      <value name="Adaptronic: Status Intake 1, CLOSEDLOOP" units="bit" offset="0" length="2" conversion="V>>9"></value>
+      <value name="Adaptronic: Status Intake 1, CRANKING" units="bit" offset="0" length="2" conversion="V>>10"></value>
+      
+      <value name="Adaptronic: Status Intake 2, NOSIG" units="bit" offset="2" length="2"></value>
+      <value name="Adaptronic: Status Intake 2, DIGIN" units="bit" offset="2" length="2" conversion="V>>1"></value>
+      <value name="Adaptronic: Status Intake 2, BELOWROADSPEED" units="bit" offset="2" length="2" conversion="V>>2"></value>
+      <value name="Adaptronic: Status Intake 2, BELOWCOOLANT" units="bit" offset="2" length="2" conversion="V>>3"></value>
+      <value name="Adaptronic: Status Intake 2, OTHERMIN" units="bit" offset="2" length="2" conversion="V>>4"></value>
+      <value name="Adaptronic: Status Intake 2, OTHERMAX" units="bit" offset="2" length="2" conversion="V>>5"></value>
+      <value name="Adaptronic: Status Intake 2, LIMITED" units="bit" offset="2" length="2" conversion="V>>8"></value>
+      <value name="Adaptronic: Status Intake 2, CLOSEDLOOP" units="bit" offset="2" length="2" conversion="V>>9"></value>
+      <value name="Adaptronic: Status Intake 2, CRANKING" units="bit" offset="2" length="2" conversion="V>>10"></value>
+
+      <value name="Adaptronic: Status Exhaust 1, NOSIG" units="bit" offset="4" length="2"></value>
+      <value name="Adaptronic: Status Exhaust 1, DIGIN" units="bit" offset="4" length="2" conversion="V>>1"></value>
+      <value name="Adaptronic: Status Exhaust 1, BELOWROADSPEED" units="bit" offset="4" length="2" conversion="V>>2"></value>
+      <value name="Adaptronic: Status Exhaust 1, BELOWCOOLANT" units="bit" offset="4" length="2" conversion="V>>3"></value>
+      <value name="Adaptronic: Status Exhaust 1, OTHERMIN" units="bit" offset="4" length="2" conversion="V>>4"></value>
+      <value name="Adaptronic: Status Exhaust 1, OTHERMAX" units="bit" offset="4" length="2" conversion="V>>5"></value>
+      <value name="Adaptronic: Status Exhaust 1, LIMITED" units="bit" offset="4" length="2" conversion="V>>8"></value>
+      <value name="Adaptronic: Status Exhaust 1, CLOSEDLOOP" units="bit" offset="4" length="2" conversion="V>>9"></value>
+      <value name="Adaptronic: Status Exhaust 1, CRANKING" units="bit" offset="4" length="2" conversion="V>>10"></value>
+
+      <value name="Adaptronic: Status Exhaust 2, NOSIG" units="bit" offset="6" length="2"></value>
+      <value name="Adaptronic: Status Exhaust 2, DIGIN" units="bit" offset="6" length="2" conversion="V>>1"></value>
+      <value name="Adaptronic: Status Exhaust 2, BELOWROADSPEED" units="bit" offset="6" length="2" conversion="V>>2"></value>
+      <value name="Adaptronic: Status Exhaust 2, BELOWCOOLANT" units="bit" offset="6" length="2" conversion="V>>3"></value>
+      <value name="Adaptronic: Status Exhaust 2, OTHERMIN" units="bit" offset="6" length="2" conversion="V>>4"></value>
+      <value name="Adaptronic: Status Exhaust 2, OTHERMAX" units="bit" offset="6" length="2" conversion="V>>5"></value>
+      <value name="Adaptronic: Status Exhaust 2, LIMITED" units="bit" offset="6" length="2" conversion="V>>8"></value>
+      <value name="Adaptronic: Status Exhaust 2, CLOSEDLOOP" units="bit" offset="6" length="2" conversion="V>>9"></value>
+      <value name="Adaptronic: Status Exhaust 2, CRANKING" units="bit" offset="6" length="2" conversion="V>>10"></value>
+    </frame>
+    
+    <frame id="0x3c5" endianess="big">
+      <value name="Adaptronic: MOP pos" offset="0" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: MOP target" offset="2" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: MOP Step A duty" offset="4" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: MOP Step B duty" offset="6" length="2" conversion="V/100"></value>
+    </frame>
+    
+    <frame id="0x3c6" endianess="big">
+      <value name="Adaptronic: TPS output duty cycle" offset="0" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: Checklight duty cycle" offset="2" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: Thermofan speed >= 1" offset="4" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: Thermofan speed >= 2" offset="6" length="2" conversion="V/100"></value>
+    </frame>
+    
+    <frame id="0x3c7" endianess="big">
+      <value name="Adaptronic: Thermofan speed >= 3" offset="0" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: Air conditioner duty" offset="2" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: Fuel pump duty cycle" offset="4" length="2" conversion="V/100"></value>
+      <value name="Adaptronic: Thermofan stage 0-3" offset="6" length="2"></value>
+    </frame>
+    
+    <frame id="0x3c8" endianess="big">
+      <value name="Adaptronic: Aux output 1 duty" offset="0" length="2"></value>
+      <value name="Adaptronic: Aux output 2 duty" offset="2" length="2"></value>
+      <value name="Adaptronic: Aux output 3 duty" offset="4" length="2"></value>
+      <value name="Adaptronic: Aux output 4 duty" offset="6" length="2"></value>
+    </frame>
+    
+    <frame id="0x3c9" endianess="big">
+      <value name="Adaptronic: Aux output 5 duty" offset="0" length="2"></value>
+      <value name="Adaptronic: Aux output 6 duty" offset="2" length="2"></value>
+      <value name="Adaptronic: Aux output 7 duty" offset="4" length="2"></value>
+      <value name="Adaptronic: Aux output 8 duty" offset="6" length="2"></value>
+    </frame>
+    
+    <frame id="0x3ca" endianess="big">
+      <value name="Adaptronic: Aux output 9 duty" offset="0" length="2"></value>
+      <value name="Adaptronic: Aux output 10 duty" offset="2" length="2"></value>
+      <value name="Adaptronic: Aux output 11 duty" offset="4" length="2"></value>
+      <value name="Adaptronic: Aux output 12 duty" offset="6" length="2"></value>
+    </frame>
+    
+    <frame id="0x3cb" endianess="big">
+      <value name="Adaptronic: Aux output 13 duty" offset="0" length="2"></value>
+      <value name="Adaptronic: Aux output 14 duty" offset="2" length="2"></value>
+      <value name="Adaptronic: Aux output 15 duty" offset="4" length="2"></value>
+      <value name="Adaptronic: Aux output 16 duty" offset="6" length="2"></value>
+    </frame>
+    
+    <frame id="0x3cc" endianess="big">
+      <value name="Adaptronic: Aux output 17 duty" offset="0" length="2"></value>
+      <value name="Adaptronic: Aux output 18 duty" offset="2" length="2"></value>
+      <value name="Adaptronic: Aux output 19 duty" offset="4" length="2"></value>
+      <value name="Adaptronic: Aux output 20 duty" offset="6" length="2"></value>
+    </frame>
+    
+    <frame id="0x3cd" endianess="big">
+      <value name="Adaptronic: Aux output 21 duty" offset="0" length="2"></value>
+      <value name="Adaptronic: Aux output 22 duty" offset="2" length="2"></value>
+      <value name="Adaptronic: Aux output 23 duty" offset="4" length="2"></value>
+      <value name="Adaptronic: Aux output 24 duty" offset="6" length="2"></value>
+    </frame>
+    
+    <frame id="0x3ce" endianess="big">
+      <value name="Adaptronic: Aux output 25 duty" offset="0" length="2"></value>
+      <value name="Adaptronic: Aux output 26 duty" offset="2" length="2"></value>
+      <value name="Adaptronic: Aux output 27 duty" offset="4" length="2"></value>
+      <value name="Adaptronic: Aux output 28 duty" offset="6" length="2"></value>
+    </frame>
+    
+    <frame id="0x3cf" endianess="big">
+      <value name="Adaptronic: Aux output 29 duty" offset="0" length="2"></value>
+      <value name="Adaptronic: Aux output 30 duty" offset="2" length="2"></value>
+      <value name="Adaptronic: Aux output 31 duty" offset="4" length="2"></value>
+      <value name="Adaptronic: Aux output 32 duty" offset="6" length="2"></value>
+    </frame>
+    
+    <frame id="0x3d0" endianess="big">
+      <value name="Adaptronic: Aux output 33 duty" offset="0" length="2"></value>
+      <value name="Adaptronic: Aux output 34 duty" offset="2" length="2"></value>
+      <value name="Adaptronic: Aux output 35 duty" offset="4" length="2"></value>
+      <value name="Adaptronic: Aux output 36 duty" offset="6" length="2"></value>
+    </frame>
+    
+    <frame id="0x3d1" endianess="big">
+      <value name="Adaptronic: Aux output 37 duty" offset="0" length="2"></value>
+      <value name="Adaptronic: Aux output 38 duty" offset="2" length="2"></value>
+      <value name="Adaptronic: Aux output 39 duty" offset="4" length="2"></value>
+      <value name="Adaptronic: Aux output 40 duty" offset="6" length="2"></value>
+    </frame>
+    
+    <frame id="0x3d2" endianess="big">
+      <value name="Adaptronic: Aux output 41 duty" offset="0" length="2"></value>
+      <value name="Adaptronic: Aux output 42 duty" offset="2" length="2"></value>
+      <value name="Adaptronic: Aux output 43 duty" offset="4" length="2"></value>
+      <value name="Adaptronic: Aux output 44 duty" offset="6" length="2"></value>
+    </frame>
+    
+    <frame id="0x3d3" endianess="big">
+      <value name="Adaptronic: Aux output 45 duty" offset="0" length="2"></value>
+      <value name="Adaptronic: Aux output 46 duty" offset="2" length="2"></value>
+      <value name="Adaptronic: Aux output 47 duty" offset="4" length="2"></value>
+      <value name="Adaptronic: Aux output 48 duty" offset="6" length="2"></value>
+    </frame>
+    
+    <frame id="0x3d4" endianess="big">
+      <value name="Adaptronic: Aux output 49 duty" offset="0" length="2"></value>
+      <value name="Adaptronic: Aux output 50 duty" offset="2" length="2"></value>
+      <value name="Adaptronic: Aux output 51 duty" offset="4" length="2"></value>
+      <value name="Adaptronic: Aux output 52 duty" offset="6" length="2"></value>
+    </frame>
+    
+    <frame id="0x3d5" endianess="big">
+      <value name="Adaptronic: Aux output 53 duty" offset="0" length="2"></value>
+      <value name="Adaptronic: Aux output 54 duty" offset="2" length="2"></value>
+      <value name="Adaptronic: Aux output 55 duty" offset="4" length="2"></value>
+      <value name="Adaptronic: Aux output 56 duty" offset="6" length="2"></value>
+    </frame>
+    
+    <frame id="0x3d6" endianess="big">
+      <value name="Adaptronic: Aux output 57 duty" offset="0" length="2"></value>
+      <value name="Adaptronic: Aux output 58 duty" offset="2" length="2"></value>
+      <value name="Adaptronic: Aux output 59 duty" offset="4" length="2"></value>
+      <value name="Adaptronic: Aux output 60 duty" offset="6" length="2"></value>
+    </frame>
+    
+    <frame id="0x3d7" endianess="big">
+      <value name="Adaptronic: Aux output 61 duty" offset="0" length="2"></value>
+      <value name="Adaptronic: Aux output 62 duty" offset="2" length="2"></value>
+      <value name="Adaptronic: Aux output 63 duty" offset="4" length="2"></value>
+      <value name="Adaptronic: Aux output 64 duty" offset="6" length="2"></value>
+    </frame>
+    
+    <frame id="0x3d8" endianess="big">
+      <value name="Adaptronic: Aux output 65 duty" offset="0" length="2"></value>
+      <value name="Adaptronic: Aux output 66 duty" offset="2" length="2"></value>
+      <value name="Adaptronic: Aux output 67 duty" offset="4" length="2"></value>
+      <value name="Adaptronic: Aux output 68 duty" offset="6" length="2"></value>
+    </frame>
+    
+    <frame id="0x3d9" endianess="big">
+      <value name="Adaptronic: Aux output 69 duty" offset="0" length="2"></value>
+      <value name="Adaptronic: Aux output 70 duty" offset="2" length="2"></value>
+      <value name="Adaptronic: Aux output 71 duty" offset="4" length="2"></value>
+      <value name="Adaptronic: Aux output 72 duty" offset="6" length="2"></value>
+    </frame>
+    
+    <frame id="0x3da" endianess="big">
+      <value name="Adaptronic: Aux output 73 duty" offset="0" length="2"></value>
+      <value name="Adaptronic: Aux output 74 duty" offset="2" length="2"></value>
+      <value name="Adaptronic: Aux output 75 duty" offset="4" length="2"></value>
+      <value name="Adaptronic: Aux output 76 duty" offset="6" length="2"></value>
+    </frame>
+    
+    <frame id="0x3db" endianess="big">
+      <value name="Adaptronic: Aux output 77 duty" offset="0" length="2"></value>
+      <value name="Adaptronic: Aux output 78 duty" offset="2" length="2"></value>
+      <value name="Adaptronic: Aux output 79 duty" offset="4" length="2"></value>
+      <value name="Adaptronic: Aux output 80 duty" offset="6" length="2"></value>
+    </frame>
+    
+    <frame id="0x3dc" endianess="big">
+      <value name="Adaptronic: Aux output 81 duty" offset="0" length="2"></value>
+      <value name="Adaptronic: Aux output 82 duty" offset="2" length="2"></value>
+      <value name="Adaptronic: Aux output 83 duty" offset="4" length="2"></value>
+      <value name="Adaptronic: Aux output 84 duty" offset="6" length="2"></value>
+    </frame>
+    
+  </frames>
+</RealDashCAN>
+
