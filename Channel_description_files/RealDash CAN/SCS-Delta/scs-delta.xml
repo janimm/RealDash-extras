@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- RealDash CAN XML description file, version 2 Requires RealDash version 1.5.8 or newer -->
+<RealDashCAN version="2">
+  <frames>
+    <frame id="0x300" endianess="big">
+      <value targetId="37" units="RPM" offset="0" length="2"></value> <!-- RPM -->
+      <value targetId="42" units="%" offset="2" length="1" conversion="V/2.55"></value> <!-- TPS -->
+      <value name="SCS-Delta: Manifold Pressure Fuel Correction" units="%" offset="3" length="1" conversion="V/255*400"></value>
+      <value targetId="31" units="kPA" offset="4" length="2" conversion="V/10"></value> <!-- MAP -->
+      <value name="SCS-Delta: Idle Lean Value" units="%" offset="6" length="2" conversion="V*0.00038696"></value>
+    </frame>
+
+    <frame id="0x301" endianess="big">
+      <value name="SCS-Delta: Delta Throttle Position" offset="0" length="2"></value>
+      <value targetId="255" offset="2" length="1" conversion="V/255*2"></value> <!-- lambda 2-->
+      <value name="SCS-Delta: Percentage Staged Injection" offset="3" length="1" conversion="V/2.55"></value>
+      <value name="SCS-Delta: Acceleration Enrichment" offset="4" length="2"></value>
+      <value name="SCS-Delta: Idle Integrator" offset="6" length="2" conversion="V*0.001"></value>
+    </frame>
+
+    <frame id="0x302" endianess="big">
+      <value targetId="64" units="kmh" offset="0" length="2" conversion="V/10"></value> <!-- vehicle speed -->
+      <value name="SCS-Delta: Base Idle Duty Cycle" offset="2" length="2" conversion="V/2.55"></value>
+      <value name="SCS-Delta: Final Idle Duty Cycle" offset="4" length="2" conversion="V/2.55"></value>
+      <value name="SCS-Delta: Traction Control Actual Slip" offset="6" length="1" conversion="V/2.55"></value>
+      <value name="SCS-Delta: Traction Control Target Slip" offset="7" length="1" conversion="V/2.55"></value>
+    </frame>
+
+    <frame id="0x303" endianess="big">
+      <value name="SCS-Delta: Inlet Cam Position Angle" offset="0" length="2" conversion="V/0.25"></value>
+      <value name="SCS-Delta: Exhaust Cam Position Angle" offset="2" length="2" conversion="V/0.25"></value>
+      <value name="SCS-Delta: Target Inlet Cam Position" offset="4" length="1" conversion="V/0.25"></value>
+      <value name="SCS-Delta: Target Exhaust Cam Position" offset="5" length="1" conversion="V/0.25"></value>
+      <value name="SCS-Delta: Drive by wire primary TPS" offset="6" length="2" conversion="V/1023*100"></value>
+    </frame>
+
+    <frame id="0x304" endianess="big">
+      <value name="SCS-Delta: Base Injection Pulse Width" offset="0" length="2" conversion="V/1000"></value>
+      <value targetId="35" units="ms" offset="2" length="4" conversion="V/1000"></value> <!-- pw1 -->
+      <value name="SCS-Delta: Base Spark Advance" offset="4" length="2" conversion="V/0.25"></value>
+      <value targetId="38" offset="6" length="2" conversion="V/0.25"></value> <!-- spark advance -->
+    </frame>
+
+    <frame id="0x305" endianess="big">
+      <value targetId="254" offset="0" length="1" conversion="V/255*2"></value> <!-- lambda 1 -->
+      <value targetId="256" offset="1" length="1" conversion="V/255*2"></value> <!-- lambda target 1 -->
+      <value targetId="36" offset="2" length="2" conversion="V/1000"></value> <!-- pw2 -->
+      <value name="SCS-Delta: Closed loop control value Bank 1" offset="4" length="2" conversion="V/0.05"></value>
+      <value name="SCS-Delta: Closed loop control value Bank 2" offset="6" length="2" conversion="V/0.05"></value>
+    </frame>
+
+    <frame id="0x306" endianess="big">
+      <value targetId="200" offset="0" length="1"></value> <!-- gear -->
+      <value name="SCS-Delta: Base Boost Duty Cycle" offset="1" length="1" conversion="V/2.55"></value>
+      <value name="SCS-Delta: Final Boost Duty Cycle" offset="2" length="2" conversion="V/2.55"></value>
+      <value targetId="151" units="bar" offset="4" length="2" conversion="V/100"></value> <!-- oil pressure -->
+      <value targetId="202" units="bar" offset="6" length="2" conversion="V/100"></value> <!-- fuel pressure -->
+    </frame>
+
+    <frame id="0x307" endianess="big">
+      <value targetId="28" offset="0" length="1" conversion="V/0.25"></value> <!-- knock retard -->
+      <value name="SCS-Delta: Knock Retard Cylinder 2" offset="1" length="1" conversion="V/0.25"></value>
+      <value name="SCS-Delta: Knock Retard Cylinder 3" offset="2" length="1" conversion="V/0.25"></value>
+      <value name="SCS-Delta: Knock Retard Cylinder 4" offset="3" length="1" conversion="V/0.25"></value>
+      <value name="SCS-Delta: Integrated Boost Control Term" offset="4" length="2"></value>
+      <value name="SCS-Delta: Target Boost Pressure" offset="6" length="2" conversion="V/1000"></value>
+    </frame>
+
+    <frame id="0x308" endianess="big">
+      <value targetId="12" offset="0" length="2" conversion="V/1023*18"></value> <!-- battery voltage -->
+      <value name="SCS-Delta: Injector Battery Voltage Correction" offset="2" length="2" conversion="V/1000"></value>
+      <value name="SCS-Delta: Injector Timing Phase" offset="4" length="2" conversion="V/0.25"></value>
+      <value targetId="26" offset="6" length="2" conversion="V/1000"></value> <!-- ignition dwell -->
+    </frame>
+
+    <frame id="0x309" endianess="big">
+      <value name="SCS-Delta: Raw Throttle Position 1 Voltage" offset="0" length="2" conversion="V/1023*5"></value>
+      <value name="SCS-Delta: Raw Pedal Position 1 Voltage" offset="2" length="2" conversion="V/1023*5"></value>
+      <value name="SCS-Delta: Raw Pedal Position 2 Voltage" offset="4" length="2" conversion="V/1023*5"></value>
+      <value name="SCS-Delta: Throttle Position Target" offset="6" length="2" conversion="V/1023*100"></value>
+    </frame>
+
+    <frame id="0x30a" endianess="big">
+      <value name="SCS-Delta: Raw Throttle Position 2 Voltage" offset="0" length="2" conversion="V/1023*5"></value>
+      <value name="SCS-Delta: Throttle/Pedal FAult Code" offset="2" length="1"></value>
+      <value name="SCS-Delta: Scaled Final Pedal Position" offset="3" length="1" conversion="V/2.55"></value>
+      <value name="SCS-Delta: Scaled Pedal Position 1" offset="4" length="1" conversion="V/2.55"></value>
+      <value name="SCS-Delta: Scaled Pedal Position 2" offset="5" length="1" conversion="V/2.55"></value>
+      <value name="SCS-Delta: Scaled Throttle Position 1" offset="6" length="1" conversion="V/2.55"></value>
+      <value name="SCS-Delta: Scaled Throttle Position 2" offset="7" length="1" conversion="V/2.55"></value>
+    </frame>
+
+    <frame id="0x30b" endianess="big">
+      <value targetId="14" units="C" offset="0" length="1" conversion="V/‭1.59375‬-10"></value> <!-- coolant temperature -->
+      <value targetId="152" units="C" offset="1" length="1" conversion="V/‭1.59375‬-10"></value> <!-- oil temperature -->
+      <value name="SCS-Delta: Crank Fuel Correction" offset="2" length="1" conversion="V/255*800"></value>
+      <value targetId="27" units="C" offset="3" length="1" conversion="V/‭1.59375‬-10"></value> <!-- intake air temperature -->
+      <value name="SCS-Delta: Raw Coolant Temp Sensor Voltage" offset="4" length="2" conversion="V/1023*5"></value>
+      <value name="SCS-Delta: Raw Oil Temp Sensor Voltage" offset="6" length="2" conversion="V/1023*5"></value>
+    </frame>
+
+    <frame id="0x30c" endianess="big">
+      <value targetId="33" offset="0" length="2" conversion="V/‭0.05"></value> <!-- engine runtime -->
+      <value name="SCS-Delta: Raw Air Temp Sensor Voltage" offset="2" length="2" conversion="V/1023*5"></value>
+      <value name="SCS-Delta: Raw Lambda Sensor Voltage" offset="4" length="2" conversion="V/1023*5"></value>
+      <value name="SCS-Delta: Coolant Temp Fuel Correction" offset="6" length="1" conversion="V/255*400"></value>
+      <value name="SCS-Delta: Air Temp Fuel Correction" offset="7" length="1" conversion="V/255*200"></value>
+    </frame>
+
+    <frame id="0x30d" endianess="big">
+      <value name="SCS-Delta: Crank Rotation Counter" offset="0" length="2"></value>
+      <value name="SCS-Delta: Baro Pressure Fuel Correction" offset="2" length="1" conversion="V/255*400"></value>
+      <value name="SCS-Delta: Fuel Pressure Fuel Correction" offset="3" length="1" conversion="V/255*400"></value>
+      <value name="SCS-Delta: Air Temp Spark Advance Correction" offset="4" length="2" conversion="V/0.25"></value>
+      <value name="SCS-Delta: Target Idle Speed" offset="6" length="2"></value>
+    </frame>
+
+    <frame id="0x30e" endianess="big">
+      <value name="SCS-Delta: Left Rear Wheel Speed" units="kmh" offset="0" length="2" conversion="V/10"></value>
+      <value name="SCS-Delta: Right Rear Wheel Speed" units="kmh" offset="2" length="2" conversion="V/10"></value>
+      <value name="SCS-Delta: Left Front Wheel Speed" units="kmh" offset="4" length="2" conversion="V/10"></value>
+      <value name="SCS-Delta: Right Front Wheel Speed" units="kmh" offset="6" length="2" conversion="V/10"></value>
+    </frame>
+
+    <frame id="0x30f" endianess="big">
+      <value name="SCS-Delta: Fuel Pressure Target" offset="0" length="2" conversion="V/10"></value>
+      <value name="SCS-Delta: Raw Fuel Level" offset="2" length="2"></value>
+      <value name="SCS-Delta: Fuel Pressure Control Duty Cycle" offset="4" length="2" conversion="V/1023*100"></value>
+      <value name="SCS-Delta: Aux 1, Gear Cut Switch input" units="bit" offset="6" length="1" conversion="V"></value>
+      <value name="SCS-Delta: Aux 1, Headlamp flash" units="bit" offset="6" length="1" conversion="V>>1"></value>
+      <value name="SCS-Delta: Aux 1, Traction control active" units="bit" offset="6" length="1" conversion="V>>2"></value>
+      <value name="SCS-Delta: Aux 1, Launch control switch" units="bit" offset="6" length="1" conversion="V>>3"></value>
+      <value name="SCS-Delta: Aux 1, Pit lane limiter switch" units="bit" offset="6" length="1" conversion="V>>4"></value>
+      <value name="SCS-Delta: Aux 1, Cooling fan 1 output" units="bit" offset="6" length="1" conversion="V>>5"></value>
+      <value name="SCS-Delta: Aux 1, Map switch input" units="bit" offset="6" length="1" conversion="V>>6"></value>
+      <value name="SCS-Delta: Aux 1, Shift lamp output" units="bit" offset="6" length="1" conversion="V>>7"></value>
+      <value name="SCS-Delta: Aux 2, Throttle blip input" units="bit" offset="7" length="1" conversion="V"></value>
+      <value name="SCS-Delta: Aux 2, Cooling fan 2 output" units="bit" offset="7" length="1" conversion="V>>1"></value>
+      <value name="SCS-Delta: Aux 2, Start switch input" units="bit" offset="7" length="1" conversion="V>>2"></value>
+      <value name="SCS-Delta: Aux 2, A/C request input" units="bit" offset="7" length="1" conversion="V>>3"></value>
+      <value name="SCS-Delta: Aux 2, A/C clutch switch status" units="bit" offset="7" length="1" conversion="V>>4"></value>
+      <value name="SCS-Delta: Aux 2, MIL status" units="bit" offset="7" length="1" conversion="V>>5"></value>
+      <value name="SCS-Delta: Aux 2, Thermostat status" units="bit" offset="7" length="1" conversion="V>>6"></value>
+      <value name="SCS-Delta: Aux 2, Oil Pressure Shutdown Status" units="bit" offset="7" length="1" conversion="V>>7"></value>
+    </frame>
+    
+  </frames>
+</RealDashCAN>
+
