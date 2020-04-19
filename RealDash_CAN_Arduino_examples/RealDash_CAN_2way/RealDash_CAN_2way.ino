@@ -30,7 +30,7 @@ unsigned int incomingFramePos = 0;
 
 // if READWRITE_PINS is defined, the values are read from and written to Arduino
 // digital and analog pins.
-//#define READWRITE_PINS
+//#define READWRITE_PINS 
 
 void setup()
 {
@@ -278,6 +278,7 @@ void HandleIncomingSetValueFrame(unsigned long canFrameId, const byte* frameData
     // write digital pins
     for (int i=0; i<13; i++)
     {
+       pinMode(i+1,OUTPUT);
       digitalWrite(i + 1, (digitalPins & (1 << i)) ? HIGH : LOW);
     }
     
