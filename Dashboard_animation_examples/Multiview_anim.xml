@@ -1,25 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RealDash>
 
-    <boot>
+	<groups>
 
-        <gauge name="Center toggle" fade="0.0"></gauge>
-
-        <gauge name="Boost 1" visible="true" fade="1.0"></gauge>
-
-        <gauge name="MAP text" area="0.320625007152557,-0.555792987346649,0.377916991710663,-0.541077971458435"></gauge>
-
-    </boot>
-
-    <groups>
-
-        <group name="Drive mode values">
+    <group name="Drive mode values">
     		<gauge name="Speed value"></gauge>
 	    	<gauge name="RPM value"></gauge>
 	    	<gauge name="Boost value"></gauge>
 	    	<gauge name="Odo value"></gauge>
 	    	<gauge name="Trip value"></gauge>
-        </group>
+    </group>
 
 		<group name="Drive mode units">
     		<gauge name="Speed unit"></gauge>
@@ -27,45 +17,45 @@
 	    	<gauge name="Boost unit"></gauge>
 	    	<gauge name="Odo unit"></gauge>
 	    	<gauge name="Trip unit"></gauge>
-        </group>
+    </group>
 
 		<group name="RPM arc gauge">
     		<gauge name="RPM arc gauge"></gauge>
 	    	<gauge name="RPM arc gauge background"></gauge>
-        </group>
+    </group>
 
 		<group name="Boost arc gauge">
     		<gauge name="Boost + arc gauge"></gauge>
 	    	<gauge name="Boost - arc gauge"></gauge>
 	    	<gauge name="Boost arc gauge background"></gauge>
-        </group>
+    </group>
 
 		<group name="Gear">
     		<gauge name="Gear value"></gauge>
 	    	<gauge name="Gear value N"></gauge>
 	    	<gauge name="Gear value R"></gauge>
-        </group>
+    </group>
 
 		<group name="Warning lights">
     		<gauge name="Oil indicator"></gauge>
 	    	<gauge name="Check engine indicator"></gauge>
 		    <gauge name="Door indicator"></gauge>
-			<gauge name="Battery indicator"></gauge>
-			<gauge name="Brake indicator"></gauge>
-			<gauge name="High beam indicator"></gauge>
-			<gauge name="Turn signal left"></gauge>
-			<gauge name="Turn signal right"></gauge>
-        </group>
+				<gauge name="Battery indicator"></gauge>
+				<gauge name="Brake indicator"></gauge>
+				<gauge name="High beam indicator"></gauge>
+				<gauge name="Turn signal left"></gauge>
+				<gauge name="Turn signal right"></gauge>
+    </group>
 
 		<group name="Coolant gauge">
     		<gauge name="Coolant gauge"></gauge>
 	    	<gauge name="Coolant background"></gauge>
-        </group>
+    </group>
 
 		<group name="Fuel level gauge">
     		<gauge name="Fuel level gauge"></gauge>
 	    	<gauge name="Fuel level background"></gauge>
-        </group>
+    </group>
 
 		<group name="Car info backgrounds">
 	    	<gauge name="CLT graph background"></gauge>
@@ -74,12 +64,12 @@
 	    	<gauge name="ADV graph background"></gauge>
 	    	<gauge name="RPM graph background"></gauge>
 	    	<gauge name="MAP graph background"></gauge>
-        </group>
+    </group>
 
 		<group name="Info panel speed">
 	    	<gauge name="Speed value info panel"></gauge>
 	    	<gauge name="Speed unit info panel"></gauge>
-        </group>
+    </group>
 
 		<group name="Info">
 	    	<gauge name="Avg speed text"></gauge>
@@ -100,7 +90,7 @@
 	    	<gauge name="ADV graph"></gauge>
 	    	<gauge name="RPM graph"></gauge>
 	    	<gauge name="MAP graph"></gauge>
-        </group>
+    </group>
 
 		<group name="Graph texts">
 	    	<gauge name="CLT text graph"></gauge>
@@ -115,36 +105,36 @@
 	    	<gauge name="RPM value graph"></gauge>
 	    	<gauge name="MAP text graph"></gauge>
 	    	<gauge name="MAP value graph"></gauge>
-        </group>
+    </group>
 
 		<group name="Speedlimit">
 	    	<gauge name="Speedlimit value"></gauge>
 		    <gauge name="Speedlimit background"></gauge>
-        </group>
+    </group>
 
 		<group name="Music info">
 	    	<gauge name="Song title small"></gauge>
 		    <gauge name="Artist name small"></gauge>
 		    <gauge name="Break line"></gauge>
-        </group>
+    </group>
 
 		<group name="Now playing">
 	    	<gauge name="Now playing line"></gauge>
 		    <gauge name="Now playing text"></gauge>
-        </group>
+    </group>
 
 		<group name="Song info">
 	    	<gauge name="Artist name music player"></gauge>
 		    <gauge name="Album name music player"></gauge>
-        </group>
+    </group>
 
 		<group name="Playback controls">
 	    	<gauge name="Previous track"></gauge>
 		    <gauge name="Play/Pause"></gauge>
 		    <gauge name="Next track"></gauge>
-        </group>
+    </group>
 
-    </groups>
+  </groups>
 
     <animations>
 
