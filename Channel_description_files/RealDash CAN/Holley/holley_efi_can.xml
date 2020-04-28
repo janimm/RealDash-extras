@@ -34,12 +34,12 @@
            This makes it easier to convert the Equation from other apps.
            Example: conversion="B0+15*(B1-43)" and conversionABC="A+15*(B-43)" are the same -->
 
-      <value targetId="33" offset="0" length="4" conversion="V*0.001"></value>
-      <value targetId="37" offset="4" length="4" conversion="V*0.00390625"></value>
+      <value targetId="33" offset="0" length="4" conversion="V*0.001"></value> <!-- engine runtime -->
+      <value targetId="37" offset="4" length="4" conversion="V*0.00390625"></value> <!-- RPM -->
     </frame>
 
     <frame id="0x1E005000" endianess="big">
-      <value targetId="35" offset="0" length="4" conversion="V*0.00390625"></value>
+      <value targetId="35" offset="0" length="4" conversion="V*0.00390625"></value> <!-- Pulse Width 1-->
       <value targetId="Holley: Fuel Flow (pounds per hour)" offset="4" length="4" conversion="V*0.00390625"></value>
     </frame>
 
@@ -49,43 +49,43 @@
     </frame>
 
     <frame id="0x1E00D000" endianess="big">
-      <value targetId="0" offset="0" length="4" conversion="V*0.00390625"></value>
-      <value targetId="17" units="%" offset="4" length="4" conversion="V*0.00390625"></value>
+      <value targetId="0" offset="0" length="4" conversion="V*0.00390625"></value> <!-- AFR1 -->
+      <value targetId="17" units="%" offset="4" length="4" conversion="V*0.00390625"></value> <!-- EGO correction -->
     </frame>
 
     <frame id="0x1E011000" endianess="big">
-      <value targetId="2" offset="0" length="4" conversion="V*0.00390625"></value>
-      <value targetId="1" offset="4" length="4" conversion="V*0.00390625"></value>
+      <value targetId="2" offset="0" length="4" conversion="V*0.00390625"></value> <!-- AFR Target 1 -->
+      <value targetId="1" offset="4" length="4" conversion="V*0.00390625"></value> <!-- AFR2 -->
     </frame>
 
     <frame id="0x1E015000" endianess="big">
-      <value targetId="38" units="deg" offset="0" length="4" conversion="V*0.00390625"></value>
+      <value targetId="38" units="deg" offset="0" length="4" conversion="V*0.00390625"></value> <!-- Spark advance -->
       <value name="Holley: AFR Average" offset="4" length="4" conversion="V*0.00390625"></value>
     </frame>
 
     <frame id="0x1E019000" endianess="big">
-      <value targetId="31" units="kPA" offset="0" length="4" conversion="V*0.00390625"></value>
-      <value targetId="28" units="deg" offset="4" length="4" conversion="V*0.00390625"></value>
+      <value targetId="31" units="kPA" offset="0" length="4" conversion="V*0.00390625"></value> <!-- MAP -->
+      <value targetId="28" units="deg" offset="4" length="4" conversion="V*0.00390625"></value> <!-- Knock retard -->
     </frame>
 
     <frame id="0x1E01D000" endianess="big">
-      <value targetId="27" units="F" offset="0" length="4" conversion="V*0.00390625"></value>
-      <value targetId="42" units="%" offset="4" length="4" conversion="V*0.00390625"></value>
+      <value targetId="27" units="F" offset="0" length="4" conversion="V*0.00390625"></value> <!-- IAT -->
+      <value targetId="42" units="%" offset="4" length="4" conversion="V*0.00390625"></value> <!-- TPS  -->
     </frame>
 
     <frame id="0x1E021000" endianess="big">
-      <value targetId="11" units="kPA" offset="0" length="4" conversion="V*0.00390625"></value>
-      <value targetId="14" units="F" offset="4" length="4" conversion="V*0.00390625"></value>
+      <value targetId="11" units="kPA" offset="0" length="4" conversion="V*0.00390625"></value> <!-- Baro  -->
+      <value targetId="14" units="F" offset="4" length="4" conversion="V*0.00390625"></value> <!-- CLT -->
     </frame>
 
     <frame id="0x1E025000" endianess="big">
-      <value targetId="151" units="bar" offset="0" length="4" conversion="V*0.00390625*0.06894757"></value>
-      <value targetId="12" units="V" offset="4" length="4" conversion="V*0.00390625"></value>
+      <value targetId="151" units="bar" offset="0" length="4" conversion="V*0.00390625*0.06894757"></value> <!-- Engine oil pressure -->
+      <value targetId="12" units="V" offset="4" length="4" conversion="V*0.00390625"></value> <!-- battery voltage -->
     </frame>
 
     <frame id="0x1E029000" endianess="big">
       <value name="Holley: Pedal Position" units="%" offset="0" length="4" conversion="V*0.00390625"></value>
-      <value targetId="202" units="bar" offset="4" length="4" conversion="V*0.00390625*0.06894757"></value>
+      <value targetId="202" units="bar" offset="4" length="4" conversion="V*0.00390625*0.06894757"></value> <!-- Fuel pressure -->
     </frame>
 
     <frame id="0x1E02D000" endianess="big">
@@ -99,7 +99,7 @@
     </frame>
 
     <frame id="0x1E035000" endianess="big">
-      <value targetId="270" units="bar" offset="0" length="4" conversion="V*0.00390625*0.06894757"></value>
+      <value targetId="270" units="bar" offset="0" length="4" conversion="V*0.00390625*0.06894757"></value> <!-- Boost target -->
       <value name="Holley: Boost Time (sec)" offset="4" length="4" conversion="V*0.00390625"></value>
     </frame>
 
@@ -119,13 +119,13 @@
     </frame>
 
     <frame id="0x1E045000" endianess="big">
-      <value targetId="200" offset="0" length="4" conversion="V*0.00390625"></value>
+      <value targetId="200" offset="0" length="4" conversion="V*0.00390625"></value> <!-- Gear -->
       <value name="Holley: N20 Stage 4 (%)" units="%" offset="4" length="4" conversion="V*0.00390625"></value>
     </frame>
 
     <frame id="0x1E049000" endianess="big">
       <value name="Holley: Line Pressure (%)" units="%" offset="0" length="4" conversion="V*0.00390625"></value>
-      <value targetId="81" units="kph" offset="4" length="4" conversion="V*0.00390625*1.609344"></value>
+      <value targetId="81" units="kph" offset="4" length="4" conversion="V*0.00390625*1.609344"></value> <!-- VSS1 -->
     </frame>
 
     <frame id="0x1E04D000" endianess="big">
