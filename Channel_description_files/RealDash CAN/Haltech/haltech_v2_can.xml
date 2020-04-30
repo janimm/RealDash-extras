@@ -6,29 +6,32 @@
   <frames>
     <!-- PARAMETERS FOR 'frame' -->
     <!-- 'id' can identifier (= baseId + id). Use 0x prefix to enter id as hexadesimal value. For example <frame id="3200"> is equal to <frame id="0x0c80"> -->
-    <!-- 'writeInterval' if present, this CAN frame is written to CAN bus in this interval (milliseconds) -->
-    <!-- 'endianess' the endianess of all frame values (big | little [default]). This is only valid if value 'length' parameter is set to at least 2 bytes.  -->
+    <!-- 'writeInterval' [optional] this CAN frame is written to CAN bus in this interval (milliseconds) -->
+    <!-- 'endianess' [optional] the endianess of all frame values (big | little [default]).  -->
+    <!-- 'signed' [optional, from 1.7.4] set to true to force RealDash to handle all values in frame as signed values.  -->
     <frame id="0x360" endianess="big">
       <!-- PARAMETERS FOR 'value' -->
       <!-- 'targetId' links value to RealDash input, see RealDash manuals www for a complete list -->
       <!-- OR -->
       <!-- 'name' links value to RealDash input, input appears in 'ECU Specific' input category -->
 
-      <!-- 'units' is used for post calculations, "F", "mph", "psi", "bit" which need to be specified for dashboard conversions to work properly -->
+      <!-- 'units' [optional] is used for post calculations, "F", "mph", "psi", "bit" which need to be specified for dashboard conversions to work properly -->
       <!-- 'offset' byte offset of the value in frame -->
       <!-- 'length' value length in bytes -->
-      <!-- 'startbit' the index of the first bit of the value -->
-      <!-- 'bitcount' number of bits used by the value -->
-      <!-- 'endianess' the endianess of value (big | little [default]). This is only valid if 'length' parameter is set to at least 2 bytes.  -->
-      <!-- 'rangeMin' and 'rangeMax' if 'name' is used instead of 'targetId', this is the recommended value range in RealDash editor -->
-      <!-- 'initialValue' if this parameter is present, its value is written to CAN after connection has been made to the CAN bus -->
-      <!-- 'conversion' if omitted, value is read 'as-is'. Otherwise variables 'B0', 'B1', 'B2', 'B3', 'V' and 'ID#' can be used within conversion formula, for example;
+      <!-- 'startbit' [optional] the index of the first bit of the value -->
+      <!-- 'bitcount' [optional] number of bits used by the value -->
+      <!-- 'endianess' [optional] the endianess of value (big | little [default]).  -->
+      <!-- 'signed' [optional, from 1.7.4] set to true to force RealDash to handle this value as signed.  -->
+      <!-- 'rangeMin' and 'rangeMax' [optional] if 'name' is used instead of 'targetId', this is the recommended value range in RealDash editor -->
+      <!-- 'initialValue' [optional] if this parameter is present, value is written to CAN after connection has been made to the CAN bus -->
+      <!-- 'conversion' [optional] if omitted, value is read 'as-is'.
+           Otherwise variables 'B0', 'B1', 'B2', 'B3', 'V' and 'ID#' can be used within conversion formula, for example;
            conversion="V/10" - result is incoming value / 10
            conversion="B0+15*(B1-43)" - result is 'first byte + 15 * (second byte - 43)
            conversion="V+ID200-74.3" - result is incoming value + 'Body Electronics->Gear' - 74.3 -->
-      <!-- From RealDash version 1.6.6, 'conversionABC' is an option to 'conversion' and uses A,B,C,...AA,AB,AC,...,etc format to distinquish the veriables on the reply.
+      <!-- From RealDash version 1.6.6, 'conversionABC' is an option to 'conversion' and uses A,B,C,...AA,AB,AC,...,etc format to distinquish the individual bytes on the reply.
            This makes it easier to convert the Equation from other apps.
-           Example: conversion="B0+15*(B1-43)" and conversionABC="A+15*(B-43)" are the same -->
+           Example: conversion="B0+15*(B1-43)" and conversionABC="A+15*(B-43)" produce the same result -->
 
       <value targetId="37" offset="0" length="2"></value>
       <value targetId="31" units="kPA" offset="2" length="2" conversion="V*0.1"></value>
