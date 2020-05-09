@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- RealDash CAN XML description file, version 2 Requires RealDash version 1.5.8 or newer -->
+<RealDashCAN version="2">
+  <frames>
+    
+    <frame id="0x520">
+      <value targetId="37" offset="0" length="2"></value> <!-- RPM -->
+      <value targetId="42" units="%" offset="2" length="2" conversion="V*0.1"></value> <!-- TPS  -->
+      <value targetId="31" units="kPA" offset="4" length="2" conversion="V*0.1"></value> <!-- MAP -->
+      <value targetId="254" offset="6" length="2" conversion="V*0.001"></value> <!-- Lambda 1 -->
+    </frame>
+
+    <frame id="0x521">
+      <value targetId="254" offset="0" length="2" conversion="V*0.001"></value> <!-- Lambda 1 -->
+      <value targetId="255" offset="2" length="2" conversion="V*0.001"></value> <!-- Lambda 2 -->
+      <value targetId="38" units="deg" offset="4" length="2" signed="true" conversion="V*0.1"></value> <!-- Spark advance -->
+      <value name="MaxxECU: Ignition Cut" units="%" offset="6" length="2"></value>
+    </frame>
+
+    <frame id="0x522">
+      <value targetId="35" offset="0" length="2" conversion="V*0.01"></value> <!-- Pulse Width 1 -->
+      <value targetId="119" units="%" offset="2" length="2" conversion="V*0.1"></value> <!-- Duty Cycle 1 -->
+      <value name="MaxxECU: Fuel Cut" units="%" offset="2" length="2"></value>
+      <value targetId="81" units="kph" offset="6" length="2" conversion="V*0.1"></value> <!-- VSS1 -->
+    </frame>
+
+    <frame id="0x523">
+      <value name="MaxxECU: Undriven wheels avg spd" units="kph" offset="0" length="2" conversion="V*0.1"></value>
+      <value name="MaxxECU: Driven wheels avg spd" units="kph" offset="2" length="2" conversion="V*0.1"></value>
+      <value name="MaxxECU: Wheel slip" units="%" offset="4" length="2" conversion="V*0.1"></value>
+      <value name="MaxxECU: Target slip" units="%" offset="6" length="2" conversion="V*0.1"></value>
+    </frame>
+
+    <frame id="0x524">
+      <value name="MaxxECU: Traction Ctrl Power limit" units="%" offset="0" length="2" conversion="V*0.1"></value>
+      <value targetId="17" units="%" offset="2" length="2" signed="true" conversion="V*0.1"></value> <!-- EGO correction 1 -->
+      <value targetId="18" units="%" offset="4" length="2" signed="true" conversion="V*0.1"></value> <!-- EGO correction 2 -->
+      <value name="MaxxECU: Firmware version" offset="6" length="2" conversion="V*0.001"></value>
+    </frame>
+
+    <frame id="0x530">
+      <value targetId="12" units="V" offset="0" length="2" conversion="V*0.01"></value> <!-- battery voltage -->
+      <value targetId="11" units="kPA" offset="2" length="2" conversion="V*0.1"></value> <!-- Baro  -->
+      <value targetId="27" units="C" offset="4" length="2" signed="true" conversion="V*0.1"></value> <!-- IAT -->
+      <value targetId="14" units="C" offset="6" length="2" signed="true" conversion="V*0.1"></value> <!-- CLT -->
+    </frame>
+
+    <frame id="0x531">
+      <value targetId="43" units="%" offset="0" length="2" signed="true" conversion="V*0.1"></value> <!-- total fuel correction -->
+      <value name="MaxxECU: Ethanol concentration" units="%" offset="2" length="2" conversion="V*0.1"></value>
+      <value name="MaxxECU: Total ignition comp" offset="4" length="2" signed="true" conversion="V*0.1"></value>
+      <value targetId="106" units="C" offset="6" length="2" signed="true"></value> <!-- EGT1 -->
+    </frame>
+
+    <frame id="0x532">
+      <value targetId="107" units="C" offset="0" length="2" signed="true"></value> <!-- EGT2 -->
+      <value targetId="108" units="C" offset="2" length="2" signed="true"></value> <!-- EGT3 -->
+      <value targetId="109" units="C" offset="4" length="2" signed="true"></value> <!-- EGT4 -->
+      <value targetId="110" units="C" offset="6" length="2" signed="true"></value> <!-- EGT5 -->
+    </frame>
+
+    <frame id="0x533">
+      <value targetId="111" units="C" offset="0" length="2" signed="true"></value> <!-- EGT6 -->
+      <value targetId="112" units="C" offset="2" length="2" signed="true"></value> <!-- EGT7 -->
+      <value targetId="113" units="C" offset="4" length="2" signed="true"></value> <!-- EGT8 -->
+      <value name="MaxxECU: EGT Highest" units="C" offset="6" length="2" signed="true"></value>
+    </frame>
+
+    <frame id="0x534">
+      <value name="MaxxECU: EGT Difference" units="C" offset="0" length="2" signed="true"></value>
+      <value name="MaxxECU: CPU Temp" units="C" offset="2" length="2" signed="true"></value>
+      <value targetId="66" offset="4" length="2"></value> <!-- Num error codes -->
+      <value name="MaxxECU: Lost Sync Count" offset="6" length="2"></value>
+    </frame>
+    
+    <frame id="0x535">
+      <value name="MaxxECU: User analog input 1" offset="0" length="2" conversion="V*0.1"></value>
+      <value name="MaxxECU: User analog input 2" offset="2" length="2" conversion="V*0.1"></value>
+      <value name="MaxxECU: User analog input 3" offset="4" length="2" conversion="V*0.1"></value>
+      <value name="MaxxECU: User analog input 4" offset="6" length="2" conversion="V*0.1"></value>
+    </frame>
+
+    <frame id="0x536">
+      <value targetId="200" offset="0" length="2" signed="true"></value> <!-- Gear -->
+      <value name="MaxxECU: Boost solenoid duty" offset="2" length="2" conversion="V*0.1"></value>
+      <value name="MaxxECU: Spare 1" offset="4" length="2" signed="true"></value>
+      <value name="MaxxECU: Spare 2" offset="6" length="2" signed="true"></value>
+    </frame>
+
+  </frames>
+</RealDashCAN>
+
