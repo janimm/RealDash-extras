@@ -6,7 +6,6 @@
  *  Created     : 15.10.2017
  *
  * Arduino example sketch of how to use RealDash CAN protocol.
- * 
  * This example code is free for any use.
  * 
  * www.realdash.net
@@ -15,7 +14,9 @@
 
 
 // Arduino digital and analog pins
+// digital pin statuses are stored as bits in one variable
 unsigned int digitalPins = 0;
+// analog pin values are stored in array of ints
 int analogPins[7] = {0};
 
 unsigned int rpm = 0;
@@ -34,6 +35,14 @@ unsigned int incomingFramePos = 0;
 
 void setup()
 {
+  #if defined (READWRITE_PINS)
+  // set digital pins as outputs
+  for (int i=1; i<14; i++)
+  {
+    pinMode(i, OUTPUT);
+  }
+  #endif
+
   // init serial
   Serial.begin(115200);
   delay(100);
@@ -62,10 +71,13 @@ void loop()
   }
   if (clt++ > 230)
   {
-    // all values in frame are handled as unsigned values. To have negative values,
-    // offset actual value and write corresponding conversion to xml file imported to RealDash
+    // all values in frame are handled as unsigned values. To use negative values,
+    // offset actual value and write corresponding conversion to XML file imported to RealDash
+    // From RealDash 1.7.6 its also possible to specify value as signed="true" in XML file.
     clt = 0;
   }
+  
+  // simple counter for sending the text frame to avoid sending it too often.
   if (textCounter++ > 4000)
   {
     textCounter = 0;
@@ -105,7 +117,7 @@ void ReadAnalogStatuses()
 
 void SendCANFramesToSerial()
 {
-  byte buf[8];
+  byte frameData[8];
 
   // build & send CAN frames to RealDash.
   // a CAN frame payload is always 8 bytes containing data in a manner
@@ -114,31 +126,31 @@ void SendCANFramesToSerial()
   // endianess of the values can be specified in XML file if it is required to use big endian values
 
   // build 1st CAN frame, RPM, MAP, CLT, TPS (just example data)
-  memcpy(buf, &rpm, 2);
-  memcpy(buf + 2, &kpa, 2);
-  memcpy(buf + 4, &clt, 2);
-  memcpy(buf + 6, &tps, 2);
+  memcpy(frameData, &rpm, 2);
+  memcpy(frameData + 2, &kpa, 2);
+  memcpy(frameData + 4, &clt, 2);
+  memcpy(frameData + 6, &tps, 2);
 
   // write first CAN frame to serial
-  SendCANFrameToSerial(3200, buf);
+  SendCANFrameToSerial(3200, frameData);
 
   // build 2nd CAN frame, Arduino digital pins and 2 analog values
-  memcpy(buf, &digitalPins, 2);
-  memcpy(buf + 2, &analogPins[0], 2);
-  memcpy(buf + 4, &analogPins[1], 2);
-  memcpy(buf + 6, &analogPins[2], 2);
+  memcpy(frameData, &digitalPins, 2);
+  memcpy(frameData + 2, &analogPins[0], 2);
+  memcpy(frameData + 4, &analogPins[1], 2);
+  memcpy(frameData + 6, &analogPins[2], 2);
 
   // write 2nd CAN frame to serial
-  SendCANFrameToSerial(3201, buf);
+  SendCANFrameToSerial(3201, frameData);
 
   // build 3rd CAN frame, rest of Arduino analog values
-  memcpy(buf, &analogPins[3], 2);
-  memcpy(buf + 2, &analogPins[4], 2);
-  memcpy(buf + 4, &analogPins[5], 2);
-  memcpy(buf + 6, &analogPins[6], 2);
+  memcpy(frameData, &analogPins[3], 2);
+  memcpy(frameData + 2, &analogPins[4], 2);
+  memcpy(frameData + 4, &analogPins[5], 2);
+  memcpy(frameData + 6, &analogPins[6], 2);
 
   // write 3rd CAN frame to serial
-  SendCANFrameToSerial(3202, buf);
+  SendCANFrameToSerial(3202, frameData);
 
   // build 4th frame, this is a text extension frame
   // only send once at 1000 loops
