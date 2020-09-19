@@ -13,17 +13,15 @@ Channel description file starts with tag **RealDashCAN** including the file form
 
 &nbsp;
 ## **'baseId' parameter [optional]**
-**frames** tag may optionally contain a parameter **baseId** that is used for the enclosed **frame** tags. Example:
+**frames** may optionally contain a parameter **baseId** that is used for the enclosed **frame** tags. Example:
 
     <frames baseId="3200">
 
-Specifies the **baseId** of 3200. Any id value in later **frame** tag is added to the base id. For example, if **frames baseId** is 3200 and it contains a frame with **id** 1, then the frame is considered to have an **id** of 3201.
+Specifies the **baseId** of 3200. Any id value in later **frame** is added to the base id. For example, if **frames baseId** is 3200 and it contains a frame with **id** 1, then the frame is considered to have an **id** of 3201.
 
-The **baseId** and the **id** in **frame** can also be specified as hexadecimal number with prefix of **0x**. Example:
+The **baseId** and the **id** in **frame** can also be specified as hexadecimal value with prefix of **0x**. Example:
 
-    <frames baseId="0xc80">
-
-The **baseId="0xc80"** and **baseId="3200"** are essentially the same.
+    <frames baseId="0xc80"> <!-- same as baseId="3200"-->
 
 &nbsp;
 ## **frame**
@@ -46,25 +44,25 @@ Every **frame** must have an **id** number, specified either in decimal or hexad
 
 &nbsp;
 ## **frame 'endianess' parameter (optional)**
-Each **frame** can optionally specify the *endianess* of how multibyte values are interpreted in frame values. Accepted values for **endianess** are **endianess="big"** or **endianess="little"** (the default setting). The endianess parameter can also be specified individually for each **value**. An example of how to specify all values in frame to be considered *big endian*:
+Each **frame** can optionally specify the *endianess* of how multibyte values are interpreted in frame data. Accepted values for **endianess** are **endianess="big"** or **endianess="little"** (the default setting). The endianess parameter can also be specified individually for each **value**. An example of how to specify all values in frame to be considered *big endian*:
 
     <frame id="3200" endianess="big">
 
 &nbsp;
 ## **frame 'signed' parameter (optional)**
-Each **frame** can optionally specify the *signed* of the frame values to force RealDash to handle the bytes as signed values. The signed parameter can also be specified individually for each **value**. By default bytes are handled as *unsigned*. An example of how to specify all values in frame to be *signed*:
+Each **frame** can optionally specify the frame values as *signed* to force RealDash to handle the data as signed values. The signed parameter can also be specified individually for each **value**. By default bytes are handled as *unsigned*. An example of how to specify all values in frame to be *signed*:
 
     <frame id="3200" signed="true">
 
 &nbsp;
 ## **frame 'writeInterval' parameter (optional)**
-**writeInterval** parameter is used to specify a case when RealDash is requested to write this frame back to the device on certain interval. The value in **writeInterval** is milliseconds. For example, to specify that RealDash should write this frame back to device once a second, use:
+**writeInterval** parameter is used to specify a case when RealDash is requested to write this frame back to the device on certain interval. The value in **writeInterval** is milliseconds. For example, to specify that RealDash should write this frame to CAN once a second, use:
 
     <frame id="3200" writeInterval="1000">
 
 &nbsp;
 ## **frame 'size' parameter (optional)**
-When connecting directly to a CAN device with supported [CAN Adapters](http://realdash.net/manuals/supported_can_lin_analyzers.php), a frame may contain less than standard 8 bytes. The **size** parameter can be used to specify a custom number (1-8) of bytes contained by CAN frame:
+When connecting directly to a CAN device with supported [CAN Adapters](http://realdash.net/manuals/supported_can_lin_analyzers.php), a CAN frame may contain less than standard 8 bytes. The **size** parameter can be used to specify a custom number (1-8) of bytes contained by CAN frame:
 
     <frame id="3200" size="6">
 
@@ -79,7 +77,7 @@ A **frame** contains a list of **value** tags that specify individual values in 
 This value links the received value into RealDash input. The **targetId="37"** writes the received value to RealDash RPM input. Check out full listing of [RealDash targetIds](www.realdash.net/manuals/targetid.php).
 
 &nbsp;
-## **value 'name' [optional to targetId]**
+## **value 'name' (optional to targetId)**
 Instead of mapping the value to existing RealDash input, **name** parameter can be used to create new input into RealDash *ECU Specific* category. Name parameter is used only if **targetId** is not present in command. Example:
 
      <value name="MYECU: Special RPM" offset="0" length="2"></value>
