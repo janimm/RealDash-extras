@@ -28,10 +28,10 @@ The **baseId** and the **id** in **frame** can also be specified as hexadecimal 
 **frames** contain a list of **frame** tags. Each **frame** specifies an *id* number for the frame and other optional parameters. Each **frame** also contains a list of **value** tags that describe how data in frame is interpreted and linked to RealDash inputs. An example **frame**:
 
     <frame id="3200">
-      <value targetId="37" units="RPM" offset="0" length="2"></value>
-      <value targetId="31" units="kPA" offset="2" length="2" conversion="V/10"></value>
+      <value targetId="37" offset="0" length="2"></value>
+      <value targetId="31" offset="2" length="2" conversion="V/10"></value>
       <value targetId="14" units="C" offset="4" length="2" conversion="V-100"></value>
-      <value targetId="42" units="%" offset="6" length="2" conversion="V/10"></value>
+      <value targetId="42" offset="6" length="2" conversion="V/10"></value>
     </frame>
 
 &nbsp;
@@ -90,13 +90,13 @@ Note: if you make your own dashboard that links into custom inputs, remember tha
 ## **value 'offset' parameter**
 **offset** parameter specifies where in frame data the value data begins. Value is specified in bytes. To specify that value data begins from 3rd byte in frame, use **offset="2"**:
 
-    <value targetId="31" units="kPA" offset="2" length="2"></value>
+    <value targetId="31" offset="2" length="2"></value>
 
 &nbsp;
 ## **value 'length' parameter**
 **length** parameter specifies how many bytes is used for value data. Combined with **offset** parameter, the corresponding bytes are read as a value. In previous example we read the data beginning 3rd byte of the frame (**offset="2"**) and read 2 bytes (**length="2"**) to form a value:
 
-    <value targetId="31" units="kPA" offset="2" length="2"></value>
+    <value targetId="31" offset="2" length="2"></value>
 
 &nbsp;
 ## **value 'startbit' and 'bitcount' parameters (optional)**
