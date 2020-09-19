@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+RealDash OBD2 communication description file.
+Requires RealDash version 1.5.8 or newer
+-->
+<OBD2>
+  <init>
+    <!-- after first init command is sent, RealDash reads whatever data comes from serial during next 1500ms.
+         This is done to purge the serial buffers. -->
+    <!-- do not remove 'atl0', 'ate0', or 'ats0' commands. Those settings are assumed when parsing the
+         reply from adapter. -->
+    <command send="atd"></command>
+    <command send="atz"></command>
+    <command send="atat1"></command>
+    <command send="atst62"></command>
+    <command send="atsp0"></command>
+    <command send="ate0"></command>
+    <command send="atl0"></command>
+    <command send="ats0"></command>
+    <command send="ath1"></command>
+    <command send="atdpn"></command>
+    <command send="0100"></command>
+    <command send="0120"></command>
+  </init>
+
+  <!-- 'send' command to send to OBD2 adapter -->
+  <!-- 'targetId' links value to RealDash input, see realdash.net/manuals/targetid.php for a complete list -->
+  <!-- OR -->
+  <!-- 'name' links value to RealDash input, if name is unknown to RealDash, input appears in 'ECU Specific' input category -->
+  <!-- 'skipCount' number of skips in rotation for that value. Higher the value less frequently its read -->
+  <!-- 'units' [optional] info for automatic unit conversion system. "C","F","km/h","mph","bar","psi","bit".
+       If units="bit", RealDash always checks the lowest bit as of value on or off. Therefore the bitshift to the right on
+       conversion, for example conversion="(V>>1)" will read second bit on incoming value -->
+  <!-- 'header' [optional] sets OBD2 header for this command. The full AT command to set the header must be included.
+       Note that header is not reset automatically on next command, so usually when header is in use it has to be set to all commands.
+       If all commands use same header, its best to be placed in 'init' section.
+       Examples:
+       header="ATSH685AF1"
+       header="ATSHDA10F1" -->
+  <!-- 'conversion' [optional] if omitted, value is read 'as-is'.
+           Otherwise variables 'B0', 'B1', 'B2', 'B3', 'V' and 'ID#' can be used within conversion formula, for example;
+           conversion="V/10" - result is incoming value / 10
+           conversion="B0+15*(B1-43)" - result is 'first byte + 15 * (second byte - 43)
+           conversion="V+ID200-74.3" - result is incoming value + 'Body Electronics->Gear' - 74.3 -->
+  <!-- From RealDash version 1.6.6, 'conversionABC' is an option to 'conversion' and uses A,B,C,...AA,AB,AC,...,etc format to distinquish the individual bytes on the reply.
+           This makes it easier to convert the Equation from other apps.
+           Example: conversion="B0+15*(B1-43)" and conversionABC="A+15*(B-43)" produce the same result -->
+
+  <!-- conversion values from ABC style to RealDash B# style
+    B0, B1, B2, B3, B4, B5, B6, B7, B8, B9, B10,B11,B12,B13,B14,B15,B16,B17,B18,B19,B20,B21,B22,B23,B24,B25
+    A   B   C   D   E   F   G   H   I   J   K   L   M   N   O   P   Q   R   S   T   U   V   W   X   Y   Z
+    B26,B27,B28,B29,B30,B31,B32,B33,B34,B35,B36,B37,B38,B39,B40,B41,B42,B43,B44,B45,B46,B47,B48,B49,B50,B51
+    AA  AB  AC  AD  AE  AF  AG  AH  AI  AJ  AK  AL  AM  AN  AO  AP  AQ  AR  AS  AT  AU  AV  AW  AX  AY  AZ
+  -->
+
+  <rotation>
+    <command send="0104" skipCount="6" targetId="100" conversion="V/2.55"></command> <!-- engine load -->
+    <command send="010c" skipCount="0" targetId="37" conversion="V/4"></command> <!-- rpm -->
+    <command send="010b" skipCount="0" targetId="31"></command> <!-- map -->
+    <command send="010d" skipCount="0" targetId="81" units="km/h"></command> <!-- speed -->
+    <command send="010e" skipCount="4" targetId="38" conversion="V/2-64"></command> <!-- spark adv -->
+    <command send="0110" skipCount="1" targetId="30" conversion="V/100"></command> <!-- maf -->
+
+    <command send="0114" skipCount="3" targetId="0" conversion="B0/200"></command> <!-- o2 1-8 -->
+    <command send="0115" skipCount="3" targetId="0" conversion="B0/200"></command>
+    <command send="0116" skipCount="3" targetId="0" conversion="B0/200"></command>
+    <command send="0117" skipCount="3" targetId="0" conversion="B0/200"></command>
+    <command send="0118" skipCount="3" targetId="1" conversion="B0/200"></command>
+    <command send="0119" skipCount="3" targetId="1" conversion="B0/200"></command>
+    <command send="011a" skipCount="3" targetId="1" conversion="B0/200"></command>
+    <command send="011b" skipCount="3" targetId="1" conversion="B0/200"></command>
+
+    <command send="0124" skipCount="3" targetId="0" conversion="(B0*256+B1)/32768"></command> <!-- o2 1-8 -->
+    <command send="0125" skipCount="3" targetId="0" conversion="(B0*256+B1)/32768"></command>
+    <command send="0126" skipCount="3" targetId="0" conversion="(B0*256+B1)/32768"></command>
+    <command send="0127" skipCount="3" targetId="0" conversion="(B0*256+B1)/32768"></command>
+    <command send="0128" skipCount="3" targetId="1" conversion="(B0*256+B1)/32768"></command>
+    <command send="0129" skipCount="3" targetId="1" conversion="(B0*256+B1)/32768"></command>
+    <command send="012a" skipCount="3" targetId="1" conversion="(B0*256+B1)/32768"></command>
+    <command send="012b" skipCount="3" targetId="1" conversion="(B0*256+B1)/32768"></command>
+
+    <command send="0134" skipCount="3" targetId="0" conversion="(B0*256+B1)/32768"></command> <!-- o2 1-8 -->
+    <command send="0135" skipCount="3" targetId="0" conversion="(B0*256+B1)/32768"></command>
+    <command send="0136" skipCount="3" targetId="0" conversion="(B0*256+B1)/32768"></command>
+    <command send="0137" skipCount="3" targetId="0" conversion="(B0*256+B1)/32768"></command>
+    <command send="0138" skipCount="3" targetId="1" conversion="(B0*256+B1)/32768"></command>
+    <command send="0139" skipCount="3" targetId="1" conversion="(B0*256+B1)/32768"></command>
+    <command send="013a" skipCount="3" targetId="1" conversion="(B0*256+B1)/32768"></command>
+    <command send="013b" skipCount="3" targetId="1" conversion="(B0*256+B1)/32768"></command>
+
+    <!-- <command send="0101" skipCount="35" targetId="65"></command> --> <!-- number of DTCs -->
+    <command send="0111" skipCount="2" targetId="42" conversion="V/2.55"></command> <!-- tps -->
+    <command send="0105" skipCount="57" targetId="14" units="C" conversion="V-40"></command> <!-- clt -->
+    <command send="010f" skipCount="15" targetId="27" units="C" conversion="V-40"></command> <!-- iat -->
+    <command send="0133" skipCount="60" targetId="11"></command> <!-- baro -->
+    <command send="0146" skipCount="100" targetId="300" units="C" conversion="V-40"></command> <!-- ambient air temp -->
+             
+    <command send="atrv" skipCount="5" targetId="12"></command> <!-- voltage -->
+    <command send="0106" skipCount="0" targetId="101" conversion="V/1.28-100"></command> <!-- short trim bank 1 -->
+    <command send="0108" skipCount="0" targetId="103" conversion="V/1.28-100"></command> <!-- short trim bank 2 -->
+    <command send="011f" skipCount="11" targetId="33"></command> <!-- engine runtime -->
+    
+    <command send="221470" skipCount="0" targetId="151" units="bar" conversion="V*0.578*0.06894757"></command> <!-- engine oil pressure -->
+    <command send="221951" skipCount="3" name="OBD2: GM Shifter position" conversion="B0" enum="72:P,24:R,80:N,48:D,120:S,40:S2,#:err"></command> <!-- Shifter position -->
+    <command send="22199a" replylength="2" skipcount="3" name="OBD2: GM current gear" conversion="B0"></command> <!-- Current gear -->
+    <command send="221940" skipcount="5" targetId="138" units="C" conversion="B0-40" ></command> <!-- Trans fluid temp -->
+    <command send="221154" skipcount="5" targetId="152" units="C" conversion="B0-40" ></command> <!-- Engine Oil Temp -->
+    <command send="2211a6" skipcount="0" targetId="28" conversion="22.5*B0/256" ></command> <!-- Knock Retard -->
+    <command send="2212c3" skipcount="0" targetId="35" conversion="((B0*256)+B1)/66.56" ></command> <!-- Inj PWN Bank1 -->
+    <command send="2212c4" skipcount="0" targetId="36" conversion="((B0*256)+B1)/66.56" ></command> <!-- Inj PWN Bank2 -->
+    <command send="221131" skipcount="0" name="OBD2: GM Fuel Status" conversion="V" enum="68:Closed Loop,36:Power Enrichment,12:Fuel Cut DFCO" ></command> <!-- GM Fuel status -->
+
+  </rotation>
+</OBD2>

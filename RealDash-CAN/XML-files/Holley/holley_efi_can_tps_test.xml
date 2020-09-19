@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RealDashCAN version="2">
+
+  <frames>
+
+    <frame id="0x1E0294b0" endianess="big">
+      <value targetId="42" units="%" offset="2" length="1" conversion="V/64*100"></value> <!-- TPS  -->
+    </frame>
+
+  </frames>
+</RealDashCAN>
+
