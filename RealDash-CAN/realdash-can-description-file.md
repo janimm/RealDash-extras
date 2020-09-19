@@ -12,7 +12,7 @@ Channel description file starts with tag **RealDashCAN** including the file form
     </RealDashCAN>
 
 &nbsp;
-## **frames baseId parameter [optional]**
+## **'baseId' parameter [optional]**
 **frames** tag may optionally contain a parameter **baseId** that is used for the enclosed **frame** tags. Example:
 
     <frames baseId="3200">
@@ -26,7 +26,7 @@ The **baseId** and the **id** in **frame** can also be specified as hexadecimal 
 The **baseId="0xc80"** and **baseId="3200"** are essentially the same.
 
 &nbsp;
-## **frame tag**
+## **frame**
 **frames** contain a list of **frame** tags. Each **frame** specifies an *id* number for the frame and other optional parameters. Each **frame** also contains a list of **value** tags that describe how data in frame is interpreted and linked to RealDash inputs. An example **frame**:
 
     <frame id="3200">
@@ -37,7 +37,7 @@ The **baseId="0xc80"** and **baseId="3200"** are essentially the same.
     </frame>
 
 &nbsp;
-## **frame tag 'id' parameter**
+## **frame 'id' parameter**
 Every **frame** must have an **id** number, specified either in decimal or hexadecimal number (with **0x** prefix). Note that if enclosing **frames** have a **baseId** specified, the resulting id number will be **baseId + id**.
 
     <frame id="3200">
@@ -45,41 +45,41 @@ Every **frame** must have an **id** number, specified either in decimal or hexad
     <frame id="0xc80">
 
 &nbsp;
-## **frame tag 'endianess' parameter (optional)**
+## **frame 'endianess' parameter (optional)**
 Each **frame** can optionally specify the *endianess* of how multibyte values are interpreted in frame values. Accepted values for **endianess** are **endianess="big"** or **endianess="little"** (the default setting). The endianess parameter can also be specified individually for each **value**. An example of how to specify all values in frame to be considered *big endian*:
 
     <frame id="3200" endianess="big">
 
 &nbsp;
-## **frame tag 'signed' parameter (optional)**
+## **frame 'signed' parameter (optional)**
 Each **frame** can optionally specify the *signed* of the frame values to force RealDash to handle the bytes as signed values. The signed parameter can also be specified individually for each **value**. By default bytes are handled as *unsigned*. An example of how to specify all values in frame to be *signed*:
 
     <frame id="3200" signed="true">
 
 &nbsp;
-## **frame tag 'writeInterval' parameter (optional)**
+## **frame 'writeInterval' parameter (optional)**
 **writeInterval** parameter is used to specify a case when RealDash is requested to write this frame back to the device on certain interval. The value in **writeInterval** is milliseconds. For example, to specify that RealDash should write this frame back to device once a second, use:
 
     <frame id="3200" writeInterval="1000">
 
 &nbsp;
-## **frame tag 'size' parameter (optional)**
+## **frame 'size' parameter (optional)**
 When connecting directly to a CAN device with supported [CAN Adapters](http://realdash.net/manuals/supported_can_lin_analyzers.php), a frame may contain less than standard 8 bytes. The **size** parameter can be used to specify a custom number (1-8) of bytes contained by CAN frame:
 
     <frame id="3200" size="6">
 
 &nbsp;
-## **'values' tag in frame**
+## **values in a frame**
 A **frame** contains a list of **value** tags that specify individual values in one frame and how they are interpreted and linked to RealDash inputs. An example of one **value**:
 
       <value targetId="37" offset="0" length="2"></value>
 
 &nbsp;
-## **value tag 'targetId' parameter**
+## **value 'targetId' parameter**
 This value links the received value into RealDash input. The **targetId="37"** writes the received value to RealDash RPM input. Check out full listing of [RealDash targetIds](www.realdash.net/manuals/targetid.php).
 
 &nbsp;
-## **value tag 'name' [optional to targetId]**
+## **value 'name' [optional to targetId]**
 Instead of mapping the value to existing RealDash input, **name** parameter can be used to create new input into RealDash *ECU Specific* category. Name parameter is used only if **targetId** is not present in command. Example:
 
      <value name="MYECU: Special RPM" offset="0" length="2"></value>
@@ -89,43 +89,43 @@ Note that above example do not use the **targetId**, but **name** instead. When 
 Note: if you make your own dashboard that links into custom inputs, remember that other users need to have same XML available for the dashboard to work correctly. Another solution would be to make the dashboard use [RealDash build-in inputs](www.realdash.net/manuals/targetid.php) and use the *Input Mapping* feature in RealDash *Settings->Units & Values->Input Mapping*.
 
 &nbsp;
-## **value tag 'offset' parameter**
+## **value 'offset' parameter**
 **offset** parameter specifies where in frame data the value data begins. Value is specified in bytes. To specify that value data begins from 3rd byte in frame, use **offset="2"**:
 
     <value targetId="31" units="kPA" offset="2" length="2"></value>
 
 &nbsp;
-## **value tag 'length' parameter**
+## **value 'length' parameter**
 **length** parameter specifies how many bytes is used for value data. Combined with **offset** parameter, the corresponding bytes are read as a value. In previous example we read the data beginning 3rd byte of the frame (**offset="2"**) and read 2 bytes (**length="2"**) to form a value:
 
     <value targetId="31" units="kPA" offset="2" length="2"></value>
 
 &nbsp;
-## **value tag 'startbit' and 'bitcount' parameters (optional)**
+## **value 'startbit' and 'bitcount' parameters (optional)**
 In addition to **offset** and **length** parameters, the **startbit** and **bitcount** can be used to specify from where the value is read in frame data. The **startbit** is the index of the first bit of the value, and **bitcount** is a number of bits used by the value. These can be combined with **offset** parameter, but **bitcount** will override the **length** if present.
 
 &nbsp;
-## **value tag 'endianess' parameter (optional)**
+## **value 'endianess' parameter (optional)**
 Value can optionally specify the *endianess* of how multibyte values are interpreted in value data. Accepted values for **endianess** are **endianess="big"** or **endianess="little"** (the default setting). The endianess parameter can also be specified in enclosing **frame** tag to apply it to all values. An example of how to specify the value to be considered *big endian*:
 
     <value targetId="37" offset="0" length="2" endianess="big"></value>
 
 &nbsp;
-## **value tag 'signed' parameter (optional)**
+## **value 'signed' parameter (optional)**
 Each **value** can optionally specify the *signed* of the frame values to force RealDash to handle the bytes as signed values. The signed parameter can also be specified in enclosing **frame** tag to apply it to all values. By default bytes are handled as *unsigned*. An example of how to specify a value to be handled as *signed*:
 
     <value targetId="14" offset="4" length="2" signed="true"></value>
 
 &nbsp;
-## **value tag 'rangeMin' and 'rangeMax' parameters (optional)**
+## **value 'rangeMin' and 'rangeMax' parameters (optional)**
 if **name** is used instead of **targetId**, these parameters specify a recommended value range in RealDash.
 
 &nbsp;
-## **value tag 'initialValue' parameter (optional)**
+## **value 'initialValue' parameter (optional)**
 If this parameter is present, value is written to CAN after connection has been made to the CAN bus.
 
 &nbsp;
-## **value tag 'conversion' (optional)**
+## **value 'conversion' (optional)**
 The **conversion** parameter is a formula that is applied to received value. For example, **conversion="V/4"** takes incoming value and divides it by 4 before writing the value to its input. Conversion can be any valid mathematical formula with these variables:
 
 * V (VALUE). This is the value itself, specified by parameters in **value** tag.
@@ -136,7 +136,7 @@ The **conversion** parameter is a formula that is applied to received value. For
     * ...
 
 &nbsp;
-## **value tag 'conversionABC' (optional)**
+## **value 'conversionABC' (optional)**
 The **conversionABC** is otherwise identical with **conversion**, but bytes are identified with **A,B,C,...,AA,AB,AC,...**, etc. This makes it easier to convert the Equation from other popular apps. For example **conversion="B0+15*(B1-43)"** and **conversionABC="A+15*(B-43)"** produce the same result.
 
 &nbsp;
@@ -149,11 +149,11 @@ The **conversionABC** is otherwise identical with **conversion**, but bytes are 
     - result is first byte + 15 * (second byte - 43)
 
 &nbsp;
-## **value tag 'units' parameter [optional]**
+## **value 'units' parameter [optional]**
 Optional info to apply automatic unit conversions. Valid values are **units="C"**, **units="F"**, **units="km/h"**, **units="mph"**, **units="bar"**, **units="psi"**, **units="bit"**. If units is set to **bit** the value is considered to be an on/off (0 or 1) valued. RealDash reads the **bit** value from the lowest bit. Therefore there is a need for a bitshift to the right on conversion. For example **conversion="(V>>1)"** will read second bit on incoming value.
 
 &nbsp;
-## **value tag 'enum' parameter [optional]**
+## **value 'enum' parameter [optional]**
 With **enum** parameter, the values in data can be directly interpreted as a text or another value. **enum** is a list of comma separated *value:display value* pairs. For example:
 
     <value name="GMLS: Shifter position" offset="7" length="1" enum="72:P,24:R,80:N,48:D,120:S,40:S2,#:err"></value>
