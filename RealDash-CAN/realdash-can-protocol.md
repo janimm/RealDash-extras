@@ -1,8 +1,5 @@
-# **RealDash-extras**
-[realdash.net](https://www.realdash.net)
-
 &nbsp;
-## **RealDash CAN protocol**
+# **RealDash CAN protocol**
 The *RealDash CAN* protocol enables custom implementations and DIY projects to connect to RealDash. The protocol uses typical 8-byte CAN frames with a header that specifies the stream start-tag and CAN frame ID number. RealDash CAN protocol was designed to easily connect to existing CAN network and transfer the data over to RealDash. However, this protocol can also be used with custom and DIY devices.
 
 The RealDash CAN protocol is a stream of data in following structure:
@@ -21,21 +18,21 @@ In addition, there is a *Text Extension Frame* that allows easy transfer of text
     TEXT EXTENSION FRAME:
     4 bytes - 0x55,0x33,0x22,0x11
     4 bytes - CAN frame id number (as 32bit little endian value)
-    N bytes - text in UTF8 format, including null-terminator
+    # bytes - text in UTF8 format, including null-terminator
 
 
 &nbsp;
-### **Writing CAN frames from RealDash to device**
+## **Writing CAN frames from RealDash to device**
 RealDash sends a *SET VALUE* frame over connection when value is updated based on RealDash actions, like buttons or data triggers. *SET VALUE* frame is always 17 bytes with following layout:
 
     4 bytes - always 0x44,0x33,0x22,0x11
     4 bytes - CAN frame id number (as 32bit little endian value)
     8 bytes - CAN frame payload (data)
-    1 byte - checksum byte
+    1 byte - checksum byte (unsigned)
 
 - First 4 bytes are RealDash CAN protocol identification tag.
 - Next 4 bytes are CAN frame id number.
 - Next 8 bytes are the can frame payload data containing values to write.
-- Last byte is a simple checksum of preceeding 16 bytes. Checksum value overflow is ignored.
+- Last byte is a unsigned checksum of preceeding 16 bytes. Checksum value overflow is ignored.
 
 
