@@ -118,6 +118,14 @@ Header to set before sending the command. The set header remains until its set a
     <command send="2010" header="atsh7e5" skipCount="0" name="MYECU: custom value 1" conversion="V/4"></command>
 
 &nbsp;
+### **ecu [optional] (from RealDash version 1.8.1)**
+The **ecu** parameter specifies which ECU reply to use as the value in case multiple ECUs are replying to the request. Possible values are *first* (default value), *last*, or the ECU identifier, for example *7E8*. Values *first* and *last* takes the according ECU reply in alphabetical order.
+
+    <command send="221940" skipcount="5" targetId="138" units="C" ecu="7EA" conversion="B0-40" ></command> <!-- GM Trans fluid temp -->
+
+The above example uses **ecu** to read GM transmission fluid temperature. As typical LS vehicle sends this info from two ECUs (7E8 and 7EA), the **ecu** parameter is used to specify that we want to read the value from ECU 7E8.
+
+&nbsp;
 ### **enum [optional]**
 With **enum** parameter, the values in data can be directly interpreted as a text or another value. **enum** is a list of comma separated *value:display value* pairs. For example:
 
