@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RealDashCAN version="2">
+  <frames>
+    <frame id="0x600" endianess="big">
+      <value name="AEM 22, unit 1: Analog 1" offset="0" length="2" conversion="V*0.001"></value>
+      <value name="AEM 22, unit 1: Analog 2" offset="2" length="2" conversion="V*0.001"></value>
+      <value name="AEM 22, unit 1: Analog 3" offset="4" length="2" conversion="V*0.001"></value>
+      <value name="AEM 22, unit 1: Analog 4" offset="6" length="2" conversion="V*0.001"></value>
+    </frame>
+
+    <frame id="0x601" endianess="big">
+      <value name="AEM 22, unit 1: Analog 5" offset="0" length="2" conversion="V*0.001"></value>
+      <value name="AEM 22, unit 1: Analog 6" offset="2" length="2" conversion="V*0.001"></value>
+      <value name="AEM 22, unit 1: Analog 7" offset="4" length="2" conversion="V*0.001"></value>
+      <value name="AEM 22, unit 1: Analog 8" offset="6" length="2" conversion="V*0.001"></value>
+    </frame>
+
+    <frame id="0x602" endianess="big">
+      <value name="AEM 22, unit 1: Analog 5 Resistance" offset="0" length="2"></value>
+      <value name="AEM 22, unit 1: Analog 6 Resistance" offset="2" length="2"></value>
+      <value name="AEM 22, unit 1: Analog 7 Resistance" offset="4" length="2"></value>
+      <value name="AEM 22, unit 1: Analog 8 Resistance" offset="6" length="2"></value>
+    </frame>
+
+    <frame id="0x603" endianess="big">
+      <value name="AEM 22, unit 1: Analog 9 Resistance" offset="0" length="2"></value>
+      <value name="AEM 22, unit 1: Analog 10 Resistance" offset="2" length="2"></value>
+      <value name="AEM 22, unit 1: Analog 11 Resistance" offset="4" length="2"></value>
+      <value name="AEM 22, unit 1: Analog 12 Resistance" offset="6" length="2"></value>
+    </frame>
+
+    <frame id="0x604" endianess="big">
+      <value name="AEM 22, unit 1: VR1" offset="0" length="2"></value>
+      <value name="AEM 22, unit 1: VR2" offset="2" length="2"></value>
+      <value name="AEM 22, unit 1: Tacho" offset="4" length="2"></value>
+      <value name="AEM 22, unit 1: Fuel Level" offset="6" length="1"></value>
+      <value name="AEM 22, unit 1: Battery Voltage" offset="7" length="1" conversion ="V*0.1"></value>
+    </frame>
+
+    <frame id="0x605" endianess="big">
+      <value name="AEM 22, unit 1: Digital 1 Frequency" offset="0" length="2"></value>
+      <value name="AEM 22, unit 1: Digital 2 Frequency" offset="2" length="2"></value>
+      <value name="AEM 22, unit 1: Digital 1 Duty Cycle" offset="4" length="1"></value>
+      <value name="AEM 22, unit 1: Digital 2 Duty Cycle" offset="5" length="1"></value>
+      <value name="AEM 22, unit 1: Digital 1 State" offset="6" length="1"></value>
+      <value name="AEM 22, unit 1: Digital 2 State" offset="7" length="1"></value>
+    </frame>
+
+    <frame id="0x606" endianess="big">
+      <value name="AEM 22, unit 1: Digital 3 Frequency" offset="0" length="2"></value>
+      <value name="AEM 22, unit 1: Digital 4 Frequency" offset="2" length="2"></value>
+      <value name="AEM 22, unit 1: Digital 3 Duty Cycle" offset="4" length="1"></value>
+      <value name="AEM 22, unit 1: Digital 4 Duty Cycle" offset="5" length="1"></value>
+      <value name="AEM 22, unit 1: Digital 3 State" offset="6" length="1"></value>
+      <value name="AEM 22, unit 1: Digital 4 State" offset="7" length="1"></value>
+    </frame>
+
+    <frame id="0x607" endianess="big">
+      <value name="AEM 22, unit 1: Digital 5 Frequency" offset="0" length="2"></value>
+      <value name="AEM 22, unit 1: Digital 6 Frequency" offset="2" length="2"></value>
+      <value name="AEM 22, unit 1: Digital 5 Duty Cycle" offset="4" length="1"></value>
+      <value name="AEM 22, unit 1: Digital 6 Duty Cycle" offset="5" length="1"></value>
+      <value name="AEM 22, unit 1: Digital 5 State" offset="6" length="1"></value>
+      <value name="AEM 22, unit 1: Digital 6 State" offset="7" length="1"></value>
+    </frame>
+
+  </frames>
+</RealDashCAN>
+
