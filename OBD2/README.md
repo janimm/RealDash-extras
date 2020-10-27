@@ -118,7 +118,7 @@ Header to set before sending the command. The set header remains until its set a
     <command send="2010" header="atsh7e5" skipCount="0" name="MYECU: custom value 1" conversion="V/4"></command>
 
 &nbsp;
-### **ecu [optional] (from RealDash version 1.8.1)**
+### **ecu [optional]**
 The **ecu** parameter specifies which ECU reply to use as the value in case multiple ECUs are replying to the request. Possible values are *first* (default value), *last*, or the ECU identifier, for example *7E8*. Values *first* and *last* takes the according ECU reply in alphabetical order.
 
     <command send="221940" skipcount="5" targetId="138" units="C" ecu="7EA" conversion="B0-40" ></command> <!-- GM Trans fluid temp -->
@@ -132,6 +132,10 @@ With **enum** parameter, the values in data can be directly interpreted as a tex
     <command send="221951" skipCount="3" name="OBD2: GM Shifter position" enum="72:P,24:R,80:N,48:D,120:S,40:S2,#:err"></command>
 
 The above example uses **enum** to show shifter position as a character in RealDash. If value is 72, the character '**P**' is shown. If value is 24, the character '**R**' is shown, and so on. The hash tag **#** is used as default value, which in above example would show text **err**.
+
+In addition, **enum** supports a range of values with *tilde* **~** operator. For example:
+
+    <value name="Custom Shifter position" offset="7" length="1" enum="0~10:P,11~20:R,21~100:N,150~200:D,#:err"></value>
 
 &nbsp;
 ### **Receive multiple values on one command**

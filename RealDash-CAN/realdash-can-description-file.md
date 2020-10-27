@@ -158,3 +158,8 @@ With **enum** parameter, the values in data can be directly interpreted as a tex
 
 The above example uses **enum** to show shifter position as a character in RealDash. If value is 72, the character '**P**' is shown. If value is 24, the character '**R**' is shown, and so on. The hash tag **#** is used as default value, which in above example would show text **err**.
 
+In addition, **enum** supports a range of values with *tilde* **~** operator. For example:
+
+    <value name="Custom Shifter position" offset="7" length="1" enum="0~10:P,11~20:R,21~100:N,150~200:D,#:err"></value>
+
+
