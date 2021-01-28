@@ -44,15 +44,16 @@ Every **frame** must have an **id** number, specified either in decimal or hexad
 
 &nbsp;
 ### **Composite ID support (optional)**
-RealDash XML format supports composite IDs where CAN frame contain varying data and a **running** id value to identify the frame.
+RealDash XML format supports composite IDs where CAN frame contain varying data and a **running** id value to identify the frame. The composite ID is specified as:
+* CAN_ID: the frame CAN ID.
+* COMPOSITE_ID: Composite ID that is read from frame data.
+* COMPOSITE_ID_OFFSET: Offset (in bytes) where Composite ID is in frame data.
+* COMPOSITE_ID_LENGTH: Length (in bytes) of the Composite ID in frame data.
+---
 
     <frame id="0x3E8:5533,0,2">
 
-The composite ID is specified as: CAN_ID : COMPOSITE_ID, COMPOSITE_ID_OFFSET, COMPOSITE_ID_LENGTH
-- CAN_ID: the frame CAN ID (same as frame id above).
-- COMPOSITE_ID: Composite ID that is read from frame data.
-- COMPOSITE_ID_OFFSET: Offset (in bytes) where Composite ID is in frame data.
-- COMPOSITE_ID_LENGTH: Length (in bytes) of the Composite ID in frame data.
+The above example specifies a frame with CAN ID of 3E8 hexadecimal, composite id of 5533 decimal. Composite id is read from frame data from first (0) byte and its length is 2 bytes.
 
 
 &nbsp;
