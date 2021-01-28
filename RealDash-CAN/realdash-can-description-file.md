@@ -43,6 +43,19 @@ Every **frame** must have an **id** number, specified either in decimal or hexad
     <frame id="0xc80">
 
 &nbsp;
+### **Composite ID support (optional)**
+RealDash XML format supports composite IDs where CAN frame contain varying data and a **running** id value to identify the frame.
+
+    <frame id="0x3E8:5533,0,2">
+
+The composite ID is specified as: CAN_ID : COMPOSITE_ID, COMPOSITE_ID_OFFSET, COMPOSITE_ID_LENGTH
+- CAN_ID: the frame CAN ID (same as frame id above).
+- COMPOSITE_ID: Composite ID that is read from frame data.
+- COMPOSITE_ID_OFFSET: Offset (in bytes) where Composite ID is in frame data.
+- COMPOSITE_ID_LENGTH: Length (in bytes) of the Composite ID in frame data.
+
+
+&nbsp;
 ## **frame 'endianess' parameter (optional)**
 Each **frame** can optionally specify the *endianess* of how multibyte values are interpreted in frame data. Accepted values for **endianess** are **endianess="big"** or **endianess="little"** (the default setting). The endianess parameter can also be specified individually for each **value**. An example of how to specify all values in frame to be considered *big endian*:
 
