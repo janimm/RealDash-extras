@@ -67,8 +67,8 @@ A special channel descriptions for "Russian Special - January 5.1"
         <value targetId="30" conversion="B26*42.5/255+B27*10880/255"></value><!--MAF-->
         <value name="Yanvar 51 target pos. idle" conversion="B13"></value>
         <value name="Yanvar 51 target idle rpm" conversion="B19*10"></value>
-        <value name="Yanvar 51 inj.correction" conversion="(B15*/255)+0.5"></value>
-        <value name="Yanvar 51 inj.correction" conversion="(B15*/255)+0.5"></value>
+        <value name="Yanvar 51 inj.correction" conversion="(B15/255)+0.5"></value>
+        <value name="Yanvar 51 inj.correction" conversion="(B15/255)+0.5"></value>
         <value name="Yanvar 51 fuel consumption" conversion="B30*1.99/255+B31*2"></value>
         <value name="Yanvar 51 idle pos" conversion="B14"></value>
         <value name="Yanvar 51 fuel consumption, hour" conversion="B28*5.1/255+B29*1305.6/255"></value>
