@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RealDashCAN version="2">
+  <frames>
+    <frame id="0x01F0A000" endianess="big">
+      <value targetId="37" offset="0" length="2" conversion="V*0.39063"></value> <!-- RPM -->
+      <value targetId="100" units="%" offset="2" length="2" conversion="V*0.0015259"></value> <!-- engine load -->
+      <value targetId="42" units="%" offset="4" length="2" conversion="V*0.0015259"></value> <!-- TPS  -->
+      <value targetId="27" units="C" offset="6" length="1" signed="true"></value> <!-- IAT -->
+      <value targetId="14" units="C" offset="7" length="1" signed="true"></value> <!-- CLT -->
+    </frame>
+
+    <frame id="0x01F0A001" endianess="big">
+      <value name="AEM: ADCR11" offset="0" length="2" conversion="V*0.00007782"></value>
+      <value name="AEM: ADCR13" offset="2" length="2" conversion="V*0.00007782"></value>
+      <value name="AEM: ADCR14" offset="4" length="2" conversion="V*0.00007782"></value>
+      <value name="AEM: ADCR17" offset="6" length="2" conversion="V*0.00007782"></value>
+    </frame>
+
+    <frame id="0x01F0A002" endianess="big">
+      <value name="AEM: ADCR18" offset="0" length="2" conversion="V*0.00007782"></value>
+      <value name="AEM: ADCR15" offset="2" length="2" conversion="V*0.00007782"></value>
+      <value name="AEM: ADCR16" offset="4" length="2" conversion="V*0.00007782"></value>
+      <value name="AEM: ADCR08" offset="6" length="2" conversion="V*0.000326"></value>
+    </frame>
+
+    <frame id="0x01F0A003" endianess="big">
+      <value targetId="254" offset="0" length="1" conversion="V*0.00390625+0.5"></value> <!-- lambda 1-->
+      <value targetId="255" offset="1" length="1" conversion="V*0.00390625+0.5"></value> <!-- lambda 2-->
+      <value targetId="81" offset="2" length="2" conversion="V*0.0062865"></value> <!-- VSS1 -->
+      <value targetId="200" offset="4" length="1"></value> <!-- Gear -->
+      <value targetId="38" offset="5" length="1" conversion="V*0.35156"></value> <!-- Spark adv -->
+      <value targetId="12" offset="6" length="2" conversion="V*0.0002455"></value> <!-- battery voltage -->
+    </frame>
+
+    <frame id="0x01F0A004" endianess="big">
+      <value targetId="31" offset="0" length="2" conversion="V*0.1"></value> <!-- MAP -->
+      <value targetId="44" offset="2" length="1"></value> <!-- VE1 -->
+      <value targetId="202" offset="3" length="1" conversion="V*0.040"></value> <!-- fuel pressure -->
+      <value targetId="151" offset="4" length="1" conversion="V*0.040"></value> <!-- oil pressure -->
+      <value targetId="256" offset="5" length="1" conversion="V*0.00390625+0.5"></value> <!-- lambda target 1 -->
+      <value targetId="182" offset="6" length="1" units="bit" conversion="V>>0"></value> <!-- fuel pump -->
+      <value targetId="153" offset="6" length="1" units="bit" conversion="V>>1"></value> <!-- cooling fan -->
+      <value name="AEM: Fan 2" offset="6" length="1" units="bit" conversion="V>>2"></value>
+      <value name="AEM: N2O active" offset="6" length="1" units="bit" conversion="V>>3"></value>
+      <value name="AEM: O2FB active" offset="6" length="1" units="bit" conversion="V>>4"></value>
+      <value name="AEM: EngineProtectOut" offset="6" length="1" units="bit" conversion="V>>5"></value>
+      <value name="AEM: MILOutput" offset="6" length="1" units="bit" conversion="V>>6"></value>
+      <value name="AEM: Lean Protect" offset="6" length="1" units="bit" conversion="V>>7"></value>
+      <value name="AEM: Oil Press Protect" offset="7" length="1" units="bit" conversion="V>>0"></value>
+      <value name="AEM: 2 Step Fuel" offset="7" length="1" units="bit" conversion="V>>1"></value>
+      <value name="AEM: 2 Step Spark" offset="7" length="1" units="bit" conversion="V>>2"></value>
+      <value name="AEM: 2 Sync State" offset="7" length="1" units="bit" conversion="V>>3"></value>
+      <value targetId="335" offset="7" length="1" units="bit" conversion="V>>4"></value> <!-- AC on -->
+      <value name="AEM: Boost Cut" offset="7" length="1" units="bit" conversion="V>>5"></value>
+      <value name="AEM: Coolant Protect" offset="7" length="1" units="bit" conversion="V>>6"></value>
+      <value name="AEM: DBZ Error" offset="7" length="1" units="bit" conversion="V>>7"></value>
+    </frame>
+
+    <frame id="0x01F0A005" endianess="big">
+      <value name="AEM: LaunchRampTime" offset="0" length="2" conversion="V*10"></value>
+      <value targetId="30" offset="2" length="2" conversion="V*0.05"></value> <!-- MAF -->
+      <value name="AEM: MassAirflow [gms/rev]" offset="4" length="2" conversion="V*0.0005"></value>
+      <value name="AEM: Clutch Pressure" offset="6" length="1" conversion="V*0.344738"></value>
+      <value name="AEM: Brake Switch" offset="7" length="1" units="bit" conversion="V>>0"></value>
+      <value name="AEM: Clutch Switch" offset="7" length="1" units="bit" conversion="V>>1"></value>
+      <value name="AEM: Shift Switch" offset="7" length="1" units="bit" conversion="V>>2"></value>
+      <value name="AEM: Staged Switch" offset="7" length="1" units="bit" conversion="V>>3"></value>
+    </frame>
+
+    <frame id="0x01F0A006" endianess="big">
+      <value targetId="35" offset="0" length="1" conversion="V*0.1"></value> <!-- PW1 -->
+      <value name="AEM: Inj1LambdaFB" offset="1" length="1" conversion="V*0.5"></value>
+      <value name="AEM: PrimaryInjDuty" offset="2" length="1" conversion="V*0.392157"></value>
+      <value name="AEM: Mode Switch" offset="3" length="1"></value>
+      <value name="AEM: Water Pressure" offset="4" length="1" conversion="V*0.040"></value>
+      <value name="AEM: Pan Pressure" offset="5" length="1"></value>
+      <value name="AEM: Estimated Torque" offset="6" length="2" conversion="v*0.1"></value>
+    </frame>
+
+    <frame id="0x01F0A007" endianess="big">
+      <value name="AEM: InjectorProbability [%]" offset="0" length="1" conversion="V*0.392157"></value>
+      <value name="AEM: SparkProbability [%]" offset="1" length="1" conversion="V*0.392157"></value>
+      <value name="AEM: LambdaTrim_Knock" offset="2" length="1" conversion="V*0.001"></value>
+      <value targetId="11" offset="3" length="1" conversion="V*0.25"></value> <!-- barometric pressure -->
+      <value name="AEM: FlexContent" offset="4" length="1" conversion="V*0.392157"></value>
+      <value name="AEM: Airbox Temp" offset="5" length="1" conversion="V-50"></value>
+      <value targetId="152" offset="6" length="1" conversion="V-50"></value> <!-- oil temperature -->
+      <value name="AEM: LaunchTimerArmed" offset="7" length="1" units="bit" conversion="V>>0"></value>
+      <value name="AEM: ECU Logging Active" offset="7" length="1" units="bit" conversion="V>>1"></value>
+      <value name="AEM: ModeSelect_Ign" offset="7" length="1" conversion="V>>2"></value>
+      <value name="AEM: ModeSelect_Lambda" offset="7" length="1" conversion="V>>4"></value>
+      <value name="AEM: ModeSelect_DBW" offset="7" length="1" units="bit" conversion="V>>6"></value>
+      <value name="AEM: VTEC" offset="7" length="1" units="bit" conversion="V>>7"></value>
+    </frame>
+
+    <frame id="0x01F0A008" endianess="big">
+      <value targetId="138" offset="0" length="1" conversion="V-50"></value> <!-- transmission oil temp -->
+      <value name="AEM: SparkCut [RPM]" offset="1" length="2" conversion="V*0.39063"></value>
+      <value name="AEM: FuelCut [RPM]" offset="3" length="2" conversion="V*0.39063"></value>
+      <value name="AEM: 2StepTargetFuel [RPM]" offset="5" length="1" conversion="V*100"></value>
+      <value name="AEM: 2StepTargetSpark [RPM]" offset="6" length="1" conversion="V*100"></value>
+      <value name="AEM: ErrorThrottle" offset="7" length="1" units="bit" conversion="V>>0"></value>
+      <value name="AEM: ErrorCoolantTemp" offset="7" length="1" units="bit" conversion="V>>1"></value>
+      <value name="AEM: ErrorFuelPressure" offset="7" length="1" units="bit" conversion="V>>2"></value>
+      <value name="AEM: ErrorOilPressure" offset="7" length="1" units="bit" conversion="V>>3"></value>
+      <value name="AEM: ErrorEBP" offset="7" length="1" units="bit" conversion="V>>4"></value>
+      <value name="AEM: ErrorMAP" offset="7" length="1" units="bit" conversion="V>>5"></value>
+      <value name="AEM: ErrorAirTemp" offset="7" length="1" units="bit" conversion="V>>6"></value>
+      <value name="AEM: ErrorBaro" offset="7" length="1" units="bit" conversion="V>>7"></value>
+    </frame>
+
+    <frame id="0x01F0A009" endianess="big">
+      <value name="AEM: Brake Pressure" offset="0" length="2" conversion="V*0.006895"></value>
+      <value targetId="229" offset="2" length="2" conversion="V*0.1"></value> <!-- steering wheel angle -->
+      <value name="AEM: Launch Boost Target" offset="4" length="2" conversion="V*0.1"></value>
+    </frame>
+
+    <frame id="0x01F0A00A" endianess="big">
+      <value name="AEM: VVC1A_Cam_Timing" offset="0" length="1" conversion="V*0.5-50"></value>
+      <value name="AEM: VVC2A_Cam_Timing" offset="1" length="1" conversion="V*0.5-50"></value>
+      <value name="AEM: VVC1B_Cam_Timing" offset="2" length="1" conversion="V*0.5-50"></value>
+      <value name="AEM: VVC2B_Cam_Timing" offset="3" length="1" conversion="V*0.5-50"></value>
+      <value name="AEM: VVC1 Target [deg]" offset="4" length="1" conversion="V*0.5-50"></value>
+      <value name="AEM: VVC2 Target [deg]" offset="5" length="1" conversion="V*0.5-50"></value>
+    </frame>
+
+    <frame id="0x01F0A00B" endianess="big">
+      <value targetId="270" offset="0" length="2" conversion="V*0.1"></value> <!-- boost target -->
+      <value name="AEM: ChargeOutPress" offset="2" length="2" conversion="V*0.1"></value>
+      <value name="AEM: BoostControl [%]" offset="4" length="1" conversion="V*0.392157"></value>
+      <value name="AEM: BoostFB_PID [%]" offset="5" length="1" conversion="V*0.392157"></value>
+      <value name="AEM: ChargeOutTemp" offset="6" length="1" conversion="V-50"></value>
+      <value name="AEM: TurboSpeed [RPM]" offset="7" length="1" conversion="V*500"></value>
+    </frame>
+
+    <frame id="0x01F0A00D" endianess="big">
+      <value name="AEM: DBW_APP1" offset="0" length="1" conversion="V*0.392157"></value>
+      <value name="AEM: DBW_Target" offset="1" length="1" conversion="V*0.392157"></value>
+      <value name="AEM: DBW1_TPSA" offset="2" length="1" conversion="V*0.392157"></value>
+      <value name="AEM: DBW2_TPSA" offset="3" length="1" conversion="V*0.392157"></value>
+      <value name="AEM: DBW_Error_APP_Corr" offset="5" length="1" units="bit" conversion="V>>0"></value>
+      <value name="AEM: DBW_Error_APP1_Range" offset="5" length="1" units="bit" conversion="V>>1"></value>
+      <value name="AEM: DBW_Error_APP2_Range" offset="5" length="1" units="bit" conversion="V>>2"></value>
+      <value name="AEM: DBW_Error_BTO" offset="5" length="1" units="bit" conversion="V>>3"></value>
+      <value name="AEM: DBW1_Error_Fatal" offset="6" length="1" units="bit" conversion="V>>0"></value>
+      <value name="AEM: DBW1_Error_TPSA_Range" offset="6" length="1" units="bit" conversion="V>>1"></value>
+      <value name="AEM: DBW1_Error_TPSB_Range" offset="6" length="1" units="bit" conversion="V>>2"></value>
+      <value name="AEM: DBW1_Error_Tracking" offset="6" length="1" units="bit" conversion="V>>3"></value>
+      <value name="AEM: DBW1_Error_Current" offset="6" length="1" units="bit" conversion="V>>4"></value>
+      <value name="AEM: DBW1_Error_TPS_Corr" offset="6" length="1" units="bit" conversion="V>>5"></value>
+      <value name="AEM: DBW2_Error_Fatal" offset="7" length="1" units="bit" conversion="V>>0"></value>
+      <value name="AEM: DBW2_Error_TPSA_Range" offset="7" length="1" units="bit" conversion="V>>1"></value>
+      <value name="AEM: DBW2_Error_TPSB_Range" offset="7" length="1" units="bit" conversion="V>>2"></value>
+      <value name="AEM: DBW2_Error_Tracking" offset="7" length="1" units="bit" conversion="V>>3"></value>
+      <value name="AEM: DBW2_Error_Current" offset="7" length="1" units="bit" conversion="V>>4"></value>
+      <value name="AEM: DBW2_Error_TPS_Corr" offset="7" length="1" units="bit" conversion="V>>5"></value>
+    </frame>
+
+    <frame id="0x01F0A010" endianess="big">
+      <value name="AEM: TC_FuelCut [%]" offset="0" length="1" conversion="V*0.392157"></value>
+      <value name="AEM: TC_SparkCut [%]" offset="1" length="1" conversion="V*0.392157"></value>
+      <value name="AEM: TC_Retard [degBTDC]" offset="2" length="1" conversion="V*0.25"></value>
+      <value name="AEM: TC_TqReduceDBW [%]" offset="3" length="1" conversion="V*0.392157"></value>
+      <value name="AEM: TC_Mode_Sw" offset="4" length="1"></value>
+      <value name="AEM: 3StepTargetFuel [RPM]" offset="5" length="1" conversion="V*100"></value>
+      <value name="AEM: 3StepTargetSpark [RPM]" offset="6" length="1" conversion="V*100"></value>
+      <value name="AEM: 3 Step Fuel" offset="7" length="1" units="bit" conversion="V>>0"></value>
+      <value name="AEM: 3 Step Spark" offset="7" length="1" units="bit" conversion="V>>1"></value>
+      <value name="AEM: 3 Step Sw" offset="7" length="1" units="bit" conversion="V>>2"></value>
+    </frame>
+
+    <frame id="0x01F0A011" endianess="big">
+      <value name="AEM: DLWheelSpeed" offset="0" length="2" conversion="V*0.02"></value>
+      <value name="AEM: DRWheelSpeed" offset="2" length="2" conversion="V*0.02"></value>
+      <value name="AEM: NLWheelSpeed" offset="4" length="2" conversion="V*0.02"></value>
+      <value name="AEM: NRWheelSpeed" offset="6" length="2" conversion="V*0.02"></value>
+    </frame>
+
+    <frame id="0x01F0A012" endianess="big">
+      <value name="AEM: TC_SlipTarget" offset="0" length="2" conversion="V*0.02"></value>
+      <value name="AEM: TC_SlipMeasured" offset="2" length="2" conversion="V*0.02"></value>
+      <value name="AEM: TC_TqReduceReq" offset="4" length="2" conversion="V*0.25"></value>
+      <value name="AEM: TC_SlipTargetTrim" offset="6" length="1" conversion="V*1.609-80.45"></value>
+    </frame>
+
+    <frame id="0x01F0A020" endianess="big">
+      <value name="AEM: KnockFB_Cyl1" offset="0" length="1" conversion="V*-0.1"></value>
+      <value name="AEM: KnockFB_Cyl2" offset="1" length="1" conversion="V*-0.1"></value>
+      <value name="AEM: KnockFB_Cyl3" offset="2" length="1" conversion="V*-0.1"></value>
+      <value name="AEM: KnockFB_Cyl4" offset="3" length="1" conversion="V*-0.1"></value>
+      <value name="AEM: KnockFB_Cyl5" offset="4" length="1" conversion="V*-0.1"></value>
+      <value name="AEM: KnockFB_Cyl6" offset="5" length="1" conversion="V*-0.1"></value>
+      <value name="AEM: KnockFB_Cyl7" offset="6" length="1" conversion="V*-0.1"></value>
+      <value name="AEM: KnockFB_Cyl8" offset="7" length="1" conversion="V*-0.1"></value>
+    </frame>
+
+    <frame id="0x01F0A021" endianess="big">
+      <value name="AEM: KnockFB_Cyl9" offset="0" length="1" conversion="V*-0.1"></value>
+      <value name="AEM: KnockFB_Cyl10" offset="1" length="1" conversion="V*-0.1"></value>
+    </frame>
+
+  </frames>
+</RealDashCAN>
+

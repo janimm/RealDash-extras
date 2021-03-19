@@ -33,15 +33,15 @@
            This makes it easier to convert the Equation from other apps.
            Example: conversion="B0+15*(B1-43)" and conversionABC="A+15*(B-43)" produce the same result -->
 
-      <value targetId="37" offset="0" length="2"></value>
-      <value targetId="31" units="kPA" offset="2" length="2" conversion="V*0.1"></value>
-      <value targetId="42" units="%" offset="4" length="2" conversion="V*0.1"></value>
+      <value targetId="37" offset="0" length="2"></value> <!-- RPM -->
+      <value targetId="31" units="kPA" offset="2" length="2" conversion="V*0.1"></value> <!-- MAP -->
+      <value targetId="42" units="%" offset="4" length="2" conversion="V*0.1"></value> <!-- TPS  -->
       <value name="Haltech: Coolant pressure" units="kPA" offset="6" length="2" conversion="V*0.1"></value>
     </frame>
 
     <frame id="0x361" endianess="big">
-      <value targetId="202" units="kPA" offset="0" length="2" conversion="V*0.1"></value>
-      <value targetId="151" units="kPA" offset="2" length="2" conversion="V*0.1"></value>
+      <value targetId="202" units="kPA" offset="0" length="2" conversion="V*0.1"></value> <!-- fuel pressure -->
+      <value targetId="151" units="kPA" offset="2" length="2" conversion="V*0.1"></value> <!-- engine oil pressure-->
       <value name="Haltech: Accelerator Pedal Pos" units="%" offset="4" length="2" conversion="V*0.1"></value>
       <value name="Haltech: Wastegate Pressure" units="kPA" offset="6" length="2" conversion="V*0.1"></value>
     </frame>
@@ -61,8 +61,8 @@
     </frame>
 
     <frame id="0x368" endianess="big">
-      <value targetId="254" offset="0" length="2" conversion="V*0.001"></value>
-      <value targetId="255" offset="2" length="2" conversion="V*0.001"></value>
+      <value targetId="254" offset="0" length="2" conversion="V*0.001"></value> <!-- lambda 1-->
+      <value targetId="255" offset="2" length="2" conversion="V*0.001"></value> <!-- lambda 2-->
       <value name="Haltech: Lambda 3" offset="4" length="2" conversion="V*0.001"></value>
       <value name="Haltech: Lambda 4" offset="6" length="2" conversion="V*0.001"></value>
     </frame>
@@ -77,7 +77,7 @@
     <frame id="0x36A" endianess="big">
       <value name="Haltech: Knock Level Logged" offset="0" length="2"></value>
       <value name="Haltech: Knock Level Logged 2" offset="2" length="2"></value>
-      <value targetId="28" units="deg" offset="4" length="2" conversion="V*0.1"></value>
+      <value targetId="28" units="deg" offset="4" length="2" conversion="V*0.1"></value> <!-- knock retard -->
       <value name="Haltech: Knock Retard - Bank 2" units="deg" offset="6" length="2" conversion="V*0.1"></value>
     </frame>
 
@@ -116,7 +116,7 @@
 
     <frame id="0x370" endianess="big">
       <value name="Haltech: Wheelspeed General" units="kmh" offset="0" length="2" conversion="V*0.1"></value>
-      <value targetId="200" offset="0" length="2"></value>
+      <value targetId="200" offset="0" length="2"></value> <!-- gear -->
       <value name="Haltech: Intake Cam Angle #1" units="deg" offset="4" length="2" conversion="V*0.1"></value>
       <value name="Haltech: Intake Cam Angle #2" units="deg" offset="6" length="2" conversion="V*0.1"></value>
     </frame>
@@ -128,42 +128,42 @@
     </frame>
 
     <frame id="0x372" endianess="big">
-      <value targetId="12" offset="0" length="2" conversion="V*0.1"></value>
+      <value targetId="12" offset="0" length="2" conversion="V*0.1"></value> <!-- battery voltage -->
       <value name="Haltech: Air Temp Sensor 2" units="K" offset="2" length="2" conversion="V*0.1"></value>
-      <value targetId="270" units="kPA" offset="4" length="2" conversion="V*0.1"></value>
-      <value targetId="11" units="kPA" offset="6" length="2" conversion="V*0.1"></value>
+      <value targetId="270" units="kPA" offset="4" length="2" conversion="V*0.1"></value> <!-- boost target -->
+      <value targetId="11" units="kPA" offset="6" length="2" conversion="V*0.1"></value> <!-- baro -->
     </frame>
 
     <frame id="0x373" endianess="big">
-      <value targetId="106" units="K" offset="0" length="2" conversion="V*0.1"></value>
-      <value targetId="107" units="K" offset="2" length="2" conversion="V*0.1"></value>
-      <value targetId="108" units="K" offset="4" length="2" conversion="V*0.1"></value>
-      <value targetId="109" units="K" offset="6" length="2" conversion="V*0.1"></value>
+      <value targetId="106" units="K" offset="0" length="2" conversion="V*0.1"></value> <!-- egt1 -->
+      <value targetId="107" units="K" offset="2" length="2" conversion="V*0.1"></value> <!-- egt2 -->
+      <value targetId="108" units="K" offset="4" length="2" conversion="V*0.1"></value> <!-- egt3 -->
+      <value targetId="109" units="K" offset="6" length="2" conversion="V*0.1"></value> <!-- egt4 -->
     </frame>
 
     <frame id="0x374" endianess="big">
-      <value targetId="110" units="K" offset="0" length="2" conversion="V*0.1"></value>
-      <value targetId="111" units="K" offset="2" length="2" conversion="V*0.1"></value>
-      <value targetId="112" units="K" offset="4" length="2" conversion="V*0.1"></value>
-      <value targetId="113" units="K" offset="6" length="2" conversion="V*0.1"></value>
+      <value targetId="110" units="K" offset="0" length="2" conversion="V*0.1"></value> <!-- egt5 -->
+      <value targetId="111" units="K" offset="2" length="2" conversion="V*0.1"></value> <!-- egt6 -->
+      <value targetId="112" units="K" offset="4" length="2" conversion="V*0.1"></value> <!-- egt7 -->
+      <value targetId="113" units="K" offset="6" length="2" conversion="V*0.1"></value> <!-- egt8 -->
     </frame>
 
     <frame id="0x375" endianess="big">
-      <value targetId="114" units="K" offset="0" length="2" conversion="V*0.1"></value>
-      <value targetId="115" units="K" offset="2" length="2" conversion="V*0.1"></value>
-      <value targetId="116" units="K" offset="4" length="2" conversion="V*0.1"></value>
-      <value targetId="117" units="K" offset="6" length="2" conversion="V*0.1"></value>
+      <value targetId="114" units="K" offset="0" length="2" conversion="V*0.1"></value> <!-- egt9 -->
+      <value targetId="115" units="K" offset="2" length="2" conversion="V*0.1"></value> <!-- egt10 -->
+      <value targetId="116" units="K" offset="4" length="2" conversion="V*0.1"></value> <!-- egt11 -->
+      <value targetId="117" units="K" offset="6" length="2" conversion="V*0.1"></value> <!-- egt12 -->
     </frame>
 
     <frame id="0x3E0" endianess="big">
-      <value targetId="14" units="K" offset="0" length="2" conversion="V*0.1"></value>
-      <value targetId="27" units="K" offset="2" length="2" conversion="V*0.1"></value>
+      <value targetId="14" units="K" offset="0" length="2" conversion="V*0.1"></value> <!-- CLT -->
+      <value targetId="27" units="K" offset="2" length="2" conversion="V*0.1"></value> <!-- IAT -->
       <value name="Haltech: Fuel Temp" units="K" offset="4" length="2" conversion="V*0.1"></value>
-      <value targetId="152" units="K" offset="6" length="2" conversion="V*0.1"></value>
+      <value targetId="152" units="K" offset="6" length="2" conversion="V*0.1"></value> <!-- engine oil temp -->
     </frame>
 
     <frame id="0x3E1" endianess="big">
-      <value targetId="138" units="K" offset="0" length="2" conversion="V*0.1"></value>
+      <value targetId="138" units="K" offset="0" length="2" conversion="V*0.1"></value> <!-- transmission oil temp -->
       <value name="Haltech: Diff Oil Temp" units="K" offset="2" length="2" conversion="V*0.1"></value>
       <value name="Haltech: Fuel Composition" units="%" offset="4" length="2" conversion="V*0.1"></value>
     </frame>
@@ -174,8 +174,8 @@
     </frame>
 
     <frame id="0x3E3" endianess="big">
-      <value targetId="17" units="%" offset="0" length="2" conversion="V*0.1"></value>
-      <value targetId="18" units="%" offset="2" length="2" conversion="V*0.1"></value>
+      <value targetId="17" units="%" offset="0" length="2" conversion="V*0.1"></value> <!-- ego1 -->
+      <value targetId="18" units="%" offset="2" length="2" conversion="V*0.1"></value> <!-- ego2 -->
       <value name="Haltech: Fuel Trim Long Term Bank 1" units="%" offset="4" length="2" conversion="V*0.1"></value>
       <value name="Haltech: Fuel Trim Long Term Bank 2" units="%" offset="6" length="2" conversion="V*0.1"></value>
     </frame>

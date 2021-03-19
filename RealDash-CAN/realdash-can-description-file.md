@@ -70,13 +70,15 @@ Each **frame** can optionally specify the frame values as *signed* to force Real
 
 &nbsp;
 ## **frame 'writeInterval' parameter (optional)**
-**writeInterval** parameter is used to specify a case when RealDash is requested to write this frame back to the device on certain interval. The value in **writeInterval** is milliseconds. For example, to specify that RealDash should write this frame to CAN once a second, use:
+**writeInterval** parameter is used to specify a case when RealDash is requested to write this frame back to the device on certain interval. The value in **writeInterval** is milliseconds. For example, to specify that RealDash should write frame 3200 to CAN once a second, use:
 
     <frame id="3200" writeInterval="1000">
 
 &nbsp;
 ## **frame 'size' parameter (optional)**
-When connecting directly to a CAN device with supported [CAN Adapters](http://realdash.net/manuals/supported_can_lin_analyzers.php), a CAN frame may contain less than standard 8 bytes. The **size** parameter can be used to specify a custom number (1-8) of bytes contained by CAN frame:
+Typically CAN frames contain 8 byte payload. When connecting directly to a CAN device with supported [CAN Adapters](http://realdash.net/manuals/supported_can_lin_analyzers.php), a CAN frame may contain less than standard 8 bytes. Also, when using *RealDash CAN* protocol CAN frame may contain up to 64 bytes of payload data. While it is not required to set the **size** parameter when using *RealDash CAN* protocol and frame is larger than 8 bytes, it is a good practise to ensure compatibility with possible CAN FD compatible adapters.
+
+The **size** parameter can be used to specify a custom number (1-64) of bytes contained by CAN frame:
 
     <frame id="3200" size="6">
 
@@ -118,13 +120,13 @@ In addition to **offset** and **length** parameters, the **startbit** and **bitc
 
 &nbsp;
 ## **value 'endianess' parameter (optional)**
-Value can optionally specify the *endianess* of how multibyte values are interpreted in value data. Accepted values for **endianess** are **endianess="big"** or **endianess="little"** (the default setting). The endianess parameter can also be specified in enclosing **frame** tag to apply it to all values. An example of how to specify the value to be considered *big endian*:
+Value can optionally specify the *endianess* of how multibyte values are interpreted in value data. Accepted values for **endianess** are **endianess="big"** or **endianess="little"** (the default setting). The endianess parameter can also be specified in enclosing **frame** to apply it to all values. An example of how to specify the value to be considered *big endian*:
 
     <value targetId="37" offset="0" length="2" endianess="big"></value>
 
 &nbsp;
 ## **value 'signed' parameter (optional)**
-Each **value** can optionally specify the *signed* of the frame values to force RealDash to handle the bytes as signed values. The signed parameter can also be specified in enclosing **frame** tag to apply it to all values. By default bytes are handled as *unsigned*. An example of how to specify a value to be handled as *signed*:
+Each **value** can optionally specify the *signed* of the frame values to force RealDash to handle the bytes as signed values. The signed parameter can also be specified in enclosing **frame** to apply it to all values. By default bytes are handled as *unsigned*. An example of how to specify a value to be handled as *signed*:
 
     <value targetId="14" offset="4" length="2" signed="true"></value>
 
@@ -161,11 +163,11 @@ The **conversionABC** is otherwise identical with **conversion**, but bytes are 
     - result is first byte + 15 * (second byte - 43)
 
 &nbsp;
-## **value 'units' parameter [optional]**
+## **value 'units' parameter (optional)**
 Optional info to apply automatic unit conversions. Valid values are **units="C"**, **units="F"**, **units="km/h"**, **units="mph"**, **units="bar"**, **units="psi"**, **units="bit"**. If units is set to **bit** the value is considered to be an on/off (0 or 1) valued. RealDash reads the **bit** value from the lowest bit. Therefore there is a need for a bitshift to the right on conversion. For example **conversion="(V>>1)"** will read second bit on incoming value.
 
 &nbsp;
-## **value 'enum' parameter [optional]**
+## **value 'enum' parameter (optional)**
 With **enum** parameter, the values in data can be directly interpreted as a text or another value. **enum** is a list of comma separated *value:display value* pairs. For example:
 
     <value name="GMLS: Shifter position" offset="7" length="1" enum="72:P,24:R,80:N,48:D,120:S,40:S2,#:err"></value>
