@@ -49,7 +49,7 @@
     <frame id="0x362" endianess="big">
       <value name="Haltech: Injector Duty Cycle (Primary)" units="%" offset="0" length="2" conversion="V*0.1"></value>
       <value name="Haltech: Injector Duty Cycle (Secondary)" units="%" offset="2" length="2" conversion="V*0.1"></value>
-      <value name="Haltech: Ignition Angle (Leading)" units="deg" offset="4" length="2" conversion="V*0.1"></value>
+      <value targetId="38" units="deg" offset="4" length="2" conversion="V*0.1"></value> <!-- spark advance -->
       <value name="Haltech: Ignition Angle (Trailing)" units="deg" offset="6" length="2" conversion="V*0.1"></value>
     </frame>
 
