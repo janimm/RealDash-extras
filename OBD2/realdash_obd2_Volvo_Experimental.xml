@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+RealDash OBD2 communication description file.
+Requires RealDash version 1.5.8 or newer
+-->
+<OBD2>
+     <init>
+          <!-- after first init command is sent, RealDash reads whatever data comes from serial during next 1500ms.
+         This is done to purge the serial buffers. -->
+          <!-- do not remove 'atl0', 'ate0', or 'ats0' commands. Those settings are assumed when parsing the
+         reply from adapter. -->
+          <command send="atd"></command>
+          <command send="atz"></command>
+          <command send="atat1"></command>
+          <command send="atsp9"></command>
+          <command send="ate0"></command>
+          <command send="atl0"></command>
+          <command send="ats0"></command>
+          <command send="ath0"></command>
+          <command send="atcp00"></command>
+          <command send="atsh0ffffe"></command>
+          <command send="atcra01000021"></command>
+          <command send="atcaf0"></command>
+     </init>
+
+
+     <!-- 'send' command to send to OBD2 adapter -->
+     <!-- 'targetId' links value to RealDash input, see realdash.net/manuals/targetid.php for a complete list -->
+     <!-- OR -->
+     <!-- 'name' links value to RealDash input, if name is unknown to RealDash, input appears in 'ECU Specific' input category -->
+     <!-- 'skipCount' number of skips in rotation for that value. Higher the value less frequently its read -->
+     <!-- 'units' optional info only for automatic unit conversion system. "C","F","km/h","mph","bar","psi","bit".
+       If units="bit", RealDash always checks the lowest bit as of value on or off. Therefore the bitshift to the right on
+       conversion, for example conversion="(V>>1)" will read second bit on incoming value -->
+     <!-- 'header' sets OBD2 header for this command. The full AT command to set the header must be included.
+       Note that header is not reset automatically on next command, so usually when header is in use it has to be set to all commands.
+       If all commands use same header, its best to be placed in 'init' section.
+       Examples: header="ATSH685AF1" header="ATSHDA10F1" -->
+     <!-- 'conversion' if omitted, value is read 'as-is'. Otherwise variables 'B0', 'B1', 'B2', 'B3', 'V' and 'ID#' can be used within
+       conversion formula, for example: conversion="V/10" - result is incoming value / 10 conversion="B0+15*(B1-43)" - result is 'first byte + 15 * (second byte - 43) conversion="V+ID200-74.3" - result is incoming value + 'Body Electronics->Gear' - 74.3 -->
+     <!-- From RealDash version 1.6.6, 'conversionABC' is an option to 'conversion' and uses A,B,C,...AA,AB,AC,...,etc format to distinquish the veriables on the reply.
+       This makes it easier to convert the Equation from other apps.
+       Example: conversion="B0+15*(B1-43)" and conversionABC="A+15*(B-43)" are the same -->
+
+
+     <rotation>
+          <command send="cd7aa610d801" skipCount="0">   <!-- coolant temp, no extraction happens -->
+               <values>
+                    <value name="Volvo: debug all" units="text"></value>
+                    <value name="Volvo: Engine Temp" conversion="(B5*0.75)-48" units="C"></value>
+                    <value name="Volvo: B3-B4" conversion="B3*256+B4"></value>
+                    <value name="Volvo: B5+6" conversion="B5*256+B6"></value>
+               </values>
+          </command>        
+          <command send="cd7aa6100701" skipCount="0"  >   <!-- baro, no extraction happens -->
+           <values>
+                    <value  targetId="94" conversion="B5*5" units="mbar"></value>
+                    <value  name="Volvo: baro" conversion="B5*5" units="mbar"></value>
+                    <value name="Volvo: enum Test" offset="5" length="1" enum="0~10:P,11~20:R,21~100:N,150~200:D,#:err"></value>
+          </values>
+          </command>        
+         <command send="cd7aa6100701" skipCount="0" name="Volvo: baro" conversion="B5*5" units="mbar"  />   <!-- baro, no extraction happens -->
+      -  <command send="atrv" skipCount="20" targetId="12"></command>      <!--     voltage for testing any response, works fine -->
+     </rotation>
+</OBD2>
