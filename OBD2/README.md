@@ -108,7 +108,12 @@ The **conversionABC** is otherwise identical with **conversion**, but bytes are 
 
 &nbsp;
 ### **units [optional]**
-Optional info to apply automatic unit conversions. Valid values are **units="C"**, **units="F"**, **units="km/h"**, **units="mph"**, **units="bar"**, **units="psi"**, **units="bit"**. If units is set to **bit** the value is considered to be an on/off (0 or 1) valued. RealDash reads the **bit** value from the lowest bit. Therefore there is a need for a bitshift to the right on conversion. For example **conversion="(V>>1)"** will read second bit on incoming value.
+Optional info to apply automatic unit conversions. Valid values are **units="C"**, **units="F"**, **units="km/h"**, **units="mph"**, **units="bar"**, **units="psi"**, **units="text"**, **units="bit"**.
+
+If units is set to **bit** the value is considered to be an on/off (0 or 1) valued. RealDash reads the **bit** value from the lowest bit. Therefore there is a need for a bitshift to the right on conversion. For example **conversion="(V>>1)"** will read second bit on incoming value.
+
+The **units="text"** can be used to see the OBD2 reply 'as-is' in RealDash text gauge. This is mainly for development/debug purposes.
+
 
 &nbsp;
 ### **header [optional]**
@@ -136,6 +141,10 @@ The above example uses **enum** to show shifter position as a character in RealD
 In addition, **enum** supports a range of values with *tilde* **~** operator. For example:
 
     <value name="Custom Shifter position" offset="7" length="1" enum="0~10:P,11~20:R,21~100:N,150~200:D,#:err"></value>
+
+&nbsp;
+### **rawReply [optional]**
+If **command** section contains attribute **rawReply="true"**, every reply byte, including any header bytes are regarded as data bytes. This allows to use custom commands on which the reply does not follow typical ELM327 reply.
 
 &nbsp;
 ### **Receive multiple values on one command**
