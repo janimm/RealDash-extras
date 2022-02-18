@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-RealDash OBD2 communication description file.
-Requires RealDash version 1.5.8 or newer
--->
 <OBD2>
      <init>
-          <!-- after first init command is sent, RealDash reads whatever data comes from serial during next 1500ms.
-         This is done to purge the serial buffers. -->
-          <!-- do not remove 'atl0', 'ate0', or 'ats0' commands. Those settings are assumed when parsing the
-         reply from adapter. -->
           <command send="atd"></command>
           <command send="atat1"></command>
           <command send="atsp9"></command>
@@ -19,6 +11,8 @@ Requires RealDash version 1.5.8 or newer
           <command send="atsh0ffffe"></command>
           <command send="atcra01000021"></command>
           <command send="atcaf0"></command>
+          <command send="atdp"></command>
+          <command send="atdpn"></command>
           <command send="ate0"></command>
      </init>
 
@@ -36,20 +30,24 @@ Requires RealDash version 1.5.8 or newer
      
 
      <rotation>
-          <command send="cd7aa610d801"  rawReply="true" skipCount="0">   <!-- coolant temp, no extraction happens -->
+          <command send="cd7aa610d801" skipCount="1" name="Volvo: Engine Temp" conversion="(B5*0.75)-48" units="C">   <!-- coolant temp, no extraction happens -->
                <values>
-                    <value name="Volvo: Temp txt" units="text"></value>
+                    <value name="Volvo: debug all" units="text"></value>
                     <value name="Volvo: Engine Temp" conversion="(B5*0.75)-48" units="C"></value>
+                    <value name="Volvo: B3-B4" conversion="B3*256+B4"></value>
+                    <value name="Volvo: B5+6" conversion="B5*256+B6"></value>
                </values>
           </command>        
-          <command send="cd7aa6100701" rawReply="true" skipCount="0"  >   <!-- baro, no extraction happens -->
+     <!--    <command send="cd7aa6100701" skipCount="2"  >       
            <values>
-                     <value  name="Volvo: baro TExt"  units="text"></value>
-                    <value  name="Volvo: baro2" conversion="B5*5" units="mbar"></value>
+                    <value  targetId="94" conversion="B5*5" units="mbar"></value>
+                    <value  name="Volvo: baro" conversion="B5*5" units="mbar"></value>
+                    <value name="Volvo: enum Test" offset="5" length="1" enum="0~10:P,11~20:R,21~100:N,150~200:D,#:err"></value>
           </values>
-          </command>        
-         <command send="cd7aa6100701" skipCount="3" rawReply="true" name="Volvo: baro" conversion="B5*5" units="mbar"  />   <!-- baro, no extraction happens -->
-        <command send="cd7aA6135101" rawReply="true" skipCount="1" name="Volvo: Ambient Temp" conversion="(B5*0.75)-48" units="C"/> 
-         <command send="atrv" skipCount="20" targetId="12"></command>      <!--     voltage for testing any response, works fine -->
+          </command>        -->
+         
+         <command send="cd7aA6135101"  header="atsh0ffffe" skipCount="1" name="Volvo: Ambient Temp" conversion="(B5*0.75)-48" units="C"/> 
+         <command send="cd7aa6100701" skipCount="0" name="Volvo: baro" conversion="B5*5" units="mbar"  />   <!-- baro, no extraction happens -->
+         <command send="atrv" skipCount="20"  name="Volvo: Voltage"></command>      <!--     voltage for testing any response, works fine -->
      </rotation>
 </OBD2>

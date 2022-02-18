@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<OBD2>
+     <init>
+          <command send="atz"></command>
+          <command send="atat1"></command>
+          <command send="atsp6"></command>
+          <command send="atl0"></command>
+          <command send="ats0"></command>
+          <command send="ath0"></command>
+          <command send="atsh7e5"></command>
+          <command send="atcm000"></command>
+          <command send="atcf000"></command>
+           <command send="atst15"></command>
+            <!--    <command send="atfcsm0"></command>
+                <command send="atcfcs0"></command>
+                  <command send="atfcsm0"></command>
+         --> <command send="ate0"></command> 
+         
+     </init>
+
+     <!-- 'conversion' if omitted, value is read 'as-is'. Otherwise variables 'B0', 'B1', 'B2', 'B3', 'V' and 'ID#' can be used within
+       conversion formula, for example: conversion="V/10" 
+       conversion="V+ID200-74.3" - result is incoming value +
+         'Body Electronics->Gear' - 74.3 -->
+
+     <rotation>
+          <!-- 0x01 Motor 
+	    <command send="atcr7ed" header="atsh7e5" skipCount="0"/>
+          0x01 Motor --> 
+		
+		<command send="221802" skipCount="0" name="Amp" conversion="((B3*65536.0)+B4*256+B5)/100-1500" units="A"/>
+		  <command send="221801" skipCount="0" name="BattVolt" conversion="((B3*256)+B4)/10" units="V"/>
+	
+		<command send="22181D" skipCount="9" name="TayBattTempOut" conversion="B3-40" units="C"/>
+          <command send="22181C" skipCount="10" name="TayBattTempIn" conversion="B3-40" units="C"/>
+          <command send="221E10" skipCount="11" name="BattTemp" conversion="B3-100" units="C"/>
+          <command send="22F40D" skipCount="3" name="Velocity" conversion="B3" units="km/h"/>
+          <command send="22028C" skipCount="12" name="SoC" conversion="B3" units="%"/>
+		  <command send="221E3B" skipCount="7" name="CellSumm" conversion="((B3*256)+B4)/10" units="V"/>
+		   
+          <command send="221E1B" skipCount="13" name="BattLimChar" conversion="B3*256+B4" units="A"/>
+          <command send="221E1C" skipCount="14" name="BattLimDis" conversion="B3*256+B4" units="A"/>
+          <command send="221E33" skipCount="5" name="CellVoltMin" conversion="((B3*256)+B4)/10000" units="V">
+               <values>
+                    <value name="CellVoltMin2" conversion="(B3*256)+B4)/10000" units="V"/>
+                    <value name="Cell#Min" conversion="B5" units="#"/>
+               </values>
+          </command>
+          <command send="221E34" skipCount="5" name="CellVoltMax" conversion="((B3*256)+B4)/10000" units="V">
+               <values>
+                    <value name="CellVoltMax" conversion="(B4*256)+B4)/10000" units="V"/>
+                    <value name="Cell#Max" conversion="B4" units="#"/>
+               </values>
+          </command>
+
+          <command send="2208D2" header="atsh7E0"   skipCount="10" name="SoCDiplay" conversion="((B3*256)+B4)*0.01" units="%"/>
+	
+          <command send="atcra7AC"  header="atsh742" skipCount="10" ></command>
+	    <command send="2227D6"  skipCount="10"  conversion="((B3*65536.0)+B4*256+B5)/100.0" name="Compressor" units="kW"/>
+		  <command send="22475F" skipCount="10" conversion="B3*0.25" name="HeaterAmp" units="A"/>
+    
+			
+			  <command send="atcra7B0"  header="atsh746" skipCount="10" ></command>
+		 <command send="222608" skipCount="10" conversion="B3*0.5-50" name="OutsideTemp" units="C"/>
+		  <command send="222613" skipCount="10" conversion="B3*0.5-50" name="InsideTemp" units="C"/>
+		       
+
+			   <command send="atcra7ED"  header="atsh7e5" skipCount="10"></command>
+<!--
+		//climate control
+														   //writeCAN("222609"); // Outside Temp Sensor 62 26 09 28 x/2-50 °C 40 -40?
+		writeCAN("222608"); // Outside Temp Calc 62 26 09 23 x/2-50 °C  35
+		writeCAN("222613");  // Inside temperature, °C
+
+		 atcra7AC"  //Thermo 0xC5
+          	//	writeCAN("2227D6 //Compressor kw Probleme time outs?
+
+               22475F27D6
+               2227D6475F
+			   
+			     <command send="221804"  header="atsh7e5" headerresp="atcra7ED" skipCount="2" name="Amp2" conversion="((B3*65536.0)+B4*256+B5)/100-1500" units="A"/>
+ 
+		-->
+        
+          <command send="atrv" skipCount="20" name="12VBatt"></command>     
+     </rotation>
+</OBD2>
