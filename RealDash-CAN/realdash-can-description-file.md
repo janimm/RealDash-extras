@@ -164,7 +164,12 @@ The **conversionABC** is otherwise identical with **conversion**, but bytes are 
 
 &nbsp;
 ## **value 'units' parameter (optional)**
-Optional info to apply automatic unit conversions. Valid values are **units="C"**, **units="F"**, **units="km/h"**, **units="mph"**, **units="bar"**, **units="psi"**, **units="bit"**. If units is set to **bit** the value is considered to be an on/off (0 or 1) valued. RealDash reads the **bit** value from the lowest bit. Therefore there is a need for a bitshift to the right on conversion. For example **conversion="(V>>1)"** will read second bit on incoming value.
+Optional info to apply automatic unit conversions. Valid values are **units="C"**, **units="F"**, **units="km/h"**, **units="mph"**, **units="bar"**, **units="psi"**, **units="time"**, **units="bit"**.
+
+If units is set to **bit** the value is considered to be an on/off (0 or 1) valued. RealDash reads the **bit** value from the lowest bit. Therefore there is a need for a bitshift to the right on conversion. For example **conversion="(V>>1)"** will read second bit on incoming value.
+
+The **units="time"** expects a value to be in seconds and its converted into displayable time in RealDash. The GPS Timezone setting in RealDash is applied.
+
 
 &nbsp;
 ## **value 'enum' parameter (optional)**

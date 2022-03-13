@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+RealDash OBD2 communication description file.
+Requires RealDash version 2.0.1 or newer
+
+A special channel descriptions for "Russian Special - Itelma/Avtel M73 E3"
+-->
+<OBD2>
+  <init>
+    <!-- after first init command is sent, RealDash reads whatever data comes from serial during next 1500ms.
+         This is done to purge the serial buffers. -->
+    <!-- do not remove 'atl0', 'ate0', or 'ats0' commands. Those settings are assumed when parsing the
+         reply from adapter. -->
+    <command send="atd"></command>
+    <command send="atz"></command>
+    <command send="atl0"></command>
+    <command send="ate0"></command>
+    <command send="ats0"></command>
+    <command send="atsp5"></command>
+    <command send="atal"></command>
+    <command send="atib10"></command>
+    <command send="atsh8110f1"></command>
+    <command send="atst32"></command>
+    <command send="atsw00"></command>
+    <command send="atfi"></command>
+  </init>
+
+  <!-- 'send' command to send to OBD2 adapter -->
+  <!-- 'targetId' links value to RealDash input, see realdash.net/manuals/targetid.php for a complete list -->
+  <!-- OR -->
+  <!-- 'name' links value to RealDash input, if name is unknown to RealDash, input appears in 'ECU Specific' input category -->
+  <!-- 'skipCount' number of skips in rotation for that value. Higher the value less frequently its read -->
+  <!-- 'units' [optional] info for automatic unit conversion system. "C","F","km/h","mph","bar","psi","bit".
+       If units="bit", RealDash always checks the lowest bit as of value on or off. Therefore the bitshift to the right on
+       conversion, for example conversion="(V>>1)" will read second bit on incoming value -->
+  <!-- 'header' [optional] sets OBD2 header for this command. The full AT command to set the header must be included.
+       Note that header is not reset automatically on next command, so usually when header is in use it has to be set to all commands.
+       If all commands use same header, its best to be placed in 'init' section.
+       Examples:
+       header="ATSH685AF1"
+       header="ATSHDA10F1" -->
+  <!-- 'conversion' [optional] if omitted, value is read 'as-is'.
+           Otherwise variables 'B0', 'B1', 'B2', 'B3', 'V' and 'ID#' can be used within conversion formula, for example;
+           conversion="V/10" - result is incoming value / 10
+           conversion="B0+15*(B1-43)" - result is 'first byte + 15 * (second byte - 43)
+           conversion="V+ID200-74.3" - result is incoming value + 'Body Electronics->Gear' - 74.3 -->
+  <!-- From RealDash version 1.6.6, 'conversionABC' is an option to 'conversion' and uses A,B,C,...AA,AB,AC,...,etc format to distinquish the individual bytes on the reply.
+           This makes it easier to convert the Equation from other apps.
+           Example: conversion="B0+15*(B1-43)" and conversionABC="A+15*(B-43)" produce the same result -->
+
+  <!-- conversion values from ABC style to RealDash B# style
+    B0, B1, B2, B3, B4, B5, B6, B7, B8, B9, B10,B11,B12,B13,B14,B15,B16,B17,B18,B19,B20,B21,B22,B23,B24,B25
+    A   B   C   D   E   F   G   H   I   J   K   L   M   N   O   P   Q   R   S   T   U   V   W   X   Y   Z
+
+    B26,B27,B28,B29,B30,B31,B32,B33,B34,B35,B36,B37,B38,B39,B40,B41,B42,B43,B44,B45,B46,B47,B48,B49,B50,B51
+    AA  AB  AC  AD  AE  AF  AG  AH  AI  AJ  AK  AL  AM  AN  AO  AP  AQ  AR  AS  AT  AU  AV  AW  AX  AY  AZ
+  -->
+
+  <rotation>
+    <command send="2101" skipCount="0">
+      <values>
+        <value targetId="37" conversion="(B7*10200)/255"></value><!--RPM-->
+        <value targetId="81" units="km/h" conversion="(B5*318.8)/255"></value><!--Speed-->
+        <value targetId="12" conversion="(B4*18.79)/255"></value><!--Batt voltage-->
+        <value targetId="14" units="C" conversion="B2*0.75-48"></value><!--CLT-->
+        <value targetId="42" conversion="B6*99.6/255"></value><!--TPS-->
+        <value targetId="35" conversion="B16*256+(B17*0.024)"></value><!--PW1-->
+        <value targetId="30" conversion="(B8*6528)/255+(B9/10)"></value><!--MAF-->
+        <value targetId="100" conversion="(B12*1530)/255+(B13*5.98)/255"></value><!--Engine Load-->
+        <value targetId="254" conversion="B27*15.938/255+(B28*0.062/255)"></value><!--Lambda1-->
+
+        <value name="Itelma/Avtel M73 E3: Number of errors" conversion="B0"></value>
+        <value name="Itelma/Avtel M73 E3: Error code" conversion="B0*255"></value>
+        <value name="Itelma/Avtel M73 E3: MAF voltage" conversion="B8*0.019535"></value>
+        <value name="Itelma/Avtel M73 E3: UOZ" conversion="SIGNED(B10)*95.3/127"></value>
+        <value name="Itelma/Avtel M73 E3: Value UOZ of detonation" conversion="-SIGNED(B11)*95.3/127"></value>
+        <value name="Itelma/Avtel M73 E3: FSM XX" conversion="B19"></value>
+        <value name="Itelma/Avtel M73 E3: JRPMS XX" conversion="B18*10"></value>
+        <value name="Itelma/Avtel M73 E3: MAF_XX" conversion="(B8*6528)/255+(B9/10)"></value>
+        <value name="Itelma/Avtel M73 E3: O2 voltage 1" conversion="B24*1.328/255-0.2"></value>
+        <value name="Itelma/Avtel M73 E3: Lambda correction" conversion="(B27*15.938)/255"></value><!-- The conversion must be wrong here -->
+        <value name="Itelma/Avtel M73 E3: Injection puls correction (MC)" conversion="B16*870.40/255+(B17*3.4)/255"></value><!-- The conversion must be wrong here -->
+        <value name="Itelma/Avtel M73 E3: Multi puls correction" conversion="B30*5+(B31*4.98)/255"></value><!-- The conversion must be wrong here -->
+        <value name="Itelma/Avtel M73 E3: Adsorber flow" conversion="B29*99.6/255"></value>
+        <value name="Itelma/Avtel M73 E3: O2 voltage 2" conversion="B24*1.328/255-0.2"></value>
+      </values>
+    </command>
+  </rotation>
+</OBD2>
+

@@ -18,7 +18,7 @@
     </frame>
 
     <frame id="0x522">
-      <value targetId="35" offset="0" length="2" conversion="V*0.01"></value> <!-- Pulse Width 1 -->
+      <value targetId="35" offset="0" length="2" conversion="V*0.001"></value> <!-- Pulse Width 1 -->
       <value targetId="119" units="%" offset="2" length="2" conversion="V*0.1"></value> <!-- Duty Cycle 1 -->
       <value name="MaxxECU: Fuel Cut" units="%" offset="2" length="2"></value>
       <value targetId="81" units="kph" offset="6" length="2" conversion="V*0.1"></value> <!-- VSS1 -->
