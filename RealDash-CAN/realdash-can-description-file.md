@@ -149,7 +149,7 @@ The **conversion** parameter is a formula that is applied to received value. For
     * B256
     * ...
 * ID#. Reference to other value where '#' is the RealDash targetId number. [See list of targetIds here](https://realdash.net/manuals/targetid.php)
-* "Custom value name". Reference to other value where text in quotas is the value name. This can be used with custom values specified by 'name' attribute.
+* 'Custom value name'. Reference to other value where text in single quotas is the value name. This can be used with custom values specified by 'name' attribute.
 
 &nbsp;
 ## **value 'conversionABC' (optional)**
@@ -163,7 +163,13 @@ The **conversionABC** is otherwise identical with **conversion**, but bytes are 
 
     conversion="B0+15*(B1-43)"
     - result is first byte + 15 * (second byte - 43)
-
+    
+    conversion="ID64+V"
+    - result is vehicle speed (targetId 64) + incoming value.
+    
+    conversion="'MYECU: Special RPM'+B1"
+    - result is value from 'MYECU: Special RPM' + value from second byte.
+    
 &nbsp;
 ## **value 'units' parameter (optional)**
 Optional info to apply automatic unit conversions. Valid values are **units="C"**, **units="F"**, **units="km/h"**, **units="mph"**, **units="bar"**, **units="psi"**, **units="time"**, **units="bit"**.
