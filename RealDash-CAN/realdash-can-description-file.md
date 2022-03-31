@@ -148,6 +148,8 @@ The **conversion** parameter is a formula that is applied to received value. For
     * ...
     * B256
     * ...
+* ID#. Reference to other value where '#' is the RealDash targetId number. [See list of targetIds here](https://realdash.net/manuals/targetid.php)
+* "Custom value name". Reference to other value where text in quotas is the value name. This can be used with custom values specified by 'name' attribute.
 
 &nbsp;
 ## **value 'conversionABC' (optional)**
