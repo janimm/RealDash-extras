@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RealDashCAN version="2">
+  <frames>
+	<frame id="0x77e:0x01,0,1" endianess="big"> <!-- Left Front -->
+		<value targetId="240" offset="1" length="2" units="bar" conversion="V*0.01"></value> <!-- pressure -->
+		<value targetId="232" offset="3" length="1" units="C"></value> <!-- temperature -->
+		<value name="Tiremagic TPMS: Sensor Voltage" offset="4" length="1" conversion="V*0.1"></value>
+		<value name="Tiremagic TPMS: Air Leakage State" offset="5" length="1" units="bit"></value>
+		<value name="Tiremagic TPMS: Low Voltage" offset="5" length="1" units="bit" conversion="V>>3"></value>
+		<value name="Tiremagic TPMS: Negative Temperature" offset="5" length="1" units="bit" conversion="V>>4"></value>
+		<value name="Tiremagic TPMS: Sensor Signal Lost" offset="5" length="1" units="bit" conversion="V>>5"></value>
+	</frame>
+	<frame id="0x77e:0x02,0,1" endianess="big"> <!-- Right Front -->
+		<value targetId="241" offset="1" length="2" units="bar" conversion="V*0.01"></value> <!-- pressure -->
+		<value targetId="233" offset="3" length="1" units="C"></value> <!-- temperature -->
+		<value name="Tiremagic TPMS: Sensor Voltage" offset="4" length="1" conversion="V*0.1"></value>
+		<value name="Tiremagic TPMS: Air Leakage State" offset="5" length="1" units="bit"></value>
+		<value name="Tiremagic TPMS: Low Voltage" offset="5" length="1" units="bit" conversion="V>>3"></value>
+		<value name="Tiremagic TPMS: Negative Temperature" offset="5" length="1" units="bit" conversion="V>>4"></value>
+		<value name="Tiremagic TPMS: Sensor Signal Lost" offset="5" length="1" units="bit" conversion="V>>5"></value>
+	</frame>
+	<frame id="0x77e:0x03,0,1" endianess="big"> <!-- Left Rear -->
+		<value targetId="242" offset="1" length="2" units="bar" conversion="V*0.01"></value> <!-- pressure -->
+		<value targetId="234" offset="3" length="1" units="C"></value> <!-- temperature -->
+		<value name="Tiremagic TPMS: Sensor Voltage" offset="4" length="1" conversion="V*0.1"></value>
+		<value name="Tiremagic TPMS: Air Leakage State" offset="5" length="1" units="bit"></value>
+		<value name="Tiremagic TPMS: Low Voltage" offset="5" length="1" units="bit" conversion="V>>3"></value>
+		<value name="Tiremagic TPMS: Negative Temperature" offset="5" length="1" units="bit" conversion="V>>4"></value>
+		<value name="Tiremagic TPMS: Sensor Signal Lost" offset="5" length="1" units="bit" conversion="V>>5"></value>
+	</frame>
+	<frame id="0x77e:0x04,0,1" endianess="big"> <!-- Right Rear -->
+		<value targetId="243" offset="1" length="2" units="bar" conversion="V*0.01"></value> <!-- pressure -->
+		<value targetId="235" offset="3" length="1" units="C"></value> <!-- temperature -->
+		<value name="Tiremagic TPMS: Sensor Voltage" offset="4" length="1" conversion="V*0.1"></value>
+		<value name="Tiremagic TPMS: Air Leakage State" offset="5" length="1" units="bit"></value>
+		<value name="Tiremagic TPMS: Low Voltage" offset="5" length="1" units="bit" conversion="V>>3"></value>
+		<value name="Tiremagic TPMS: Negative Temperature" offset="5" length="1" units="bit" conversion="V>>4"></value>
+		<value name="Tiremagic TPMS: Sensor Signal Lost" offset="5" length="1" units="bit" conversion="V>>5"></value>
+	</frame>
+  </frames>
+</RealDashCAN>
+
