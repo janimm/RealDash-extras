@@ -87,6 +87,21 @@
       <value name="MaxxECU: Spare 2" offset="6" length="2" signed="true"></value>
     </frame>
 
+    <frame id="0x538">
+      <value name="MaxxECU: User Channel 1" offset="0" length="2" conversion="V*0.1"></value>
+      <value name="MaxxECU: User Channel 2" offset="2" length="2" conversion="V*0.1"></value>
+      <value name="MaxxECU: User Channel 3" offset="4" length="2" conversion="V*0.1"></value>
+      <value name="MaxxECU: User Channel 4" offset="6" length="2" conversion="V*0.1"></value>
+    </frame>
+    
+    <frame id="0x540">
+      <value name="MaxxECU: Active Boost Table" offset="0" length="1"></value>
+      <value name="MaxxECU: Active Tune Selector" offset="1" length="1"></value>
+      <value name="MaxxECU: Virtual Fuel Tank" offset="2" length="2" conversion="V*0.1"></value>
+      <value name="MaxxECU: Transmission Temp" units="C" offset="4" length="2" conversion="V*0.1"></value>
+      <value name="MaxxECU: Differential Temp" units="C" offset="6" length="2" conversion="V*0.1"></value>
+    </frame>
+    
   </frames>
 </RealDashCAN>
 
