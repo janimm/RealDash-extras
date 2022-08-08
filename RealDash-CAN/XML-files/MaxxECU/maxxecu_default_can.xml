@@ -2,7 +2,8 @@
 <!-- RealDash CAN XML description file, version 2 Requires RealDash version 1.5.8 or newer -->
 <RealDashCAN version="2">
   <frames>
-    
+    <!-- https://www.maxxecu.com/webhelp/can-default_maxxecu_protocol.html -->
+	  
     <frame id="0x520">
       <value targetId="37" offset="0" length="2"></value> <!-- RPM -->
       <value targetId="42" units="%" offset="2" length="2" conversion="V*0.1"></value> <!-- TPS  -->
@@ -38,6 +39,10 @@
       <value name="MaxxECU: Firmware version" offset="6" length="2" conversion="V*0.001"></value>
     </frame>
 
+    <frame id="0x527">
+      <value targetId="256" offset="6" length="2" signed="true" conversion="V*0.001"></value> <!-- Lambda Target 1 -->
+    </frame>
+	  
     <frame id="0x530">
       <value targetId="12" units="V" offset="0" length="2" conversion="V*0.01"></value> <!-- battery voltage -->
       <value targetId="11" units="kPA" offset="2" length="2" conversion="V*0.1"></value> <!-- Baro  -->
