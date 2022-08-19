@@ -1,0 +1,318 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- RealDash CAN XML description file, version 2 Requires RealDash version 1.5.8 or newer -->
+<RealDashCAN version="2">
+  <frames>
+
+  <!-- Tested ecu,E38 LS3 L99. 6L80e -->
+
+    <frame id="0x00c7" endianess="big">
+      <value name="0x00c7 B1" offset="0" length="1" conversion="V"></value> <!-- rullaa 1-2-3 vain kun auto liikkuu -->
+      <value name="0x00c7 B2" offset="1" length="1" conversion="V"></value> <!-- rullaa 0-255 vain kun auto liikkuu -->
+      <value name="0x00c7 B3" offset="2" length="1" conversion="V"></value> <!-- rullaa 0-255 vain kun auto liikkuu -->
+      <value name="0x00c7 B4" offset="3" length="1" conversion="V"></value> <!-- rullaa 0-255 vain kun auto liikkuu -->
+      <value name="0x00c7 B5" offset="4" length="1" conversion="V"></value> <!-- Aina 0 -->
+      <value name="0x00c7 B6" offset="5" length="1" conversion="V"></value> <!-- Aina 0 -->
+      <value name="0x00c7 B7" offset="6" length="1" conversion="V"></value> <!-- Aina 0 -->
+      <value name="0x00c7 B8" offset="7" length="1" conversion="V"></value> <!-- Aina 0 -->
+    </frame>
+
+    <frame id="0x00c9" endianess="big">
+      <value name="0x00c9 B1" offset="0" length="1" conversion="V"></value> <!-- tassa arvo 128 kun ajaa ja 132 kun seis (idle)-->
+      <value targetId="37" offset="1" length="2" conversion="V*0.25"></value> <!-- RPM -->
+      <value name="0x00c9 B4" offset="3" length="1" conversion="V"></value> <!-- heiluu 0-30 koko ajan -->
+      <value name="GM CAN Accelerator Pedal 0" offset="4" length="1" conversion="V*100/254"></value> <!-- Accel pedal -->
+      <value name="0x00c9 B6" offset="5" length="1" conversion="V"></value> <!-- Ainakin jarru tieto -->
+      <value name="GM CAN Brake Pedal" offset="5" length="1" units="bit" startbit="0" bitcount="1" conversion="V"></value> <!-- Brake pedal -->
+      <value name="0x00c9 B7" offset="6" length="1" conversion="V"></value> <!-- Aina 8 -->
+      <value name="0x00c9 B8" offset="7" length="1" conversion="V"></value> <!-- Aina 0 -->
+    </frame>
+
+    <frame id="0x00f9" endianess="big"> <!-- vaihteistoa ehka -->
+      <value name="0x00f9 B1" offset="0" length="2" conversion="V"></value>
+      <value name="0x00f9 B3" offset="2" length="1" conversion="V"></value> <!-- Aina 64 -->
+      <value name="GM CAN Trans out shaft speed" offset="3" length="2" conversion="V*0.25"></value> <!-- Transmission output shaft speed-->
+      <value targetId="301" offset="3" length="2" conversion="V*0.25"></value> <!-- Transmission output shaft speed to ID301 Dummy40-->
+      <value name="0x00f9 B6" offset="5" length="2" conversion="V"></value> <!-- joku kuljettu matka -->
+      <value name="0x00f9 B8" offset="7" length="1" conversion="V"></value>
+    </frame>
+
+    <frame id="0x0191" endianess="big">
+      <value name="0x0191 B1" offset="0" length="2" conversion="V"></value>
+      <value name="0x0191 B3" offset="2" length="2" conversion="V"></value>
+      <value name="0x0191 B5" offset="4" length="2" conversion="V"></value>
+      <value name="GM CAN Accelerator Pedal 2" offset="6" length="1" conversion="V*100/254"></value> <!-- Accel pedal -->
+      <value name="GM CAN Accelerator Pedal 3" offset="7" length="1" conversion="V*100/254"></value> <!-- Accel pedal -->
+    </frame>
+
+    <frame id="0x0199" endianess="big">
+      <value name="0x0199 B1" offset="0" length="1" conversion="V"></value> <!-- rullaa 15-79-143-207 vaikka auto ei ole kaynnissa -->
+      <value name="0x0199 B2" offset="1" length="1" conversion="V"></value> <!-- jotain laatikon hallintaan liityvaa-->
+      <value name="0x0199 B3" offset="2" length="1" conversion="V"></value> <!-- jotain laatikon hallintaan liityvaa-->
+      <value name="0x0199 B4" offset="3" length="1" conversion="V"></value> <!-- jotain laatikon hallintaan liityvaa-->
+      <value name="0x0199 B5" offset="4" length="1" conversion="V"></value> <!-- jotain laatikon hallintaan liityvaa-->
+      <value name="0x0199 B6" offset="5" length="1" conversion="V"></value> <!-- jotain laatikon hallintaan liityvaa-->
+      <value name="0x0199 B7" offset="6" length="1" conversion="V"></value> <!-- Aina 0 -->
+      <value name="0x0199 B8" offset="7" length="1" conversion="V"></value> <!-- Aina 255 -->
+    </frame>
+
+    <frame id="0x01a1" endianess="big">
+      <value name="0x01a1 B1" offset="0" length="1" conversion="V"></value> <!-- Aina 0 -->
+      <value name="0x01a1 B2" offset="1" length="1" conversion="V"></value> <!-- Aina 16 -->
+      <value name="0x01a1 B3" offset="2" length="1" conversion="V"></value> <!-- Aina 65 -->
+      <value name="0x01a1 B4" offset="3" length="1" conversion="V"></value> <!-- Aina 64 -->
+      <value name="0x01a1 B5" offset="4" length="1" conversion="V"></value> <!-- Aina 0 -->
+      <value name="0x01a1 B6" offset="5" length="1" conversion="V"></value> <!-- Aina 0 -->
+      <value name="GM CAN Accelerator Pedal 1" offset="6" length="1" conversion="V*100/254"></value> <!-- Accel pedal -->
+      <value name="0x01a1 B8" offset="7" length="1" conversion="V"></value> <!-- Aina 0 -->
+    </frame>
+
+    <frame id="0x01c3" endianess="big">
+      <value name="0x01c3 B1" offset="0" length="2" conversion="V"></value>
+      <value name="0x01c3 B3" offset="2" length="2" conversion="V"></value>
+      <value name="0x01c3 B5" offset="4" length="1" conversion="V"></value> <!-- Aina 0 -->
+      <value name="0x01c3 B6" offset="5" length="1" conversion="V"></value> <!-- Aina 0 -->
+      <value name="GM CAN Accelerator Pedal 4" offset="6" length="1" conversion="V*100/254"></value> <!-- Accel pedal -->
+      <value name="0x01c3 B8" offset="7" length="1" conversion="V"></value> <!-- Aina 0 -->
+    </frame>
+
+    <frame id="0x01ed" endianess="big">
+      <value name="0x01ed B1" offset="0" length="1" conversion="V"></value> <!-- Aina 65 -->
+      <value name="0x01ed B2" offset="1" length="1" conversion="V"></value> <!-- Aina 144 -->
+      <value name="GM CAN Fuel Flow Estimate g/s" offset="2" length="2" conversion="V/1000"></value> <!-- Instantaneous Fuel Flow Estimate g/s -->
+      <value name="0x01ed B5" offset="4" length="1" conversion="V"></value> <!-- Aina 0 -->
+      <value name="0x01ed B6" offset="5" length="1" conversion="V"></value> <!-- Aina 0 -->
+      <value targetId="256" offset="6" length="1" conversion="V/117"></value> <!-- Lambda Target 1 -->
+      <value targetId="257" offset="6" length="1" conversion="V/117"></value> <!-- Lambda Target 2 -->
+      <value targetId="2" offset="6" length="1" conversion="14.7*(B0/117)"></value> <!-- AFR Target 1 -->
+      <value targetId="3" offset="6" length="1" conversion="14.7*(B0/117)"></value> <!-- AFR Target 2 -->
+      <value name="0x01ed B8" offset="7" length="1" conversion="V"></value> <!-- closed loop =109 ja muuttuu kun ei closed loop tai command eq ei ole 1 -->
+    </frame>
+
+    <frame id="0x01ef" endianess="big">
+      <value name="0x01ef B1" offset="0" length="1" conversion="V"></value> <!-- on aina 128 -->
+      <value name="0x01ef B2" offset="1" length="1" conversion="V"></value> <!-- Aina 0 -->
+      <value targetId="30" offset="2" length="2" conversion="V/100"></value> <!-- MAF g/s -->
+      <value name="0x01ef B5" offset="4" length="1" conversion="V"></value> <!-- Aina 0 -->
+      <value name="0x01ef B6" offset="5" length="1" conversion="V"></value> <!-- Aina 0 -->
+      <value name="0x01ef B7" offset="6" length="1" conversion="V"></value> <!-- Aina 0 -->
+      <value name="0x01ef B8" offset="7" length="1" conversion="V"></value> <!-- Aina 0 -->
+    </frame>
+
+    <frame id="0x019d" endianess="big">
+      <value name="0x019d B1" offset="0" length="1" conversion="V"></value> <!-- rullaa 64-128-192 vaikka auto ei ole kaynnissa -->
+      <value name="0x019d B2" offset="1" length="1" conversion="V"></value> <!-- Aina 0 -->
+      <value name="0x019d B3" offset="2" length="1" conversion="V"></value> <!-- rullaa 0-64 vaikka auto ei ole kaynnissa -->
+      <value name="0x019d B4" offset="3" length="1" conversion="V"></value> <!-- rullaa 255-254-253 vaikka auto ei ole kaynnissa -->
+      <value name="0x019d B5" offset="4" length="1" conversion="V"></value> <!-- 1/0 onko vaihde kytketty -->
+      <value name="GM CAN Trans input shaft speed" offset="5" length="2" conversion="V*0.25"></value> <!-- Transmission input shaft speed-->
+      <value name="GM CAN Trans TCC slip" offset="5" length="2" conversion="ID37-(V*0.25)"></value> <!-- Transmission TCC slip-->
+      <value name="GM CAN Trans slip" offset="5" length="2" conversion="V*0.25/ID409-ID301"></value> <!-- Transmission slip-->
+      <value name="0x019d B8" offset="7" length="1" conversion="V"></value> <!-- on 255 kun pysahdyksissa ja kun auto liikku niin menee 21 -->
+    </frame>
+
+    <frame id="0x01f5" endianess="big">
+      <value name="0x01f5 B1" offset="0" length="1" conversion="V"></value> <!-- tassa nakyy vaihde ja jotain muuta myos -->
+      <value name="GM CAN Shifter Pos+Gear" offset="1" length="5" conversion="B0+((B2*100)+(B4*100))" enum="
+115:P,
+214:R,
+313:N,
+401:D1,
+402:D2,
+403:D3,
+404:D4,
+405:D5,
+406:D6,
+501:S1,
+502:S2,
+503:S3,
+504:S4,
+505:S5,
+506:S6,
+601:M1,
+602:M2,
+603:M3,
+604:M4,
+605:M5,
+606:M6,
+437:D6↓,
+436:D5↓,
+435:D4↓,
+434:D3↓,
+433:D2↓,
+418:D1↑,
+419:D2↑,
+420:D3↑,
+421:D4↑,
+422:D5↑,
+537:S6↓,
+536:S5↓,
+535:S4↓,
+534:S3↓,
+533:S2↓,
+518:S1↑,
+519:S2↑,
+520:S3↑,
+521:S4↑,
+522:S5↑,
+637:M6↓,
+636:M5↓,
+635:M4↓,
+634:M3↓,
+633:M2↓,
+618:M1↑,
+619:M2↑,
+620:M3↑,
+621:M4↑,
+622:M5↑"></value> <!-- Shifter pos + Gear + up/down pointer -->
+
+      <value targetId="200" offset="1" length="1" startbit="0" bitcount="4" conversion="V" enum="15:P,14:R,13:N"></value> <!-- P,R,N + Gear -->
+      <value targetId="144" offset="1" length="1" conversion="V>>4"></value> <!-- Upshift indicator -->
+      <value targetId="145" offset="1" length="1" conversion="V>>5"></value> <!-- Downshift indicator -->
+      <value name="0x01f5 B3" offset="2" length="1" conversion="V"></value> <!-- TUTD Gears-->
+      <value targetId="141" offset="3" length="1" enum="1:P,2:R,3:N,4:D,5:S,#:err"></value> <!-- Shifter position -->
+      <value name="0x01f5 B5" offset="4" length="1" conversion="V"></value> <!-- Aina 0 -->
+      <value name="GM CAN TUTD Active" offset="5" length="1" conversion="V"></value> <!-- TUTD Active 1=on 0=off-->
+      <value name="GM CAN P/N,R,D status" offset="6" length="1" conversion="V" enum="8:P/N,10:R,9:D"></value> <!-- Shifter pos status P/N,R,D -->
+      <value name="0x01f5 B8" offset="7" length="1" conversion="V"></value> <!-- Aina 0 -->
+    </frame>
+
+    <frame id="0x02c3" endianess="big">
+      <value name="0x02c3 B1" offset="0" length="2" conversion="V"></value> <!-- kun laitoin mafin takas niin tama muuttui-->
+      <value name="0x02c3 B3" offset="2" length="1" conversion="V"></value> <!-- Aina 6 -->
+      <value name="0x02c3 B4" offset="3" length="1" conversion="V"></value>
+      <value name="0x02c3 B5" offset="4" length="2" conversion="V"></value>
+      <value targetId="31" offset="6" length="1" conversion="V/2"></value> <!-- MAP kpa -->
+      <value name="0x02c3 B8" offset="7" length="1" conversion="V"></value> <!-- Aina 0 -->
+    </frame>
+
+    <frame id="0x03c1" endianess="big">
+      <value name="0x03c1 B1" offset="0" length="1" conversion="V"></value> <!-- Aina 7 -->
+      <value name="0x03c1 B2" offset="1" length="1" conversion="V"></value> <!-- Aina 101 -->
+      <value name="0x03c1 B3" offset="2" length="1" conversion="V"></value> <!-- Aina 20 -->
+      <value name="0x03c1 B4" offset="3" length="1" conversion="V"></value> <!-- Aina 0 -->
+      <value name="0x03c1 B5" offset="4" length="1" conversion="V"></value> <!-- Aina 0 -->
+      <value name="0x03c1 B6" offset="5" length="1" conversion="V"></value> <!-- Aina 0 -->
+      <value name="0x03c1 B7" offset="6" length="1" conversion="V"></value> <!-- Aina 0 -->
+      <value name="0x03c1 B8" offset="7" length="1" conversion="V"></value> <!-- Aina 0 -->
+    </frame>
+
+    <frame id="0x03d1" endianess="big">
+      <value targetId="65" offset="0" length="1" startbit="0" bitcount="1" conversion="(V-1)*(-1)"></value> <!-- Check engine light 1=off 0=on -->
+      <value targetId="42" offset="1" length="1" conversion="V*100/254"></value> <!-- TPS -->
+      <value name="GM CAN Fuel Cut" offset="2" length="1" units="bit" startbit="6" bitcount="1" conversion="V"></value> <!-- FuelCut bit7, bit8 on aina1 muut on aina0-->
+      <value targetId="406" offset="2" length="1" units="bit" startbit="6" bitcount="1" conversion="V"></value> <!-- FuelCut bit7, bit8 on aina1 muut on aina0-->
+      <value name="0x03d1 B4" offset="3" length="1" conversion="V"></value> <!-- Aina 0 -->
+      <value name="0x03d1 B5" offset="4" length="2" conversion="V"></value> <!-- Fuel Flow Gallons/h? -->
+      <value name="GM CAN Fuel Flow L/h" offset="4" length="2" conversion="V/100*3.78541178"></value> <!-- Fuel Flow Gallons/h? (converted to l/h) -->
+      <value name="0x03d1 B7" offset="6" length="1" conversion="V"></value> <!-- Aina 0 -->
+      <value name="0x03d1 B8" offset="7" length="1" conversion="V"></value> <!-- Aina 0 -->
+    </frame>
+
+    <frame id="0x03e9" endianess="big">
+      <value targetId="81" offset="0" length="2" units="km/h" conversion="V/104.5*1.609344"></value> <!-- VSS1 (MPH to kph)-->
+      <value name="0x03e9 B3" offset="2" length="2" conversion="V"></value> <!-- JOKU KULJETTU MATKA -->
+      <value name="0x03e9 B5" offset="4" length="1" conversion="V"></value> <!-- Aina 0 -->
+      <value name="0x03e9 B6" offset="5" length="1" conversion="V"></value> <!-- Aina 0 -->
+      <value name="0x03e9 B7" offset="6" length="1" conversion="V"></value> <!-- Aina 0 -->
+      <value name="0x03e9 B8" offset="7" length="1" conversion="V"></value> <!-- Aina 0 -->
+    </frame>
+
+    <frame id="0x03f9" endianess="big">
+      <value name="0x03f9 B1" offset="0" length="1" conversion="V"></value> <!-- Aina 0 -->
+      <value name="0x03f9 B2" offset="1" length="2" conversion="V"></value> <!-- Kulutettu polttoaine maara ehka-->
+      <value name="0x03f9 B4" offset="3" length="1" conversion="V"></value>
+      <value name="0x03f9 B5" offset="4" length="1" conversion="V"></value> <!-- Aina 254 -->
+      <value name="0x03f9 B6" offset="5" length="1" conversion="V"></value> <!-- Aina 99 -->
+      <value name="0x03f9 B7" offset="6" length="1" conversion="V"></value> <!-- arvo 230-254 ja ei muutu ajon aikana -->
+      <value name="0x03f9 B8" offset="7" length="1" conversion="V"></value> <!-- Aina 0 -->
+    </frame>
+
+    <frame id="0x04c1" endianess="big">
+      <value name="0x04c1 B1" offset="0" length="1" conversion="V"></value> <!-- ei muutu ajossa -->
+      <value name="0x04c1 B2" offset="1" length="1" conversion="V"></value>  <!-- Aina 196 -->
+      <value targetId="14" offset="2" length="1" units="C" conversion="V-40"></value> <!-- CLT -->
+      <value targetId="27" offset="3" length="1" units="C" conversion="V-40"></value> <!-- IAT -->
+      <value targetId="173" offset="4" length="1" units="F" conversion="V-50+1.3"></value><!-- Outside Temp -->
+      <value name="0x04c1 B6" offset="5" length="1" conversion="V"></value> <!-- ei muutu ajossa -->
+      <value name="0x04c1 B7" offset="6" length="1" conversion="V"></value> <!-- Aina 0 -->
+      <value name="0x04c1 B8" offset="7" length="1" conversion="V"></value> <!-- Aina 0 -->
+    </frame>
+
+    <frame id="0x04d1" endianess="big">
+      <value name="0x04d1 B1" offset="0" length="1" conversion="V"></value> <!-- Aina 16 -->
+      <value name="0x04d1 B2" offset="1" length="1" conversion="V"></value> <!-- Aina 0 -->
+      <value targetId="151" offset="2" length="1" conversion="V*0.578*0.06894757"></value> <!-- Oil pressure (converted to bar) -->
+      <value name="0x04d1 B4" offset="3" length="1" conversion="V"></value> <!-- Aina 2 -->
+      <value name="0x04d1 B5" offset="4" length="1" conversion="V"></value> <!-- Aina 51 -->
+      <value name="GM CAN Fuel Level" offset="5" length="1" conversion="V*100/255"></value> <!-- Fuel level -->
+      <value name="0x04d1 B7" offset="6" length="1" conversion="V"></value> <!-- Aina 0 -->
+      <value name="0x04d1 B8" offset="7" length="1" conversion="V"></value> <!-- 125 kaikilla muilla paitsi kun shifter on D,S -->
+    </frame>
+
+    <frame id="0x04c9" endianess="big">
+      <value name="0x04c9 B1" offset="0" length="1" conversion="V"></value> <!-- Aina 64 -->
+      <value targetId="138" offset="1" length="1" conversion="V-40"></value> <!-- Transmission fluid temp -->
+      <value name="0x04c9 B3" offset="2" length="1" conversion="V"></value> <!-- Aina 0 -->
+      <value name="0x04c9 B4" offset="3" length="1" conversion="V"></value> <!-- Aina 0 -->
+      <value name="0x04c9 B5" offset="4" length="1" conversion="V"></value> <!-- Aina 0 -->
+      <value name="0x04c9 B6" offset="5" length="1" conversion="V"></value> <!-- Aina 0 -->
+      <value name="0x04c9 B7" offset="6" length="1" conversion="V"></value> <!-- Aina 0 -->
+      <value name="0x04c9 B8" offset="7" length="1" conversion="V"></value> <!-- Aina 0 -->
+    </frame>
+
+    <frame id="0x04f1" endianess="big">
+      <value name="0x04f1 B1" offset="0" length="1" conversion="V"></value> <!-- Aina 1 -->
+      <value name="0x04f1 B2" offset="1" length="1" conversion="V"></value> <!-- Aina 220 -->
+      <value name="0x04f1 B3" offset="2" length="1" conversion="V"></value> <!-- Aina 1 -->
+      <value name="0x04f1 B4" offset="3" length="1" conversion="V"></value> <!-- Aina 220 -->
+      <value name="0x04f1 B5" offset="4" length="1" conversion="V"></value> <!-- Aina 0 -->
+      <value name="0x04f1 B6" offset="5" length="1" conversion="V"></value> <!-- Aina 155 -->
+      <value name="0x04f1 B7" offset="6" length="1" conversion="V"></value> <!-- Aina 0 -->
+      <value name="0x04f1 B8" offset="7" length="1" conversion="V"></value> <!-- 125 kaikilla muilla paitsi kun shifter on D,S -->
+    </frame>
+
+    <frame id="0x0772" endianess="big">
+      <value name="0x0772 B1" offset="0" length="1" conversion="V"></value> <!-- Aina 0 -->
+      <value name="0x0772 B2" offset="1" length="1" conversion="V"></value> <!-- Aina 0 -->
+      <value name="0x0772 B3" offset="2" length="1" conversion="V"></value> <!-- Aina 0 -->
+      <value name="0x0772 B4" offset="3" length="1" conversion="V"></value> <!-- Aina 0 -->
+      <value name="0x0772 B5" offset="4" length="1" conversion="V"></value> <!-- Aina 0 -->
+      <value name="0x0772 B6" offset="5" length="1" conversion="V"></value> <!-- Aina 0 -->
+      <value name="0x0772 B7" offset="6" length="1" conversion="V"></value> <!-- Aina 0 -->
+      <value name="0x0772 B8" offset="7" length="1" conversion="V"></value> <!-- Aina 0 -->
+    </frame>
+
+    <frame id="0x077f" endianess="big">
+      <value name="0x077f B1" offset="0" length="1" conversion="V"></value> <!-- Aina 0 -->
+      <value name="0x077f B2" offset="1" length="1" conversion="V"></value> <!-- Aina 0 -->
+      <value name="0x077f B3" offset="2" length="1" conversion="V"></value> <!-- Aina 0 -->
+      <value name="0x077f B4" offset="3" length="1" conversion="V"></value> <!-- Aina 0 -->
+      <value name="0x077f B5" offset="4" length="1" conversion="V"></value> <!-- Aina 0 -->
+      <value name="0x077f B6" offset="5" length="1" conversion="V"></value> <!-- Aina 0 -->
+      <value name="0x077f B7" offset="6" length="1" conversion="V"></value> <!-- Aina 0 -->
+      <value name="0x077f B8" offset="7" length="1" conversion="V"></value> <!-- Aina 0 -->
+    </frame>
+
+    <frame id="0x0000" endianess="big">
+      <value name="0x0000 B1" offset="0" length="1" conversion="V"></value> <!-- huttua -->
+      <value name="0x0000 B2" offset="1" length="1" conversion="V"></value> <!-- huttua -->
+      <value name="0x0000 B3" offset="2" length="1" conversion="V"></value> <!-- huttua -->
+      <value name="0x0000 B4" offset="3" length="1" conversion="V"></value> <!-- huttua -->
+      <value name="0x0000 B5" offset="4" length="1" conversion="V"></value> <!-- huttua -->
+      <value name="0x0000 B6" offset="5" length="1" conversion="V"></value> <!-- huttua -->
+      <value name="0x0000 B7" offset="6" length="1" conversion="V"></value> <!-- huttua -->
+      <value name="0x0000 B8" offset="7" length="1" conversion="V"></value> <!-- huttua -->
+    </frame>
+
+    <frame id="0x01af" endianess="big"> <!-- tama nakyy vaan valilla -->
+      <value name="0x01af B1" offset="0" length="1" conversion="V"></value>
+      <value name="0x01af B2" offset="1" length="1" conversion="V"></value>
+      <value name="0x01af B3" offset="2" length="1" conversion="V"></value>
+      <value name="0x01af B4" offset="3" length="1" conversion="V"></value>
+      <value name="0x01af B5" offset="4" length="1" conversion="V"></value>
+      <value name="0x01af B6" offset="5" length="1" conversion="V"></value>
+      <value name="0x01af B7" offset="6" length="1" conversion="V"></value>
+      <value name="0x01af B8" offset="7" length="1" conversion="V"></value>
+    </frame>
+  </frames>
+</RealDashCAN>

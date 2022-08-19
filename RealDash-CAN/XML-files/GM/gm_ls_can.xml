@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- RealDash CAN XML description file, version 2 Requires RealDash version 1.5.8 or newer -->
+<RealDashCAN version="2">
+  <frames>
+  <!-- Tested ecu,E38 LS3 L99. 6L80e -->
+    <frame id="0x00c9" endianess="big">
+      <value targetId="37" offset="1" length="2" conversion="V*0.25"></value> <!-- RPM -->
+      <value name="GM CAN: Accelerator Pedal 0" offset="4" length="1" conversion="V*100/254"></value> <!-- Accel pedal 0 -->
+      <value name="GM CAN: Brake Pedal" offset="5" length="1" units="bit" startbit="0" bitcount="1"></value> <!-- Brake pedal -->
+    </frame>
+
+    <frame id="0x00f9" endianess="big">
+      <value name="GM CAN: Trans out shaft speed" offset="3" length="2" conversion="V*0.25"></value> <!-- Transmission output shaft speed-->
+    </frame>
+
+    <frame id="0x0191" endianess="big">
+      <value name="GM CAN: Accelerator Pedal 2" offset="6" length="1" conversion="V*100/254"></value> <!-- Accel pedal 2 -->
+      <value name="GM CAN: Accelerator Pedal 3" offset="7" length="1" conversion="V*100/254"></value> <!-- Accel pedal 3 -->
+    </frame>
+
+    <frame id="0x01a1" endianess="big">
+      <value name="GM CAN: Accelerator Pedal 1" offset="6" length="1" conversion="V*100/254"></value> <!-- Accel pedal 1 -->
+    </frame>
+
+    <frame id="0x01c3" endianess="big">
+      <value name="GM CAN: Accelerator Pedal 4" offset="6" length="1" conversion="V*100/254"></value> <!-- Accel pedal 4 -->
+    </frame>
+
+    <frame id="0x01ed" endianess="big">
+      <value name="GM CAN: Fuel Flow Estimate g/s" offset="2" length="2" conversion="V/1000"></value> <!-- Instantaneous Fuel Flow Estimate g/s -->
+      <value targetId="256" offset="6" length="1" conversion="V/117"></value> <!-- Lambda Target 1 -->
+      <value targetId="257" offset="6" length="1" conversion="V/117"></value> <!-- Lambda Target 2 -->
+      <value targetId="2" offset="6" length="1" conversion="14.7*(B0/117)"></value> <!-- AFR Target 1 -->
+      <value targetId="3" offset="6" length="1" conversion="14.7*(B0/117)"></value> <!-- AFR Target 2 -->
+    </frame>
+
+    <frame id="0x01ef" endianess="big">
+      <value targetId="30" offset="2" length="2" conversion="V/100"></value> <!-- MAF g/s -->
+    </frame>
+
+    <frame id="0x019d" endianess="big">
+      <value name="GM CAN: Trans input shaft speed" offset="5" length="2" conversion="V*0.25"></value> <!-- Transmission input shaft speed-->
+      <value name="GM CAN: Trans TCC slip" offset="5" length="2" conversion="ID37-(V*0.25)"></value> <!-- Transmission TCC slip-->
+      <value name="GM CAN: Trans slip" offset="5" length="2" conversion="V*0.25/ID409-ID301"></value> <!-- Transmission slip-->
+    </frame>
+
+    <frame id="0x01f5" endianess="big">
+      <value name="GM CAN: Shifter Pos+Gear" offset="1" length="5" conversion="B0+((B2*100)+(B4*100))" enum="
+115:P,
+214:R,
+313:N,
+401:D1,
+402:D2,
+403:D3,
+404:D4,
+405:D5,
+406:D6,
+501:S1,
+502:S2,
+503:S3,
+504:S4,
+505:S5,
+506:S6,
+601:M1,
+602:M2,
+603:M3,
+604:M4,
+605:M5,
+606:M6,
+437:D6↓,
+436:D5↓,
+435:D4↓,
+434:D3↓,
+433:D2↓,
+418:D1↑,
+419:D2↑,
+420:D3↑,
+421:D4↑,
+422:D5↑,
+537:S6↓,
+536:S5↓,
+535:S4↓,
+534:S3↓,
+533:S2↓,
+518:S1↑,
+519:S2↑,
+520:S3↑,
+521:S4↑,
+522:S5↑,
+637:M6↓,
+636:M5↓,
+635:M4↓,
+634:M3↓,
+633:M2↓,
+618:M1↑,
+619:M2↑,
+620:M3↑,
+621:M4↑,
+622:M5↑"></value> <!-- Shifter pos + Gear + up/down pointer -->
+
+      <value targetId="200" offset="1" length="1" startbit="0" bitcount="4" enum="15:P,14:R,13:N"></value> <!-- P,R,N + Gear -->
+      <value targetId="144" offset="1" length="1" conversion="V>>4"></value> <!-- Upshift indicator -->
+      <value targetId="145" offset="1" length="1" conversion="V>>5"></value> <!-- Downshift indicator -->
+      <value targetId="141" offset="3" length="1" enum="1:P,2:R,3:N,4:D,5:S,#:err"></value> <!-- Shifter position -->
+      <value name="GM CAN: TUTD Active" offset="5" length="1"></value> <!-- TUTD Active 1=on 0=off-->
+      <value name="GM CAN: P/N,R,D status" offset="6" length="1" enum="8:P/N,10:R,9:D"></value> <!-- Shifter pos status P/N,R,D -->
+    </frame>
+
+    <frame id="0x02c3" endianess="big">
+      <value targetId="31" offset="6" length="1" conversion="V/2"></value> <!-- MAP kpa -->
+    </frame>
+
+    <frame id="0x03d1" endianess="big">
+      <value targetId="65" offset="0" length="1" startbit="0" bitcount="1" conversion="(V-1)*(-1)"></value> <!-- Check engine light 1=off 0=on -->
+      <value targetId="42" offset="1" length="1" conversion="V*100/254"></value> <!-- TPS -->
+      <value targetId="406" offset="2" length="1" units="bit" startbit="6" bitcount="1"></value> <!-- FuelCut -->
+      <value name="GM CAN: Fuel Flow L/h" offset="4" length="2" conversion="V/100*3.78541178"></value> <!-- Fuel Flow Gallons/h? (converted to l/h) -->
+    </frame>
+
+    <frame id="0x03e9" endianess="big">
+      <value targetId="81" offset="0" length="2" units="km/h" conversion="V/104.5*1.609344"></value> <!-- VSS1 (MPH to kph)-->
+    </frame>
+
+    <frame id="0x04c1" endianess="big">
+      <value targetId="14" offset="2" length="1" units="C" conversion="V-40"></value> <!-- CLT -->
+      <value targetId="27" offset="3" length="1" units="C" conversion="V-40"></value> <!-- IAT -->
+      <value targetId="173" offset="4" length="1" units="F" conversion="V-50+1.3"></value><!-- Outside Temp -->
+    </frame>
+
+    <frame id="0x04d1" endianess="big">
+      <value targetId="151" offset="2" length="1" conversion="V*0.578*0.06894757"></value> <!-- Oil pressure (converted to bar) -->
+      <value name="GM CAN Fuel Level" offset="5" length="1" conversion="V*100/255"></value> <!-- Fuel level -->
+    </frame>
+
+    <frame id="0x04c9" endianess="big">
+      <value targetId="138" offset="1" length="1" conversion="V-40"></value> <!-- Transmission fluid temp -->
+    </frame>
+  </frames>
+</RealDashCAN>
