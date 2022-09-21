@@ -61,7 +61,7 @@
 
 		<!-- name="name of the trigger" -->
 		<!-- condition="larger(default)|smaller|equal" -->
-		<!-- variable="name of the variable, only dummy and dummy timers are supported" -->
+		<!-- variable="name of the variable, only dummy variables and dummy timers are supported" -->
 		<!-- tolerance="value to trigger on" for example, if condition="smaller" and tolerance="1", trigger will fire if variable is less than 1  -->
 		<!-- reset="value to reset (allow trigger to fire again)" this is an inverse of condition, trigger is reset if variable is larger than 1 -->
 		<!-- cooldown="seconds until this trigger can fire again" -->
