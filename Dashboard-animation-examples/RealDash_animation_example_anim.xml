@@ -2,9 +2,7 @@
 <RealDash>
 
 	<groups>
-
 		<!-- You can include gauges into groups which can be animated. You can include same gauge to many different groups at the same time. -->
-
 		<group name="Speed group">
 			<gauge name="Speed needle gauge"></gauge>
 			<gauge name="Speed text gauge"></gauge>
@@ -15,7 +13,6 @@
 			<gauge name="Gauge 2"></gauge>
 			<gauge name="Gauge 3"></gauge>
 		</group>
-
 	</groups>
 
 	<animations>
@@ -60,50 +57,44 @@
 	</animations>
 
 	<triggers>
-
 		<!-- S I N G L E  G A U G E  T R I G G E R S -->
 
-		<!-- Triggers for hiding and showing the RPM needle gauge. This is for action type "Rotate value up". -->
+		<!-- name="name of the trigger" -->
+		<!-- condition="larger(default)|smaller|equal" -->
+		<!-- variable="name of the variable, only dummy and dummy timers are supported" -->
+		<!-- tolerance="value to trigger on" for example, if condition="smaller" and tolerance="1", trigger will fire if variable is less than 1  -->
+		<!-- reset="value to reset (allow trigger to fire again)" this is an inverse of condition, trigger is reset if variable is larger than 1 -->
+		<!-- cooldown="seconds until this trigger can fire again" -->
 
+		<!-- Triggers for hiding and showing the RPM needle gauge. This is for action type "Rotate value up". -->
 		<trigger name="Show RPM" condition="smaller" variable="Dummy 01" tolerance="1.00" reset="1.00" cooldown="0.00">
 			<actions>
-
 				<action name="fade-in-rpm"></action>
-
 			</actions>
 		</trigger>
 
 		<trigger name="Hide RPM" condition="larger" variable="Dummy 01" tolerance="0.00" reset="0.00" cooldown="0.00">
 			<actions>
-
 				<action name="fade-out-rpm"></action>
-
 			</actions>
 		</trigger>
 
 		<!-- Triggers for moving the RPM needle gauge. This is for action type "Set value". -->
-
 		<trigger name="Move RPM to top" condition="equal" variable="Dummy 02" tolerance="0.00" reset="0.00" cooldown="0.00">
 			<actions>
-
 				<action name="move-rpm-top"></action>
-
 			</actions>
 		</trigger>
 
 		<trigger name="Move RPM to center" condition="equal" variable="Dummy 02" tolerance="1.00" reset="1.00" cooldown="0.00">
 			<actions>
-
 				<action name="move-rpm-center"></action>
-
 			</actions>
 		</trigger>
 
 		<trigger name="Move RPM to bottom" condition="equal" variable="Dummy 02" tolerance="2.00" reset="2.00" cooldown="0.00">
 			<actions>
-
 				<action name="move-rpm-bottom"></action>
-
 			</actions>
 		</trigger>
 
@@ -113,17 +104,13 @@
 
 		<trigger name="Show Speed group" condition="smaller" variable="Dummy 03" tolerance="1.00" reset="1.00" cooldown="0.00">
 			<actions>
-
 				<action name="fade-in-speed-group"></action>
-
 			</actions>
 		</trigger>
 
 		<trigger name="Hide Speed group" condition="larger" variable="Dummy 03" tolerance="0.00" reset="0.00" cooldown="0.00">
 			<actions>
-
 				<action name="fade-out-speed-group"></action>
-
 			</actions>
 		</trigger>
 
@@ -131,25 +118,19 @@
 
 		<trigger name="Move Speed group to top" condition="equal" variable="Dummy 04" tolerance="0.00" reset="0.00" cooldown="0.00">
 			<actions>
-
 				<action name="move-speed-group-top"></action>
-
 			</actions>
 		</trigger>
 
 		<trigger name="Move Speed group to center" condition="equal" variable="Dummy 04" tolerance="1.00" reset="1.00" cooldown="0.00">
 			<actions>
-
 				<action name="move-speed-group-center"></action>
-
 			</actions>
 		</trigger>
 
 		<trigger name="Move Speed group to bottom" condition="equal" variable="Dummy 04" tolerance="2.00" reset="2.00" cooldown="0.00">
 			<actions>
-
 				<action name="move-speed-group-bottom"></action>
-
 			</actions>
 		</trigger>
 
@@ -157,33 +138,25 @@
 
 		<trigger name="Move Gauges to top" condition="equal" variable="Dummy 05" tolerance="0.00" reset="0.00" cooldown="0.00">
 			<actions>
-
 				<action name="fade-in-gauge-2"></action> <!-- For setting Gauge 2 back to visible. -->
 				<action name="move-gauge-group-top"></action>
-
 			</actions>
 		</trigger>
 
 		<trigger name="Move Gauges to center and fade out Gauge 2" condition="equal" variable="Dummy 05" tolerance="1.00" reset="1.00" cooldown="0.00">
 			<actions>
-
 				<action name="fade-out-gauge-2"></action>
 				<action name="move-gauge-group-center"></action>
-
 			</actions>
 		</trigger>
 
 		<trigger name="Move Gauges to bottom with delay" condition="equal" variable="Dummy 05" tolerance="2.00" reset="2.00" cooldown="0.00">
 			<actions>
-
 				<action name="fade-in-gauge-2"></action> <!-- For setting Gauge 2 back to visible. -->
 				<action name="move-gauge-1-bottom"></action>
 				<action name="move-gauge-2-bottom"></action>
 				<action name="move-gauge-3-bottom"></action>
-
 			</actions>
 		</trigger>
-
-
 	</triggers>
 </RealDash>
