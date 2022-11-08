@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RealDashCAN version="2">
+  <frames>
+    <frame id="B600" endianess="big">
+      <value name="AEM 6-CAN: Analog 1" offset="0" length="2"></value>
+      <value name="AEM 6-CAN: Analog 2" offset="2" length="2"></value>
+      <value name="AEM 6-CAN: Analog 3" offset="4" length="2" conversion="V*0.001"></value>
+      <value name="AEM 6-CAN: Analog 4" offset="6" length="2" conversion="V*0.001"></value>
+    </frame>
+    <frame id="B601" endianess="big">
+      <value name="AEM 6-CAN: Tacho" offset="0" length="2" conversion="V*0.1"></value>
+      <value name="AEM 6-CAN: Fuel Level" offset="6" length="1"></value>
+      <value name="AEM 6-CAN: Battery Voltage" offset="7" length="1" conversion="V*0.1"></value>
+    </frame>
+
+  </frames>
+</RealDashCAN>
+
