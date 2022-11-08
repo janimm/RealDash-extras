@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RealDashCAN version="2">
+<!-- AEM 6 Channel CAN Sensor Module -->
+<!-- https://www.aemelectronics.com/sites/default/files/aem_product_instructions/30-2226-6-Channel-CAN-Sensor-Module-Instructions.pdf -->
   <frames>
     <frame id="B600" endianess="big">
       <value name="AEM 6-CAN: Analog 1" offset="0" length="2"></value>
