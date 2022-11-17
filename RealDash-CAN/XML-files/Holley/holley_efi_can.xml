@@ -43,7 +43,7 @@
 
     <frame id="0x1E005000" endianess="big">
       <value targetId="35" offset="0" length="4" conversion="V*0.00390625"></value> <!-- Pulse Width 1-->
-      <value targetId="Holley: Fuel Flow (pounds per hour)" offset="4" length="4" conversion="V*0.00390625"></value>
+      <value name="Holley: Fuel Flow (pounds per hour)" offset="4" length="4" conversion="V*0.00390625"></value>
     </frame>
 
     <frame id="0x1E009000" endianess="big">
