@@ -70,7 +70,7 @@ Number of times to skip sending this command. This value can be used to request 
 
 &nbsp;
 ### **targetId**
-This value links the received value into RealDash input. The **targetId="37"** writes the received value to RealDash RPM input. Check out full listing of [RealDash targetIds](www.realdash.net/manuals/targetid.php).
+This value links the received value into RealDash input. The **targetId="37"** writes the received value to RealDash RPM input. Check out full listing of [RealDash targetIds](https://www.realdash.net/manuals/targetid.php).
 
 &nbsp;
 ### **name [optional to targetId]**
@@ -80,7 +80,7 @@ Instead of mapping the value to existing RealDash input, **name** parameter can 
 
 Note that above example do not use the **targetId**, but **name** instead. When RealDash reads the XML file, a new custom input is created into *ECU Specific* category called **MYECU: Special RPM**. New custom input can be used like any other input in RealDash for gauges and triggers/actions.
 
-Note: if you make your own dashboard that links into custom inputs, remember that other users need to have same XML available for the dashboard to work correctly. Another solution would be to make the dashboard use [RealDash build-in inputs](www.realdash.net/manuals/targetid.php) and use the *Input Mapping* feature in RealDash *Settings->Units & Values->Input Mapping*.
+Note: if you make your own dashboard that links into custom inputs, remember that other users need to have same XML available for the dashboard to work correctly. Another solution would be to make the dashboard use [RealDash build-in inputs](https://www.realdash.net/manuals/targetid.php) and use the *Input Mapping* feature in RealDash *Settings->Units & Values->Input Mapping*.
 
 &nbsp;
 ### **conversion [optional]**
