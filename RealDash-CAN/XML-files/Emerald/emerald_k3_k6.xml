@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- RealDash CAN XML description file, version 2 Requires RealDash version 1.5.8 or newer -->
+<RealDashCAN version="2">
+  <frames>
+    <frame id="0x1000" endianess="big">
+      <value targetId="37" offset="0" length="2"></value> <!-- RPM -->
+      <value targetId="31" offset="2" length="2" conversion="V/10"></value> <!-- MAP -->
+      <value targetId="11" offset="4" length="2" signed="true" conversion="(V+1000)/10"></value> <!-- Baro -->
+      <value targetId="42" offset="6" length="1"></value> <!-- TPS -->
+      <value name="Emerald: Coil on-time" offset="7" length="1" conversion="V*0.0488"></value>
+    </frame>
+
+    <frame id="0x1001" endianess="big">
+      <value targetId="106" offset="0" length="2"></value> <!-- EGT1 -->
+      <value targetId="81" offset="2" length="2" conversion="(V*(2.55/256))*1.609344"></value> <!-- VSS1 -->
+      <value targetId="1" offset="4" length="2" conversion="V/10"></value> <!-- AFR1 -->
+      <value targetId="2" offset="6" length="2" conversion="V/10"></value> <!-- AFR2 -->
+    </frame>
+
+    <frame id="0x1002" endianess="big">
+      <value name="Emerald: Status flags" offset="0" length="2"></value>
+      <value name="Emerald: Error flags" offset="2" length="2"></value>
+      <value targetId="35" offset="4" length="2" conversion="V*0.001526"></value>  <!-- PW 1 -->
+      <value targetId="36" offset="6" length="2" conversion="V*0.001526"></value>  <!-- PW 2 -->
+    </frame>
+
+    <frame id="0x1003" endianess="big">
+      <value targetId="27" offset="0" length="1" conversion="V-40"></value> <!-- IAT -->
+      <value targetId="14" offset="1" length="1" conversion="V-40"></value> <!-- CLT -->
+      <value name="Emerald: Aux temp" offset="2" length="1" conversion="V-40"></value>
+      <value targetId="38" offset="3" length="1" signed="true" conversion="V/2"></value> <!-- Spark adv -->
+      <value name="Emerald: Injector duration" offset="4" length="1"></value>
+      <value targetId="200" offset="5" length="1"></value> <!-- Gear -->
+      <value name="Emerald: Selected map" offset="6" length="1"></value>
+      <value targetId="12" offset="7" length="1" conversion="V/11"></value> <!-- battery voltage -->
+    </frame>
+
+  </frames>
+</RealDashCAN>
+
