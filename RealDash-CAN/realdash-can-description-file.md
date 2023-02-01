@@ -53,7 +53,16 @@ RealDash XML format supports composite IDs where CAN frame contain varying data 
 
     <frame id="0x3E8:5533,0,2">
 
-The above example specifies a frame with CAN ID of 3E8 hexadecimal, composite id of 5533 decimal. Composite id is read from frame data from first (0) byte and its length is 2 bytes.
+The above example specifies a frame with CAN ID of 3E8 hexadecimal, composite id of 5533 decimal. Composite id is read from frame data starting from first (0) byte and its length is 2 bytes.
+
+Note that if composite id consists of multiple bytes, it is assumed to be in little endian format. For example, if composite id in CAN frame is in big endian:
+
+    Frame data: 000007e8: f4 49 db 00 00 00 00 00
+    
+You need to swap the bytes hexadecimal composite id in frame description:
+
+    <frame id="0x7E8:0x49F4,0,2">
+    
 
 
 &nbsp;
