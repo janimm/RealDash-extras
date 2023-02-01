@@ -57,9 +57,9 @@ The above example specifies a frame with CAN ID of 3E8 hexadecimal, composite id
 
 Note that if composite id consists of multiple bytes, it is assumed to be in little endian format. For example, if composite id in CAN frame is in big endian:
 
-    Frame data: 000007e8: f4 49 db 00 00 00 00 00
+    CAN frame data: 000007e8: f4 49 db 00 00 00 00 00
     
-You need to swap the bytes hexadecimal composite id in frame description:
+The composite id in XML must be defined in little endian by swapping the byte order:
 
     <frame id="0x7E8:0x49F4,0,2">
     
