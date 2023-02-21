@@ -183,10 +183,11 @@ The **conversionABC** is otherwise identical with **conversion**, but bytes are 
     - result is value bitshifted 6 to the right. Bitshift to the left is also available.
     
     conversion="V&15"
-    - result is value with bitwise AND with 15. In essence, this uses only 4 lowest bits of the value.
+    - result is value with bitwise AND with 15. In essence, this uses 4 lowest bits of the value.
     
     Available functions:
-    abs, acos, asin, atan, atan2, ceil, cos, cosh, e, exp, fac, floor, ln, log, log10, max, min, ncr, not, npr, pi, pow, sin, sinh, sqrt, tan, tanh
+    abs, acos, asin, atan, atan2, ceil, cos, cosh, e, exp, fac, floor, ln, log, log10,
+    max, min, ncr, not, npr, pi, pow, sin, sinh, sqrt, tan, tanh
     
     Available operators:
     =, <, >, !, !=, <>, <=, >=, <<, >>, &&, ||, &, |, +, -, *, /, ^, %, (, )
