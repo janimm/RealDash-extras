@@ -185,6 +185,12 @@ The **conversionABC** is otherwise identical with **conversion**, but bytes are 
     conversion="V&15"
     - result is value with bitwise AND with 15. In essence, this uses only 4 lowest bits of the value.
     
+    Available functions:
+    abs, acos, asin, atan, atan2, ceil, cos, cosh, e, exp, fac, floor, ln, log, log10, max, min, ncr, not, npr, pi, pow, sin, sinh, sqrt, tan, tanh
+    
+    Available operators:
+    =, <, >, !, !=, <>, <=, >=, <<, >>, &&, ||, &, |, +, -, *, /, ^, %, (, )
+    
     
 &nbsp;
 ## **value 'units' parameter (optional)**
