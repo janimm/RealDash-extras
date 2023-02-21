@@ -179,6 +179,13 @@ The **conversionABC** is otherwise identical with **conversion**, but bytes are 
     conversion="'MYECU: Special RPM'+B1"
     - result is value from 'MYECU: Special RPM' + value from second byte.
     
+    conversion="V>>6"
+    - result is value bitshifted 6 to the right. Bitshift to the left is also available.
+    
+    conversion="V&15"
+    - result is value with bitwise AND with 15. In essence, this uses only 4 lowest bits of the value.
+    
+    
 &nbsp;
 ## **value 'units' parameter (optional)**
 Optional info to apply automatic unit conversions. Valid values are **units="C"**, **units="F"**, **units="km/h"**, **units="mph"**, **units="bar"**, **units="psi"**, **units="time"**, **units="bit"**.
