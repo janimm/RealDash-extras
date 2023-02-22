@@ -182,8 +182,9 @@ The **conversionABC** is otherwise identical with **conversion**, but bytes are 
     conversion="V>>6"
     - result is value bitshifted 6 to the right. Bitshift to the left is also available.
     
-    conversion="V&15"
+    conversion="V &amp; 15"
     - result is value with bitwise AND with 15. In essence, this uses 4 lowest bits of the value.
+    Note that bitwise AND operator '&' character is reserved in XML and must be written as &amp;
     
     Available functions:
     abs, acos, asin, atan, atan2, ceil, cos, cosh, e, exp, fac, floor, ln, log, log10,
