@@ -180,12 +180,16 @@ The **conversionABC** is otherwise identical with **conversion**, but bytes are 
     - result is value from 'MYECU: Special RPM' + value from second byte.
     
     conversion="V>>6"
-    - result is value bitshifted 6 to the right. Bitshift to the left is also available.
+    - result is value bitshifted 6 to the right.
     
     conversion="V &amp; 15"
     - result is value with bitwise AND with 15. In essence, this uses 4 lowest bits of the value.
     Note that bitwise AND operator '&' character is reserved in XML and must be written as &amp;
-    
+
+    conversion="V &lt;&lt; 3"
+    - result is value bitshifted 3 to the left.
+    Note that character '<' is reserved in XML and must be written as &lt;
+
     Available functions:
     abs, acos, asin, atan, atan2, ceil, cos, cosh, e, exp, fac, floor, ln, log, log10,
     max, min, ncr, not, npr, pi, pow, sin, sinh, sqrt, tan, tanh
@@ -201,6 +205,13 @@ Optional info to apply automatic unit conversions. Valid values are **units="C"*
 If units is set to **bit** the value is considered to be an on/off (0 or 1) valued. RealDash reads the **bit** value from the lowest bit. Therefore there is a need for a bitshift to the right on conversion. For example **conversion="(V>>1)"** will read second bit on incoming value.
 
 The **units="time"** expects a value to be in seconds and its converted into displayable time in RealDash. The GPS Timezone setting in RealDash is applied.
+
+&nbsp;
+## **value 'float' and 'double' parameters (optional)**
+Value can be specified to be IEEE754 4 or 8 byte floating point value:
+
+    <value name="My float" offset="0" length="4" float="true"></value>
+    <value name="My double" offset="0" length="8" double="true"></value>
 
 
 &nbsp;
