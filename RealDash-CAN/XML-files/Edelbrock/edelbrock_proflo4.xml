@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- RealDash CAN XML description file, version 2 Requires RealDash version 1.5.8 or newer -->
+<RealDashCAN version="2">
+  <frames>
+    <frame id="0x300" endianess="big">
+      <value targetId="37" units="RPM" offset="0" length="2"></value>
+      <value targetId="0" units="AFR" offset="2" length="1" conversion="V*0.05+10"></value> <!-- AFR1 -->
+      <value targetId="2" units="AFR" offset="3" length="1" conversion="V*0.1"></value> <!-- AFR1 target-->
+      <value targetId="42" units="%" offset="4" length="1" conversion="V*0.392157"></value> <!-- TPS -->
+      <value targetId="31" units="kPA" offset="5" length="2" conversion="V*0.1"></value> <!-- MAP -->
+      <value targetId="18" units="%" offset="7" length="1" conversion="V-100"></value> <!-- EGO2 -->
+    </frame>
+
+    <frame id="0x301" endianess="big">
+      <value targetId="202" offset="0" length="2" conversion="V*0.01"></value> <!-- Fuel Pressure -->
+      <value targetId="35" units="ms" offset="2" length="2" conversion="V*0.001"></value> <!-- PW1 -->
+	  <value name="Edelbrock: Fuel Injector Duty" units="%" offset="4" length="1"></value>
+      <value targetId="38" units="deg" offset="5" length="2" conversion="V*0.25"></value> <!-- Spark Advance -->
+	  <value name="Edelbrock: Idle Position" units="%" offset="7" length="1" conversion="V*0.392157"></value>
+    </frame>
+
+    <frame id="0x302" endianess="big">
+      <value targetId="17" units="%" offset="0" length="2" signed="true" conversion="V*0.05"></value> <!-- EGO1 -->
+      <value targetId="27" units="F" offset="2" length="2"></value> <!-- IAT -->
+      <value targetId="14" units="F" offset="4" length="2"></value> <!-- CLT -->
+      <value targetId="12" units="V" offset="6" length="1" conversion="V*0.0705882"></value> <!-- BattV -->
+	  <value name="Edelbrock: AFR Learn Status" units="bit" offset="7" length="1"></value>
+    </frame>
+
+    <frame id="0x303" endianess="big">
+	  <value name="Edelbrock: Idle Target" offset="0" length="2"></value>
+	  <value name="Edelbrock: AFR Closed Loop Status" offset="2" length="1"></value>
+      <value targetId="153" units="bit" offset="3" length="1"></value> <!-- Engine cooling fan-->
+	  <value name="Edelbrock: Radiator Fan 2 Status" units="bit" offset="4" length="1"></value>
+    </frame>
+
+  </frames>
+</RealDashCAN>
+
