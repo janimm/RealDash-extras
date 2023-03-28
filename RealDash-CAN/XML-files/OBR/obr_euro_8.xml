@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- RealDash CAN XML description file, version 2 Requires RealDash version 1.5.8 or newer -->
+<RealDashCAN version="2">
+  <frames>
+    <frame id="0x300" endianess="big">
+        <value targetId="37" units="RPM" offset="0" length="2"></value>  <!-- RPM -->
+        <value targetId="42" units="%" offset="2" length="2" conversion="V/1023*100"></value> <!-- TPS -->
+        <value targetId="144" units="bit" offset="4" length="2"></value> <!-- Trans shift up -->
+        <value targetId="145" units="bit" offset="6" length="2"></value> <!-- Trans shift down -->
+    </frame>
+	
+    <frame id="0x301" endianess="big">
+        <value name="OBR: DragTimer" offset="0" length="2" conversion="V*0.001"></value>
+        <value name="OBR: Gear potentiometer" offset="2" length="2"></value>
+        <value name="OBR: Up shift valve out" offset="4" length="2"></value>
+		<value name="OBR: Down shift valve out" offset="6" length="2"></value>
+	</frame>
+
+    <frame id="0x302" endianess="big">
+        <value targetId="406" units="bit" offset="0" length="2"></value>  <!-- fuel cut active -->
+        <value targetId="31" units="kPA" offset="2" length="2" signed="true" conversion="V*0.1"></value> <!-- MAP -->
+        <value targetId="38" units="deg" offset="4" length="2" signed="true" conversion="V*0.25"></value> <!-- Spark Advance -->
+		<value name="OBR: Calculated Downshift RPM" offset="6" length="2"></value>
+	</frame>
+
+    <frame id="0x303" endianess="big">
+        <value name="OBR: Wheelspeed front right" units="kph" offset="0" length="2" conversion="V*0.1"></value>
+		<value name="OBR: Wheelspeed front left" units="kph" offset="2" length="2" conversion="V*0.1"></value>
+		<value name="OBR: Wheelspeed rear right" units="kph" offset="4" length="2" conversion="V*0.1"></value>
+		<value name="OBR: Wheelspeed rear left" units="kph" offset="6" length="2" conversion="V*0.1"></value>
+	</frame>
+
+    <frame id="0x304" endianess="big">
+        <value name="OBR: Drag Switch Status" units="bit" offset="0" length="2"></value>
+		<value name="OBR: Prop Shaft RPM" units="rpm" offset="2" length="2"></value>
+		<value targetId="81" units="kph" offset="4" length="2" conversion="V*0.1"></value> <!-- VSS1 -->
+		<value targetId="30" offset="6" length="2" conversion="V*2"></value> <!-- MAF -->
+	</frame>
+
+    <frame id="0x305" endianess="big">
+        <value targetId="254" offset="0" length="2" conversion="V*0.001"></value>  <!-- Lambda 1 -->
+        <value targetId="255" offset="2" length="2" conversion="V*0.001"></value>  <!-- Lambda 2 -->
+        <value targetId="17" offset="4" length="2" signed="true" conversion="V*0.05"></value>  <!-- Lambda correction 1 -->
+        <value targetId="18" offset="6" length="2" signed="true" conversion="V*0.05"></value>  <!-- Lambda correction 2 -->
+    </frame>
+
+    <frame id="0x306" endianess="big">
+        <value name="OBR: Pedal position" units="%" offset="0" length="2" conversion="V/1023*100"></value>
+		<value name="OBR: TC Potentiometer" offset="2" length="2"></value>
+	</frame>
+
+    <frame id="0x307" endianess="big">
+        <value targetId="11" units="kpa" offset="0" length="2" conversion="V*0.1"></value>  <!-- Barometer -->
+        <value name="OBR: TPS driver request" offset="2" length="2" conversion="V/1023*100"></value>
+        <value targetId="489" units="bit" offset="4" length="2"></value>  <!-- Neutral safety switch -->
+        <value name="OBR: Shift Pressure" offset="6" length="2" signed="true"></value>
+    </frame>
+
+    <frame id="0x308" endianess="big">
+        <value targetId="35" offset="0" length="2" conversion="V*0.001"></value>  <!-- Pulse Width 1 -->
+        <value targetId="12" offset="2" length="2" conversion="V/1023*18"></value>  <!-- Battery voltage -->
+        <value name="OBR: ECU ON" units="bit" offset="4" length="2"></value>
+        <value targetId="179" units="bit" offset="6" length="2"></value>  <!-- Traction control active -->
+    </frame>
+	  
+    <frame id="0x309" endianess="big">
+        <value name="OBR: Analogue input for TC maps" offset="0" length="2"></value>
+		<value name="OBR: Target slip" offset="2" length="2" conversion="V*0.1"></value>
+		<value name="OBR: Slip" offset="4" length="2" conversion="V*0.1"></value>
+		<value targetId="256" offset="6" length="2" conversion="V*0.001"></value> <!-- Lambda target 1 -->
+	</frame>
+	  
+    <frame id="0x30A" endianess="big">
+        <value name="OBR: Coil current draw cylinder 1" offset="0" length="2" conversion="V*0.1"></value>
+		<value name="OBR: Coil current draw cylinder 2" offset="2" length="2" conversion="V*0.1"></value>
+		<value name="OBR: Coil current draw cylinder 3" offset="4" length="2" conversion="V*0.1"></value>
+		<value name="OBR: Coil current draw cylinder 4" offset="6" length="2" conversion="V*0.1"></value>
+	</frame>
+
+    <frame id="0x30B" endianess="big">
+        <value targetId="14" offset="0" length="2" conversion="V*0.25-56"></value>  <!-- CLT -->
+        <value targetId="152" offset="2" length="2" conversion="V*0.25-56"></value>  <!-- Engine oil temp -->
+        <value targetId="499" offset="4" length="2" conversion="V*0.25-56"></value>  <!-- Fuel temp -->
+        <value targetId="27" offset="6" length="2" conversion="V*0.25-56"></value>  <!-- IAT -->
+    </frame>
+
+    <frame id="0x30C" endianess="big">
+        <value targetId="407" offset="0" length="2" conversion="V*0.01"></value>  <!-- Liters/Hour -->
+        <value targetId="202" units="bar" offset="2" length="2" signed="true" conversion="V*0.01"></value>  <!-- Fuel pressure -->
+        <value targetId="151" units="bar" offset="4" length="2" signed="true" conversion="V*0.1"></value>  <!-- Engine oil pressure -->
+        <value name="OBR: Camshaft Retard" offset="6" length="2" signed="true" conversion="V*0.25"></value>
+    </frame>
+
+    <frame id="0x30D" endianess="big">
+        <value name="OBR: Crank case pressure" offset="0" length="2"></value>
+		<value targetId="119" offset="2" length="2"></value> <!-- Duty cycle 1-->
+		<value name="OBR: AngleCrankStatus" offset="4" length="2"></value>
+		<value name="OBR: Engine map # active in ECU" offset="6" length="2" conversion="V+1"></value>
+	</frame>
+	  
+    <frame id="0x30E" endianess="big">
+        <value name="OBR: Coil current draw cylinder 5" offset="0" length="2" conversion="V*0.1"></value>
+		<value name="OBR: Coil current draw cylinder 6" offset="2" length="2" conversion="V*0.1"></value>
+		<value name="OBR: Coil current draw cylinder 7" offset="4" length="2" conversion="V*0.1"></value>
+		<value name="OBR: Coil current draw cylinder 8" offset="6" length="2" conversion="V*0.1"></value>
+	</frame>
+
+    <frame id="0x30F" endianess="big">
+        <value targetId="492" offset="0" length="2" signed="true" conversion="V*0.25"></value>  <!-- Intake cam 1 position -->
+        <value name="OBR: VCT error position" offset="2" length="2" signed="true" conversion="V*0.25"></value>
+    </frame>
+
+    <frame id="0x310" endianess="big">
+        <value name="OBR: PWM Alternator control" offset="0" length="2" conversion="V+1"></value>
+		<value targetId="200" offset="2" length="2" conversion="V*0.1"></value> <!-- Gear -->
+		<value name="OBR: Brake pressure front" units="bar" offset="4" length="2" conversion="V*0.1"></value>
+		<value name="OBR: Brake pressure rear" units="bar" offset="6" length="2" conversion="V*0.1"></value>
+	</frame>
+	  
+    <frame id="0x311" endianess="big">
+        <value targetId="222" offset="0" length="2" conversion="V*0.01"></value>  <!-- Fuel amount, liters -->
+        <value targetId="138" offset="2" length="2" conversion="V*0.25-56"></value>  <!-- Transmission oil temp -->
+        <value name="OBR: Crank Count" offset="4" length="2"></value>
+        <value targetId="182" units="bit" offset="6" length="2"></value>  <!-- Fuel pump 1 -->
+    </frame>
+
+    <frame id="0x312" endianess="big">
+		<value name="OBR: Wheelspeed front right (CAN)" units="kph" offset="0" length="2" conversion="V*0.1"></value>
+		<value name="OBR: Wheelspeed front left (CAN)" units="kph" offset="2" length="2" conversion="V*0.1"></value>
+		<value name="OBR: Wheelspeed rear right (CAN)" units="kph" offset="4" length="2" conversion="V*0.1"></value>
+		<value name="OBR: Wheelspeed rear left (CAN)" units="kph" offset="6" length="2" conversion="V*0.1"></value>
+	</frame>
+
+    <frame id="0x313" endianess="big">
+        <value name="OBR: Lambda self lear correction" offset="0" length="2" conversion="V*100/32768"></value>
+        <value targetId="153" units="bit" offset="2" length="2"></value>  <!-- Fan output -->
+        <value name="OBR: Universal output active" units="bit" offset="4" length="2"></value>
+		<value name="OBR: Water pressure" offset="6" length="2"></value>
+	</frame>
+	  
+  </frames>
+</RealDashCAN>
