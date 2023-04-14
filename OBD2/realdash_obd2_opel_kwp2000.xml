@@ -53,7 +53,7 @@
 
     <!-- <command send="0101" skipCount="35" targetId="65"></command> --> <!-- number of DTCs -->
     <command send="0111" skipCount="2" targetId="42" conversion="V/2.55"></command> <!-- tps -->
-    <command send="010a" skipCount="6" targetId="105" conversion="V*3"></command> <!-- fuel pressure -->
+    <command send="010a" skipCount="6" targetId="202" conversion="V*3"></command> <!-- fuel pressure -->
     <command send="0105" skipCount="57" targetId="14" units="C" conversion="V-40"></command> <!-- clt -->
     <command send="010f" skipCount="15" targetId="27" units="C" conversion="V-40"></command> <!-- iat -->
     <command send="0133" skipCount="60" targetId="11"></command> <!-- baro -->
