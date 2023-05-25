@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- RealDash CAN XML description file, version 2 Requires RealDash version 1.5.8 or newer -->
+<RealDashCAN version="2">
+  <frames>
+    <frame id="0x0110" endianess="big">
+      <value targetId="37" offset="1" length="2" conversion="V*0.25"></value> <!-- RPM -->
+      <value targetId="42" offset="4" length="1" conversion="V*100/254"></value> <!-- TPS -->
+    </frame>
+
+    <frame id="0x0130" endianess="big">
+      <value targetId="81" offset="0" length="2" units="km/h" conversion="V/104.5*1.609344"></value> <!-- VSS1 (MPH to kph)-->
+    </frame>
+
+    <frame id="0x0308" endianess="big">
+      <value targetId="151" offset="2" length="1" conversion="V*0.578*0.06894757"></value> <!-- Oil pressure (converted to bar) -->
+    </frame>
+
+    <frame id="0x0510" endianess="big">
+      <value targetId="14" offset="1" length="1" units="C" conversion="V-40"></value> <!-- CLT -->
+      <value targetId="27" offset="2" length="1" units="C" conversion="V-40"></value> <!-- IAT -->
+      <value targetId="138" offset="7" length="1" units="C" conversion="V-40"></value> <!-- Engine oil temp -->
+    </frame>
+
+  </frames>
+</RealDashCAN>

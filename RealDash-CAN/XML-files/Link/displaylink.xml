@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- RealDash CAN XML description file, version 2 Requires RealDash version 1.5.8 or newer -->
+<RealDashCAN version="2">
+  <frames>
+    <frame id="1000:0x00,0,1" endianess="big">
+      <value targetId="37" offset="2" length="2"></value> <!-- RPM -->
+      <value targetId="31" offset="4" length="2"></value> <!-- MAP -->
+      <value name="DisplayLink: MGP" offset="6" length="2" conversion="V-100"></value>
+    </frame>
+
+    <frame id="1000:0x01,0,1" endianess="big">
+      <value targetId="11" offset="2" length="2" conversion="V*0.1"></value> <!-- Baro -->
+      <value targetId="42" offset="4" length="2" conversion="V*0.1"></value> <!-- TPS -->
+      <value targetId="119" offset="6" length="2" conversion="V*0.1"></value> <!-- Duty Cycle 1 -->
+    </frame>
+
+    <frame id="1000:0x02,0,1" endianess="big">
+      <value targetId="119" offset="2" length="2" conversion="V*0.1"></value> <!-- Duty Cycle 2 -->
+      <value targetId="35" offset="4" length="2" conversion="V*0.001"></value>  <!-- PW 1 -->
+      <value targetId="14" offset="6" length="2" conversion="V-50"></value> <!-- CLT -->
+    </frame>
+
+    <frame id="1000:0x03,0,1" endianess="big">
+      <value targetId="27" offset="2" length="2" conversion="V-50"></value> <!-- IAT -->
+      <value targetId="12" offset="4" length="2" conversion="V*0.01"></value> <!-- battery voltage -->
+      <value targetId="30" offset="6" length="2" conversion="V*0.1"></value> <!-- MAF -->
+    </frame>
+
+    <frame id="1000:0x04,0,1" endianess="big">
+      <value targetId="200" offset="2" length="2"></value> <!-- Gear -->
+      <value name="DisplayLink: Injector Timing" offset="4" length="2"></value>
+      <value targetId="38" offset="6" length="2" conversion="V*0.1-100"></value> <!-- Spark adv -->
+    </frame>
+
+    <frame id="1000:0x05,0,1" endianess="big">
+      <value targetId="492" offset="2" length="2" conversion="V*0.1"></value> <!-- intake cam1 position -->
+      <value targetId="494" offset="4" length="2" conversion="V*0.1"></value> <!-- intake cam2 position -->
+      <value targetId="493" offset="6" length="2" conversion="V*-0.1"></value> <!-- exhaust cam1 position -->
+    </frame>
+
+    <frame id="1000:0x06,0,1" endianess="big">
+      <value targetId="495" offset="2" length="2" conversion="V*-0.1"></value> <!-- exhaust cam2 position -->
+      <value targetId="0" offset="4" length="2" conversion="V*0.01"></value> <!-- AFR 1 -->
+      <value targetId="1" offset="6" length="2" conversion="V*0.01"></value> <!-- AFR 2 -->
+    </frame>
+
+    <frame id="1000:0x07,0,1" endianess="big">
+      <value name="DisplayLink: Trig 1 Error Counter" offset="2" length="2"></value>
+      <value name="DisplayLink: Fault codes" offset="4" length="2"></value>
+      <value targetId="202" offset="6" length="2" conversion="V*0.01"></value> <!-- Fuel pressure (converted to bar) -->
+    </frame>
+
+    <frame id="1000:0x08,0,1" endianess="big">
+      <value targetId="152" offset="2" length="2" conversion="V-50"></value> <!-- Oil temp -->
+      <value targetId="151" offset="4" length="2" conversion="V*0.01"></value> <!-- Oil pressure (converted to bar) -->
+      <value targetId="81" offset="6" length="2" conversion="V*0.1"></value> <!-- VSS1 -->
+    </frame>
+
+    <frame id="1000:0x09,0,1" endianess="big">
+      <value targetId="99" offset="2" length="2" conversion="V*0.1"></value> <!-- VSS2 -->
+      <value name="DisplayLink: RF Wheel Speed" offset="4" length="2" conversion="V*0.1"></value>
+      <value name="DisplayLink: RR Wheel Speed" offset="6" length="2" conversion="V*0.1"></value>
+    </frame>
+
+    <frame id="1000:0x0a,0,1" endianess="big">
+      <value targetId="29" offset="2" length="2" conversion="V*5"></value> <!-- Knock -->
+      <value name="DisplayLink: Knock Level 2" offset="4" length="2" conversion="V*5"></value>
+      <value name="DisplayLink: Knock Level 3" offset="6" length="2" conversion="V*5"></value>
+    </frame>
+
+    <frame id="1000:0x0b,0,1" endianess="big">
+      <value name="DisplayLink: Knock Level 4" offset="2" length="2" conversion="V*5"></value>
+      <value name="DisplayLink: Knock Level 5" offset="4" length="2" conversion="V*5"></value>
+      <value name="DisplayLink: Knock Level 6" offset="6" length="2" conversion="V*5"></value>
+    </frame>
+
+    <frame id="1000:0x0c,0,1" endianess="big">
+      <value name="DisplayLink: Knock Level 7" offset="2" length="2" conversion="V*5"></value>
+      <value name="DisplayLink: Knock Level 8" offset="4" length="2" conversion="V*5"></value>
+      <value name="DisplayLink: Limits Flags" offset="6" length="2" conversion="V*5"></value>
+    </frame>
+  </frames>
+</RealDashCAN>
+
