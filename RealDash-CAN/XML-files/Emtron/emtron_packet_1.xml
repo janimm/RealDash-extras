@@ -2,42 +2,42 @@
 <!-- RealDash CAN XML description file, version 2 Requires RealDash version 1.5.8 or newer -->
 <RealDashCAN version="2">
   <frames>
-    <frame id="1250" endianess="big">
+    <frame id="1250">
       <value targetId="37" units="RPM" offset="0" length="2"></value> <!-- RPM -->
       <value targetId="31" units="kPA" offset="2" length="2" conversion="V*0.1"></value> <!-- MAP -->
       <value targetId="14" units="C" offset="4" length="2" conversion="V*0.1-50"></value> <!-- CLT -->
       <value targetId="27" units="C" offset="6" length="2" conversion="V*0.1-50"></value> <!-- IAT -->
     </frame>
 
-    <frame id="1251" endianess="big">
-      <value targetId="42" units="%" offset="0" length="2" conversion="V*0.1"></value> <!-- TPS -->
+    <frame id="1251">
+      <value targetId="42" units="%" offset="0" length="2" conversion="V*0.1-100"></value> <!-- TPS -->
 	  <value name="Emtron: Estimated Charge Temp" units="C" offset="2" length="2" conversion="V*0.1-50"></value>
 	  <value targetId="200" offset="4" length="2"></value> <!-- Gear -->
       <value targetId="12" units="V" offset="6" length="2" conversion="V*0.001"></value> <!-- BattV -->
     </frame>
 
-    <frame id="1252" endianess="big">
+    <frame id="1252">
       <value targetId="151" units="bar" offset="0" length="2" conversion="V*0.001"></value> <!-- Engine Oil Press -->
       <value targetId="152" units="C" offset="2" length="2" conversion="V*0.1-50"></value> <!-- Engine Oil Temp -->
       <value targetId="202" units="bar" offset="4" length="2" conversion="V*0.001"></value> <!-- Fuel Press -->
       <value targetId="499" units="C" offset="6" length="2" conversion="V*0.1-50"></value> <!-- Fuel Temp -->
 	</frame>
 
-    <frame id="1253" endianess="big">
+    <frame id="1253">
 		<value name="Emtron: Exhaust Pressure" units="kPA" offset="0" length="2" conversion="V*0.1"></value>
 		<value name="Emtron: Fuel Pressure Differential" units="kPA" offset="2" length="2" conversion="V*0.1"></value>
 		<value name="Emtron: Crankcase Pressure" units="kPA" offset="4" length="2" conversion="V*0.1"></value>
 		<value name="Emtron: Coolant Pressure" units="kPA" offset="6" length="2" conversion="V*0.1"></value>
 	</frame>
 
-    <frame id="1254" endianess="big">
+    <frame id="1254">
 	    <value targetId="254" offset="0" length="2" conversion="V*0.001"></value> <!-- Lambda 1 -->
         <value targetId="255" offset="2" length="2" conversion="V*0.001"></value> <!-- Lambda 2 -->
         <value targetId="256" offset="4" length="2" conversion="V*0.001"></value> <!-- Lambda target -->
         <value targetId="81" units="kph" offset="6" length="2" conversion="V*0.1"></value> <!-- VSS1 -->
 	</frame>
 
-    <frame id="1255" endianess="big">
+    <frame id="1255">
         <value targetId="17" units="%" offset="0" length="2" conversion="V*0.01-100"></value> <!-- EGO corr1 -->
         <value targetId="18" units="%" offset="2" length="2" conversion="V*0.01-100"></value> <!-- EGO corr2 -->
 		<value name="Emtron: Lambda 1 Long" units="%" offset="4" length="2" conversion="V*0.01-100"></value>
@@ -45,28 +45,28 @@
     </frame>
 		
 		
-    <frame id="1256" endianess="big">
+    <frame id="1256">
         <value targetId="119" units="%" offset="0" length="2" conversion="V*0.1"></value> <!-- Duty 1 -->
         <value targetId="38" units="deg" offset="2" length="2" conversion="V*0.1-100"></value> <!-- Spark adv. -->
         <value targetId="11" units="kPA" offset="4" length="2" conversion="V*0.1"></value> <!-- Baro -->
 		<value name="Emtron: ECU Temp" units="C" offset="6" length="2" conversion="V*0.1-50"></value>
 	</frame>
 
-    <frame id="1257" endianess="big">
+    <frame id="1257">
         <value targetId="41" offset="0" length="2" conversion="V*0.1-100"></value> <!-- TPS DOT -->
 		<value name="Emtron: ECU dRPM" offset="2" length="2" conversion="V-20000"></value>
 		<value name="Emtron: Fuel Cut Level" offset="4" length="2" conversion="V*0.1"></value>
 		<value name="Emtron: Ignition Cut Level" offset="6" length="2" conversion="V*0.1"></value>
 	</frame>
 	  
-    <frame id="1258" endianess="big">
+    <frame id="1258">
 		<value name="Emtron: Ethanol Content" offset="0" length="2" conversion="V*0.1"></value>
         <value targetId="6" offset="2" length="2" conversion="V*0.01-10"></value> <!-- ACC-X -->
         <value targetId="8" offset="4" length="2" conversion="V*0.01-10"></value> <!-- ACC-Z -->
         <value targetId="7" offset="6" length="2" conversion="V*0.01-10"></value> <!-- ACC-Y -->
 	</frame>
 
-    <frame id="1259" endianess="big">
+    <frame id="1259">
 		<value name="Emtron: Crank/Cam Error Counter" offset="0" length="2"></value>
 		<value name="Emtron: Max Engine Speed" offset="2" length="2"></value>
 		<value name="Emtron: Sync Position" offset="4" length="2" conversion="V*0.1"></value>
