@@ -4,14 +4,14 @@
   <frames>
     <!-- https://www.ms4x.net/index.php?title=Siemens_MS42_CAN_Bus -->
 
-	<frame id="0x316" endianess="big">
+	<frame id="0x316">
 		<value targetId="167" offset="0" length="1" units="bit"></value> <!-- Ignition on -->
 		<value targetId="179" offset="0" length="1" conversion="(V>>2 &amp; 1) * 100"></value> <!-- Traction control percentage -->
 		<value targetId="100" offset="1" length="1"></value> <!-- Engine Load (Torque %) -->
-		<value targetId="37" offset="2" length="2"></value> <!-- RPM -->
+		<value targetId="37" offset="2" length="2" conversion="V/6.42"></value> <!-- RPM -->
 	</frame>
 
-	<frame id="0x329" endianess="big">
+	<frame id="0x329">
 		<value targetId="14" offset="1" length="1" units="C" conversion="V*0.75-48"></value> <!-- Coolant temp -->
 		<value targetId="11" offset="2" length="1" units="kpa" conversion="(V*2+598)*0.1"></value> <!-- Barometer -->
 		<value targetId="231" offset="3" length="1" conversion="(V &amp; 1) * 100"></value> <!-- Clutch pedal -->
@@ -20,7 +20,7 @@
 		<value targetId="230" offset="6" length="1" conversion="(V>>1) &amp; 1"></value> <!-- Brake pedal -->
 	</frame>
 	  
-    <frame id="0x545" endianess="big">
+    <frame id="0x545">
       <value targetId="65" offset="0" length="1" units="bit" conversion="V>>1"></value> <!-- Check engine light -->
       <value targetId="490" offset="1" length="2" conversion="V*0.1"></value> <!-- Fuel Flow -->
     </frame>
