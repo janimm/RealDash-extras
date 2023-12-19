@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- RealDash CAN XML description file, version 2 Requires RealDash version 1.5.8 or newer -->
+<RealDashCAN version="2">
+  <frames>
+    <frame id="0x400" endianess="big">
+      <value targetId="307" offset="0" length="4" signed="true" conversion="V/10000000"></value> <!-- latitude -->
+      <value targetId="308" offset="4" length="4" signed="true" conversion="V/10000000"></value> <!-- longitude -->
+    </frame>
+
+    <frame id="0x401" endianess="big">
+      <value targetId="24" offset="0" length="2" units="kph" signed="true" conversion="V*36/1000"></value> <!-- GPS speed -->
+      <value targetId="21" offset="2" length="2" units="m" signed="true"></value> <!-- altitude -->
+	  <value name="ECUMaster GPS: Number of satellites being tracked" offset="5" length="1"></value>
+    </frame>
+
+    <frame id="0x402">
+      <value name="ECUMaster GPS: Heading Motion" offset="0" length="2"></value>
+      <value name="ECUMaster GPS: Heading Vehicle" offset="2" length="2"></value>
+      <value name="ECUMaster GPS: Anglular Rate X" offset="4" length="2" signed="true" conversion="V*0.01"></value>
+      <value name="ECUMaster GPS: Anglular Rate Y" offset="6" length="2" signed="true" conversion="V*0.01"></value>
+    </frame>
+
+    <frame id="0x403">
+      <value name="ECUMaster GPS: Anglular Rate Z" offset="0" length="2" signed="true" conversion="V*0.01"></value>
+      <value targetId="6" offset="2" length="2" signed="true" conversion="V*0.01"></value> <!-- Acceleration X -->
+      <value targetId="7" offset="4" length="2" signed="true" conversion="V*0.01"></value> <!-- Acceleration Y -->
+      <value targetId="8" offset="6" length="2" signed="true" conversion="V*0.01"></value> <!-- Acceleration Z -->
+    </frame>
+	  
+    <frame id="0x404" endianess="big">
+	  <value name="ECUMaster GPS: UTC year" offset="0" length="1" conversion="V+2000"></value>
+	  <value name="ECUMaster GPS: UTC month" offset="1" length="1"></value>
+	  <value name="ECUMaster GPS: UTC day" offset="2" length="1"></value>
+	  <value name="ECUMaster GPS: UTC hour" offset="3" length="1"></value>
+	  <value name="ECUMaster GPS: UTC minute" offset="4" length="1"></value>
+	  <value name="ECUMaster GPS: UTC second" offset="5" length="1"></value>
+	  <value name="ECUMaster GPS: UTC millisecond" offset="6" length="2" conversion="V*500/32768"></value>
+    </frame>
+
+  </frames>
+</RealDashCAN>
+
