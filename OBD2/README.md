@@ -168,7 +168,7 @@ It is possible to receive multiple values for one sent command. The individual v
 1. Save your XML file to a place that is accessible from your device running RealDash.
 2. Open RealDash Go to Garage, open vehicle door and tap the instrument cluster
 3. On the *Connections* list, tap your OBD2 connection.
-4. Tap *Select Vehicle* button and then select *Custom Channel Description File* and browse to your XML file.
+4. Tap *Select Vehicle* button and then scroll down to find *Custom Channel Description File* and browse to your XML file.
 5. Tap the upper left corner *Done* button and exit the Garage.
 6. RealDash will reconnect and use your custom XML file for communications.
 
