@@ -177,10 +177,10 @@
     </frame>
 
 	<frame id="0x6F3" endianess="big">
-	  <value id="739" units="bit" offset="4" length="1"></value> <!-- Front Left tyre leaking -->
-	  <value id="740" units="bit" offset="4" length="1" conversion="V>>1"></value> <!-- Front Right tyre leaking -->
-	  <value id="741" units="bit" offset="4" length="1" conversion="V>>2"></value> <!-- Rear Left tyre leaking -->
-	  <value id="742" units="bit" offset="4" length="1" conversion="V>>3"></value> <!-- Rear Right tyre leaking -->
+	  <value targetId="739" units="bit" offset="4" length="1"></value> <!-- Front Left tyre leaking -->
+	  <value targetId="740" units="bit" offset="4" length="1" conversion="V>>1"></value> <!-- Front Right tyre leaking -->
+	  <value targetId="741" units="bit" offset="4" length="1" conversion="V>>2"></value> <!-- Rear Left tyre leaking -->
+	  <value targetId="742" units="bit" offset="4" length="1" conversion="V>>3"></value> <!-- Rear Right tyre leaking -->
 	  <value name="Haltech: Engine Protection Severity Level" offset="5" length="1"></value>
 	  <value name="Haltech: Engine Protection Reason" offset="6" length="2"></value>
 	</frame>
