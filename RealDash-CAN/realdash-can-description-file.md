@@ -66,10 +66,12 @@ The composite id in XML must be defined in little endian by swapping the byte or
 
 
 &nbsp;
-## **frame 'endianess' attribute (optional)**
-Each **frame** can optionally specify the *endianess* of how multibyte values are interpreted in frame data. Accepted values for **endianess** are **endianess="big"** or **endianess="little"** (the default setting). The endianess attribute can also be specified individually for each **value**. An example of how to specify all values in frame to be considered *big endian*:
+## **frame 'endianness' attribute (optional)**
+Each **frame** can optionally specify the *endianness* of how multibyte values are interpreted in frame data. Accepted values for **endianness** are **endianness="big"** or **endianness="little"** (the default setting). The endianness attribute can also be specified individually for each **value**. An example of how to specify all values in frame to be considered *big endian*:
 
-    <frame id="3200" endianess="big">
+**NOTE:** Until version 2.3.9, RealDash used the word 'endianess' instead of correct spelling of 'endianness'. From version 2.3.9 RealDash accepts both as an attribute name.
+
+    <frame id="3200" endianness="big">
 
 &nbsp;
 ## **frame 'signed' attribute (optional)**
@@ -128,10 +130,12 @@ Note: if you make your own dashboard that links into custom inputs, remember tha
 In addition to **offset** and **length** attributes, the **startbit** and **bitcount** can be used to specify from where the value is read in frame data. The **startbit** is the index of the first bit of the value, and **bitcount** is a number of bits used by the value. These can be combined with **offset** parameter, but **bitcount** will override the **length** if present.
 
 &nbsp;
-## **value 'endianess' attribute (optional)**
-Value can optionally specify the *endianess* of how multibyte values are interpreted in value data. Accepted values for **endianess** are **endianess="big"** or **endianess="little"** (the default setting). The endianess parameter can also be specified in enclosing **frame** to apply it to all values. An example of how to specify the value to be considered *big endian*:
+## **value 'endianness' attribute (optional)**
+Value can optionally specify the *endianness* of how multibyte values are interpreted in value data. Accepted values for **endianness** are **endianness="big"** or **endianness="little"** (the default setting). The endianness parameter can also be specified in enclosing **frame** to apply it to all values. An example of how to specify the value to be considered *big endian*:
 
-    <value targetId="37" offset="0" length="2" endianess="big"></value>
+**NOTE:** Until version 2.3.9, RealDash used the word 'endianess' instead of correct spelling of 'endianness'. From version 2.3.9 RealDash accepts both as an attribute name.
+
+    <value targetId="37" offset="0" length="2" endianness="big"></value>
 
 &nbsp;
 ## **value 'signed' attribute (optional)**
