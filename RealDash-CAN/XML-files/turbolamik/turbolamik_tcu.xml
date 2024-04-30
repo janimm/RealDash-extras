@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RealDashCAN version="2">
+  <frames>
+    <frame id="0x640" endianess="big">
+      <value name="Turbolamik TCU: Value 1" offset="0" length="2" rangeMin="0" rangeMax="5000"></value>
+      <value name="Turbolamik TCU: Value 2" offset="2" length="2" rangeMin="0" rangeMax="5000"></value>
+      <value name="Turbolamik TCU: Value 3" offset="4" length="2" rangeMin="0" rangeMax="5000"></value>
+      <value name="Turbolamik TCU: Value 4" offset="6" length="2" rangeMin="0" rangeMax="5000"></value>
+    </frame>
+
+    <frame id="0x641" endianess="big">
+      <value name="Turbolamik TCU: Value 5" offset="0" length="2" rangeMin="0" rangeMax="5000"></value>
+      <value name="Turbolamik TCU: Value 6" offset="2" length="2" rangeMin="0" rangeMax="5000"></value>
+      <value name="Turbolamik TCU: Value 7" offset="4" length="2" rangeMin="0" rangeMax="5000"></value>
+      <value name="Turbolamik TCU: Value 8" offset="6" length="2" rangeMin="0" rangeMax="5000"></value>
+    </frame>
+
+    <frame id="0x642" endianess="big">
+      <value targetId="139" offset="0" length="1"></value> <!-- gear (transmission) -->
+      <value targetId="138" offset="1" length="1" units="C" conversion="V-40"></value> <!-- oil temp (transmission) -->
+      <value name="Turbolamik TCU: Program Switch" offset="2" length="1"></value>
+      <value name="Turbolamik TCU: Error Code" offset="3" length="1"></value>
+      <value name="Turbolamik TCU: Torque Reduction" offset="4" length="1" units="bit"></value>
+      <value name="Turbolamik TCU: Safety Mode" offset="4" length="1" units="bit" conversion="V>>1"></value>
+      <value name="Turbolamik TCU: Parking" offset="4" length="1" units="bit" conversion="V>>2"></value>
+      <value name="Turbolamik TCU: Oil Fan" offset="4" length="1" units="bit" conversion="V>>3"></value>
+      <value name="Turbolamik TCU: Transbrake" offset="4" length="1" units="bit" conversion="V>>4"></value>
+      <value name="Turbolamik TCU: Brake solenoid ON" offset="4" length="1" units="bit" conversion="V>>5"></value>
+      <value targetId="489" offset="4" length="1" units="bit" conversion="V>>6"></value> <!-- neutral safety switch -->
+      <value targetId="143" offset="4" length="1" units="bit" conversion="V>>7"></value> <!-- lockup active -->
+
+      <value name="Turbolamik TCU: Automatic Mode" offset="5" length="1" units="bit"></value>
+      <value name="Turbolamik TCU: Adaptation active" offset="5" length="1" units="bit" conversion="V>>1"></value>
+      <value targetId="164" offset="5" length="1" units="bit" conversion="V>>2"></value> <!-- Parking brake -->
+      <value targetId="136" offset="6" length="1" units="kph" conversion="V*2"></value> <!-- vehicle speed (transmission) -->
+	</frame>
+
+	  <!-- data from ECU to TCU. You probably better configure your ECU to send these values directly to CAN -->
+	  <!-- frame 0x600 is just for reference, do not enable unless you are sure what you are doing -->
+	  
+	  <!-- 
+    <frame id="0x600" endianess="big" writeInterval="40">
+      <value targetId="37" offset="0" length="2"></value>
+      <value targetId="31" offset="2" length="2"></value>
+      <value targetId="42" offset="4" length="1" conversionOut="V*2"></value>
+      <value targetId="42" offset="5" length="1" conversionOut="V*2"></value>
+      <value name="Turbolamik TCU: Engine torque" offset="6" length="2"></value>
+	</frame>
+	  -->
+
+</frames>
+</RealDashCAN>
+
