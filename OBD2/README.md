@@ -148,7 +148,7 @@ If **command** section contains attribute **rawReply="true"**, every reply byte,
 
 &nbsp;
 ### **keepInRotation [optional] (from RealDash 2.4.2)**
-RealDash has a feature that removes commands from the rotation if there is no valid response from the vehicle multiple times on the row. This attribute allows to disable automatic removal of invalid commands from the rotation.
+RealDash has a feature that removes commands from the rotation if there is no valid response from the vehicle multiple times on the row. **keepInRotation="true"** attribute allows to disable automatic removal of invalid commands from the rotation.
 
 &nbsp;
 ### **Receive multiple values on one command**
