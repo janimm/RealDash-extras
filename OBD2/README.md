@@ -147,6 +147,10 @@ In addition, **enum** supports a range of values with *tilde* **~** operator. Fo
 If **command** section contains attribute **rawReply="true"**, every reply byte, including any header bytes are regarded as data bytes. This allows to use custom commands on which the reply does not follow typical ELM327 reply.
 
 &nbsp;
+### **keepInRotation [optional] (from RealDash 2.4.2)**
+RealDash has a feature that removes commands from the rotation if there is no valid response from the vehicle multiple times on the row. This attribute allows to disable automatic removal of invalid commands from the rotation.
+
+&nbsp;
 ### **Receive multiple values on one command**
 It is possible to receive multiple values for one sent command. The individual values are listed in **command** as **values**. The parameters for the **value** are the same as with command with only one target value.
 
