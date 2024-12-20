@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- RealDash CAN XML description file, version 2 Requires RealDash version 1.5.8 or newer -->
+<RealDashCAN version="2">
+  <frames>
+	 <frame id="0x191">	 
+		<value targetId="188" offset="0" length="1"></value> <!-- Steering wheel button 1, name="Button 1" -->
+		<value targetId="189" offset="1" length="1"></value> <!-- Steering wheel button 2, name="Button 2" -->
+		<value targetId="167" offset="7" length="1"></value> <!-- Ignition on -->
+	 </frame>
+	 		
+	 <frame id="0x3B4">	 
+		<value targetId="14" units="C" offset="2" length="1" conversion="V/2" ></value> <!-- Coolant Temperature -->
+		<value targetId="139" offset="4" length="2" enum="16384~16385:D,32~33:N,64~65:R,128~129:P,512~513:L1,1024~1025:L2,2048~2049:3D"></value> <!-- Gear  -->
+		<value targetId="169" startbit="5" bitcount="1"></value> <!-- Cruise Control Active -->
+	 </frame>
+	 
+    <frame id="0x398">
+		<value targetId="490" offset="0" length="2" endianess="big" conversion="V/100"></value> <!-- Fuel Flow l/h -->
+	</frame>
+			
+	<frame id="0x620">
+		<value targetId="484" startbit="42" bitcount="1"></value> <!-- Door4 open, right back door -->
+		<value targetId="483" startbit="43" bitcount="1"></value> <!-- Door3 open, left back door -->
+		<value targetId="163" startbit="40" bitcount="1"></value> <!-- trunk ajar -->
+		<value targetId="481" startbit="45" bitcount="1"></value> <!-- Door1 open, left front door -->
+		<value targetId="482" startbit="44" bitcount="1"></value> <!-- Door2 open, right front door -->
+	  
+		<value targetId="162" conversion="ID481||ID482||ID483||ID484"></value> <!-- Door Ajar -->
+		<value targetId="155" startbit="2" bitcount="1"></value> <!-- parking lights active -->
+	  
+		<value targetId="164" startbit="60" bitcount="1"></value> <!-- Parking Brake-->
+		<value targetId="168" startbit="62" bitcount="1"></value> <!-- Seat Belt Warning-->
+    </frame>
+	
+    <frame id="0x2C4">
+		<value targetId="37" units="RPM" offset="0" length="2" endianess="big" conversion="V/1.3"></value> <!-- PRM -->
+	</frame>
+	
+    <frame id="0x0B4">
+		<value targetId="81" units="kmh" offset="5" length="2" endianess="big" conversion="V/95"></value> <!-- VSS1 -->
+	</frame>
+	 
+    <frame id="0x640">
+		<value targetId="173" units="C" offset="3" length="3"  conversion="0.003867973182*(B0*256+B2)-47.57"></value> <!-- Ambient Temperature -->
+	</frame>
+ 		
+    <frame id="0x611">
+		<value targetId="310" offset="5" length="3" endianess="big" conversion="V*1.60934+61040"></value> <!-- BODY ELECTRONICS Odometer -->
+	</frame>
+	
+    <frame id="0x3B1">
+		<value targetId="272" startbit="18" bitcount="1"  ></value> <!-- Airbag Warning -->
+	</frame>
+   		
+	<!-- ID62С -->
+    <frame id="0x394">
+		<value name="Toyota Corolla: SteeringWheel" startbit="0" bitcount="8"  ></value>
+	</frame>
+		
+    <frame id="0x3B7">
+		<value targetId="179" startbit="12" bitcount="1" conversion="V*10"></value> <!-- Traction Control active -->
+		<value targetId="179" startbit="11" bitcount="1" conversion="V*100"></value> <!-- Traction Control active (blink) -->
+		<value targetId="273" startbit="2" bitcount="1" ></value> <!-- ABS Warning --> 
+		<value targetId="164" startbit="6" bitcount="1" ></value> <!-- Parking Brake -->
+	</frame>
+  </frames>
+</RealDashCAN>
+
