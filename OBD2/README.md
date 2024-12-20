@@ -66,7 +66,7 @@ This is the command to send to adapter. In above example **010c**, which is comm
 
 &nbsp;
 ### **skipCount**
-Number of times to skip sending this command. This value can be used to request a certain values less frequently and therefore get more time critical data faster. For example, using 5 as **skipCount** would send the command and later skip sending the command 5 times before sending it again. For some values like ambient temperature **skipCount** can be relatively large value, like 60.
+Number of times to skip sending this command. This value can be used to request a certain values less frequently and therefore get more time critical data faster. For example, using 5 as **skipCount** would send the command and later skip sending the command 5 times before sending it again. For some values like ambient temperature **skipCount** can be relatively large value, like 60. Default skipCount is 0.
 
 &nbsp;
 ### **targetId**
