@@ -10,5 +10,5 @@
 [See the full specification of RealDash CAN XML description file here](./realdash-can-description-file.md).
 
 &nbsp;
-## **RealDash CAN Arcuino examples**
-[RealDash CAN Arcuino examples](./Arduino-examples/README.md).
+## **RealDash CAN Arduino examples**
+[RealDash CAN Arduino examples](./Arduino-examples/README.md).
