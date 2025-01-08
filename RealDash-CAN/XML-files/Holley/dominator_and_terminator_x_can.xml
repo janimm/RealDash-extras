@@ -1,0 +1,834 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RealDashCAN version="2">
+  <frames>
+    <frame id="0x1E005000" endianness="big">
+      <value targetId="37" offset="0" length="4" float="true"/> <!-- RPM -->
+    </frame>
+    <frame id="0x1E009000" endianness="big">
+      <value targetId="35" offset="0" length="4" float="true"/> <!-- PW1 -->
+    </frame>
+    <frame id="0x1E00D000" endianness="big">
+      <value targetId="119" offset="0" length="4" float="true"/> <!-- Duty Cycle 1 -->
+    </frame>
+    <frame id="0x1E015000" endianness="big">
+      <value targetId="2" offset="0" length="4" float="true"/> <!-- AFR target 1 -->
+    </frame>
+    <frame id="0x1E019000" endianness="big">
+      <value targetId="0" offset="0" length="4" float="true"/> <!-- AFR 1 -->
+    </frame>
+    <frame id="0x1E01D000" endianness="big">
+      <value targetId="1" offset="0" length="4" float="true"/> <!-- AFR 2 -->
+    </frame>
+    <frame id="0x1E025000" endianness="big">
+      <value targetId="9" offset="0" length="4" float="true"/> <!-- IAT Correction -->
+    </frame>
+    <frame id="0x1E029000" endianness="big">
+      <value targetId="46" offset="0" length="4" float="true"/> <!-- Warmup correction -->
+    </frame>
+    <frame id="0x1E045000" endianness="big">
+      <value targetId="490" offset="0" length="4" float="true"/> <!-- Fuel Flow -->
+    </frame>
+    <frame id="0x1E055000" endianness="big">
+      <value targetId="44" offset="0" length="4" float="true"/> <!-- VE1 -->
+    </frame>
+    <frame id="0x1E059000" endianness="big">
+      <value targetId="38" offset="0" length="4" float="true"/> <!-- Spark Adv -->
+    </frame>
+    <frame id="0x1E05D000" endianness="big">
+      <value targetId="28" offset="0" length="4" float="true"/> <!-- Knock retard -->
+    </frame>
+    <frame id="0x1E061000" endianness="big">
+      <value targetId="29" offset="0" length="4" float="true"/> <!-- Knock percentage -->
+    </frame>
+    <frame id="0x1E071000" endianness="big">
+      <value targetId="31" offset="0" length="4" float="true"/> <!-- Manifold absolute pressure -->
+    </frame>
+    <frame id="0x1E075000" endianness="big">
+      <value targetId="42" offset="0" length="4" float="true"/> <!-- TPS -->
+    </frame>
+    <frame id="0x1E079000" endianness="big">
+      <value targetId="27" offset="0" length="4" units="F" float="true"/> <!-- IAT -->
+    </frame>
+    <frame id="0x1E07D000" endianness="big">
+      <value targetId="14" offset="0" length="4" units="F" float="true"/> <!-- CLT -->
+    </frame>
+    <frame id="0x1E081000" endianness="big">
+      <value targetId="11" offset="0" length="4" float="true"/> <!-- Barometer -->
+    </frame>
+    <frame id="0x1E085000" endianness="big">
+      <value targetId="12" offset="0" length="4" float="true"/> <!-- Battery Voltage -->
+    </frame>
+    <frame id="0x1E089000" endianness="big">
+      <value targetId="151" offset="0" length="4" float="true"/> <!-- Engine Oil Pressure -->
+    </frame>
+    <frame id="0x1E08D000" endianness="big">
+      <value targetId="202" offset="0" length="4" float="true"/> <!-- Fuel Pressure -->
+    </frame>
+    <frame id="0x1E095000" endianness="big">
+      <value targetId="271" offset="0" length="4" float="true"/> <!-- RPM limiter active -->
+    </frame>
+    <frame id="0x1E0A1000" endianness="big">
+      <value targetId="335" offset="0" length="4" float="true"/> <!-- AC ON -->
+    </frame>
+    <frame id="0x1E0B1000" endianness="big">
+      <value targetId="153" offset="0" length="4" float="true"/> <!-- Cooling Fan active -->
+    </frame>
+    <frame id="0x1E0B5000" endianness="big">
+      <value name="Holley EFI: Cooling Fan 2 Status" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E0B9000" endianness="big">
+      <value name="Holley EFI: Fuel Pump 2 Status" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E0C5000" endianness="big">
+      <value name="Holley EFI: Sensor Warning" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E0C9000" endianness="big">
+      <value name="Holley EFI: Sensor Caution" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E0DD000" endianness="big">
+      <value name="Holley EFI: Sensor Caution" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E0F5000" endianness="big">
+      <value name="Holley EFI: System Status 1" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E0F9000" endianness="big">
+      <value name="Holley EFI: System Status 2" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E0FD000" endianness="big">
+      <value name="Holley EFI: System Status 3" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E101000" endianness="big">
+      <value name="Holley EFI: System Status 4" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E105000" endianness="big">
+      <value name="Holley EFI: System Status 5" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E109000" endianness="big">
+      <value name="Holley EFI: System Status 6" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E10D000" endianness="big">
+      <value name="Holley EFI: System Status 7" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E111000" endianness="big">
+      <value name="Holley EFI: System Status 8" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E1F5000" endianness="big">
+      <value name="Holley EFI: Target Fuel Pressure" offset="0" length="4" units="psi" float="true"/>
+    </frame>
+    <frame id="0x1E209000" endianness="big">
+      <value name="Holley EFI: Boost Gear" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E20D000" endianness="big">
+      <value name="Holley EFI: Boost Manual Stage" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E21D000" endianness="big">
+      <value targetId="270" offset="0" length="4" float="true"/> <!-- Boost Target -->
+    </frame>
+    <frame id="0x1E221000" endianness="big">
+      <value name="Holley EFI: Transbrake Status" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E281000" endianness="big">
+      <value name="Holley EFI: NOS Stage 1" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E285000" endianness="big">
+      <value name="Holley EFI: NOS Stage 2" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E289000" endianness="big">
+      <value name="Holley EFI: NOS Stage 3" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E28D000" endianness="big">
+      <value name="Holley EFI: NOS Stage 4" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E291000" endianness="big">
+      <value name="Holley EFI: NOS Stage 5" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E295000" endianness="big">
+      <value name="Holley EFI: NOS Stage 6" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E299000" endianness="big">
+      <value name="Holley EFI: NOS Stage 7" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E29D000" endianness="big">
+      <value name="Holley EFI: NOS Stage 8" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E2A1000" endianness="big">
+      <value name="Holley EFI: NOS GPO 1" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E2A5000" endianness="big">
+      <value name="Holley EFI: NOS GPO 2" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E2A9000" endianness="big">
+      <value name="Holley EFI: NOS GPO 3" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E2AD000" endianness="big">
+      <value name="Holley EFI: NOS GPO 4" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E2B1000" endianness="big">
+      <value name="Holley EFI: NOS GPO 5" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E2B5000" endianness="big">
+      <value name="Holley EFI: NOS GPO 6" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E2B9000" endianness="big">
+      <value name="Holley EFI: NOS GPO 7" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E2BD000" endianness="big">
+      <value name="Holley EFI: NOS GPO 8" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E2C1000" endianness="big">
+      <value name="Holley EFI: NOS Enabled Status" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E2C5000" endianness="big">
+      <value name="Holley EFI: NOS Input 1 Status" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E2C9000" endianness="big">
+      <value name="Holley EFI: NOS Input 2 Status" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E2CD000" endianness="big">
+      <value name="Holley EFI: NOS Input 3 Status" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E2D1000" endianness="big">
+      <value name="Holley EFI: NOS Input 4 Status" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E2D5000" endianness="big">
+      <value name="Holley EFI: NOS Input 5 Status" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E2D9000" endianness="big">
+      <value name="Holley EFI: NOS Input 6 Status" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E2DD000" endianness="big">
+      <value name="Holley EFI: NOS Input 7 Status" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E2E1000" endianness="big">
+      <value name="Holley EFI: NOS Input 8 Status" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E2E5000" endianness="big">
+      <value name="Holley EFI: NOS Purge Status" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E2E9000" endianness="big">
+      <value name="Holley EFI: NOS Lean Cutoff Status" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E2ED000" endianness="big">
+      <value name="Holley EFI: NOS Rich Cutoff Status" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E2F1000" endianness="big">
+      <value name="Holley EFI: NOS RPM Cutoff Status" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E2F5000" endianness="big">
+      <value name="Holley EFI: NOS MAP Cutoff Status" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E2F9000" endianness="big">
+      <value name="Holley EFI: NOS Purge Output" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E2FD000" endianness="big">
+      <value name="Holley EFI: NOS Dry Fuel 1" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E301000" endianness="big">
+      <value name="Holley EFI: NOS Dry Fuel 2" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E305000" endianness="big">
+      <value name="Holley EFI: NOS Dry Fuel 3" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E309000" endianness="big">
+      <value name="Holley EFI: NOS Dry Fuel 4" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E30D000" endianness="big">
+      <value name="Holley EFI: NOS Dry Fuel 5" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E311000" endianness="big">
+      <value name="Holley EFI: NOS Dry Fuel 6" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E315000" endianness="big">
+      <value name="Holley EFI: NOS Dry Fuel 7" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E319000" endianness="big">
+      <value name="Holley EFI: NOS Dry Fuel 8" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E31D000" endianness="big">
+      <value name="Holley EFI: NOS Timing Mod 1" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E321000" endianness="big">
+      <value name="Holley EFI: NOS Timing Mod 2" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E325000" endianness="big">
+      <value name="Holley EFI: NOS Timing Mod 3" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E329000" endianness="big">
+      <value name="Holley EFI: NOS Timing Mod 4" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E32D000" endianness="big">
+      <value name="Holley EFI: NOS Timing Mod 5" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E331000" endianness="big">
+      <value name="Holley EFI: NOS Timing Mod 6" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E335000" endianness="big">
+      <value name="Holley EFI: NOS Timing Mod 7" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E339000" endianness="big">
+      <value name="Holley EFI: NOS Timing Mod 8" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E33D000" endianness="big">
+      <value name="Holley EFI: NOS Timer 1" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E341000" endianness="big">
+      <value name="Holley EFI: NOS Timer 2" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E345000" endianness="big">
+      <value name="Holley EFI: NOS Timer 3" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E349000" endianness="big">
+      <value name="Holley EFI: NOS Timer 4" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E34D000" endianness="big">
+      <value name="Holley EFI: NOS Timer 5" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E351000" endianness="big">
+      <value name="Holley EFI: NOS Timer 6" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E355000" endianness="big">
+      <value name="Holley EFI: NOS Timer 7" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E359000" endianness="big">
+      <value name="Holley EFI: NOS Timer 8" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E36D000" endianness="big">
+      <value targetId="200" offset="0" length="4" float="true"/> <!-- Gear -->
+    </frame>
+    <frame id="0x1E371000" endianness="big">
+      <value targetId="81" offset="0" length="4" units="mph" float="true"/> <!-- VSS 1 -->
+   </frame>
+    <frame id="0x1E385000" endianness="big">
+      <value targetId="138" offset="0" length="4" units="F" float="true"/> <!-- Transmission Oil Temp -->
+    </frame>
+    <frame id="0x1E3C1000" endianness="big">
+      <value targetId="230" offset="0" length="4" float="true"/> <!-- Brake pedal position -->
+    </frame>
+    <frame id="0x1E3C9000" endianness="big">
+      <value name="Holley EFI: Diagnostic 1" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E3CD000" endianness="big">
+      <value name="Holley EFI: Diagnostic 2" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E3D1000" endianness="big">
+      <value name="Holley EFI: Diagnostic 3" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E3D5000" endianness="big">
+      <value name="Holley EFI: Diagnostic 4" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E3D9000" endianness="big">
+      <value name="Holley EFI: Diagnostic 5" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E3DD000" endianness="big">
+      <value name="Holley EFI: Diagnostic 6" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E3E1000" endianness="big">
+      <value name="Holley EFI: Diagnostic 7" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E3E5000" endianness="big">
+      <value name="Holley EFI: Diagnostic 8" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E3E9000" endianness="big">
+      <value name="Holley EFI: Diagnostic 9" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E3ED000" endianness="big">
+      <value name="Holley EFI: Diagnostic 10" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E3F1000" endianness="big">
+      <value name="Holley EFI: Diagnostic 11" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E3F5000" endianness="big">
+      <value name="Holley EFI: Diagnostic 12" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E3F9000" endianness="big">
+      <value name="Holley EFI: Diagnostic 13" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E3FD000" endianness="big">
+      <value name="Holley EFI: Diagnostic 14" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E401000" endianness="big">
+      <value name="Holley EFI: Diagnostic 15" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E405000" endianness="big">
+      <value name="Holley EFI: Diagnostic 16" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E409000" endianness="big">
+      <value name="Holley EFI: Diagnostic 17" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E40D000" endianness="big">
+      <value name="Holley EFI: Diagnostic 18" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E411000" endianness="big">
+      <value name="Holley EFI: Diagnostic 19" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E415000" endianness="big">
+      <value name="Holley EFI: Diagnostic 20" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E419000" endianness="big">
+      <value targetId="394" offset="0" length="4" float="true"/> <!-- Launch control active -->
+    </frame>
+    <frame id="0x1E4A9000" endianness="big">
+      <value name="Holley EFI: IO Input 1" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E4AD000" endianness="big">
+      <value name="Holley EFI: IO Input 2" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E4B1000" endianness="big">
+      <value name="Holley EFI: IO Input 3" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E4B5000" endianness="big">
+      <value name="Holley EFI: IO Input 4" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E4B9000" endianness="big">
+      <value name="Holley EFI: IO Input 5" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E4BD000" endianness="big">
+      <value name="Holley EFI: IO Input 6" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E4C1000" endianness="big">
+      <value name="Holley EFI: IO Input 7" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E4C5000" endianness="big">
+      <value name="Holley EFI: IO Input 8" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E4C9000" endianness="big">
+      <value name="Holley EFI: IO Input 9" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E4CD000" endianness="big">
+      <value name="Holley EFI: IO Input 10" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E4D1000" endianness="big">
+      <value name="Holley EFI: IO Input 11" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E4D5000" endianness="big">
+      <value name="Holley EFI: IO Input 12" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E4D9000" endianness="big">
+      <value name="Holley EFI: IO Input 13" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E4DD000" endianness="big">
+      <value name="Holley EFI: IO Input 14" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E4E1000" endianness="big">
+      <value name="Holley EFI: IO Input 15" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E4E5000" endianness="big">
+      <value name="Holley EFI: IO Input 16" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E4E9000" endianness="big">
+      <value name="Holley EFI: IO Input 17" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E4ED000" endianness="big">
+      <value name="Holley EFI: IO Input 18" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E4F1000" endianness="big">
+      <value name="Holley EFI: IO Input 19" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E4F5000" endianness="big">
+      <value name="Holley EFI: IO Input 20" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E4F9000" endianness="big">
+      <value name="Holley EFI: IO Input 21" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E4FD000" endianness="big">
+      <value name="Holley EFI: IO Input 22" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E501000" endianness="big">
+      <value name="Holley EFI: IO Input 23" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E505000" endianness="big">
+      <value name="Holley EFI: IO Input 24" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E509000" endianness="big">
+      <value name="Holley EFI: IO Input 25" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E50D000" endianness="big">
+      <value name="Holley EFI: IO Input 26" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E511000" endianness="big">
+      <value name="Holley EFI: IO Input 27" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E515000" endianness="big">
+      <value name="Holley EFI: IO Input 28" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E519000" endianness="big">
+      <value name="Holley EFI: IO Input 29" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E51D000" endianness="big">
+      <value name="Holley EFI: IO Input 30" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E521000" endianness="big">
+      <value name="Holley EFI: IO Input 31" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E525000" endianness="big">
+      <value name="Holley EFI: IO Input 32" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E529000" endianness="big">
+      <value name="Holley EFI: IO Input 33" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E52D000" endianness="big">
+      <value name="Holley EFI: IO Input 34" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E531000" endianness="big">
+      <value name="Holley EFI: IO Input 35" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E535000" endianness="big">
+      <value name="Holley EFI: IO Input 36" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E539000" endianness="big">
+      <value name="Holley EFI: IO Input 37" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E53D000" endianness="big">
+      <value name="Holley EFI: IO Input 38" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E541000" endianness="big">
+      <value name="Holley EFI: IO Input 39" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E545000" endianness="big">
+      <value name="Holley EFI: IO Input 40" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E549000" endianness="big">
+      <value name="Holley EFI: IO Input 41" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E54D000" endianness="big">
+      <value name="Holley EFI: IO Input 42" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E551000" endianness="big">
+      <value name="Holley EFI: IO Input 43" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E555000" endianness="big">
+      <value name="Holley EFI: IO Input 44" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E559000" endianness="big">
+      <value name="Holley EFI: IO Input 45" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E55D000" endianness="big">
+      <value name="Holley EFI: IO Input 46" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E561000" endianness="big">
+      <value name="Holley EFI: IO Input 47" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E565000" endianness="big">
+      <value name="Holley EFI: IO Input 48" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E569000" endianness="big">
+      <value name="Holley EFI: IO Input 49" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E56D000" endianness="big">
+      <value name="Holley EFI: IO Input 50" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E571000" endianness="big">
+      <value name="Holley EFI: IO Input 51" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E575000" endianness="big">
+      <value name="Holley EFI: IO Input 52" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E579000" endianness="big">
+      <value name="Holley EFI: IO Input 53" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E57D000" endianness="big">
+      <value name="Holley EFI: IO Input 54" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E581000" endianness="big">
+      <value name="Holley EFI: IO Input 55" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E585000" endianness="big">
+      <value name="Holley EFI: IO Input 56" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E589000" endianness="big">
+      <value name="Holley EFI: IO Input 57" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E58D000" endianness="big">
+      <value name="Holley EFI: IO Input 58" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E591000" endianness="big">
+      <value name="Holley EFI: IO Input 59" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E595000" endianness="big">
+      <value name="Holley EFI: IO Input 60" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E599000" endianness="big">
+      <value name="Holley EFI: IO Input 61" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E59D000" endianness="big">
+      <value name="Holley EFI: IO Input 62" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E5A1000" endianness="big">
+      <value name="Holley EFI: IO Input 63" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E5A5000" endianness="big">
+      <value name="Holley EFI: IO Input 64" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E5A9000" endianness="big">
+      <value name="Holley EFI: IO Input 65" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E5AD000" endianness="big">
+      <value name="Holley EFI: IO Input 66" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E5B1000" endianness="big">
+      <value name="Holley EFI: IO Input 67" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E5B5000" endianness="big">
+      <value name="Holley EFI: IO Input 68" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E5B9000" endianness="big">
+      <value name="Holley EFI: IO Input 69" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E5BD000" endianness="big">
+      <value name="Holley EFI: IO Input 70" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E5C1000" endianness="big">
+      <value name="Holley EFI: IO Input 71" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E5C5000" endianness="big">
+      <value name="Holley EFI: IO Input 72" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E5C9000" endianness="big">
+      <value name="Holley EFI: IO Input 73" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E5CD000" endianness="big">
+      <value name="Holley EFI: IO Input 74" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E5D1000" endianness="big">
+      <value name="Holley EFI: IO Input 75" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E5D5000" endianness="big">
+      <value name="Holley EFI: IO Input 76" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E5D9000" endianness="big">
+      <value name="Holley EFI: IO Input 77" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E5DD000" endianness="big">
+      <value name="Holley EFI: IO Input 78" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E5E1000" endianness="big">
+      <value name="Holley EFI: IO Input 79" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E5E5000" endianness="big">
+      <value name="Holley EFI: IO Input 80" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E5E9000" endianness="big">
+      <value name="Holley EFI: IO Output 1" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E5ED000" endianness="big">
+      <value name="Holley EFI: IO Output 2" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E5F1000" endianness="big">
+      <value name="Holley EFI: IO Output 3" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E5F5000" endianness="big">
+      <value name="Holley EFI: IO Output 4" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E5F9000" endianness="big">
+      <value name="Holley EFI: IO Output 5" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E5FD000" endianness="big">
+      <value name="Holley EFI: IO Output 6" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E601000" endianness="big">
+      <value name="Holley EFI: IO Output 7" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E605000" endianness="big">
+      <value name="Holley EFI: IO Output 8" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E609000" endianness="big">
+      <value name="Holley EFI: IO Output 9" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E60D000" endianness="big">
+      <value name="Holley EFI: IO Output 10" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E611000" endianness="big">
+      <value name="Holley EFI: IO Output 11" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E615000" endianness="big">
+      <value name="Holley EFI: IO Output 12" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E619000" endianness="big">
+      <value name="Holley EFI: IO Output 13" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E61D000" endianness="big">
+      <value name="Holley EFI: IO Output 14" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E621000" endianness="big">
+      <value name="Holley EFI: IO Output 15" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E625000" endianness="big">
+      <value name="Holley EFI: IO Output 16" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E629000" endianness="big">
+      <value name="Holley EFI: IO Output 17" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E62D000" endianness="big">
+      <value name="Holley EFI: IO Output 18" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E631000" endianness="big">
+      <value name="Holley EFI: IO Output 19" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E635000" endianness="big">
+      <value name="Holley EFI: IO Output 20" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E639000" endianness="big">
+      <value name="Holley EFI: IO Output 21" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E63D000" endianness="big">
+      <value name="Holley EFI: IO Output 22" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E641000" endianness="big">
+      <value name="Holley EFI: IO Output 23" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E645000" endianness="big">
+      <value name="Holley EFI: IO Output 24" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E649000" endianness="big">
+      <value name="Holley EFI: IO Output 25" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E64D000" endianness="big">
+      <value name="Holley EFI: IO Output 26" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E651000" endianness="big">
+      <value name="Holley EFI: IO Output 27" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E655000" endianness="big">
+      <value name="Holley EFI: IO Output 28" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E659000" endianness="big">
+      <value name="Holley EFI: IO Output 29" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E65D000" endianness="big">
+      <value name="Holley EFI: IO Output 30" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E661000" endianness="big">
+      <value name="Holley EFI: IO Output 31" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E665000" endianness="big">
+      <value name="Holley EFI: IO Output 32" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E669000" endianness="big">
+      <value name="Holley EFI: IO Output 33" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E66D000" endianness="big">
+      <value name="Holley EFI: IO Output 34" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E671000" endianness="big">
+      <value name="Holley EFI: IO Output 35" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E675000" endianness="big">
+      <value name="Holley EFI: IO Output 36" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E679000" endianness="big">
+      <value name="Holley EFI: IO Output 37" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E67D000" endianness="big">
+      <value name="Holley EFI: IO Output 38" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E681000" endianness="big">
+      <value name="Holley EFI: IO Output 39" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E685000" endianness="big">
+      <value name="Holley EFI: IO Output 40" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E689000" endianness="big">
+      <value name="Holley EFI: IO Output 41" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E68D000" endianness="big">
+      <value name="Holley EFI: IO Output 42" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E691000" endianness="big">
+      <value name="Holley EFI: IO Output 43" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E695000" endianness="big">
+      <value name="Holley EFI: IO Output 44" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E699000" endianness="big">
+      <value name="Holley EFI: IO Output 45" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E69D000" endianness="big">
+      <value name="Holley EFI: IO Output 46" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E6A1000" endianness="big">
+      <value name="Holley EFI: IO Output 47" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E6A5000" endianness="big">
+      <value name="Holley EFI: IO Output 48" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E6A9000" endianness="big">
+      <value name="Holley EFI: IO Output 49" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E6AD000" endianness="big">
+      <value name="Holley EFI: IO Output 50" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E6B1000" endianness="big">
+      <value name="Holley EFI: IO Output 51" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E6B5000" endianness="big">
+      <value name="Holley EFI: IO Output 52" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E6B9000" endianness="big">
+      <value name="Holley EFI: IO Output 53" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E6BD000" endianness="big">
+      <value name="Holley EFI: IO Output 54" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E6C1000" endianness="big">
+      <value name="Holley EFI: IO Output 55" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E6C5000" endianness="big">
+      <value name="Holley EFI: IO Output 56" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E6C9000" endianness="big">
+      <value name="Holley EFI: IO Output 57" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E6CD000" endianness="big">
+      <value name="Holley EFI: IO Output 58" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E6D1000" endianness="big">
+      <value name="Holley EFI: IO Output 59" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E6D5000" endianness="big">
+      <value name="Holley EFI: IO Output 60" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E6D9000" endianness="big">
+      <value name="Holley EFI: IO Output 61" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E6DD000" endianness="big">
+      <value name="Holley EFI: IO Output 62" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E76D000" endianness="big">
+      <value name="Holley EFI: Staging Input 1" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E771000" endianness="big">
+      <value name="Holley EFI: Staging Input 2" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E775000" endianness="big">
+      <value name="Holley EFI: Staging Output" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E77D000" endianness="big">
+      <value targetId="179" offset="0" length="4" float="true"/> <!-- Traction control percentage -->
+    </frame>
+    <frame id="0x1E7A9000" endianness="big">
+      <value targetId="496" offset="0" length="4" float="true"/> <!-- Intake Cam target position -->
+    </frame>
+    <frame id="0x1E7AD000" endianness="big">
+      <value targetId="492" offset="0" length="4" float="true"/> <!-- Intake Cam 1 position -->
+    </frame>
+    <frame id="0x1E7B1000" endianness="big">
+      <value name="Holley EFI: VVT Intake Solenoid Duty" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E7B5000" endianness="big">
+      <value targetId="497" offset="0" length="4" float="true"/> <!-- Exhaust Cam target position -->
+    </frame>
+    <frame id="0x1E7B9000" endianness="big">
+      <value targetId="493" offset="0" length="4" float="true"/> <!-- Exhaust Cam 1 position -->
+    </frame>
+    <frame id="0x1E7BD000" endianness="big">
+      <value name="Holley EFI: VVT Exhaust Solenoid Duty" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E7C9000" endianness="big">
+      <value name="Holley EFI: Transmission Line Pressure" offset="0" length="4" units="psi" float="true"/>
+    </frame>
+    <frame id="0x1E7CD000" endianness="big">
+      <value name="Holley EFI: Race Launch Status" offset="0" length="4" float="true"/>
+    </frame>
+  </frames>
+</RealDashCAN>
+

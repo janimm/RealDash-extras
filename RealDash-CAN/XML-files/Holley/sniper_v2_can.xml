@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RealDashCAN version="2">
+  <frames>
+    <frame id="0x1E005000" endianness="big">
+      <value targetId="37" offset="0" length="4" float="true"/> <!-- RPM -->
+    </frame>
+    <frame id="0x1E009000" endianness="big">
+      <value targetId="35" offset="0" length="4" float="true"/> <!-- PW1 -->
+    </frame>
+    <frame id="0x1E00D000" endianness="big">
+      <value targetId="119" offset="0" length="4" float="true"/> <!-- Duty Cycle 1 -->
+    </frame>
+    <frame id="0x1E015000" endianness="big">
+      <value targetId="2" offset="0" length="4" float="true"/> <!-- AFR target 1 -->
+    </frame>
+    <frame id="0x1E019000" endianness="big">
+      <value targetId="0" offset="0" length="4" float="true"/> <!-- AFR 1 -->
+    </frame>
+    <frame id="0x1E025000" endianness="big">
+      <value targetId="9" offset="0" length="4" float="true"/> <!-- IAT Correction -->
+    </frame>
+    <frame id="0x1E029000" endianness="big">
+      <value targetId="46" offset="0" length="4" float="true"/> <!-- Warmup correction -->
+    </frame>
+    <frame id="0x1E045000" endianness="big">
+      <value targetId="490" offset="0" length="4" float="true"/> <!-- Fuel Flow -->
+    </frame>
+    <frame id="0x1E055000" endianness="big">
+      <value targetId="44" offset="0" length="4" float="true"/> <!-- VE1 -->
+    </frame>
+    <frame id="0x1E059000" endianness="big">
+      <value targetId="38" offset="0" length="4" float="true"/> <!-- Spark Adv -->
+    </frame>
+    <frame id="0x1E071000" endianness="big">
+      <value targetId="31" offset="0" length="4" float="true"/> <!-- Manifold absolute pressure -->
+    </frame>
+    <frame id="0x1E075000" endianness="big">
+      <value targetId="42" offset="0" length="4" float="true"/> <!-- TPS -->
+    </frame>
+    <frame id="0x1E079000" endianness="big">
+      <value targetId="27" offset="0" length="4" units="F" float="true"/> <!-- IAT -->
+    </frame>
+    <frame id="0x1E07D000" endianness="big">
+      <value targetId="14" offset="0" length="4" units="F" float="true"/> <!-- CLT -->
+    </frame>
+    <frame id="0x1E085000" endianness="big">
+      <value targetId="12" offset="0" length="4" float="true"/> <!-- Battery Voltage -->
+    </frame>
+    <frame id="0x1E095000" endianness="big">
+      <value targetId="271" offset="0" length="4" float="true"/> <!-- RPM limiter active -->
+    </frame>
+    <frame id="0x1E0A1000" endianness="big">
+      <value targetId="335" offset="0" length="4" float="true"/> <!-- AC ON -->
+    </frame>
+    <frame id="0x1E0B1000" endianness="big">
+      <value targetId="153" offset="0" length="4" float="true"/> <!-- Cooling Fan active -->
+    </frame>
+    <frame id="0x1E0B5000" endianness="big">
+      <value name="Holley EFI: Cooling Fan 2 Status" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E0B9000" endianness="big">
+      <value name="Holley EFI: Fuel Pump 2 Status" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E0C5000" endianness="big">
+      <value name="Holley EFI: Sensor Warning" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E0C9000" endianness="big">
+      <value name="Holley EFI: Sensor Caution" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E0DD000" endianness="big">
+      <value targetId="26" offset="0" length="4" float="true"/> <!-- Ignition Dwell -->
+    </frame>
+    <frame id="0x1E0F5000" endianness="big">
+      <value name="Holley EFI: System Status 1" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E0F9000" endianness="big">
+      <value name="Holley EFI: System Status 2" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E0FD000" endianness="big">
+      <value name="Holley EFI: System Status 3" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E101000" endianness="big">
+      <value name="Holley EFI: System Status 4" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E105000" endianness="big">
+      <value name="Holley EFI: System Status 5" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E109000" endianness="big">
+      <value name="Holley EFI: System Status 6" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E10D000" endianness="big">
+      <value name="Holley EFI: System Status 7" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E111000" endianness="big">
+      <value name="Holley EFI: System Status 8" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E21D000" endianness="big">
+      <value targetId="270" offset="0" length="4" float="true"/> <!-- Boost Target -->
+    </frame>
+    <frame id="0x1E221000" endianness="big">
+      <value name="Holley EFI: Transbrake Status" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E2C1000" endianness="big">
+      <value name="Holley EFI: NOS Enabled Status" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E2C5000" endianness="big">
+      <value name="Holley EFI: NOS Input 1 Status" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E2E9000" endianness="big">
+      <value name="Holley EFI: NOS Lean Cutoff Status" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E2ED000" endianness="big">
+      <value name="Holley EFI: NOS Rich Cutoff Status" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E2F1000" endianness="big">
+      <value name="Holley EFI: NOS RPM Cutoff Status" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E2F5000" endianness="big">
+      <value name="Holley EFI: NOS MAP Cutoff Status" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E2FD000" endianness="big">
+      <value name="Holley EFI: NOS Dry Fuel 1" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E36D000" endianness="big">
+      <value targetId="200" offset="0" length="4" float="true"/> <!-- Gear -->
+    </frame>
+    <frame id="0x1E371000" endianness="big">
+      <value targetId="81" offset="0" length="4" units="mph" float="true"/> <!-- VSS 1 -->
+    </frame>
+    <frame id="0x1E385000" endianness="big">
+      <value targetId="138" offset="0" length="4" units="F" float="true"/> <!-- Transmission Oil Temp -->
+    </frame>
+    <frame id="0x1E3C9000" endianness="big">
+      <value name="Holley EFI: Diagnostic 1" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E3CD000" endianness="big">
+      <value name="Holley EFI: Diagnostic 2" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E3D1000" endianness="big">
+      <value name="Holley EFI: Diagnostic 3" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E3D5000" endianness="big">
+      <value name="Holley EFI: Diagnostic 4" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E3D9000" endianness="big">
+      <value name="Holley EFI: Diagnostic 5" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E3DD000" endianness="big">
+      <value name="Holley EFI: Diagnostic 6" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E3E1000" endianness="big">
+      <value name="Holley EFI: Diagnostic 7" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E3E5000" endianness="big">
+      <value name="Holley EFI: Diagnostic 8" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E3E9000" endianness="big">
+      <value name="Holley EFI: Diagnostic 9" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E3ED000" endianness="big">
+      <value name="Holley EFI: Diagnostic 10" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E3F1000" endianness="big">
+      <value name="Holley EFI: Diagnostic 11" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E3F5000" endianness="big">
+      <value name="Holley EFI: Diagnostic 12" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E3F9000" endianness="big">
+      <value name="Holley EFI: Diagnostic 13" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E3FD000" endianness="big">
+      <value name="Holley EFI: Diagnostic 14" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E401000" endianness="big">
+      <value name="Holley EFI: Diagnostic 15" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E405000" endianness="big">
+      <value name="Holley EFI: Diagnostic 16" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E409000" endianness="big">
+      <value name="Holley EFI: Diagnostic 17" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E40D000" endianness="big">
+      <value name="Holley EFI: Diagnostic 18" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E411000" endianness="big">
+      <value name="Holley EFI: Diagnostic 19" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E415000" endianness="big">
+      <value name="Holley EFI: Diagnostic 20" offset="0" length="4" float="true"/>
+    </frame>
+    <frame id="0x1E419000" endianness="big">
+      <value targetId="394" offset="0" length="4" float="true"/> <!-- Launch control active -->
+    </frame>
+    <frame id="0x1E7C9000" endianness="big">
+      <value name="Holley EFI: Transmission Line Pressure" offset="0" length="4" units="psi" float="true"/>
+    </frame>
+  </frames>
+</RealDashCAN>
+
