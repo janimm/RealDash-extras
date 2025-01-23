@@ -208,7 +208,7 @@ The **conversionOut** attribute is a formula that is applied to a value when its
 
 &nbsp;
 ## **value 'units' attribute (optional)**
-Optional info to apply automatic unit conversions. Valid values are **units="C"**, **units="F"**, **units="K"**, **units="km/h"**, **units="mph"**, **units="mph"**, **units="bar"**, **units="psi"**, **units="time"**, **units="bit"**.
+Optional info to apply automatic unit conversions. Valid values are **units="C"**, **units="F"**, **units="K"**, **units="km/h"**, **units="mph"**, **units="bar"**, **units="psi"**, **units="time"**, **units="bit"**.
 
 If units is set to **bit** the value is considered to be an on/off (0 or 1) valued. RealDash reads the **bit** value from the lowest bit. Therefore there is a need for a bitshift to the right on conversion. For example **conversion="(V>>1)"** will read second bit on incoming value.
 
