@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RealDash>
+	<!-- This example shows how to make value based gauge animations -->
+	<!-- NOTE: Still in BETA. Requires RealDash 2.4.7-prerel1 or newer -->
+	<animations>
+		<!-- animation types "value-morph" and "value-fade" are used to animate gauge area or transparency based on an input value -->
+		<!-- attributes 'valueId' and 'range' must be provided. attribute 'duration' is not used as animation is not time based -->
+		<animation name="speedo-value-morph" type="value-morph" target="Speedo Needle" start="0.472807109355927,0.431491911411285,0.527192890644073,0.568508028984070" end="0.350000083446503,0.215531468391418,0.649999916553497,0.784468412399292" valueId="64" range="0-300"></animation>
+		<animation name="speedo-value-fade" type="value-fade" target="Speedo Needle" start="0.0" end="1.0" valueId="64" range="0-250"></animation>
+
+		<animation name="rpm-value-morph" type="value-morph" target="Rpm Needle" start="0.806337773799896,0.456851065158844,0.840438544750214,0.542762398719788" end="0.587664425373077,0.096483051776886,1.013212442398071,0.903516888618469" valueId="37" range="0-6000"></animation>
+		<animation name="rpm-value-fade" type="value-fade" target="Rpm Needle" start="0.0" end="1.0" valueId="37" range="0-6000"></animation>
+
+		<!-- morph and fade animations are used to restore the state of the gauges -->
+		<!-- these animations omit the 'start' attribute; that effectively starts the animation from gauges current position/fade -->
+		<animation name="speedo-back" type="morph" target="Speedo Needle" end="0.350000083446503,0.215531468391418,0.649999916553497,0.784468412399292" duration="0.1"></animation>
+		<animation name="speedo-back-fade" type="fade" target="Speedo Needle" end="1.0" duration="0.1"></animation>
+
+		<animation name="rpm-back" type="morph" target="Rpm Needle" end="0.587664425373077,0.096483051776886,1.013212442398071,0.903516888618469" duration="0.1"></animation>
+		<animation name="rpm-back-fade" type="fade" target="Rpm Needle" end="1.0" duration="0.1"></animation>
+	</animations>
+
+	<triggers>
+		<!-- buttons on the dashboard toggle Dummy 01 and Dummy 02 on values between 0 and 1 -->
+
+		<!-- if Dummy 01 is greater than 0.5 start the animations in 'actions' -->
+		<!-- typically this is used to activate animations defined in this file, but any valid action name can be used -->
+		<!-- reset="0" means that this trigger can fire again if Dummy 01 is set to 0 -->
+		<trigger name="Activate speedo-value-morph" condition=">" variable="Dummy 01" value="0.5" reset="0">
+			<actions>
+				<!-- activate speedometer value based animations -->
+				<action name="speedo-value-morph"></action>
+				<action name="speedo-value-fade"></action>
+			</actions>
+		</trigger>
+
+		<!-- once started, the value based animations run as long as they are replaced with other animation -->
+		<!-- here, when Dummy 01 changes to 0, non-value based animations are activated to bring gauges back to original state -->
+		<trigger name="Deactivate speedo-value-morph" condition="&lt;" variable="Dummy 01" value="0.5" reset="1">
+			<actions>
+				<action name="speedo-back"></action>
+				<action name="speedo-back-fade"></action>
+			</actions>
+		</trigger>
+
+		<!-- repeats the same as above, but with Dummy 02 and RPM gauge animations -->
+		<trigger name="Activate rpm-value-morph" condition=">" variable="Dummy 02" value="0.5" reset="0">
+			<actions>
+				<action name="rpm-value-morph"></action>
+				<action name="rpm-value-fade"></action>
+			</actions>
+		</trigger>
+
+		<trigger name="Deactivate rpm-value-morph" condition="&lt;" variable="Dummy 02" value="0.5" reset="1">
+			<actions>
+				<action name="rpm-back"></action>
+				<action name="rpm-back-fade"></action>
+			</actions>
+		</trigger>
+	</triggers>	
+</RealDash>
