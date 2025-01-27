@@ -1,160 +1,140 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- File created by DBCtoRDXML Converter https://github.com/wjcloudy/DBCtoRDXML -->
 <!-- 2012 Toyota FJ Cruiser by M. Main -->
-<!-- 13/01/2024 -->
+<!-- 27/07/2024 -->
 <RealDashCAN version="2">
 	<frames>
-		<frame canId="0x24" endianess="big">  
+		<frame canId="0x24" endianess="big"> 
 			<!-- MP01 - Kinematics [36] -->
 			<value name="MP: Yaw_Rate" offset="0" length="2" signed="true" conversion="V/4.0-128"></value>
 			<!--Comment = Yaw Rate-->
-			<value name="MP: Steering_Torque" offset="2" length="2" conversion="V-512"></value>
+			<value name="MP: Steering_Torque" offset="2" length="2" signed="false" conversion="V-512"></value>
 			<!--Comment = Steering Torque-->
-			<value name="MP: Accel_Y" offset="4" length="2" conversion="V/28.0-18.375"></value>
+			<value name="MP: Accel_Y" offset="4" length="2" signed="false" conversion="V/28.0-18.375"></value>
 			<!--Comment = Accel Y-->
 		</frame>
-		<frame canId="0x25" endianess="big">  
+		<frame canId="0x25" endianess="big"> 
 			<!-- MP02 - Steering [37] -->
-			<value targetId="229" offset="0" length="2" units="deg"  signed="true" conversion="V/8.0"></value>
-			<!--Comment = Steering Wheel Angle (0, 1, 511 = centre, 2 - 254 = left, 510 - 255 = right)-->
-			<value name="MP: Steering_Fraction" startbit="52" bitcount="4" signed="true" rangeMin="-0.7" rangeMax="0.7" conversion="V/10.0"></value>
-			<!--Comment = None-->
-			<value name="MP: Steering_Rate" offset="6" length="2" units="deg/s"  signed="true" rangeMin="-2000" rangeMax="2000" conversion="V &amp; 4095"></value>
-			<!--Comment = None-->
+			<value targetId="93" offset="0" length="1" signed="true" conversion="(V>>3)*2-1"></value>
+			<!--Comment = Steering Wheel Direction (Dummy 01) -1 = straight / left counterclockwise and 1 = right clockwise-->
+			<value targetId="229" offset="0" length="2" units="deg" signed="true" conversion="180*(ID93) + 180 - (V &amp; 4095) * 0.087891"></value>
+			<!--Comment = Steering Angle (-30 degrees to + 30 degrees)-->
 		</frame>
-		<frame canId="0xb0" endianess="big">  
+		<frame canId="0xb0" endianess="big"> 
 			<!-- MP03 - Wheel Speed Front [176] -->
-			<value name="MP: FL_Speed" offset="0" length="2" units="km/h"  rangeMin="0" rangeMax="65535" conversion="V/100.0"></value>
+			<value name="MP: FL_Speed" offset="0" length="2" units="km/h" signed="false" rangeMin="0" rangeMax="65535" conversion="V/100.0"></value>
 			<!--Comment = Front Left Wheel Speed-->
-			<value name="MP: FR_Speed" offset="2" length="2" units="km/h"  rangeMin="0" rangeMax="65535" conversion="V/100.0"></value>
+			<value name="MP: FR_Speed" offset="2" length="2" units="km/h" signed="false" rangeMin="0" rangeMax="65535" conversion="V/100.0"></value>
 			<!--Comment = Front Right Wheel Speed-->
 		</frame>
-		<frame canId="0xb2" endianess="big">  
+		<frame canId="0xb2" endianess="big"> 
 			<!-- MP04 - Wheel Speed Rear [178] -->
-			<value name="MP: RL_Speed" offset="0" length="2" units="km/h"  rangeMin="0" rangeMax="65535" conversion="V/100.0"></value>
+			<value name="MP: RL_Speed" offset="0" length="2" units="km/h" signed="false" rangeMin="0" rangeMax="65535" conversion="V/100.0"></value>
 			<!--Comment = Rear Left Wheel Speed-->
-			<value name="MP: RR_Speed" offset="2" length="2" units="km/h"  rangeMin="0" rangeMax="65535" conversion="V/100.0"></value>
+			<value name="MP: RR_Speed" offset="2" length="2" units="km/h" signed="false" rangeMin="0" rangeMax="65535" conversion="V/100.0"></value>
 			<!--Comment = Rear Right Wheel Speed-->
 		</frame>
-		<frame canId="0xb4" endianess="big">  
+		<frame canId="0xb4" endianess="big"> 
 			<!-- MP05 - Vehicle Speed [180] -->
-			<value targetId="81" offset="5" length="2" units="km/h"  rangeMin="0" rangeMax="180" conversion="V/100.0"></value>
+			<value targetId="81" offset="5" length="2" units="km/h" signed="false" rangeMin="0" rangeMax="180" conversion="V/100.0"></value>
 			<!--Comment = Vehicle Speed (16-bit)-->
 		</frame>
-		<frame canId="0x223" endianess="big">  
+		<frame canId="0x223" endianess="big"> 
 			<!-- MP06 - Miscellaneous [547] -->
-			<value name="MP: Brake_4" units="bit" startbit="7" bitcount="1"></value>
-			<!--Comment = None-->
-			<value name="MP: Brake_3" units="bit" startbit="6" bitcount="1"></value>
-			<!--Comment = None-->
-			<value name="MP: Brake_Stop_Light" units="bit" startbit="2" bitcount="1"></value>
+			<value name="MP: Brake_Stop_Light" startbit="2" bitcount="1" units="bit"></value>
 			<!--Comment = Brake Stop Light-->
-			<value name="MP: Brake_2" units="bit" startbit="1" bitcount="1"></value>
-			<!--Comment = -->
-			<value name="MP: Brake_1" units="bit" startbit="0" bitcount="1"></value>
-			<!--Comment = -->
 		</frame>
-		<frame canId="0x224" endianess="big">  
+		<frame canId="0x224" endianess="big"> 
 			<!-- MP07 - Brake Pedal [548] -->
-			<value name="MP: Brake_Pressure" offset="5" length="1"></value>
-			<!--Comment = Brake Pedal Pressure-->
+			<value name="MP: Brake_Pressure" offset="4" length="2" signed="false" rangeMin="0" rangeMax="511" ></value>
+			<!--Comment = Brake Pedal Pressure (9 bit value)-->
 		</frame>
-		<frame canId="0x2c1" endianess="big">  
+		<frame canId="0x2c1" endianess="big"> 
 			<!-- MP08 - Powertrain [705] -->
-			<value targetId="396" units="bit" startbit="3" bitcount="1"></value>
+			<value targetId="396" startbit="3" bitcount="1" units="bit"></value>
 			<!--Comment = Idle set at 1 when accelerator is not being used-->
-			<value targetId="737" units="bit" startbit="2" bitcount="1"></value>
+			<value targetId="737" startbit="2" bitcount="1" units="bit"></value>
 			<!--Comment = Cruise Control Autospeed Active-->
-			<value name="MP: Torque_Mean" offset="1" length="2" units="Nm"  signed="true" conversion="V/32.0"></value>
-			<!--Comment = Torque Mean-->
-			<value name="MP: Torque_Real" offset="3" length="2" units="Nm"  signed="true" conversion="V/32.0"></value>
-			<!--Comment = Torque Real-->
-			<value name="MP: Torque_Instant" offset="5" length="1" units="Nm"  conversion="V-192"></value>
-			<!--Comment = Torque Instant-->
-			<value name="MP: Accelerator_Pedal_Pressure" offset="6" length="1" units="pcnt" conversion="V/2.0"></value>
+			<value targetId="63" startbit="31" bitcount="1" units="bit"></value>
+			<!--Comment = Deceleration-->
+			<value targetId="100" offset="3" length="2" units="pcnt" signed="true" conversion="(V+1200)/111"></value>
+			<!--Comment = OBD Engine Load Equivalent-->
+			<value name="MP: Accelerator_Pedal_Pressure" offset="6" length="1" units="pcnt" signed="false" conversion="V/2.0"></value>
 			<!--Comment = Accelerator Pedal Pressure-->
 		</frame>
-		<frame canId="0x2c4" endianess="big">  
+		<frame canId="0x2c4" endianess="big"> 
 			<!-- MP09 - Engine RPM [708] -->
-			<value targetId="37" offset="0" length="2" units="rpm" conversion="V/1.28"></value>
+			<value targetId="37" offset="0" length="2" units="rpm" signed="false" conversion="V/1.28"></value>
 			<!--Comment = Engine RPM-->
-			<value targetId="27" offset="3" length="1" units="C"></value>
+			<value targetId="27" offset="3" length="1" units="C" signed="false" ></value>
 			<!--Comment = Intake Air Temperature (IAT)-->
 		</frame>
-		<frame canId="0x2d0" endianess="big">  
+		<frame canId="0x2d0" endianess="big"> 
 			<!-- MP10 - Transmission #1 [720] -->
-			<value name="MP: Turbine_RPM" offset="0" length="2" conversion="V/2.56"></value>
+			<value name="MP: Turbine_RPM" offset="0" length="2" signed="false" conversion="V/2.56"></value>
 			<!--Comment = Turbine RPM-->
-			<value name="MP: Gear_Code" offset="2" length="1" conversion="V &amp; 15"></value>
+			<value name="MP: Gear_Code" offset="2" length="1" signed="false" conversion="V &amp; 15"></value>
 			<!--Comment = Gear Code for RealDash Trigger-->
-			<value targetId="141" offset="2" length="1" conversion="V &amp; 127" enum="2:R,9:P,12:N,16:D,#:"></value>
+			<value targetId="141" offset="2" length="1" signed="false" conversion="V &amp; 127" enum="2:R,9:P,12:N,16:D,#:"></value>
 			<!--Comment = Gear Shift Position-->
-			<value targetId="140" offset="3" length="1" enum="1:L,2:2,4:3,8:4,0:D,#:"></value>
+			<value targetId="140" offset="3" length="1" signed="false" enum="1:L,2:2,4:3,8:4,0:D,#:"></value>
 			<!--Comment = Manual Gear Position-->
-			<value targetId="139" offset="4" length="1" conversion="(V &amp; 7)+1"></value>
+			<value targetId="139" offset="4" length="1" signed="false" conversion="(V &amp; 7)+1"></value>
 			<!--Comment = Gear Engaged (1-5)-->
-			<value name="MP: TC_Lockup" offset="6" length="1" enum="13:1,#:0"></value>
+			<value name="MP: TC_Lockup" offset="6" length="1" signed="false" enum="13:1,#:0"></value>
 			<!--Comment = Torque Converter Lockup when V = 13-->
 		</frame>
-		<frame canId="0x361" endianess="big">  
+		<frame canId="0x361" endianess="big"> 
 			<!-- MP12 - CCS / Accelerator [865] -->
-			<value name="MP: CCS_Active" units="bit" startbit="1" bitcount="1"></value>
+			<value name="MP: CCS_Active" startbit="1" bitcount="1" units="bit"></value>
 			<!--Comment = Cruise Control Autospeed Active-->
-			<value name="MP: Accelerator" offset="2" length="1" units="pcnt"  rangeMin="0" rangeMax="100" conversion="V/1.28"></value>
+			<value name="MP: Accelerator" offset="2" length="1" units="pcnt" signed="false" rangeMin="0" rangeMax="100" conversion="V/1.28"></value>
 			<!--Comment = Accelerator Pedal / Gas Pedal-->
-			<value name="MP: ID865_B3" offset="3" length="1"></value>
-			<!--Comment = If Accelerator or Cruise are not on 0 else follows accelerator / cruise -->
 		</frame>
-		<frame canId="0x3b1" endianess="big">  
+		<frame canId="0x3b1" endianess="big"> 
 			<!-- MP13 - Miscellaneous [945] -->
-			<value targetId="395" units="bit" startbit="18" bitcount="1"></value>
+			<value targetId="395" startbit="18" bitcount="1" units="bit"></value>
 			<!--Comment = Engine Closed Loop when = 0 open loop =1-->
 		</frame>
-		<frame canId="0x3b3" endianess="big">  
+		<frame canId="0x3b3" endianess="big"> 
 			<!-- MP14 - Miscellaneous [947] -->
-			<value name="MP: Engine_RPM" offset="0" length="2" conversion="V/1.28"></value>
-			<!--Comment = Engine RPM-->
-			<value targetId="42" offset="2" length="1" conversion="V/2.0"></value>
+			<value targetId="42" offset="2" length="1" signed="false" conversion="V/2.0"></value>
 			<!--Comment = Throttle Position-->
 		</frame>
-		<frame canId="0x3b4" endianess="big">  
+		<frame canId="0x3b4" endianess="big"> 
 			<!-- MP15 - CCS / Coolant / Braking / Gear Positions [948] -->
-			<value targetId="169" units="bit" startbit="5" bitcount="1"></value>
+			<value targetId="169" startbit="5" bitcount="1" units="bit"></value>
 			<!--Comment = Cruise Control Active (symbol on dash)-->
-			<value targetId="14" offset="2" length="1" units="C" conversion="V/2.0"></value>
+			<value targetId="14" offset="2" length="1" units="C" signed="false" conversion="V/2.0"></value>
 			<!--Comment = Coolant Temperature-->
-			<value targetId="230" units="bit" startbit="32" bitcount="1"></value>
+			<value targetId="230" startbit="32" bitcount="1" units="bit"></value>
 			<!--Comment = Brake Pedal Pressed-->
 		</frame>
-		<frame canId="0x3b7" endianess="big">  
+		<frame canId="0x3b7" endianess="big"> 
 			<!-- MP16 - Vehicle Stability Control [951] -->
-			<value name="MP: Rear_Diff_Lock" offset="0" length="1" enum="24:1,#:0"></value>
+			<value name="MP: Rear_Diff_Lock" offset="0" length="1" signed="false" enum="24:1,#:0"></value>
 			<!--Comment = Rear Differential Lock (4WD L4)-->
-			<value targetId="273" units="bit" startbit="2" bitcount="1"></value>
+			<value targetId="273" startbit="2" bitcount="1" units="bit"></value>
 			<!--Comment = ABS Warning On-->
-			<value targetId="164" units="bit" startbit="15" bitcount="1"></value>
+			<value targetId="164" startbit="15" bitcount="1" units="bit"></value>
 			<!--Comment = Parking Brake On-->
-			<value targetId="178" units="bit" startbit="14" bitcount="1"></value>
+			<value targetId="178" startbit="14" bitcount="1" units="bit"></value>
 			<!--Comment = Low Brake Fluid Warning-->
-			<value name="MP: Traction_Disabled" units="bit" startbit="13" bitcount="1"></value>
+			<value name="MP: Traction_Disabled" startbit="13" bitcount="1" units="bit"></value>
 			<!--Comment = Traction Control Disabled-->
-			<value name="MP: VSC_Disabled" units="bit" startbit="12" bitcount="1"></value>
+			<value name="MP: VSC_Disabled" startbit="12" bitcount="1" units="bit"></value>
 			<!--Comment = VSC Disabled (4WD L4)-->
-			<value name="MP: ATRAC_Enabled1" units="bit" startbit="11" bitcount="1"></value>
-			<!--Comment = A-TRAC Enabled (4WD L4)-->
-			<value name="MP: ATRAC_Enabled2" units="bit" startbit="47" bitcount="1"></value>
+			<value name="MP: ATRAC_Enabled1" startbit="11" bitcount="1" units="bit"></value>
 			<!--Comment = A-TRAC Enabled (4WD L4)-->
 		</frame>
-		<frame canId="0x3bc" endianess="big">  
+		<frame canId="0x3bc" endianess="big"> 
 			<!-- MP17 - Transmission #2 [956] -->
-			<value name="MP: Gear_P" units="bit" startbit="13" bitcount="1"></value>
-			<!--Comment = Gear in Park position-->
-			<value targetId="138" offset="3" length="1" units="C" conversion="V/1.6-50"></value>
+			<value targetId="138" offset="3" length="1" units="C" signed="false" conversion="V/1.6-50"></value>
 			<!--Comment = Transmission Temperature (Torque Converter) THO2-->
 		</frame>
-		<frame canId="0x610" endianess="big">  
+		<frame canId="0x610" endianess="big"> 
 			<!-- MP27 - Low Resolution Speed [1552] -->
-			<value targetId="99" offset="2" length="1" units="km/h"></value>
+			<value targetId="99" offset="2" length="1" units="km/h" signed="false" ></value>
 			<!--Comment = Vehicle Speed 8 bit (VSS2)-->
 		</frame>
 	</frames>
