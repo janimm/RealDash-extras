@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- RealDash CAN XML description file,
+ BMW E93 335I
+Author: Countryman-->
+<RealDashCAN version="2">
+    <frames>
+        <frame canId="0x26E">
+		    <value targetId="26" startbit="0" length="1" units="bit"></value> <!-- Ignition on -->
+	    </frame>
+
+		<frame id="0x1D0">
+			<value targetId="14" startbit="0" bitcount="8" rangeMin="0" conversion="V-48"></value> <!-- CoolantTemp -->
+		</frame>
+		
+	    <frame canId="0x1B4">
+            <value targetId="81" offset="0" length="2" units="mph" conversion="(((B1 - 208) * 256) + B0) / 16"></value> <!-- vss 1 -->
+			<value targetId="164" offset="5" length="1" units="bit" conversion="V>>1"></value> <!-- parking brake -->
+	    </frame>
+		
+		<frame canId="0x0AA">
+			<value name="RPM" offset="4" bitcount="16" conversion="V/4"></value> <!-- RPM -->
+		</frame>
+
+		<frame canId="0x349">
+			<value targetId="170" offset="0" length="4" conversion="((((B1*256+B0)/160)+((B3*256+B2)/160))/53.0)*100.0"></value> <!-- fuel level -->
+		</frame>
+		
+		<frame canId="0x3B4">
+		   	<value targetId="12" offset="0" length="2" conversion="(V &amp; 0xfff) / 68"></value> <!-- battery voltage -->
+        </frame>
+
+		<frame canId="0x2CA"> 
+			<value targetId="173" startbit="0" bitcount="16" conversion="V-48"> </value> <!-- Outside Temp -->
+		</frame>
+				
+		<frame canId="0x1F6">
+			<value targetId="160" units="bit" startbit="4" bitcount="1"></value> <!-- Left Turn -->
+			<value targetId="161" units="bit" startbit="5" bitcount="1"></value> <!-- Right Turn -->
+		</frame>
+		
+		<frame canId="0x21A">
+			<value name="Flash High Beams" units="bit" startbit="1" bitcount="1"></value> <!-- Flash High Beams -->
+			<value targetId="157" units="bit" startbit="1" bitcount="1"></value> <!-- High Beams -->
+			<value name="Headlights Lights on" units="bit" startbit="5" offset="1"  bitcount="1"></value> <!-- Headlights On -->
+			<value targetId="392" units="bit" startbit="5" bitcount="1"></value> <!--Fog Lights front -->
+			<value targetId="158" units="bit" startbit="5" bitcount="1"></value> <!--Fog Lights back -->
+		</frame>
+		
+		<frame canId="0x1D2">
+			<value name="Shifter P" units="bit" startbit="0" bitcount="8"></value> <!-- Shifter -->
+			<value name="Shifter R" units="bit" startbit="1" bitcount="8"></value> <!-- Shifter -->
+			<value name="Shifter N" units="bit" startbit="2" bitcount="8"></value> <!-- Shifter -->
+			<value name="Shifter D" units="bit" startbit="3" bitcount="8"></value> <!-- Shifter -->
+			<value name="Shift Mode" startbit="32" bitcount="2" rangeMin="0" rangeMax="3" enum="0:Normal,1:Sport,2:Manual,#:err"></value><!--Comment=On the dashboard, there are displayed:  D1...D7 in Normal. S1...S6 in Sport.  M1..M7 in Manual-->
+			<value name="Gear Number" startbit="12" bitcount="4" enum="92:1,108:2,124:3,140:4,156:5,172:6"></value> <!-- still have work to do -->
+			<value name="Gear" startbit="12" bitcount="4"></value><!-- still have work to do -->
+			<value name="TransmissionDataDisplay_ShiftLeverMode" startbit="32" bitcount="2" rangeMin="0" rangeMax="3"></value><!---still have work to do - On the dashboard, there are displayed:  D1...D7 in Normal. S1...S6 in Sport.  M1..M7 in Manual-->
+		</frame>
+		
+		<frame canId="0x200">  <!-- CruiseControlStatus -->
+			<value targetId="171" startbit="7" bitcount="8" units="mph" endianess="big" rangeMin="0" rangeMax="255" conversion="V/4.0"></value> <!-- cruise set speed -->
+			<value targetId="169" units="bit" startbit="13" bitcount="1"></value> <!-- cruise control active -->
+			<value name="CruiseControlStatus_CruiseControlInactiveFlag" units="bit" startbit="12" bitcount="1"></value><!-- Comment=None -->
+		</frame>
+		
+		<frame canId="0x19e">  <!-- StatusDSC_KCAN -->
+			<value name="Traction Control off" startbit="8" bitcount="4" rangeMin="0" rangeMax="15"></value> <!-- Working -->
+		</frame>
+		
+        <frame id="0x545">
+			<value targetId="65" offset="0" length="1" units="bit" conversion="V>>1"></value> <!-- Check engine light -->
+			<value targetId="490" offset="1" length="2" conversion="V*0.1"></value> <!-- Fuel Flow -->
+		</frame>
+		
+   </frames>
+</RealDashCAN>
