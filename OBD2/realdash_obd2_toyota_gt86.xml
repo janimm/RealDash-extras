@@ -62,9 +62,9 @@
              
     <command send="atrv" skipCount="5" targetId="12"></command> <!-- voltage -->
     <command send="012f" skipCount="25" targetId="170" conversion="V/2.55"></command> <!-- fuel level -->
-    <command send="0106" skipCount="10" targetId="101" conversion="V/1.28-100"></command> <!-- short trim bank 1 -->
+    <command send="0106" skipCount="10" targetId="17" conversion="V/1.28-100"></command> <!-- fuel trim 1 -->
     <command send="0107" skipCount="50" targetId="102" conversion="V/1.28-100"></command> <!-- long trim bank 1 -->
-    <command send="0108" skipCount="10" targetId="103" conversion="V/1.28-100"></command> <!-- short trim bank 2 -->
+    <command send="0108" skipCount="10" targetId="18" conversion="V/1.28-100"></command> <!-- fuel trim 2 -->
     <command send="0109" skipCount="50" targetId="104" conversion="V/1.28-100"></command> <!-- long trim bank 2 -->
     <command send="011f" skipCount="11" targetId="33"></command> <!-- engine runtime -->
     <command send="015c" skipCount="32" targetId="152" units="C" conversion="V-40"></command> <!-- engine oil temp -->

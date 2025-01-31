@@ -19,7 +19,7 @@
     <frame id="1514" endianess="big">
       <value targetId="2" units="AFR" offset="0" length="1" conversion="V/10"></value>
       <value targetId="0" units="AFR" offset="1" length="1" conversion="V/10"></value>
-      <value targetId="101" units="%" offset="2" length="2" conversion="V/10"></value>
+      <value targetId="17" units="%" offset="2" length="2" conversion="V/10"></value>
       <value targetId="106" units="F" offset="4" length="2" conversion="V/10"></value>
       <value name="SeqPW1" units="ms" offset="6" length="2" conversion="V/1000"></value>
     </frame>
