@@ -93,7 +93,7 @@ Requires RealDash version 1.5.8 or newer
     <command send="0105" skipCount="57" targetId="14" units="C" conversion="V-40"></command> <!-- clt -->
     <command send="010f" skipCount="15" targetId="27" units="C" conversion="V-40"></command> <!-- iat -->
     <command send="0133" skipCount="60" targetId="11"></command> <!-- baro -->
-    <command send="0146" skipCount="100" targetId="300" units="C" conversion="V-40"></command> <!-- ambient air temp -->
+    <command send="0146" skipCount="100" targetId="173" units="C" conversion="V-40"></command> <!-- ambient air temp -->
              
     <command send="atrv" skipCount="5" targetId="12"></command> <!-- voltage -->
     <command send="0106" skipCount="0" targetId="101" conversion="V/1.28-100"></command> <!-- short trim bank 1 -->
