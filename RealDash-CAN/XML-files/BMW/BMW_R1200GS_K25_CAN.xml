@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- RealDash CAN XML description file, version 2 Requires RealDash version 1.5.8 or newer -->
+<RealDashCAN version="2">
+  <frames>
+    <frame id="0x10C">
+      <value targetId="42" offset="1" length="1" conversion="(V/255)*100"></value> <!-- TPS -->
+      <value targetId="37" offset="2" length="2" conversion="V*0.25"></value> <!-- RPM -->
+    </frame>
+
+    <frame id="0x130">
+      <value targetId="160" offset="7" length="1" units="bit" conversion="(V=0xD7) || (V=0xEF)"></value> <!-- Turn Signal Left -->
+      <value targetId="161" offset="7" length="1" units="bit" conversion="(V=0xE7) || (V=0xEF)"></value> <!-- Turn Signal Right -->
+      <value targetId="157" offset="6" length="1" units="bit" startbit="0" bitcount="1"></value> <!-- High Beam -->
+    </frame>
+
+    <frame id="0x2A8">
+      <value targetId="64" offset="2" length="2" units="km/h" conversion="V*0.0625"></value> <!-- Speed -->
+    </frame>
+
+    <frame id="0x2D0">
+      <value targetId="170" offset="3" length="1" conversion="V/255*100"></value> <!-- Fuel Level -->
+    </frame>
+
+    <frame id="0x2BC">
+      <value targetId="14" offset="2" length="1" units="C" conversion="V*0.75-24"></value> <!-- Coolant temperature -->
+      <value targetId="200" offset="5" length="1" startbit="4" bitcount="4" enum="1:1,2:N,4:2,7:3,8:4,11:5,13:6,15:-"></value> <!-- Gear (Transmission) -->
+      <value targetId="27" offset="7" length="1" units="C" conversion="V*0.75-48"></value> <!-- Intake air temperature -->
+    </frame>
+
+    <frame id="0x3A0">
+      <value targetId="240" offset="6" length="1" units="bar" conversion="V/50"></value> <!-- Tire pressure, front left -->
+      <value targetId="242" offset="7" length="1" units="bar" conversion="V/50"></value> <!-- Tire pressure, rear left -->
+    </frame>
+
+    <frame id="0x3FA">
+      <value targetId="173" offset="0" length="1" units="C" conversion="V*0.75-48"></value> <!-- Ambient temp -->
+    </frame>
+
+    <frame id="0x3FF">
+      <value targetId="310" offset="5" length="3" units="km"></value> <!-- Odometer -->
+    </frame>
+
+ </frames>
+</RealDashCAN>
