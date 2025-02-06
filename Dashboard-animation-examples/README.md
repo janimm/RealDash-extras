@@ -28,8 +28,8 @@ How to create animated dashboards with RealDash.
 |:--------|:----------:|
 | morph | animate the area of the gauge or group |
 | fade | fade gauge or group |
-| value-morph | animate the area of the gauge or group based on input value |
-| value-fade | fade gauge or group based on input value |
+| value-morph | animate the area of the gauge or group based on input value. Requires RealDash version 2.4.7 or newer. |
+| value-fade | fade gauge or group based on input value. Requires RealDash version 2.4.7 or newer. |
 
 
 &nbsp;
