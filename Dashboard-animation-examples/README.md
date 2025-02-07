@@ -15,7 +15,7 @@ How to create animated dashboards with RealDash.
 | file | description |
 |:--------|:----------:|
 | RealDash_animation_example.rd</br>RealDash_animation_example_anim.xml | Example dashboard that demonstrates most common animation techniques. |
-| value_anim_example.rd</br>value_anim_example_anim.xml | Example of how to animate gauges based on input values. |
+| value_anim_example.rd</br>value_anim_example_anim.xml | Example of how to animate gauges based on input values. Requires RealDash version 2.4.7 or newer. |
 | Multiview.rd</br>Multiview_anim.xml | Multiview dashboard and associated animation XML file. Multiview is available for free in RealDash gallery. |
 
 
@@ -28,8 +28,8 @@ How to create animated dashboards with RealDash.
 |:--------|:----------:|
 | morph | animate the area of the gauge or group |
 | fade | fade gauge or group |
-| value-morph | animate the area of the gauge or group based on input value |
-| value-fade | fade gauge or group based on input value |
+| value-morph | animate the area of the gauge or group based on input value. Requires RealDash version 2.4.7 or newer. |
+| value-fade | fade gauge or group based on input value. Requires RealDash version 2.4.7 or newer. |
 
 
 &nbsp;
