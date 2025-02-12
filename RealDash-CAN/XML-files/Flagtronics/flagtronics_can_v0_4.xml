@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RealDashCAN version="2">
+  <frames>
+    <frame id="0x600">
+      <value name="Flagtronics: Case Temp" offset="2" length="1" units="C" conversion="V*0.67-20"/>
+      <value targetId="12" offset="1" length="1" conversion="V*0.1+5"/> <!-- battery voltage -->
+    </frame>
+    <frame id="0x601">
+      <value name="Flagtronics: Flag Set" offset="4" length="1"/>
+      <value name="Flagtronics: Current Light Sensor Reading" offset="3" length="1"/>
+      <value name="Flagtronics: Commended Brightness" offset="2" length="1"/>
+      <value name="Flagtronics: Local Flag State" offset="1" length="1"/>
+      <value name="Flagtronics: Full Track State" length="1"/>
+    </frame>
+    <frame id="0x4DC">
+      <value name="Flagtronics: Accident Gforce" startbit="57" bitcount="7"/>
+      <value name="Flagtronics: Accident Flag" startbit="56" bitcount="1" units="bit"/>
+      <value name="Flagtronics: Individual Flag State" offset="6" length="1"/>
+      <value name="Flagtronics: Individual Flag State Text" offset="6" length="1" enum="0:None,1:Black,2:Meatball,3:Pit,4:Stalled (Automatic Yellow),75:Emergency 10g,76:Emergency 25g,77:Emergency 50g,78:Emergency 75g,79:Emergency 100g"/>
+      <value name="Flagtronics: Local Track State" offset="5" length="1"/>
+      <value name="Flagtronics: Local Track State Text" offset="5" length="1" enum="0:None,1:Yellow,2:Waving Yellow,4:Debris,5:Yellow + Debris,6:Waving Yellow + Debris,8:White,9:Yellow + White,10:Waving Yellow + White,12:Debris + White,13:Yellow + Debris + White,14:Waving Yellow + Debris + White,16:Blue,25:Green,26:Checkered"/>
+      <value name="Flagtronics: Full Track State" offset="4" length="1"/>
+      <value name="Flagtronics: Full Track State Text" offset="4" length="1" enum="0:None,66:Blank,67:Purple (Code 35),68:Black,71:Green,72:Checkered,80:Pit,82:Red,91:Full Course Yellow,94:White,255:Invalid"/>
+      <value name="Flagtronics: Displayed State 2" offset="2" length="2"/>
+      <value name="Flagtronics: Displayed State" length="2"/>
+    </frame>
+    <frame id="0x4DD">
+      <value name="Flagtronics: Pit Time" offset="6" length="2"/>
+      <value name="Flagtronics: Last Lap Time" offset="3" length="3"/>
+      <value name="Flagtronics: Debug Flag State" offset="2" length="1"/>
+      <value name="Flagtronics: Debug Flag State Text" offset="2" length="1" enum="0:None,1:Low Battery,2:Bad Power Supply,3:High Temperature,14:Pit - Time Counter,16:Pit - Exceeding Speed Limit,17:Code 35 - Normal,18:Code 35 - 36to39,25:Code 35 - 40+,32:SIG - No Signal,33:CMD - No Flag Commanded"/>
+      <value targetId="99" length="2" units="km/h" conversion="V*3.6"/> <!-- VSS2 -->
+    </frame>
+    <frame id="0x4DE">
+      <value name="Flagtronics: Future_4" offset="7" length="1"/>
+      <value name="Flagtronics: Future_3" offset="6" length="1"/>
+      <value name="Flagtronics: Future_2" offset="5" length="1"/>
+      <value name="Flagtronics: Future_1" offset="4" length="1"/>
+      <value name="Flagtronics: Current Light Sensor Reading" offset="3" length="1"/>
+      <value name="Flagtronics: LED Temp" offset="2" length="1"/>
+      <value name="Flagtronics: Commanded Brightness Curve" offset="1" length="1"/>
+      <value name="Flagtronics: Zone" length="1"/>
+    </frame>
+    <frame id="0x4DF">
+      <value name="Flagtronics: Future_12" offset="7" length="1"/>
+      <value name="Flagtronics: Future_11" offset="6" length="1"/>
+      <value name="Flagtronics: Future_10" offset="5" length="1"/>
+      <value name="Flagtronics: Future_9" offset="4" length="1"/>
+      <value name="Flagtronics: Future_8" offset="3" length="1"/>
+      <value name="Flagtronics: Future_7" offset="2" length="1"/>
+      <value name="Flagtronics: Future_6" offset="1" length="1"/>
+      <value name="Flagtronics: Future_5" length="1"/>
+    </frame>
+  </frames>
+</RealDashCAN>
