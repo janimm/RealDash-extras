@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RealDash>
 
+    <!-- NOTE: groups in animation XML are depricated and will be removed from future versions of RealDash. -->
+    <!-- Instead of groups, use the container gauge to animate multiple gauges with single animation. -->
+    <!-- Deprication of groups from animation XML does not affect released dashboards as animation XML is not contained in dash files. -->
     <groups>
         <group name="Drive mode values">
     		<gauge name="Speed value"></gauge>
