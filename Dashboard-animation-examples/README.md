@@ -9,6 +9,9 @@ How to create animated dashboards with RealDash.
 - When XML has changed, reload the .rd file, or press *F2* on Windows to reload the dash and apply changes.
 - Every time .rd file is saved it also contains all animations, there is no need to distribute the XML with .rd file.
 
+**NOTE** 
+The *groups* and *group* attributes will not be supported in future versions of RealDash. To animate multiple gauges with one animation, use a Container Gauge in RealDash. Container gauge accepts all animation types and applies the animation to all contained gauges. Removal of the support for *groups* in XML does not affect the functionality of previously published dashboards.
+
 
 &nbsp;
 ## **Files**
@@ -26,10 +29,11 @@ How to create animated dashboards with RealDash.
 ### **Animation types**
 | type | description |
 |:--------|:----------:|
-| morph | animate the area of the gauge or group |
-| fade | fade gauge or group |
-| value-morph | animate the area of the gauge or group based on input value. Requires RealDash version 2.4.7 or newer. |
-| value-fade | fade gauge or group based on input value. Requires RealDash version 2.4.7 or newer. |
+| morph | animate the area of the gauge. Use CTRL+Q in RealDash to copy gauge area to clipboard. |
+| position | animate gauge position. Use SHIFT+Q in RealDash to copy gauge center position to clipboard. |
+| fade | fade gauge |
+| value-morph | animate the area of the gauge based on input value. Requires RealDash version 2.4.7 or newer. |
+| value-fade | fade gauge based on input value. Requires RealDash version 2.4.7 or newer. |
 
 
 &nbsp;
@@ -42,19 +46,19 @@ Default easing for all animations is SineInOut.
 
 Examples of easing in action: [https://matthewlein.com/tools/ceaser]
 
-| type | description |
-|:--------|:----------:|
-| Back | --- |
-| Bounce | --- |
-| Circ | --- |
-| Cubic | --- |
-| Elastic | --- |
-| Expo | --- |
-| Linear | --- |
-| Quad | --- |
-| Quart | --- |
-| Quint | --- |
-| Sine | --- |
+| type |
+|:--------|
+| Back(In, Out, InOut) |
+| Bounce(In, Out, InOut) |
+| Circ(In, Out, InOut) |
+| Cubic(In, Out, InOut) |
+| Elastic(In, Out, InOut) |
+| Expo(In, Out, InOut) |
+| Linear(In, Out, InOut) |
+| Quad(In, Out, InOut) |
+| Quart(In, Out, InOut) |
+| Quint(In, Out, InOut) |
+| Sine(In, Out, InOut) |
 
 
 [realdash.net](https://www.realdash.net)

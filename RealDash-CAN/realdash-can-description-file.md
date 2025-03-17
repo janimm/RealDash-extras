@@ -234,4 +234,7 @@ In addition, **enum** supports a range of values with *tilde* **~** operator. Fo
 
     <value name="Custom Shifter position" offset="7" length="1" enum="0~10:P,11~20:R,21~100:N,150~200:D,#:err"></value>
 
+From RealDash version 2.4.8, the underscore character '_' in enum can be used to completely discard a value:
+
+    <value name="Custom Shifter position" offset="7" length="1" enum="0~10:P,11~20:R,21~100:N,150~200:D,#:_"></value>
 
