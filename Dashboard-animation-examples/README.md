@@ -10,7 +10,8 @@ How to create animated dashboards with RealDash.
 - Every time .rd file is saved it also contains all animations, there is no need to distribute the XML with .rd file.
 
 **NOTE** 
-The *groups* and *group* attributes will not be supported in future versions of RealDash. To animate multiple gauges with one animation, use a Container Gauge in RealDash. Container gauge accepts all animation types and applies the animation to all contained gauges.
+The *groups* and *group* attributes will not be supported in future versions of RealDash. To animate multiple gauges with one animation, use a Container Gauge in RealDash. Container gauge accepts all animation types and applies the animation to all contained gauges. Removal of the support for *groups* in XML does not affect the functionality of previously published dashboards.
+
 
 &nbsp;
 ## **Files**
