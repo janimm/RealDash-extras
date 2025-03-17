@@ -29,8 +29,8 @@ The *groups* and *group* attributes will not be supported in future versions of 
 ### **Animation types**
 | type | description |
 |:--------|:----------:|
-| morph | animate the area of the gauge |
-| position | animate gauge position |
+| morph | animate the area of the gauge. Use CTRL+Q in RealDash to copy gauge area to clipboard. |
+| position | animate gauge position. Use SHIFT+Q in RealDash to copy gauge center position to clipboard. |
 | fade | fade gauge |
 | value-morph | animate the area of the gauge based on input value. Requires RealDash version 2.4.7 or newer. |
 | value-fade | fade gauge based on input value. Requires RealDash version 2.4.7 or newer. |
