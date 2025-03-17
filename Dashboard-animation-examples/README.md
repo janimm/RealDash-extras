@@ -30,6 +30,7 @@ The *groups* and *group* attributes will not be supported in future versions of 
 | type | description |
 |:--------|:----------:|
 | morph | animate the area of the gauge |
+| position | animate gauge position |
 | fade | fade gauge |
 | value-morph | animate the area of the gauge based on input value. Requires RealDash version 2.4.7 or newer. |
 | value-fade | fade gauge based on input value. Requires RealDash version 2.4.7 or newer. |
