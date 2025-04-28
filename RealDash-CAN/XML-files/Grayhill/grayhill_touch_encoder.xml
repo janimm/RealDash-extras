@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RealDashCAN version="2">
+  <frames>
+    <frame id="0x18ff0ff2">
+      <value name="Grayhill Touch: Rotation Right" offset="3" length="1" units="bit" conversion="V>>7"/>
+      <value name="Grayhill Touch: Rotation Left" offset="3" length="1" units="bit" conversion="(V>>7)==0"/>
+    </frame>
+    <frame id="0x18ff11f2">
+      <value name="Grayhill Touch: Selection Value" offset="3" length="1"/>
+      <value name="Grayhill Touch: Mode" offset="0" length="1" enum="1:Main Screen,2:Audio,3:Fader,4:Balance,5:AM,6:Sirius,7:Lights,8:Audio Volume,9:Fog Lights,10:HVAC,11:Screen Birghtness,12:AC Level,15:Wipers,16:Light Mode,17:Temperature (Automatic),18:Blower Motor"/>
+    </frame>
+    <frame id="0x18ff0ef2">
+      <value name="Grayhill Touch: Touch-X" offset="2" length="2"/>
+      <value name="Grayhill Touch: Touch-Y" offset="4" length="2"/>
+    </frame>
+  </frames>
+</RealDashCAN>

@@ -9,7 +9,7 @@
     <!-- 'writeInterval' [optional] this CAN frame is written to CAN bus in this interval (milliseconds) -->
     <!-- 'endianess' [optional] the endianess of all frame values (big | little [default]).  -->
     <!-- 'signed' [optional, from 1.7.4] set to true to force RealDash to handle all values in frame as signed values.  -->
-    <frame id="3200">
+    <frame id="0xC80">
       <!-- PARAMETERS FOR 'value' -->
       <!-- 'targetId' links value to RealDash input, see RealDash manuals www for a complete list -->
       <!-- OR -->
@@ -34,43 +34,41 @@
            Example: conversion="B0+15*(B1-43)" and conversionABC="A+15*(B-43)" produce the same result -->
 
       <!-- 1st CAN frame, RPM, MAP, CLT, TPS -->
-      <value targetId="37" units="RPM" offset="0" length="2"></value>
+      <value targetId="37" offset="0" length="2"></value>
       <value targetId="31" units="kPA" offset="2" length="2" conversion="V/10"></value>
       <value targetId="14" units="C" offset="4" length="2" conversion="V-100"></value>
-      <value targetId="42" units="%" offset="6" length="2" conversion="V/10"></value>
+      <value targetId="42" offset="6" length="2" conversion="V/10"></value>
     </frame>
       
-    <frame id="3201">
+    <frame id="0xC81">
       <!-- 2nd CAN frame, Arduino example digital inputs, these will appear in RealDash 'ECU Specific' input category -->
-      <!-- note that 9 bit values all come from same 2 bytes -->
-      <!-- if units="bit", RealDash always checks the lowest bit as of value on or off. Therefore the bitshift to the right on conversion -->
-      <value name="Arduino Example: Digital 1" startbit="0" bitcount="1"></value>
-      <value name="Arduino Example: Digital 2" startbit="1" bitcount="1"></value>
-      <value name="Arduino Example: Digital 3" startbit="2" bitcount="1"></value>
-      <value name="Arduino Example: Digital 4" startbit="3" bitcount="1"></value>
-      <value name="Arduino Example: Digital 5" startbit="4" bitcount="1"></value>
-      <value name="Arduino Example: Digital 6" startbit="5" bitcount="1"></value>
-      <value name="Arduino Example: Digital 7" startbit="6" bitcount="1"></value>
-      <value name="Arduino Example: Digital 8" startbit="7" bitcount="1"></value>
-      <value name="Arduino Example: Digital 9" startbit="8" bitcount="1"></value>
-      <value name="Arduino Example: Digital 10" startbit="9" bitcount="1"></value>
-      <value name="Arduino Example: Digital 11" startbit="10" bitcount="1"></value>
-      <value name="Arduino Example: Digital 12" startbit="11" bitcount="1"></value>
-      <value name="Arduino Example: Digital 13" startbit="12" bitcount="1"></value>
+      <value name="Arduino Example: Digital 1" startbit="0" bitcount="1" units="bit"></value>
+      <value name="Arduino Example: Digital 2" startbit="1" bitcount="1" units="bit"></value>
+      <value name="Arduino Example: Digital 3" startbit="2" bitcount="1" units="bit"></value>
+      <value name="Arduino Example: Digital 4" startbit="3" bitcount="1" units="bit"></value>
+      <value name="Arduino Example: Digital 5" startbit="4" bitcount="1" units="bit"></value>
+      <value name="Arduino Example: Digital 6" startbit="5" bitcount="1" units="bit"></value>
+      <value name="Arduino Example: Digital 7" startbit="6" bitcount="1" units="bit"></value>
+      <value name="Arduino Example: Digital 8" startbit="7" bitcount="1" units="bit"></value>
+      <value name="Arduino Example: Digital 9" startbit="8" bitcount="1" units="bit"></value>
+      <value name="Arduino Example: Digital 10" startbit="9" bitcount="1" units="bit"></value>
+      <value name="Arduino Example: Digital 11" startbit="10" bitcount="1" units="bit"></value>
+      <value name="Arduino Example: Digital 12" startbit="11" bitcount="1" units="bit"></value>
+      <value name="Arduino Example: Digital 13" startbit="12" bitcount="1" units="bit"></value>
       <value name="Arduino Example: Analog 1" offset="2" length="2"></value>
       <value name="Arduino Example: Analog 2" offset="4" length="2"></value>
       <value name="Arduino Example: Analog 3" offset="6" length="2"></value>
     </frame>
 
     <!-- 3rd CAN frame contains rest of Arduino analog inputs -->
-    <frame id="3202">
+    <frame id="0xC82">
       <value name="Arduino Example: Analog 4" offset="0" length="2"></value>
       <value name="Arduino Example: Analog 5" offset="2" length="2"></value>
       <value name="Arduino Example: Analog 6" offset="4" length="2"></value>
       <value name="Arduino Example: Analog 7" offset="6" length="2"></value>
     </frame>
 
-    <frame id="3203">
+    <frame id="0xC83">
       <!-- 4th CAN frame, example of text extension frame -->
       <!-- Text extension frame requires RealDash 1.4.1 or newer -->
       <!-- declare own unique CAN id for each text value. -->
