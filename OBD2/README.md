@@ -117,7 +117,7 @@ The **units="text"** can be used to see the OBD2 reply 'as-is' in RealDash text 
 
 &nbsp;
 ### **header [optional]**
-Header to set before sending the command. The set header remains until its set again, so consecutive commands with different header must specify the header. The full AT command to set the header must be included. If all commands use same header, its best to be placed in **init** section. Examples of **header** usage:
+Header to set before sending the command. The full AT command to set the header must be specified. If all commands use same header, its best to be placed in **init** section. If rotation uses two or more headers, set the header for every command. Examples of **header** usage:
 
     <command send="010c" header="atsh7e0" skipCount="0" targetId="37" conversion="V/4"></command>
     <command send="2010" header="atsh7e5" skipCount="0" name="MYECU: custom value 1" conversion="V/4"></command>
