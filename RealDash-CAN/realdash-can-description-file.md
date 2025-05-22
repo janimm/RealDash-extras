@@ -17,7 +17,7 @@ XML file starts with tag **RealDashCAN** including the file format version **ver
 
     <frames baseId="3200">
 
-Specifies the **baseId** of 3200. Any id value in later **frame** is added to the base id. For example, if **frames baseId** is 3200 and it contains a frame with **id** 1, then the frame is considered to have an **id** of 3201.
+Specifies the **baseId** as 3200 decimal. Any id value in later **frame** is added to the base id. For example, if **frames baseId** is 3200 and it contains a frame with **id** 1, then the frame is considered to have an **id** of 3201.
 
 The **baseId** and the **id** in **frame** can also be specified as hexadecimal value with prefix of **0x**. Example:
 
@@ -27,7 +27,7 @@ The **baseId** and the **id** in **frame** can also be specified as hexadecimal 
 ## **frame**
 **frames** contain a list of **frame** tags. Each **frame** specifies an *id* number for the frame and other optional parameters. Each **frame** also contains a list of **value** tags that describe how data in frame is interpreted and linked to RealDash inputs. An example **frame**:
 
-    <frame id="3200">
+    <frame id="0xc80">
       <value targetId="37" offset="0" length="2"></value>
       <value targetId="31" offset="2" length="2" conversion="V/10"></value>
       <value targetId="14" units="C" offset="4" length="2" conversion="V-100"></value>
@@ -71,19 +71,19 @@ Each **frame** can optionally specify the *endianness* of how multibyte values a
 
 **NOTE:** Until version 2.3.9, RealDash used the word 'endianess' instead of correct spelling of 'endianness'. From version 2.3.9 RealDash accepts both as an attribute name.
 
-    <frame id="3200" endianness="big">
+    <frame id="0xc80" endianness="big">
 
 &nbsp;
 ## **frame 'signed' attribute (optional)**
 Each **frame** can optionally specify the frame values as *signed* to force RealDash to handle the data as signed values. The signed attribute can also be specified individually for each **value**. By default bytes are handled as *unsigned*. An example of how to specify all values in frame to be *signed*:
 
-    <frame id="3200" signed="true">
+    <frame id="0xc80" signed="true">
 
 &nbsp;
 ## **frame 'writeInterval' attribute (optional)**
-**writeInterval** attribute is used to specify a case when RealDash is requested to write this frame back to the device on certain interval. The value in **writeInterval** is milliseconds. For example, to specify that RealDash should write frame 3200 to CAN once a second, use:
+**writeInterval** attribute is used to specify a case when RealDash is requested to write this frame back to the device on certain interval. The value in **writeInterval** is milliseconds. For example, to specify that RealDash should write frame 0xc80 to CAN once a second, use:
 
-    <frame id="3200" writeInterval="1000">
+    <frame id="0xc80" writeInterval="1000">
 
 &nbsp;
 ## **frame 'size' attribute (optional)**
@@ -91,19 +91,19 @@ Typically CAN frames contain 8 byte payload. When connecting directly to a CAN d
 
 The **size** attribute can be used to specify a custom number (1-64) of bytes contained by CAN frame:
 
-    <frame id="3200" size="6">
+    <frame id="0xc80" size="6">
 
 &nbsp;
 ## **frame 'readOnly' attribute (optional)**
 Frames can be marked as read only. This assures that frame is not accidently written from RealDash by any malfunctioning or badly configured action. Read only attribute can also be used to prevent circular update when multiple RealDash instances are connected to same CAN bus.
 
-    <frame id="3200" readOnly="true">
+    <frame id="0xc80" readOnly="true">
 
 &nbsp;
 ## **frame 'timeout' attribute (optional)**
 This attribute allows to set timeout for the frame. Timeout is specified in milliseconds. If CAN frame is not received in specified timeout, all values in the frame will be set to their 'offline' values. This can be used to prevent values for sticking when connection to the CAN bus is lost. For example, 2 second timeout use:
 
-    <frame id="3200" timeout="2000">
+    <frame id="0xc80" timeout="2000">
 
 &nbsp;
 ## **values in a frame**
