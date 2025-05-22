@@ -2,74 +2,74 @@
 <!-- RealDash CAN XML description file, version 2 Requires RealDash version 1.5.8 or newer -->
 <RealDashCAN version="2">
   <frames>
-    <frame id="1520" endianess="big">
+    <frame id="1520" endianness="big" readOnly="true" timeout="2000">
       <value targetId="33" units="s" offset="0" length="2"></value>
       <value targetId="35" units="ms" offset="2" length="2" conversion="V/1000"></value>
       <value targetId="36" units="ms" offset="4" length="2" conversion="V/1000"></value>
       <value targetId="37" units="RPM" offset="6" length="2"></value>
     </frame>
 
-    <frame id="1521" endianess="big">
+    <frame id="1521" endianness="big" readOnly="true" timeout="2000">
       <value targetId="38" units="deg" offset="0" length="2" conversion="V/10"></value>
     </frame>
 
-    <frame id="1522" endianess="big">
+    <frame id="1522" endianness="big" readOnly="true" timeout="2000">
       <value targetId="11" units="kPA" offset="0" length="2" conversion="V/10"></value>
       <value targetId="31" units="kPA" offset="2" length="2" conversion="V/10"></value>
       <value targetId="27" units="F" offset="4" length="2" conversion="V/10"></value>
       <value targetId="14" units="F" offset="6" length="2" conversion="V/10"></value>
     </frame>
 
-    <frame id="1523" endianess="big">
+    <frame id="1523" endianness="big" readOnly="true" timeout="2000">
       <value targetId="42" units="%" offset="0" length="2" conversion="V/10"></value>
       <value targetId="12" units="V" offset="2" length="2" conversion="V/10"></value>
       <value targetId="0" units="AFR" offset="4" length="2" conversion="V/10"></value>
       <value targetId="1" units="AFR" offset="6" length="2" conversion="V/10"></value>
     </frame>
 
-    <frame id="1524" endianess="big">
+    <frame id="1524" endianness="big" readOnly="true" timeout="2000">
       <value targetId="29" units="%" offset="0" length="2" conversion="V/10"></value>
       <value targetId="17" units="%" offset="2" length="2" conversion="V/10"></value>
       <value targetId="18" units="%" offset="4" length="2" conversion="V/10"></value>
       <value targetId="9" units="%" offset="6" length="2" conversion="V/10"></value>
     </frame>
 
-    <frame id="1525" endianess="big">
+    <frame id="1525" endianness="big" readOnly="true" timeout="2000">
       <value targetId="46" units="%" offset="0" length="2" conversion="V/10"></value>
       <value name="TPSAccel" units="%" offset="2" length="2" conversion="V/10"></value>
       <value targetId="40" units="%" offset="4" length="2" conversion="V/10"></value>
       <value targetId="10" units="%" offset="6" length="2" conversion="V/10"></value>
     </frame>
 
-    <frame id="1526" endianess="big">
+    <frame id="1526" endianness="big" readOnly="true" timeout="2000">
       <value targetId="43" units="%" offset="0" length="2" conversion="V/10"></value>
       <value targetId="44" units="%" offset="2" length="2" conversion="V/10"></value>
       <value targetId="45" units="%" offset="4" length="2" conversion="V/10"></value>
       <value name="IacStep" units="step" offset="6" length="2"></value>
     </frame>
 
-    <frame id="1527" endianess="big">
+    <frame id="1527" endianness="big" readOnly="true" timeout="2000">
       <value targetId="13" units="deg" offset="0" length="2" conversion="V/10"></value>
       <value targetId="41" units="%/s" offset="2" length="2" conversion="V/10"></value>
       <value targetId="32" units="kPa/s" offset="4" length="2"></value>
       <value name="RPMDot" units="RPM/s" offset="6" length="2" conversion="V*10"></value>
     </frame>
 
-    <frame id="1528" endianess="big">
+    <frame id="1528" endianness="big" readOnly="true" timeout="2000">
       <value name="MAFLoad" units="%" offset="0" length="2" conversion="V/10"></value>
       <value name="FuelLoad" units="%" offset="2" length="2" conversion="V/10"></value>
       <value name="FuelCorr" units="%" offset="4" length="2" conversion="V/10"></value>
       <value targetId="30" units="g/s" offset="6" length="2" conversion="V/100"></value>
     </frame>
 
-    <frame id="1529" endianess="big">
+    <frame id="1529" endianness="big" readOnly="true" timeout="2000">
       <value name="EGOV1" units="V" offset="0" length="2" conversion="V/100"></value>
       <value name="EGOV2" units="V" offset="2" length="2" conversion="V/100"></value>
       <value name="Dwell" units="ms" offset="4" length="2" conversion="V/10"></value>
       <value name="DwellTrail" units="ms" offset="6" length="2" conversion="V/10"></value>
     </frame>
 
-    <frame id="1530" endianess="big">
+    <frame id="1530" endianness="big" readOnly="true" timeout="2000">
       <value name="Status1" units="" offset="0" length="1"></value>
       <value name="Status2" units="" offset="1" length="1"></value>
       <value name="Status3" units="" offset="2" length="1"></value>
@@ -79,7 +79,7 @@
       <value name="Status7" units="" offset="7" length="1"></value>
     </frame>
 
-    <frame id="1553" endianess="big">
+    <frame id="1553" endianness="big" readOnly="true" timeout="2000">
       <value name="PWMDuty1" units="%" offset="0" length="1"></value>
       <value name="PWMDuty2" units="%" offset="1" length="1"></value>
       <value name="PWMDuty3" units="%" offset="2" length="1"></value>
@@ -90,7 +90,7 @@
       <value name="EngineStatus" units="" offset="7" length="1"></value>
     </frame>
 
-    <frame id="1562" endianess="big">
+    <frame id="1562" endianness="big" readOnly="true" timeout="2000">
       <value targetId="81" units="kph" offset="0" length="2" conversion="V/10*3.6"></value>
       <value targetId="99" units="kph" offset="2" length="2" conversion="V/10*3.6"></value>
       <value name="VSS3" units="kph" offset="4" length="2" conversion="V/10*3.6"></value>
@@ -99,4 +99,3 @@
 
   </frames>
 </RealDashCAN>
-
