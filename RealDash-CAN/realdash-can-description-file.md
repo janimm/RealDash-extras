@@ -1,8 +1,8 @@
 &nbsp;
 # **Channel Description File (XML)**
-The RealDash CAN Channel Description File describes how data in CAN frames are interpreted by RealDash.
+The RealDash CAN XML file describes how data in CAN frames are interpreted by RealDash.
 
-Channel description file starts with tag **RealDashCAN** including the file format version **version="2"**. Next in file is a list of **frames**.
+XML file starts with tag **RealDashCAN** including the file format version **version="2"**. Next in file is a list of **frames**.
 
     <?xml version="1.0" encoding="utf-8"?>
     <RealDashCAN version="2">
@@ -92,6 +92,18 @@ Typically CAN frames contain 8 byte payload. When connecting directly to a CAN d
 The **size** attribute can be used to specify a custom number (1-64) of bytes contained by CAN frame:
 
     <frame id="3200" size="6">
+
+&nbsp;
+## **frame 'readOnly' attribute (optional)**
+Frames can be marked as read only. This assures that frame is not accidently written from RealDash by any malfunctioning or badly configured action. Read only attribute can also be used to prevent circular update when multiple RealDash instances are connected to same CAN bus.
+
+    <frame id="3200" readOnly="true">
+
+&nbsp;
+## **frame 'timeout' attribute (optional)**
+This attribute allows to set timeout for the frame. Timeout is specified in milliseconds. If CAN frame is not received in specified timeout, all values in the frame will be set to their 'offline' values. This can be used to prevent values for sticking when connection to the CAN bus is lost. For example, 2 second timeout use:
+
+    <frame id="3200" timeout="2000">
 
 &nbsp;
 ## **values in a frame**
