@@ -4,116 +4,116 @@
   <frames>
     <!-- https://www.maxxecu.com/webhelp/can-default_maxxecu_protocol.html -->
 	  
-    <frame id="0x520">
+    <frame id="0x520" readOnly="true" timeout="2000">
       <value targetId="37" offset="0" length="2"></value> <!-- RPM -->
       <value targetId="42" units="%" offset="2" length="2" conversion="V*0.1"></value> <!-- TPS  -->
       <value targetId="31" units="kPA" offset="4" length="2" conversion="V*0.1"></value> <!-- MAP -->
       <value targetId="254" offset="6" length="2" conversion="V*0.001"></value> <!-- Lambda 1 -->
     </frame>
 
-    <frame id="0x521">
+    <frame id="0x521" readOnly="true" timeout="2000">
       <value targetId="254" offset="0" length="2" conversion="V*0.001"></value> <!-- Lambda 1 -->
       <value targetId="255" offset="2" length="2" conversion="V*0.001"></value> <!-- Lambda 2 -->
       <value targetId="38" units="deg" offset="4" length="2" signed="true" conversion="V*0.1"></value> <!-- Spark advance -->
       <value name="MaxxECU: Ignition Cut" units="%" offset="6" length="2"></value>
     </frame>
 
-    <frame id="0x522">
+    <frame id="0x522" readOnly="true" timeout="2000">
       <value targetId="35" offset="0" length="2" conversion="V*0.001"></value> <!-- Pulse Width 1 -->
       <value targetId="119" units="%" offset="2" length="2" conversion="V*0.1"></value> <!-- Duty Cycle 1 -->
       <value targetId="408" units="%" offset="4" length="2"></value> <!-- Fuel Cut -->
       <value targetId="81" units="kph" offset="6" length="2" conversion="V*0.1"></value> <!-- VSS1 -->
     </frame>
 
-    <frame id="0x523">
+    <frame id="0x523" readOnly="true" timeout="2000">
       <value targetId="99" units="kph" offset="0" length="2" conversion="V*0.1"></value> <!-- VSS2 -->
       <value name="MaxxECU: Driven wheels avg spd" units="kph" offset="2" length="2" conversion="V*0.1"></value>
       <value name="MaxxECU: Wheel slip" units="%" offset="4" length="2" conversion="V*0.1"></value>
       <value name="MaxxECU: Target slip" units="%" offset="6" length="2" conversion="V*0.1"></value>
     </frame>
 
-    <frame id="0x524">
+    <frame id="0x524" readOnly="true" timeout="2000">
       <value targetId="179" offset="0" length="2" conversion="V*0.1"></value> <!-- Traction Control power limit percentage -->
       <value targetId="17" units="%" offset="2" length="2" signed="true" conversion="V*0.1"></value> <!-- EGO correction 1 -->
       <value targetId="18" units="%" offset="4" length="2" signed="true" conversion="V*0.1"></value> <!-- EGO correction 2 -->
       <value name="MaxxECU: Firmware version" offset="6" length="2" conversion="V*0.001"></value>
     </frame>
 
-    <frame id="0x525">
+    <frame id="0x525" readOnly="true" timeout="2000">
       <value name="MaxxECU: User Channel 9" offset="0" length="2" conversion="V*0.1"></value>
       <value name="MaxxECU: User Channel 10" offset="2" length="2" conversion="V*0.1"></value>
       <value name="MaxxECU: User Channel 11" offset="4" length="2" conversion="V*0.1"></value>
       <value name="MaxxECU: User Channel 12" offset="6" length="2" conversion="V*0.1"></value>
     </frame>
 	  
-    <frame id="0x527">
+    <frame id="0x527" readOnly="true" timeout="2000">
       <value targetId="256" offset="6" length="2" signed="true" conversion="V*0.001"></value> <!-- Lambda Target 1 -->
     </frame>
 	  
-    <frame id="0x530">
+    <frame id="0x530" readOnly="true" timeout="2000">
       <value targetId="12" units="V" offset="0" length="2" conversion="V*0.01"></value> <!-- battery voltage -->
       <value targetId="11" units="kPA" offset="2" length="2" conversion="V*0.1"></value> <!-- Baro  -->
       <value targetId="27" units="C" offset="4" length="2" signed="true" conversion="V*0.1"></value> <!-- IAT -->
       <value targetId="14" units="C" offset="6" length="2" signed="true" conversion="V*0.1"></value> <!-- CLT -->
     </frame>
 
-    <frame id="0x531">
+    <frame id="0x531" readOnly="true" timeout="2000">
       <value targetId="43" units="%" offset="0" length="2" signed="true" conversion="V*0.1"></value> <!-- total fuel correction -->
       <value name="MaxxECU: Ethanol concentration" units="%" offset="2" length="2" conversion="V*0.1"></value>
       <value name="MaxxECU: Total ignition comp" offset="4" length="2" signed="true" conversion="V*0.1"></value>
       <value targetId="106" units="C" offset="6" length="2" signed="true"></value> <!-- EGT1 -->
     </frame>
 
-    <frame id="0x532">
+    <frame id="0x532" readOnly="true" timeout="2000">
       <value targetId="107" units="C" offset="0" length="2" signed="true"></value> <!-- EGT2 -->
       <value targetId="108" units="C" offset="2" length="2" signed="true"></value> <!-- EGT3 -->
       <value targetId="109" units="C" offset="4" length="2" signed="true"></value> <!-- EGT4 -->
       <value targetId="110" units="C" offset="6" length="2" signed="true"></value> <!-- EGT5 -->
     </frame>
 
-    <frame id="0x533">
+    <frame id="0x533" readOnly="true" timeout="2000">
       <value targetId="111" units="C" offset="0" length="2" signed="true"></value> <!-- EGT6 -->
       <value targetId="112" units="C" offset="2" length="2" signed="true"></value> <!-- EGT7 -->
       <value targetId="113" units="C" offset="4" length="2" signed="true"></value> <!-- EGT8 -->
       <value name="MaxxECU: EGT Highest" units="C" offset="6" length="2" signed="true"></value>
     </frame>
 
-    <frame id="0x534">
+    <frame id="0x534" readOnly="true" timeout="2000">
       <value name="MaxxECU: EGT Difference" units="C" offset="0" length="2" signed="true"></value>
       <value name="MaxxECU: CPU Temp" units="C" offset="2" length="2" signed="true"></value>
       <value targetId="66" offset="4" length="2"></value> <!-- Num error codes -->
       <value name="MaxxECU: Lost Sync Count" offset="6" length="2"></value>
     </frame>
     
-    <frame id="0x535">
+    <frame id="0x535" readOnly="true" timeout="2000">
       <value name="MaxxECU: User analog input 1" offset="0" length="2" conversion="V*0.1"></value>
       <value name="MaxxECU: User analog input 2" offset="2" length="2" conversion="V*0.1"></value>
       <value name="MaxxECU: User analog input 3" offset="4" length="2" conversion="V*0.1"></value>
       <value name="MaxxECU: User analog input 4" offset="6" length="2" conversion="V*0.1"></value>
     </frame>
 
-    <frame id="0x536">
+    <frame id="0x536" readOnly="true" timeout="2000">
       <value targetId="200" offset="0" length="2" signed="true"></value> <!-- gear -->
       <value name="MaxxECU: Boost solenoid duty" offset="2" length="2" conversion="V*0.1"></value>
       <value targetId="151" offset="4" length="2" signed="true" units="bar" conversion="V*0.001"></value> <!-- oil pressure -->
       <value targetId="152" offset="6" length="2" signed="true" units="C" conversion="V*0.1"></value> <!-- oil temperature -->
     </frame>
 
-    <frame id="0x538">
+    <frame id="0x538" readOnly="true" timeout="2000">
       <value name="MaxxECU: User Channel 1" offset="0" length="2" conversion="V*0.1"></value>
       <value name="MaxxECU: User Channel 2" offset="2" length="2" conversion="V*0.1"></value>
       <value name="MaxxECU: User Channel 3" offset="4" length="2" conversion="V*0.1"></value>
       <value name="MaxxECU: User Channel 4" offset="6" length="2" conversion="V*0.1"></value>
     </frame>
 
-    <frame id="0x539">
+    <frame id="0x539" readOnly="true" timeout="2000">
       <value name="MaxxECU: User Channel 5" offset="0" length="2" conversion="V*0.1"></value>
       <value name="MaxxECU: User Channel 6" offset="2" length="2" conversion="V*0.1"></value>
       <value name="MaxxECU: User Channel 7" offset="4" length="2" conversion="V*0.1"></value>
       <value name="MaxxECU: User Channel 8" offset="6" length="2" conversion="V*0.1"></value>
     </frame>
 	  
-    <frame id="0x540">
+    <frame id="0x540" readOnly="true" timeout="2000">
       <value name="MaxxECU: Active Boost Table" offset="0" length="1"></value>
       <value name="MaxxECU: Active Tune Selector" offset="1" length="1"></value>
       <value name="MaxxECU: Virtual Fuel Tank" offset="2" length="2" conversion="V*0.1"></value>
@@ -121,14 +121,14 @@
       <value name="MaxxECU: Differential Temp" units="C" offset="6" length="2" conversion="V*0.1"></value>
     </frame>
 
-    <frame id="0x541">
+    <frame id="0x541" readOnly="true" timeout="2000">
       <value targetId="492" offset="0" length="2" conversion="V*0.1"></value> <!-- vvt intake pos 1 -->
       <value targetId="493" offset="2" length="2" conversion="V*0.1"></value> <!-- vvt exhaust pos 1 -->
       <value targetId="494" offset="4" length="2" conversion="V*0.1"></value> <!-- vvt intake pos 2 -->
       <value targetId="495" offset="6" length="2" conversion="V*0.1"></value> <!-- vvt exhaust pos 2 -->
     </frame>
 
-    <frame id="0x542">
+    <frame id="0x542" readOnly="true" timeout="2000">
       <value targetId="496" offset="0" length="2" conversion="V*0.1"></value> <!-- vvt intake target pos -->
       <value targetId="497" offset="2" length="2" conversion="V*0.1"></value> <!-- vvt exhaust target pos -->
       <value targetId="105" offset="4" length="2"></value> <!-- rotating error code -->
@@ -136,4 +136,3 @@
 	  
   </frames>
 </RealDashCAN>
-
