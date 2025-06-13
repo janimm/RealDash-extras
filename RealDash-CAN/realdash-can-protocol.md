@@ -24,7 +24,7 @@ Payload size is always 8 bytes. In case of transferring CAN data with less than 
 
 
 &nbsp;
-## **The CAN FD *66* frame (requires RealDash version 1.9.1)**
+## **The CAN FD *66* frame**
 
 The *66* frame allows to send more than 8 bytes in a single frame and contains 32 bit CRC value. This frame type can be used to transfer [CAN FD](https://en.wikipedia.org/wiki/CAN_FD) frame data, as CAN FD is capable of variable payload size.
 
@@ -113,13 +113,30 @@ This frame ends with 4 byte little endian CRC32 checksum value. Checksum is calc
 &nbsp;
 ## **The *55* frame**
 
-In addition, there is a *Text Extension Frame* that allows easy transfer of text from device to RealDash. The text payload in this frame must be UTF8 compatible string terminated by 0-byte. A text extension frame contains one, and only one text string. It always consumes the entire frame.
+The *Text Extension Frame* allows easy transfer of text from device to RealDash. The text payload in this frame must be UTF8 compatible string terminated by 0-byte. A text extension frame contains one, and only one text string. It always consumes the entire frame.
 
     RealDash CAN '55' text extension frame:
     4 bytes - 0x55,0x33,0x22,0x11
     4 bytes - CAN frame id number (32bit little endian value)
     # bytes - text in UTF8 format, including null-terminator
 
+
+&nbsp;
+## **The *67* config frame**
+
+Sending of config frames can be enabled from connection settings of RealDash CAN protocol. After connection is established, RealDash will send two config frames to CAN bus containing current CAN settings.
+
+    RealDash CAN '67' config frame for CAN speed:
+    5 bytes - 0x67,0x33,0x22,0x02,0x15
+    1 bytes - CAN speed: 0x01 = 20000, 0x02 = 50000, 0x03 = 100000, 0x04 = 125000, 0x06 = 500000, 0x07 = 800000, 0x08 = 1000000
+    4 bytes - CRC32 checksum (32bit little endian value)
+
+&nbsp;
+
+    RealDash CAN '67' config frame for CAN mode:
+    4 bytes - 0x67,0x33,0x22,0x01,0x15
+    1 bytes - CAN mode: 0x11 = normal, 0x12 = loopback, 0x13 = silent, 0x14 = loopback silent
+    4 bytes - CRC32 checksum (32bit little endian value)
 
 &nbsp;
 ## **Writing CAN frames from RealDash to device**
