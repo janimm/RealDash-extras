@@ -259,13 +259,13 @@
     </frame>
 
     <frame id="0x2C2" endianess="big" size="8" writeInterval="100">
-      <value targetId="Haltech: DPI1" offset="0" length="2" conversion="V &lt;&lt; 6"></value> <!-- DPI1 Duty value between 0 and 1000 (% * 10) -->
-      <value targetId="Haltech: DPI2" offset="4" length="2" conversion="V &lt;&lt; 6"></value> <!-- DPI2 Duty value between 0 and 1000 (% * 10) -->
+      <value name="Haltech: DPI1" offset="0" length="2" conversion="V &lt;&lt; 6"></value> <!-- DPI1 Duty value between 0 and 1000 (% * 10) -->
+      <value name="Haltech: DPI2" offset="4" length="2" conversion="V &lt;&lt; 6"></value> <!-- DPI2 Duty value between 0 and 1000 (% * 10) -->
     </frame>
 
     <frame id="0x2C4" endianess="big" size="8" writeInterval="100">
-      <value targetId="Haltech: DPI3" offset="0" length="2" conversion="V &lt;&lt; 6"></value> <!-- DPI3 Duty value between 0 and 1000 (% * 10) -->
-      <value targetId="Haltech: DPI4" offset="4" length="2" conversion="V &lt;&lt; 6"></value> <!-- DPI4 Duty value between 0 and 1000 (% * 10) -->
+      <value name="Haltech: DPI3" offset="0" length="2" conversion="V &lt;&lt; 6"></value> <!-- DPI3 Duty value between 0 and 1000 (% * 10) -->
+      <value name="Haltech: DPI4" offset="4" length="2" conversion="V &lt;&lt; 6"></value> <!-- DPI4 Duty value between 0 and 1000 (% * 10) -->
     </frame>
 
   </frames>
