@@ -35,21 +35,21 @@
 
       <value targetId="37" offset="0" length="2"></value> <!-- RPM -->
       <value targetId="31" units="kPA" offset="2" length="2" conversion="V*0.1"></value> <!-- MAP -->
-      <value targetId="42" units="%" offset="4" length="2" conversion="V*0.1"></value> <!-- TPS  -->
-      <value name="Haltech: Coolant pressure" units="kPA" offset="6" length="2" conversion="V*0.1 - 101.3"></value>
+      <value targetId="42" offset="4" length="2" conversion="V*0.1"></value> <!-- TPS  -->
+      <value targetId="759" units="kPA" offset="6" length="2" conversion="V*0.1 - 101.3"></value> <!-- coolant pressure -->
     </frame>
 
     <frame id="0x361" endianess="big">
       <value targetId="202" units="kPA" offset="0" length="2" conversion="V*0.1 - 101.3"></value> <!-- fuel pressure -->
       <value targetId="151" units="kPA" offset="2" length="2" conversion="V*0.1 - 101.3"></value> <!-- engine oil pressure-->
-      <value name="Haltech: Engine Demand" units="%" offset="4" length="2" conversion="V*0.1"></value>
+      <value name="Haltech: Engine Demand" offset="4" length="2" conversion="V*0.1"></value>
       <value name="Haltech: Wastegate Pressure" units="kPA" offset="6" length="2" conversion="V*0.1 - 101.3"></value>
     </frame>
 
     <frame id="0x362" endianess="big">
-      <value name="Haltech: Injector Duty Cycle (Primary)" units="%" offset="0" length="2" conversion="V*0.1"></value>
-      <value name="Haltech: Injector Duty Cycle (Secondary)" units="%" offset="2" length="2" conversion="V*0.1"></value>
-      <value targetId="38" units="deg" offset="4" length="2" conversion="V*0.1"></value> <!-- spark advance -->
+      <value targetId="119" offset="0" length="2" conversion="V*0.1"></value> <!-- duty cycle 1 -->
+      <value targetId="120" offset="2" length="2" conversion="V*0.1"></value> <!-- duty cycle 2 -->
+      <value targetId="38" offset="4" length="2" conversion="V*0.1"></value> <!-- spark advance -->
     </frame>
 
     <frame id="0x363" endianess="big">
@@ -92,30 +92,30 @@
     </frame>
 
     <frame id="0x36D" endianess="big">
-      <value name="Haltech: Exhaust Cam Angle #1" units="deg" offset="4" length="2" conversion="V*0.1"></value>
-      <value name="Haltech: Exhaust Cam Angle #2" units="deg" offset="6" length="2" conversion="V*0.1"></value>
+      <value targetId="493" offset="4" length="2" conversion="V*0.1"></value> <!-- exhaust cam pos 1 -->
+      <value targetId="495" offset="6" length="2" conversion="V*0.1"></value> <!-- exhaust cam pos 2 -->
     </frame>
 
     <frame id="0x36E" endianess="big">
       <value name="Haltech: Engine Limiting Active" units="bit" offset="1" startbit="0" bitcount="1"></value>
-      <value name="Haltech: Launch Control Ign Retard" units="deg" offset="2" length="2" conversion="V*0.1"></value>
-      <value name="Haltech: Launch Control Fuel Enrich" units="deg" offset="4" length="2" conversion="V*0.1"></value>
+      <value name="Haltech: Launch Control Ign Retard" offset="2" length="2" conversion="V*0.1"></value>
+      <value name="Haltech: Launch Control Fuel Enrich" offset="4" length="2" conversion="V*0.1"></value>
       <value name="Haltech: Longitudinal G" offset="6" length="2" conversion="V*0.1"></value>
     </frame>
 
     <frame id="0x36F" endianess="big">
-      <value name="Haltech: Generic Output 1 Duty" units="%" offset="0" length="2" conversion="V*0.1"></value>
-      <value name="Haltech: Boost Control Output" units="%" offset="2" length="2" conversion="V*0.1"></value>
+      <value name="Haltech: Generic Output 1 Duty" offset="0" length="2" conversion="V*0.1"></value>
+      <value name="Haltech: Boost Control Output" offset="2" length="2" conversion="V*0.1"></value>
     </frame>
 
     <frame id="0x370" endianess="big">
-      <value name="Haltech: Wheelspeed General" units="kmh" offset="0" length="2" conversion="V*0.1"></value>
-      <value name="Haltech: Intake Cam Angle #1" units="deg" offset="4" length="2" conversion="V*0.1"></value>
-      <value name="Haltech: Intake Cam Angle #2" units="deg" offset="6" length="2" conversion="V*0.1"></value>
+      <value targetId="81" units="kmh" offset="0" length="2" conversion="V*0.1"></value> <!-- VSS 1 -->
+      <value targetId="492" offset="4" length="2" conversion="V*0.1"></value> <!-- intake cam pos 1 -->
+      <value targetId="494" offset="6" length="2" conversion="V*0.1"></value> <!-- intake cam pos 2 -->
     </frame>
 
     <frame id="0x371" endianess="big">
-      <value name="Haltech: Fuel Flow" offset="0" length="2"></value>
+      <value targetId="490" offset="0" length="2"></value> <!-- fuel flow -->
       <value name="Haltech: Fuel Flow Return" offset="2" length="2"></value>
     </frame>
 
@@ -135,7 +135,7 @@
     <frame id="0x3E1" endianess="big">
       <value targetId="138" units="K" offset="0" length="2" conversion="V*0.1"></value> <!-- transmission oil temp -->
       <value name="Haltech: Diff Oil Temp" units="K" offset="2" length="2" conversion="V*0.1"></value>
-      <value name="Haltech: Fuel Composition" units="%" offset="4" length="2" conversion="V*0.1"></value>
+      <value name="Haltech: Fuel Composition" offset="4" length="2" conversion="V*0.1"></value>
     </frame>
 
     <frame id="0x3E2" endianess="big">
@@ -143,27 +143,27 @@
     </frame>
 
     <frame id="0x3E3" endianess="big">
-      <value targetId="17" units="%" offset="0" length="2" signed="true" conversion="V*0.1"></value> <!-- ego1 -->
-      <value targetId="18" units="%" offset="2" length="2" signed="true" conversion="V*0.1"></value> <!-- ego2 -->
-      <value name="Haltech: Fuel Trim Long Term Bank 1" units="%" offset="4" length="2" signed="true" conversion="V*0.1"></value>
-      <value name="Haltech: Fuel Trim Long Term Bank 2" units="%" offset="6" length="2" signed="true" conversion="V*0.1"></value>
+      <value targetId="17" offset="0" length="2" signed="true" conversion="V*0.1"></value> <!-- ego1 -->
+      <value targetId="18" offset="2" length="2" signed="true" conversion="V*0.1"></value> <!-- ego2 -->
+      <value targetId="102" offset="4" length="2" signed="true" conversion="V*0.1"></value> <!-- long term trim 1 -->
+      <value targetId="104" offset="6" length="2" signed="true" conversion="V*0.1"></value> <!-- long term trim 2 -->
     </frame>
 
     <frame id="0x3E4" endianess="big">
       <value name="Haltech: Oil Pressure Light" units="bit" offset="1" startbit="0" bitcount="1"></value>
-      <value name="Haltech: Clutch Switch" units="bit" offset="1" startbit="1" bitcount="1"></value>
-      <value name="Haltech: Brake Pedal Switch" units="bit" offset="1" startbit="2" bitcount="1"></value>
+      <value targetId="231" offset="1" startbit="1" bitcount="1" conversion="V*100"></value> <!-- clutch -->
+      <value tragetId="230" offset="1" startbit="2" bitcount="1" conversion="V*100"></value> <!-- brake pedal -->
       <value name="Haltech: Transient Throttle Active" units="bit" offset="1" startbit="3" bitcount="1"></value>
-      <value name="Haltech: Decel Cut Active" units="bit" offset="1" startbit="4" bitcount="1"></value>
+      <value targetId="397" units="bit" offset="1" startbit="4" bitcount="1"></value> <!-- overrun active -->
       <value name="Haltech: Gear Switch" units="bit" offset="1" startbit="5" bitcount="1"></value>
-      <value name="Haltech: Reverse Switch" units="bit" offset="1" startbit="6" bitcount="1"></value>
-      <value name="Haltech: Neutral Switch" units="bit" offset="1" startbit="7" bitcount="1"></value>
+      <value targetId="159" units="bit" offset="1" startbit="6" bitcount="1"></value> <!-- reverse lights -->
+      <value targetId="489" units="bit" offset="1" startbit="7" bitcount="1"></value> <!-- neutral switch -->
 
       <value name="Haltech: Torque Reduction Active" units="bit" offset="2" startbit="1" bitcount="1"></value>
       <value name="Haltech: Flat Shift Switch" units="bit" offset="2" startbit="3" bitcount="1"></value>
       <value name="Haltech: Aux RPM Limiter Active" units="bit" offset="2" startbit="5" bitcount="1"></value>
       <value name="Haltech: Launch Control Switch" units="bit" offset="2" startbit="6" bitcount="1"></value>
-      <value name="Haltech: Launch Control Active" units="bit" offset="2" startbit="7" bitcount="1"></value>
+      <value targetId="394" units="bit" offset="2" startbit="7" bitcount="1"></value> <!-- launch control active -->
 
 
       <value name="Haltech: Thermo-fan 1 On" units="bit" offset="3" startbit="0" bitcount="1"></value>
@@ -180,7 +180,7 @@
       <value name="Haltech: Rotary Trim Pot 3" offset="6" length="1"></value>
 
       <value name="Haltech: Traction Control Light" units="bit" offset="7" startbit="0" bitcount="1"></value>
-      <value name="Haltech: Hand Brake State" units="bit" offset="7" startbit="1" bitcount="1"></value>
+      <value targetId="164" units="bit" offset="7" startbit="1" bitcount="1"></value> <!-- parking brake -->
       <value name="Haltech: Battery Light Active" units="bit" offset="7" startbit="6" bitcount="1"></value>
       <value name="Haltech: Check Engine Light" units="bit" offset="7" startbit="7" bitcount="1"></value>
     </frame>
@@ -194,8 +194,8 @@
     </frame>
 
     <frame id="0x3EB" endianess="big">
-      <value name="Haltech: Ignition Angle Bank 1" units="deg" offset="4" length="2" conversion="V*0.1"></value>
-      <value name="Haltech: Ignition Angle Bank 2" units="deg" offset="6" length="2" conversion="V*0.1"></value>
+      <value targetId="38" offset="4" length="2" conversion="V*0.1"></value> <!-- spark advance -->
+      <value name="Haltech: Ignition Angle Bank 2" offset="6" length="2" conversion="V*0.1"></value>
     </frame>
 
     <frame id="0x469" endianess="big">
@@ -212,7 +212,7 @@
 
     <frame id="0x471" endianess="big">
       <value name="Haltech: Injector Pressure Differential" units="kPA" offset="0" length="2" conversion="V*0.1"></value>
-      <value name="Haltech: Accel Pedal Position" units="%" offset="2" length="2" conversion="V*0.1"></value>
+      <value name="Haltech: Accel Pedal Position" offset="2" length="2" conversion="V*0.1"></value>
       <value name="Haltech: Exhaust Manifold Pressure" units="kPA" offset="4" length="2" conversion="V*0.1"></value>
     </frame>
 
@@ -222,15 +222,15 @@
       <value name="Haltech: Antilag Switch State" units="bit" offset="4" startbit="6" bitcount="1"></value>
       <value name="Haltech: Antilag Output State" units="bit" offset="4" startbit="5" bitcount="1"></value>
       <value name="Haltech: Traction Control Switch State" units="bit" offset="4" startbit="4" bitcount="1"></value>
-      <value name="Haltech: Primary Fuel Pump Output State" units="bit" offset="4" startbit="3" bitcount="1"></value>
-      <value name="Haltech: Aux 1 Fuel Pump Output State" units="bit" offset="4" startbit="2" bitcount="1"></value>
-      <value name="Haltech: Aux 2 Fuel Pump Output State" units="bit" offset="4" startbit="1" bitcount="1"></value>
-      <value name="Haltech: Aux 3 Fuel Pump Output State" units="bit" offset="4" startbit="0" bitcount="1"></value>
+      <value targetId="182" units="bit" offset="4" startbit="3" bitcount="1"></value> <!-- fuel pump 1 -->
+      <value targetId="183" units="bit" offset="4" startbit="2" bitcount="1"></value> <!-- fuel pump 2 -->
+      <value targetId="184" units="bit" offset="4" startbit="1" bitcount="1"></value> <!-- fuel pump 3 -->
+      <value targetId="185" units="bit" offset="4" startbit="0" bitcount="1"></value> <!-- fuel pump 4 -->
     </frame>
 
     <frame id="0x477" endianess="big">
-      <value name="Haltech: Engine Limiter Max RPM" offset="0" length="2"></value>
-      <value name="Haltech: Cut Percentage" units="%" offset="2" length="2" conversion="V*0.1"></value>
+      <value targetId="271" offset="0" length="2"></value> <!-- RPM limit -->
+      <value name="Haltech: Cut Percentage" offset="2" length="2" conversion="V*0.1"></value>
       <value name="Haltech: Engine Limiter Function" offset="4" length="1" enum="0:None,1:Immobiliser,2:Map version error,3:Electronic throttle error,4:Electronic throttle redundancy error,5:Decel cut,6:Over boost cut,7:Ignition switch,8:Anti-flood,9:Limp mode,10:Rotational idle,11:Launch control,12:Torque reduction,13:Flat shift,14:Aux limiter,15:Main limiter,16:Speed limiter,17:Supervisor error,18:Turbo Timer,19:Engine Protection,20:Flood Clear,21:Diagnostic trouble code,22:LPG,23:Kill Switch,24:Traction Control,25:Rolling Anti-lag,26:Torque Management DS RPM,27:Trans-Brake Control,28:Injection System Error,29:Main Setup (F4) Page Error,30:Injection System Disable,31:Torque Model,32:Start/Stop Button,33:Throttle Blip,34:IMU Calibration"></value>
       <value name="Haltech: RPM Limiter Function" offset="5" length="1" enum="0:None,1:Immobiliser,2:Map version error,3:Electronic throttle error,4:Electronic throttle redundancy error,5:Decel cut,6:Over boost cut,7:Ignition switch,8:Anti-flood,9:Limp mode,10:Rotational idle,11:Launch control,12:Torque reduction,13:Flat shift,14:Aux limiter,15:Main limiter,16:Speed limiter,17:Supervisor error,18:Turbo Timer,19:Engine Protection,20:Flood Clear,21:Diagnostic trouble code,22:LPG,23:Kill Switch,24:Traction Control,25:Rolling Anti-lag,26:Torque Management DS RPM,27:Trans-Brake Control,28:Injection System Error,29:Main Setup (F4) Page Error,30:Injection System Disable,31:Torque Model,32:Start/Stop Button,33:Throttle Blip,34:IMU Calibration"></value>
       <value name="Haltech: Cut Percentage Function" offset="6" length="1" enum="0:None,1:Immobiliser,2:Map version error,3:Electronic throttle error,4:Electronic throttle redundancy error,5:Decel cut,6:Over boost cut,7:Ignition switch,8:Anti-flood,9:Limp mode,10:Rotational idle,11:Launch control,12:Torque reduction,13:Flat shift,14:Aux limiter,15:Main limiter,16:Speed limiter,17:Supervisor error,18:Turbo Timer,19:Engine Protection,20:Flood Clear,21:Diagnostic trouble code,22:LPG,23:Kill Switch,24:Traction Control,25:Rolling Anti-lag,26:Torque Management DS RPM,27:Trans-Brake Control,28:Injection System Error,29:Main Setup (F4) Page Error,30:Injection System Disable,31:Torque Model,32:Start/Stop Button,33:Throttle Blip,34:IMU Calibration"></value>
