@@ -1,39 +1,35 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- RealDash CAN XML description file, version 2 Requires RealDash version 1.5.8 or newer -->
+<?xml version="1.0" encoding="UTF-8"?>
 <RealDashCAN version="2">
-  <frames baseId="1000">
-    <frame id="0" endianness="big" readOnly="true" timeout="2000">
-      <value targetId="37" offset="0" length="2"></value> <!-- RPM -->
-      <value targetId="31" offset="2" length="2" conversion="V-100"></value> <!-- MAP -->
-      <value targetId="14" offset="4" length="1" units="C" conversion="V-50"></value> <!-- CLT -->
-      <value targetId="27" offset="5" length="1" units="C" conversion="V-50"></value> <!-- IAT -->
-      <value targetId="12" offset="6" length="1" conversion="V*0.1"></value> <!-- battery voltage -->
-      <value targetId="152" offset="7" length="1" units="C" conversion="V-50"></value> <!-- Oil temp -->
+  <!-- Link ECU DASH2PRO stream -->
+  <frames>
+    <frame id="0x3E8" readOnly="true" endianness="big">
+      <value targetId="37" offset="0" length="2"/> <!-- RPM -->
+      <value targetId="31" offset="2" length="2" conversion="V-100"/> <!-- MAP -->
+      <value targetId="14" offset="4" length="1" units="C" conversion="V-50"/> <!-- CLT -->
+      <value targetId="27" offset="5" length="1" units="C" conversion="V-50"/> <!-- IAT -->
+      <value targetId="12" offset="6" length="1" conversion="V*0.1"/> <!-- battery voltage -->
+      <value targetId="152" offset="7" length="1" units="C" conversion="V-50"/> <!-- Oil_Temp -->
     </frame>
-
-    <frame id="1" endianness="big" readOnly="true" timeout="2000">
-      <value targetId="42" offset="0" length="2" conversion="V*0.1"></value> <!-- TPS -->
-      <value targetId="38" offset="2" length="2" conversion="V*0.1-100"></value> <!-- Spark adv -->
-      <value targetId="81" offset="4" length="1" units="km/h"></value> <!-- VSS1 (CHECK THIS, 1 byte value with range of 0-1000)-->
-      <value targetId="151" offset="5" length="1" units="bar" conversion="V*10/100"></value> <!-- Oil pressure (converted to bar) -->
-      <value targetId="202" offset="6" length="1" units="bar" conversion="V/10/100"></value> <!-- Fuel pressure (converted to bar) -->
-      <value name="Link: ECU temp" offset="7" length="1" units="C" conversion="V-50"></value>
+    <frame id="0x3E9" readOnly="true" endianness="big">
+      <value targetId="42" offset="0" length="2" conversion="V*0.1"/> <!-- TPS -->
+      <value targetId="81" offset="4" length="1" units="km/h"/> <!-- VSS1 -->
+      <value targetId="151" offset="5" length="1" units="bar" conversion="V*10/100"/> <!-- engine oil pressure, converted to BAR -->
+      <value targetId="202" offset="6" length="1" units="bar" conversion="V*10/100"/> <!-- Fuel_Press, converted to BAR -->
+      <value targetId="38" offset="2" length="2" conversion="V*0.1-100"/> <!-- spark advance -->
+      <value name="Link: ECU temp" offset="7" length="1" units="C" conversion="V-50"/>
     </frame>
-    
-    <frame id="2" endianness="big" readOnly="true" timeout="2000">
-      <value targetId="254" offset="0" length="2" conversion="V*0.001"></value> <!-- Lambda 1 -->
-      <value targetId="255" offset="2" length="2" conversion="V*0.001"></value> <!-- Lambda 2 -->
-      <value targetId="229" offset="4" length="2" conversion="V-30000/10"></value> <!-- Steering wheel angle -->
-      <value targetId="11" offset="6" length="2" conversion="V*0.1"></value> <!-- Baro -->
+    <frame id="0x3EA" readOnly="true" endianness="big">
+      <value targetId="254" offset="0" length="2" conversion="V*0.001"/> <!-- Lambda_1 -->
+      <value targetId="255" offset="2" length="2" conversion="V*0.001"/> <!-- Lambda_2 -->
+      <value targetId="11" offset="6" length="2" conversion="V*0.1"/> <!-- baro pressure -->
     </frame>
-    
-    <frame id="3" endianness="big" readOnly="true" timeout="2000">
-      <value targetId="200" offset="0" length="1"></value> <!-- Gear -->
-      <value name="Link: Fuel Cut Percentage" offset="1" length="1"></value>
-      <value name="Link: Ignition Cut Percentage" offset="2" length="1"></value>
-      <value targetId="35" offset="3" length="2" conversion="V*0.001"></value>  <!-- PW 1 -->
-      <value name="Link: Fault code count" offset="5" length="1"></value>
-      <value targetId="29" offset="6" length="2" conversion="V*5"></value> <!-- knock -->
+    <frame id="0x3EB" readOnly="true" endianness="big">
+      <value targetId="200" offset="0" length="1"/> <!-- Gear -->
+      <value targetId="406" offset="1" length="1"/> <!-- fuel cut active -->
+      <value name="Link: Ignition Cut Percentage" offset="2" length="1"/>
+      <value targetId="35" offset="3" length="2" conversion="V*0.001"/> <!-- pulse width 1 -->
+      <value name="Link: Fault code count" offset="5" length="1"/>
+      <value targetId="29" offset="6" length="2"/> <!-- knock -->
     </frame>
   </frames>
 </RealDashCAN>
