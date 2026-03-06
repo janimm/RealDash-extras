@@ -161,7 +161,10 @@ if **name** is used instead of **targetId**, these attributes specify a recommen
 
 &nbsp;
 ## **value 'initialValue' attribute (optional)**
-If this attribute is present, value is written to CAN after connection has been made to the CAN bus.
+If this attribute is present, value is written to CAN after connection has been made to the CAN bus. Examples:
+
+    <value targetId="37" offset="0" length="2" initialValue="1000"></value>    <!-- sets RPM (targetId 37) to 1000 and sends the frame when connection has been establised -->
+    <value targetId="37" offset="0" length="2" initialValue="read"></value>    <!-- reads current RPM (targetId 37) from RealDash, sets value to the frame and sends the frame when connection has been establised -->
 
 &nbsp;
 ## **value 'conversion' (optional)**
