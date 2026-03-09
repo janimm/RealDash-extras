@@ -128,14 +128,14 @@ Sending of config frames can be enabled from connection settings of RealDash CAN
 
     RealDash CAN '67' config frame for CAN speed:
     5 bytes - 0x67,0x33,0x22,0x02,0x15
-    1 bytes - CAN speed: 0x01 = 20000, 0x02 = 50000, 0x03 = 100000, 0x04 = 125000, 0x06 = 500000, 0x07 = 800000, 0x08 = 1000000
+    1 byte  - CAN speed: 0x01 = 20000, 0x02 = 50000, 0x03 = 100000, 0x04 = 125000, 0x06 = 500000, 0x07 = 800000, 0x08 = 1000000
     4 bytes - CRC32 checksum (32bit little endian value)
 
 &nbsp;
 
     RealDash CAN '67' config frame for CAN mode:
-    4 bytes - 0x67,0x33,0x22,0x01,0x15
-    1 bytes - CAN mode: 0x11 = normal, 0x12 = loopback, 0x13 = silent, 0x14 = loopback silent
+    4 bytes - 0x67,0x33,0x22,0x01
+    1 byte  - CAN mode: 0x11 = normal, 0x12 = loopback, 0x13 = silent, 0x14 = loopback silent
     4 bytes - CRC32 checksum (32bit little endian value)
 
 &nbsp;
