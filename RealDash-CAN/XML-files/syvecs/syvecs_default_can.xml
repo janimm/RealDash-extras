@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- RealDash CAN XML description file, version 2 Requires RealDash version 1.5.8 or newer -->
+<RealDashCAN version="2">
+  <frames>
+
+    <frame id="0x600" endianess="big">
+        <value targetId="37" units="RPM" offset="0" length="2" signed="true"></value> <!-- RPM -->
+        <value targetId="42" units="%" offset="4" length="2" conversion="V/81.92"></value> <!-- TPS  -->
+        <value targetId="placeholder" offset="6" length="2" units="placeholder" conversion="placeholder" signed="true"></value>
+    </frame>
+	
+    <frame id="0x601" endianess="big">
+        <value targetId="254" offset="0" length="2" units="Lambda" conversion="V/1000" signed="true"></value> <!--Lambda 1-->
+        <value targetId="255" offset="2" length="2" units="Lambda" conversion="V/1000" signed="true"></value> <!--Lambda 2-->
+    </frame>
+
+    <frame id="0x602" endianess="big">
+        <value targetId="151" offset="0" length="2" conversion="V/1000" signed="true"></value> <!-- eop1 -->
+        <value name="Syvecs: Engine Coolant Pressure" offset="4" length="2"></value>
+        <value name="Syvecs: Crank Case Pressure" offset="6" length="2"></value>
+    </frame>
+
+    <frame id="0x603 " endianess="big">
+        <value targetId="14" units="C" offset="0" length="2" conversion="V/10" signed="true"></value> <!--ect1/ CLT-->
+        <value targetId="27" units="C" offset="2" length="2" conversion="V/10" signed="true"></value> <!-- act1 /iat-->
+        <value targetId="152" units="C" offset="4" length="2" conversion="V/10" signed="true"></value> <!-- eot / Engine Oil Temperature -->
+        <value name="Syvecs: Fuel Temp" units="C" offset="6" length="2" conversion="V/10" signed="true"></value>
+    </frame>
+
+    <frame id="0x604" endianess="big">
+        <value targetId="136" offset="4" length="2" conversion="V*0.036"></value> <!-- Speed-->
+        <value targetId="placeholder" offset="6" length="2" units="placeholder" conversion="placeholder" signed="true"></value>
+    </frame>
+
+    <frame id="0x607" endianess="big">
+      <value targetId="81" offset="0" length="2"  conversion="V*0036" signed="true"></value> <!--VSS1-->
+      <value targetId="placeholder" offset="2" length="2" units="placeholder" conversion="placeholder" signed="true"></value>
+      <value targetId="placeholder" offset="4" length="2" units="placeholder" conversion="placeholder" signed="true"></value>
+      <value targetId="placeholder" offset="6" length="2" units="placeholder" conversion="placeholder" signed="true"></value>
+    </frame>
+
+    <frame id="0x608" endianess="big">
+        <value targetId="38" units="deg" offset="0" length="2" conversion="V/32" signed="true"></value> <!-- ignFinalPri1 -->
+    </frame>
+
+    <frame id="0x609" endianess="big">
+        <value name="Syvecs: airConCtl" offset="2" units="onff" length="2" enum="0:OFF,1:ON"></value>
+        <value name="Syvecs: fan1" offset="2" length="2" enum="0:OFF,1:ON,2:RUNON,3:DISABLED"></value>
+        <value name="Syvecs: fan2" offset="4" length="2" enum="0:OFF,1:ON,2:RUNON,3:DISABLED"></value>
+        <value name="Syvecs: cruiseActive" offset="4" length="2" enum="0:IDLE,1:ACTIVE"></value>
+    </frame>
+
+    <frame id="0x60a" endianess="big">
+      <value targetId="254"  offset="0" length="2" units="Lambda" conversion="V/1000" signed="true"></value>  
+      <value targetId="255"  offset="0" length="2" units="Lambda" conversion="V/1000" signed="true"></value>  <!--Lambda 2-->
+    </frame>
+	
+    <frame id="0x612" endianess="big">
+        <value name="Syvecs: idleControlActive" offset="4" length="2" enum="0:NO,1:YES"></value>
+        <value name="Syvecs: runMode" offset="6" length="2" enum="0:INITIAL,1:PREINJECT,2:STOP,3:CRANK,4:RUN"></value> <!-- runMode -->
+    </frame>
+
+	<frame id="0x613" endianess="big">
+      <value targetId="200" offset="0" length="2" signed="true"></value> <!--GEAR-->
+      <value targetId="placeholder" offset="2" length="2" units="placeholder" conversion="placeholder" signed="true"></value>
+      <value targetId="placeholder" offset="4" length="2" units="placeholder" conversion="placeholder" signed="true"></value>
+      <value targetId="placeholder" offset="6" length="2" units="placeholder" conversion="placeholder" signed="true"></value>
+    </frame>
+   
+  </frames>
+</RealDashCAN>
