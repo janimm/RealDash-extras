@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- RealDash CAN XML description file, version 2 Requires RealDash version 1.5.8 or newer -->
+<!-- EMU Black XML mapping file made by Damtrx                     -->
+<!-- Target IDs https://realdash.net/manuals/targetid.php          -->
+<!-- ECU Master IDs are located in the HELP file - EMU CAN Stream  -->
+<RealDashCAN version="2">
+<frames>
+    <frame id="0x600"><!--EMU CAN Stream - ID 0-->
+      <value targetId="37" offset="0" length="2"></value> <!-- RPM -->
+      <value targetId="42" offset="2" length="1" conversion="V/2"></value> <!-- TPS -->
+      <value targetId="27" offset="3" length="1" units="C"></value> <!-- IAT -->
+      <value targetId="31" offset="4" length="2"></value> <!--MAP-->
+      <value targetId="35" offset="6" length="2" conversion="V*0.016129"></value> <!--Injector PW-->
+    </frame>
+    
+    <frame id="0x601"><!--EMU CAN Stream - ID 1-->
+       <value name="EMU Black: Analog-1-AC" offset="0" length="2" conversion="V*0.0049" units="V"></value><!--Analog 1 (AC Pressur)-->
+       <value name="EMU Black: Analog-2-OilWarning" offset="2" length="2" conversion="V*0.0049" units="V"></value><!--Analog 2 OIL Warning-->   
+       <value name="EMU Black: Analog-3-DBW1" offset="4" length="2" conversion="V*0.0049" units="V"></value><!--Analog 3 DBW-->
+       <value name="EMU Black: Analog-4-MUXSwitch" offset="6" length="2" conversion="V*0.0049" units="V"></value> <!--Analog 4 MUX Switch-->
+    </frame>
+	
+    <frame id="0x602"><!--EMU CAN Stream - ID 2-->
+      <value targetId="14" offset="6" length="2" units="C"></value> <!-- Coolant -->
+      <value targetId="152" offset="3" length="1" units="C"></value> <!--OIL Temp-->
+      <value targetId="151" offset="4" length="1" units="bar" conversion="V*0.0625"></value> <!--OIL Pressure-->
+    </frame>
+    <frame id="0x603"><!--EMU CAN Stream - ID 3-->
+      <value targetId="254" offset="2" length="1" conversion="V*0.0078125" ></value> <!-- Lambda 1 -->
+      <value targetId="38" offset="0" length="1" conversion="V0.5" signed="true" ></value> <!-- Ignition Angle -->
+      <value targetId="23" offset="1" length="1" conversion="V*0.05"></value> <!-- Ignition Dwell -->
+    </frame>
+    <frame id="0x604"><!--EMU CAN Stream - ID 4-->
+      <value targetId="200" offset="0" length="1"></value> <!-- Gear -->
+      <value targetId="12" offset="2" length="2" conversion="V*0.027"></value> <!-- Battery Voltage -->
+      <value targetId="105" offset="4" length="2"></value> <!-- rotating error code -->
+      <value targetId="230" offset="6" length="1" units="bit" startbit="7" bitCount="1" conversion="V*100"></value><!--Brake Pedal Percentage(it is 0 or 100 because it is a switch)-->
+    </frame>
+    <frame id="0x606"><!--EMU CAN Stream - ID 6-->
+       <value name="EMU Black: Analog-5-AC-Voltage" offset="0" length="2" conversion="V*0.0049" units="V"></value><!--Analog 5(ac state from All4Swap)-->
+       <value name="EMU Black: Analog-6-DBW2" offset="2" length="2" conversion="V*0.0049" units="V"></value><!--Analog 6-->
+       <value targetId="335" offset="7" length="1" units="bit"  startbit="3" bitCount="1"></value><!--AC State-->
+    </frame>
+    <frame id="0x607"><!--EMU CAN Stream - ID 7-->
+      <value targetId="270" offset="0" length="2"></value> <!-- Boost Target -->
+      <value targetId="256" offset="4" length="1" conversion="V*0.01"></value> <!-- Target Lambda 1 -->
+      <value name="EMU Black: Fuel Used" offset="6" length="2" conversion="V*0.1" units="l/100"></value> <!--Fuel used-->
+    </frame>
+    <frame id="0x500"><!--Custom CAN Bus messages -->
+       <value name="EMU Black: Knock Voltage" offset="0" length="1" conversion="V*0.01" units="V"></value> <!--Knock Sensor Value-->
+       <!-- <value name="EMU Black: AC Enabled" offset="1" length="1" units="V"></value> <AC Clutch enabled--> -->
+       <value name="EMU Black: Knock-graph" offset="2" length="1" conversion="V*0.01"></value> <!--Knock Sensor Value-->
+    </frame>
+	
+    <frame id="0x666" writeInterval="1000">
+        <value name="EMU Black: CALPOT 1" offset="4" length="1"></value>
+        <value name="EMU Black: CALPOT 2" offset="5" length="1"></value>
+        <value name="EMU Black: Switch 1" offset="6" length="1" units="bit"></value>
+        <value name="EMU Black: Switch 2" offset="6" length="1" units="bit" conversion="V>>1"></value>
+        <value name="EMU Black: Switch 3" offset="6" length="1" units="bit" conversion="V>>2"></value>
+        <value name="EMU Black: Switch 4" offset="6" length="1" units="bit" conversion="V>>3"></value>
+        <value name="EMU Black: Switch 5" offset="6" length="1" units="bit" conversion="V>>4"></value>
+        <value name="EMU Black: Switch 6" offset="6" length="1" units="bit" conversion="V>>5"></value>
+        <value name="EMU Black: Switch 7" offset="6" length="1" units="bit" conversion="V>>6"></value>
+        <value name="EMU Black: Switch 8" offset="6" length="1" units="bit" conversion="V>>7"></value>
+        <value name="EMU Black: Heartbeat" offset="7" length="1"></value>
+    </frame>
+
+</frames>
+</RealDashCAN>
