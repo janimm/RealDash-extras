@@ -21,7 +21,7 @@
     <frame id="0x522" readOnly="true" timeout="2000">
       <value targetId="35" offset="0" length="2" conversion="V*0.001"></value> <!-- Pulse Width 1 -->
       <value targetId="119" units="%" offset="2" length="2" conversion="V*0.1"></value> <!-- Duty Cycle 1 -->
-      <value targetId="408" units="%" offset="4" length="2"></value> <!-- Fuel Cut -->
+      <value targetId="406" units="%" offset="4" length="2"></value> <!-- Fuel Cut -->
       <value targetId="81" units="kph" offset="6" length="2" conversion="V*0.1"></value> <!-- VSS1 -->
     </frame>
 
@@ -45,9 +45,37 @@
       <value name="MaxxECU: User Channel 11" offset="4" length="2" conversion="V*0.1"></value>
       <value name="MaxxECU: User Channel 12" offset="6" length="2" conversion="V*0.1"></value>
     </frame>
+
+    <frame id="0x526" readOnly="true" timeout="2000">
+      <value name="MaxxECU: Shiftcut active" offset="0" length="1" units="bit"></value>
+      <value name="MaxxECU: Rev-limit active" offset="0" length="1" units="bit" conversion="V>>1"></value>
+      <value name="MaxxECU: Anti-lag active" offset="0" length="1" units="bit" conversion="V>>2"></value>
+      <value targetId="394" offset="0" length="1" units="bit" conversion="V>>3"></value> <!-- launch control active -->
+      <value name="MaxxECU: Traction power limiter active" offset="0" length="1" units="bit" conversion="V>>4"></value>
+      <value name="MaxxECU: Throttle blip active" offset="0" length="1" units="bit" conversion="V>>5"></value>
+      <value targetId="335" offset="0" length="1" units="bit" conversion="V>>6"></value> <!-- AC on -->
+      <value name="MaxxECU: Knock detected" offset="0" length="1" units="bit" conversion="V>>7"></value>
+      <value name="MaxxECU: Brake pedal active" offset="1" length="1" units="bit"></value>
+      <value name="MaxxECU: Clutch pedal active" offset="1" length="1" units="bit" conversion="V>>1"></value>
+      <value name="MaxxECU: Speed limit active" offset="1" length="1" units="bit" conversion="V>>2"></value>
+      <value name="MaxxECU: GP limiter active" offset="1" length="1" units="bit" conversion="V>>3"></value>
+      <value name="MaxxECU: User cut active" offset="1" length="1" units="bit" conversion="V>>4"></value>
+      <value name="MaxxECU: ECU logging active" offset="1" length="1" units="bit" conversion="V>>5"></value>
+      <value name="MaxxECU: Nitrous active" offset="1" length="1" units="bit" conversion="V>>6"></value>
+    </frame>
 	  
     <frame id="0x527" readOnly="true" timeout="2000">
+      <value targetId="8" offset="0" length="2" signed="true" conversion="V*0.01"></value> <!-- acceleration Z -->
+      <value targetId="6" offset="2" length="2" signed="true" conversion="V*0.01"></value> <!-- acceleration X -->
+      <value targetId="7" offset="4" length="2" signed="true" conversion="V*0.01"></value> <!-- acceleration Y -->
       <value targetId="256" offset="6" length="2" signed="true" conversion="V*0.001"></value> <!-- Lambda Target 1 -->
+    </frame>
+
+    <frame id="0x528" readOnly="true" timeout="2000">
+      <value targetId="29" offset="0" length="2" signed="true"></value> <!-- knock level -->
+      <value targetId="28" offset="2" length="2" signed="true" conversion="V*0.1"></value> <!-- knock retard -->
+      <value name="MaxxECU: Knock count" offset="4" length="2"></value>
+      <value name="MaxxECU: Last knock cylinder" offset="6" length="2"></value>
     </frame>
 	  
     <frame id="0x530" readOnly="true" timeout="2000">
@@ -93,12 +121,19 @@
     </frame>
 
     <frame id="0x536" readOnly="true" timeout="2000">
-      <value targetId="200" offset="0" length="2" signed="true"></value> <!-- gear -->
+      <value targetId="200" offset="0" length="2" signed="true" enum="-3:-2"></value> <!-- gear -->
       <value name="MaxxECU: Boost solenoid duty" offset="2" length="2" conversion="V*0.1"></value>
       <value targetId="151" offset="4" length="2" signed="true" units="bar" conversion="V*0.001"></value> <!-- oil pressure -->
       <value targetId="152" offset="6" length="2" signed="true" units="C" conversion="V*0.1"></value> <!-- oil temperature -->
     </frame>
 
+    <frame id="0x537" readOnly="true" timeout="2000">
+      <value targetId="202" offset="0" length="2" units="bar" conversion="V*0.001"></value> <!-- fuel pressure -->
+      <value name="MaxxECU: Wastegate pressure" offset="2" length="2" units="bar" conversion="V*0.001"></value>
+      <value targetId="759" offset="4" length="2" units="bar" conversion="V*0.001"></value> <!-- coolant pressure -->
+      <value targetId="270" offset="6" length="2" units="kpa" conversion="V*0.1"></value> <!-- boost target -->
+    </frame>
+	  
     <frame id="0x538" readOnly="true" timeout="2000">
       <value name="MaxxECU: User Channel 1" offset="0" length="2" conversion="V*0.1"></value>
       <value name="MaxxECU: User Channel 2" offset="2" length="2" conversion="V*0.1"></value>
@@ -117,7 +152,7 @@
       <value name="MaxxECU: Active Boost Table" offset="0" length="1"></value>
       <value name="MaxxECU: Active Tune Selector" offset="1" length="1"></value>
       <value name="MaxxECU: Virtual Fuel Tank" offset="2" length="2" conversion="V*0.1"></value>
-      <value name="MaxxECU: Transmission Temp" units="C" offset="4" length="2" conversion="V*0.1"></value>
+      <value targetId="138" units="C" offset="4" length="2" conversion="V*0.1"></value> <!-- transmission oil temperature -->
       <value name="MaxxECU: Differential Temp" units="C" offset="6" length="2" conversion="V*0.1"></value>
     </frame>
 
@@ -136,3 +171,4 @@
 	  
   </frames>
 </RealDashCAN>
+
